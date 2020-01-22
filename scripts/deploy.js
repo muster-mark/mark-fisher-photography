@@ -43,7 +43,7 @@ const main = async function main() {
     const destination = process.argv.pop();
 
     if (['staging', 'production'].indexOf(destination) === -1) {
-        console.log('Invalid destination');
+        console.error('Invalid destination');
         printUsage(2);
     }
 
@@ -70,8 +70,9 @@ const main = async function main() {
     } else  if (!syncResult) {
         console.log("Not invalidating CDN as no changes to sync");
     } else {
-        clearCloudFrontCache(destination, config.CF_INVALIDATOR_KEY, config.CF_INVALIDATOR_SECRET);
+        clearCloudFrontCache(config.DISTRIBUTION_ID, config.CF_INVALIDATOR_KEY, config.CF_INVALIDATOR_SECRET);
     }
+
 
 };
 

@@ -4,3 +4,4 @@
 --ignore-dir=public
 --ignore-dir=.idea
 --ignore-dir=cache
+--ignore-dir=@fortawesome

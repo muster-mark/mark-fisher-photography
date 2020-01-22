@@ -18,8 +18,9 @@
     },
     "devDependencies": {},
     "scripts": {
-        "build": "echo not yet configured",
-        "test": "echo not yet configured",
-        "deploy": "echo not yet configured"
+        "add-photo": "node scripts/extract_metadata.js && php scripts/build_photo_and_gallery_pages.php",
+        "build": "node node_modules/.bin/encore prod && node scripts/extract_metadata.js && php scripts/build_manual_pages.php && php scripts/build_photo_and_gallery_pages.php && php scripts/build_homepage.php",
+        "test": "echo tests not yet configured",
+        "deploy": "node scripts/deploy.js"
     }
 }

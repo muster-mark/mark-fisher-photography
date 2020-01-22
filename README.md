@@ -16,7 +16,7 @@ npm install
 Add photos as desired - see [adding photos](#adding-photos)
 
 ```
-composer build
+npm run build
 ```
 
 Use `conf.example.json` as a starting point to create config files for deployment to staging and production: `conf.staging.json` and `conf.production.json`.
@@ -29,7 +29,7 @@ Use `conf.example.json` as a starting point to create config files for deploymen
     * photos in w200 directory should contain photos 200px wide
     * photos in h300 directory should contain photos 300px tall
 * Add thumbnail image containing all metadata to source/metadata_images/&lt;gallery&gt;/ folder
-* `composer add-photo` extracts metadata and rebuilds the gallery and photo pages
+* `npm run add-photo` extracts metadata and rebuilds the gallery and photo pages
 
 ### Environment
 
@@ -43,7 +43,7 @@ The following need to be installed and in the PATH
 ### Build
 
 ```
-composer build
+npm run build
 ```
 
 ### Testing
@@ -56,7 +56,7 @@ Javascript is an enhancement for maximum robustness, so check with and without j
 The deployment scripts deploys to an s3 bucket using aws2 and invalidates the relevant distribution
 
 ```
-composer deploy staging|production [--dryrun]
+npm run deploy staging|production [--dryrun]
 ```
 
 ### TODO

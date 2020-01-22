@@ -1,27 +1,7 @@
 {
-    "name": "mustermark/mark-fisher-photography-website",
-    "description": "Mark Fisher's photography website: https://www.markfisher.photo",
+    "name": "muster-mark/mark-fisher-photography",
+    "description": "Mark Fisher's landscape and nature photography website: https://www.markfisher.photo",
     "type": "project",
-    "scripts": {
-        "publish": [
-            "./scripts/deploy.sh"
-        ],
-        "build": [
-            "Composer\\Config::disableProcessTimeout",
-            "node node_modules/.bin/encore prod",
-            "node scripts/extract_metadata.js",
-            "php scripts/build_manual_pages.php",
-            "php scripts/build_photo_and_gallery_pages.php",
-            "php scripts/build_homepage.php"
-        ],
-        "deploy": [
-            "node scripts/deploy.js"
-        ],
-        "add-photo": [
-            "node scripts/extract_metadata.js",
-            "php scripts/build_photo_and_gallery_pages.php"
-        ]
-    },
     "require": {
         "symfony/filesystem": "^5.0",
         "twig/twig": "^3.0",
