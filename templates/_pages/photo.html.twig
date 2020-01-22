@@ -1,0 +1,65 @@
+{% extends "_layouts/default.html.twig" %}
+
+{% import("_includes/macros.html.twig") as macros %}
+
+{% block head %}
+    <link rel="prefetch" href="/{{ gallery }}/{{ next_photo.SpecialInstructions }}"  />
+    <link rel="prefetch" href="/{{ gallery }}/{{ previous_photo.SpecialInstructions }}" />
+{% endblock %}
+
+{% block content %}
+
+    <div class="inner-container ">
+        <figure class="the-image">
+            <div class="the-image_container">
+                <a href="/{{ gallery }}/{{ previous_photo.SpecialInstructions }}" class="a_context the-image_prev" title="Go to the previous image in the {{gallery_name}} gallery">
+                    <svg role="img" class="ico" viewBox="0 0 256 512">
+                        <use xlink:href="/images/icons_sprite.svg#chevron-left"></use>
+                    </svg></span><span class="sr-only">Previous photo</span>
+                </a>
+                {{ macros.picture((photo.SpecialInstructions), (photo.Headline), "l840", (photo.ImageAspectRatio) ) }}
+                <a href="/{{ gallery }}/{{ next_photo.SpecialInstructions }}" class="a_context the-image_next" title="Go to the next image in the {{gallery_name}} gallery">
+                    <svg role="img" class="ico" viewBox="0 0 256 512">
+                        <use xlink:href="/images/icons_sprite.svg#chevron-right"></use>
+                    </svg></span><span class="sr-only">Next photo</span>
+                </a>
+            </div>
+            <figcaption>
+                <h1 class="the-image_title">{{ photo.Title }}</h1>
+                {% if photo.Sublocation %}
+                    <span class="the-image_location">
+                        <svg role="img" class="ico" viewBox="0 0 576 512" title="Location">
+                            <use xlink:href="/images/icons_sprite.svg#map-marked-alt"></use>
+                        </svg>
+                        {{ photo.Sublocation }}{% if photo.CountryPrimaryLocationName %}, {{ photo.CountryPrimaryLocationName }}{% endif %}
+                    </span>
+                {% endif %}
+
+                <p>{{ photo.CaptionAbstract|raw }}</p>
+
+            </figcaption>
+        </figure>
+
+        <details class="image-details">
+            <summary>More details</summary>
+            <ul class="image-details_list">
+                {% if photo.Sublocation %}
+                    <li>
+                        <svg role="img" class="ico" viewBox="0 0 576 512" title="Location">
+                            <use xlink:href="/images/icons_sprite.svg#map-marked-alt"></use>
+                        </svg>{{ photo.Sublocation }}{% if photo.CountryPrimaryLocationName %}, {{ photo.CountryPrimaryLocationName }}{% endif %}
+                    </li>
+                {% endif %}
+
+                <li>
+                    <svg role="img" class="ico" viewBox="0 0 448 512" title="Date take">
+                        <use xlink:href="/images/icons_sprite.svg#calendar-alt"></use>
+                    </svg>
+                    {{ photo.DateTimeOriginal|date('F jS, Y') }}</li>
+                <li></li>
+            </ul>
+        </details>
+
+    </div>
+
+{% endblock %}

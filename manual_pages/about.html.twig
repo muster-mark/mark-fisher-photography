@@ -1,0 +1,40 @@
+{% extends "_layouts/default.html.twig" %}
+
+{% set page = {
+    "meta_title": "About",
+    "url": "/about",
+    "title" : "About Mark",
+    "header_image" : {
+        "src" : "/images/mark-fisher-jump-out_150x150",
+        "alt" : "Mark Fisher",
+        "height" : 150,
+        "width" : 150
+    }
+} %}
+
+{% block headline %}
+    <p>Hi, my name is Mark. I like foregrounds, Genoa cake and coming in to the warm and dry after being wet and cold. In fact, I would
+    go so far as to say it makes it worth getting wet and cold in the first place.</p>
+
+    <p>Still want to know more? Fine, keep reading.</p>
+
+{% endblock %}
+
+{% block meta_description_tag %}
+    <meta name="description" content="Mark Fisher is an amateur landscape and nature photographer from the UK. Whether he is looking for relaxation, invigoration or mental stimulation, he turns to the natural world to find it."/>
+{% endblock %}
+
+{% block content %}
+    <div class="inner-container">
+        <p>Hi there. I'm a web developer currently living and working in London, while trying to find as much time as
+            possible outside of work to self-medicate on what I find to be the perfect antidote to sitting at a computer
+            all
+            day &mdash; immersing myself in nature and taking the odd picture or two while I'm at it.</p>
+
+        <p>My photographic interests started out being a bit more woolly, until I decided it would be better to do one
+            thing
+            reasonably well rather than multiple things badly, and so I sharpened my focus on nature, and particularly
+            landscape, photography. Landscape photographs have always connected with me the most deeply, and there is
+            nothing that gives me more release than intimately experiencing the rich and vibrant gamut of nature.</p>
+    </div>
+{% endblock %}

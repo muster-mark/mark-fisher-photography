@@ -1,0 +1,25 @@
+{
+    "name": "markfisher.test",
+    "version": "1.0.0",
+    "author": "Mark Fisher <mfishe@gmail.com>",
+    "license": "UNLICENSED",
+    "bugs": {
+        "url": "https://github.com/muster-mark/markfisher.local/issues"
+    },
+    "homepage": "https://github.com/muster-mark/markfisher.local#readme",
+    "dependencies": {
+        "@symfony/webpack-encore": "^0.24.0",
+        "aws-sdk": "^2.599.0",
+        "imagemin-webp-webpack-plugin": "^3.3.1",
+        "node-exiftool": "^2.3.0",
+        "node-sass": "^4.13.0",
+        "sass-loader": "^7.0.1",
+        "slug": "^2.1.0"
+    },
+    "devDependencies": {},
+    "scripts": {
+        "build": "echo not yet configured",
+        "test": "echo not yet configured",
+        "deploy": "echo not yet configured"
+    }
+}

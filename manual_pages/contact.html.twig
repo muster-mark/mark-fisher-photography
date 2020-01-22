@@ -1,0 +1,68 @@
+{% extends "_layouts/default.html.twig" %}
+
+{% set page = {
+    "meta_title": "Contact",
+    "url": "/contact",
+    "title" : "Contact Mark",
+    "header_image" : {
+        "src" : "/images/mark-fisher-jump-out_150x150",
+        "alt" : "Mark Fisher",
+        "height" : 150,
+        "width" : 150
+    }
+} %}
+
+{% block headline %}
+    <p>Do you have a question about my photography, or something to share? Don't hesitate to get in touch!</p>
+    <p>You can also connect with me via any of my social media channels.</p>
+{% endblock %}
+
+{% block content %}
+    <div class="inner-container ">
+{#        <form action="/api/contact" method="post"#}
+{#              class="contact-form">#}
+
+{#            <label for="contact_name">What's your name?</label>#}
+{#            <input required type="text" id="contact_name" name="name" maxlength="100"/>#}
+{#            <span class="form-help">Feel free to make one up if you want to provide some harsh but constructive criticism about my photos.</span>#}
+
+{#            <label for="contact_email">What's your email address?</label>#}
+{#            <input required type="email" id="contact_email" name="email" minlength="5"/>#}
+
+{#            <label for="contact_msg">How can I help you?</label>#}
+{#            <textarea required id="contact_msg" name="message"></textarea>#}
+
+{#            <div class="contact-form_valid-message">Please fill out all the fields correctly</div>#}
+
+{#            <input type="submit" value="Send"/>#}
+
+{#        </form>#}
+
+        <p>Please email me at <a href="mailto:mfishe@gmail.com?subject=Website%20Enquiry%20-%20markfisher.photo">mfishe@gmail.com</a> for any enquiries</p>
+    </div>
+{% endblock %}
+
+{% block footer_scripts %}
+    {{ parent() }}
+
+{#    <script>#}
+{#        if (window.fetch) {#}
+
+{#            let contactForm = document.querySelector(".contact-form");#}
+{#            contactForm.addEventListener("submit", function(e) {#}
+{#                const data = new URLSearchParams();#}
+{#                for (const pair of new FormData(contactForm)) {#}
+{#                    data.append(pair[0], pair[1]);#}
+{#                }#}
+
+{#                fetch("/api/contact", {#}
+{#                    method: "post",#}
+{#                    body: data,#}
+{#                })#}
+{#                    .then(function(result){#}
+{#                        console.log(result);#}
+{#                    });#}
+{#            });#}
+{#        }#}
+{#    </script>#}
+{% endblock %}

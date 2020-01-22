@@ -1,0 +1,7 @@
+$color-primary: #efa929; /* #efa929 is AAA on black. Keep synchronised with meta theme colour in HTML */
+$link-color: $color-primary;
+
+$text-color: desaturate(lighten($color-primary, 35%),10%);
+$subtle-text-color: desaturate(darken($color-primary, 10%),75%);
+$visited-link-color: darken($color-primary,  22%);
+$placeholder-grey: darken(desaturate($color-primary, 25%), 20%);

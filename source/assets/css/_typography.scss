@@ -1,0 +1,50 @@
+$line-height: 1.4;
+
+html {
+    line-height: $line-height;
+}
+
+@mixin title-font {
+    font-family: Impact, Verdana, sans-serif;
+}
+
+p {
+  margin-bottom: calc(24px + 0.375vw);
+}
+
+a {
+  color: $color-primary;
+  text-underline-offset: 5px;
+}
+
+.a_context {
+  color: $text-color;
+}
+
+a:not(.a_context):visited {
+  color: $visited-link-color;
+}
+
+a, a:not(.a_context) {
+  &:focus, &:hover {
+    color: $text-color;
+  }
+}
+
+.a_context:hover, .a_context:focus {
+  color: $color-primary;
+}
+
+a:focus {
+  /*outline: none;*/
+  /* have set manually for text, but not other elements */
+}
+
+.subtle-text {
+    color: $subtle-text-color;
+    font-size: smaller;
+}
+
+.text-center {
+    text-align: center;
+}

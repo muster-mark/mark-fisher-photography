@@ -1,0 +1,49 @@
+$screen-width-show-social-media-in-footer: 550px;
+
+.header_sm, .footer_sm {
+    display: inline-block;
+    margin-right: 20px;
+
+    &:hover .sm-link.sm-link:hover {
+        transform: scale(1.2)
+    }
+}
+
+.header_sm {
+    float: right;
+}
+
+.footer_sm {
+    display: block;
+    text-align: center;
+}
+
+@media screen and (max-width: $screen-width-show-social-media-in-footer) {
+    .header_sm {
+        display: none;
+    }
+}
+
+@media screen and (min-width: $screen-width-show-social-media-in-footer + 1px) {
+    .footer_sm {
+        display: none;
+    }
+}
+
+.sm-link.sm-link {
+    /* Why is higher specificity required - bug? */
+    display: inline-block;
+    font-size: 1.5em;
+    color: $text-color;
+    padding: 20px 0.4em;
+    text-decoration: none;
+}
+
+.sm-link:hover {
+    color: $color-primary;
+    text-decoration: none;
+
+    .ico {
+        fill: $color-primary;
+    }
+}

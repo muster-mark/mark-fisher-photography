@@ -1,0 +1,6 @@
+*.png diff=exif
+*.jpg diff=exif
+*.gif diff=exif
+*.webp diff=exif
+
+/composer.lock -merge

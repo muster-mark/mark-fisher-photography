@@ -1,0 +1,92 @@
+body {
+    margin: 0;
+}
+
+html {
+    font-family: Verdana, sans-serif, serif;
+    background-color: black;
+    --font-size: calc(16px + 0.25vw);
+    font-size: var(--font-size);
+    color: $text-color;
+}
+
+html, body {
+    width: 100%;
+}
+
+html {
+    height: 100%;
+}
+
+*:not(img) {
+    box-sizing: border-box;
+}
+
+body {
+    background: url("/images/bg_tesselate.jpg");
+    background-size: 1200px 800px;
+    min-height: 100%;
+}
+
+figure {
+    margin: 0;
+}
+
+@keyframes toggleAltText {
+    from {font-size: 0;}
+    to {font-size: 16px;}
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    font-size: 0;
+    animation-name: toggleAltText;
+    animation-duration: 0ms;
+    animation-timing-function: ease;
+    animation-delay: 2.5s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+}
+
+summary {
+    cursor: pointer;
+}
+
+//summary {
+//    list-style-image: url("/images/right-arrow.svg");
+//}
+//
+//summary::-webkit-details-marker {
+//    background: url("/images/right-arrow.svg");
+//    color: transparent;
+//}
+
+.inner-container {
+    margin: auto;
+    max-width: calc(845px + 6em);
+    padding: 0 1em 1em;
+    display: flow-root;
+
+    &_narrow {
+        max-width: calc(630px + 2em);
+    }
+}
+
+.inner-container {
+    margin-top: 0;
+}
+
+.sr-only {
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+

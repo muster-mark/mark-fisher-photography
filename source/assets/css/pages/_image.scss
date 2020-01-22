@@ -1,0 +1,126 @@
+.the-image_title {
+    margin-top: 0.5em;
+    margin-bottom: 0;
+    @include title-font;
+}
+
+.the-image_location {
+    font-size: 1.3em;
+    letter-spacing: 0.05em;
+    @include title-font;
+}
+
+.the-image_container {
+    position: relative;
+    display: table;
+
+    img {
+        display: block;
+    }
+}
+
+.the-image_prev, .the-image_next {
+    display: inline-block;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 30%;
+    font-size: 3em;
+    vertical-align: center;
+
+    &:after {
+        right: 1em;
+        display: block;
+        content: "";
+        height: 100%;
+        top: 0;
+        position: absolute;
+
+    }
+}
+
+.the-image_prev {
+    left: -1em;
+
+    &:after {
+        right: 0;
+        left: 1em;
+    }
+
+    &:hover:after {
+        background-image: linear-gradient(to right, transparentize($color-primary, 0.5), transparent );
+    }
+}
+
+.the-image_next {
+    right: -1em;
+    direction: rtl;
+
+    &:after {
+        left:0;
+        right: 1em;
+    }
+
+    &:hover:after {
+        background-image: linear-gradient(to left, transparentize($color-primary, 0.5), transparent );
+    }
+}
+
+.image-details_list {
+    list-style-type: none;
+    padding-left: 0;
+
+    .ico {
+        margin-right: 1em;
+    }
+}
+
+@media screen and (min-width: 1049px) {
+    .the-image_prev, .the-image_next {
+        .ico {
+            position: absolute;
+            top: 50%;
+        }
+    }
+}
+
+@media screen and (max-width: 1050px) {
+
+    //Previous / next arrows need to go above photo
+
+    .the-image_container img {
+        margin-top: 2em;
+    }
+
+    .the-image_prev, .the-image_next {
+        line-height: $line-height;
+        font-size: 1.5em;
+
+        &:after {
+            top: 1.2em;
+        }
+    }
+
+    .the-image_prev, .the-image_next {
+        &:after {
+            height: auto;
+            bottom: 0;
+        }
+    }
+
+    .the-image_prev {
+        left: 0;
+    }
+
+    .the-image_next {
+        right: 0;
+    }
+
+    .the-image_prev:after {
+            left: 0;
+    }
+
+    .the-image_next:after {
+        right: 0;
+    }
+}

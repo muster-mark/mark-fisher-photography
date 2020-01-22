@@ -1,0 +1,32 @@
+//Confusing conflation of header terminology
+
+.header-container .inner-container {
+    position: relative;
+}
+
+.header-container .inner-container:after {
+    display: block;
+    content: "";
+    height: 1px;
+    width: 100%;
+    background-color: $text-color;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.header-container {
+    padding: 2vw 0;
+    display: flow-root;
+    background-image: linear-gradient($color-primary, #000);
+    background-image: linear-gradient($color-primary, transparent);
+    margin-block-start: -1em;
+}
+
+.header-container_img-shape {
+    shape-outside: circle(53.01% at 76px 74px);
+    width: 200px;
+    height: 160px;
+    display: inline-block;
+    float: left;
+}

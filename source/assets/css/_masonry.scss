@@ -1,0 +1,56 @@
+$masonry-column-width: 200px;
+$masonry-gap: 15px;
+
+.masonry_wall {
+    display: grid;
+    grid-template-columns: repeat(4, $masonry-column-width);
+    grid-template-rows: 1px;
+    grid-auto-flow: dense;
+    grid-gap: 0 $masonry_gap;
+    width: #{4 * ($masonry-column-width + $masonry-gap) - $masonry-gap};
+    max-width: 100%;
+    margin: auto;
+}
+
+@media screen and (max-width: 1000px) {
+    .masonry_wall {
+        grid-template-columns: repeat(3, $masonry-column-width);
+        width: #{3 * ($masonry-column-width + $masonry-gap) - $masonry-gap};
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .masonry_wall {
+        grid-template-columns: $masonry-column-width $masonry-column-width;
+        width: #{2 * ($masonry-column-width + $masonry-gap) - $masonry-gap};
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .masonry_wall {
+        grid-template-columns: $masonry-column-width;
+        width: $masonry-column-width;
+    }
+}
+
+.masonry_brick {
+    max-width: 100%;
+}
+
+$aspect-ratios:
+    ("name": "3to1", "width": 3, "height": 1)
+    ("name": "2to1", "width": 2, "height": 1)
+    ("name": "3to2", "width": 3, "height": 2)
+    ("name": "4to3", "width": 4, "height": 3)
+    ("name": "1to1", "width": 1, "height": 1)
+    ("name": "3to4", "width": 3, "height": 4)
+    ("name": "2to3", "width": 2, "height": 3)
+    ("name": "1to2", "width": 1, "height": 2);
+
+@each $aspect-ratio in $aspect-ratios {
+    .masonry_brick_#{map-get($aspect-ratio, "name")} {
+        $brick-height: #{round(200 * (map-get($aspect-ratio, "height") / map-get($aspect-ratio, "width"))  + $masonry-gap / 1px)};
+        grid-row: auto / span $brick-height;
+        height: #{$brick-height}px;
+    }
+}

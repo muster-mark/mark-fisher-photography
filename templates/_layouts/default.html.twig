@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>{% if page.meta_title %}{{ page.meta_title }} - {% endif %}Mark Fisher Photography</title>
+    {% block meta_description_tag %}{% endblock %}
+    <meta name="viewport" content="width=device-width, initial-scale=1"> {# Ensure not zoomed out on mobile #}
+    <link rel="stylesheet" href="/assets/main.css"/>
+    <link rel="canonical" href="{{ page.url }}"/>
+    <meta name="theme-color" content="#efa929">
+
+    {% block head %}
+
+    {% endblock %}
+
+</head>
+<body>
+{% include "_includes/header.html.twig" %}
+<main>
+    {% if page.title %}
+        <div class="header-container">
+            <div class="inner-container">
+                <h1>{{ page.title }}</h1>
+                {% if page.header_image %}
+                    <div class="header-container_img-shape">
+                        <img class="header-container_img"
+                             alt="{{ page.header_image.alt }}"
+                             srcset="{{ page.header_image.src }}@2x.png, {{ page.header_image.src }}.png 1x"
+                             src="{{ page.header_image.src }}.png"
+                             height="{{ page.header_image.height }}"
+                             width="{{ page.header_image.width }}"
+                        />
+                    </div>
+                {% endif %}
+                {% block headline %}{% endblock %}
+            </div>
+        </div>
+    {% endif %}
+
+    {% block content %}
+    {% endblock %}
+</main>
+
+{% include "_includes/footer.html.twig" %}
+
+{% block footer_scripts %}
+
+{% endblock %}
+
+
+</body>
+
+</html>

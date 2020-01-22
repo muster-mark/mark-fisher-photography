@@ -1,0 +1,26 @@
+{% set footer_nav_links =
+    {
+        '/about': 'About',
+        '/contact': 'Contact',
+    } %}
+
+<footer class="container">
+    <nav class="nav footer_nav">
+        <ul>
+            {% for nav_url, nav_title in footer_nav_links %}
+                {% if (nav_url == page.url|trim(".", "right")) %}
+                    <li class="nav-active">
+                        {{ nav_title }}
+                        <a class="a_context sr-only" tabindex="-1" aria-current="page" href="{{ nav_url }}">{{ nav_title }}</a>
+                    </li>
+                {% else %}
+                    <li>
+                        <a class="a_context" href="{{ nav_url }}">{{ nav_title }}</a>
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </nav>
+    {% include "_includes/social_media.html.twig" with {class: "footer_sm"} %}
+    <div class="footer_copyright subtle-text">Images and words &copy; {{ "now"|date("Y") }} Mark Fisher</div>
+</footer>
