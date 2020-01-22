@@ -2,7 +2,7 @@
     "name": "markfisher.test",
     "version": "1.0.0",
     "author": "Mark Fisher <mfishe@gmail.com>",
-    "license": "UNLICENSED",
+    "license": "SEE LICENSE IN LICENSE.md",
     "bugs": {
         "url": "https://github.com/muster-mark/markfisher.local/issues"
     },
@@ -19,7 +19,7 @@
     "devDependencies": {},
     "scripts": {
         "add-photo": "node scripts/extract_metadata.js && php scripts/build_photo_and_gallery_pages.php",
-        "build": "node node_modules/.bin/encore prod && node scripts/extract_metadata.js && php scripts/build_manual_pages.php && php scripts/build_photo_and_gallery_pages.php && php scripts/build_homepage.php",
+        "build": "node node_modules/.bin/encore prod && php scripts/build_manual_pages.php && php scripts/build_photo_and_gallery_pages.php && php scripts/build_homepage.php",
         "test": "echo tests not yet configured",
         "deploy": "node scripts/deploy.js"
     }
