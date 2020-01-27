@@ -108,7 +108,7 @@ let getMetaDataForGallery = async function getMetaDataForGallery(gallery) {
             ExposureTime: image.ExposureTime,
             FNumber: image.FNumber,
             ISO: image.ISO,
-            DateTimeOriginal: image.DateTimeOriginal,
+            DateTimeOriginal: image.DateTimeOriginal.replace(/:/, '-').replace(/:/, '-'), // e.g. Change 2019:03:04 08:43:00 to 2019-03-04 08:43:00,
             ApertureValue: image.ApertureValue,
             ExposureCompensation: image.ExposureCompensation,
             Flash: image.Flash,
