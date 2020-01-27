@@ -2,11 +2,12 @@
     <a href="/">
         <img class="header_logo" src="/images/reflection_logo.svg" width="300" height="88" alt="Mark fisher"/>
     </a>
-    {% include "_includes/social_media.html.twig" with {class: "header_sm"} %}
+    {% set sm_class="header_sm" %}
+    {% include "_includes/social_media.html.nunj" %}
     <nav class="nav header_nav">
         <ul>
             {% for gallery_url, gallery_name in header_nav_links %}
-                {% if (gallery_url == page.url|trim(".", "right")) %}
+                {% if page.url and (gallery_url == page.url|trim(".", "right")) %}
                     <li class="nav-active">
                         {{ gallery_name }}
                     </li>

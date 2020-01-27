@@ -48,7 +48,7 @@ let getImageAspectRatioIdentifier = function getImageAspectRatioIdentifier(width
         return "a4landscape";
     }
 
-    if (widthOverHeight - (210 / 297) < 0.001) {
+    if ((widthOverHeight - (210 / 297)) < 0.001) {
         return "a4portrait";
     }
 

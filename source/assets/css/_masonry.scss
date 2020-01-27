@@ -45,7 +45,10 @@ $aspect-ratios:
     ("name": "1to1", "width": 1, "height": 1)
     ("name": "3to4", "width": 3, "height": 4)
     ("name": "2to3", "width": 2, "height": 3)
-    ("name": "1to2", "width": 1, "height": 2);
+    ("name": "1to2", "width": 1, "height": 2)
+    ("name": "a4landscape", "width": 297, "height": 210)
+    ("name": "a4portrait", "width": 210, "height": 297)
+;
 
 @each $aspect-ratio in $aspect-ratios {
     .masonry_brick_#{map-get($aspect-ratio, "name")} {

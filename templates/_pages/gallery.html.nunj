@@ -1,6 +1,6 @@
-{% extends "_layouts/default.html.twig" %}
+{% extends "_layouts/default.html.nunj" %}
 
-{% import("_includes/macros.html.twig") as macros %}
+{% from  "_includes/macros.html.nunj" import picture %}
 
 {% block meta_description_tag %}
     <meta name="description" content="{{ gallery_meta_description }}">
@@ -14,10 +14,10 @@
             {% for photo in photos %}
                 <a href="/{{ gallery }}/{{ photo.SpecialInstructions }}"
                    {% if photo.ImageAspectRatioIdentifier != "invalid" %}class="masonry_brick masonry_brick_{{ photo.ImageAspectRatioIdentifier }}"{% endif %}
-                    {% if photo.css_grid_row_span is defined %}style="grid-row: auto/span {{ photo.css_grid_row_span }}; height: {{ photo.css_grid_row_span }}px"{% endif %}
+                    {% if photo.ImageAspectRatioIdentifier === "invalid" %}style="grid-row: auto/span {{ photo.cssGridRowSpan }}; height: {{ photo.cssGridRowSpan }}px"{% endif %}
                    aria-label="See more information about the photo &ldquo;{{ photo.Title }}&rdquo;"
                 >
-                    {{ macros.picture((photo.SpecialInstructions), (photo.CaptionAbstract), "w200", (photo.ImageAspectRatio)) }}
+                    {{ picture((photo.SpecialInstructions), (photo.CaptionAbstract), "w200", (photo.ImageAspectRatio)) }}
                 </a>
             {% endfor %}
         </div>

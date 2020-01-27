@@ -1,14 +1,14 @@
 {% set footer_nav_links =
     {
         '/about': 'About',
-        '/contact': 'Contact',
+        '/contact': 'Contact'
     } %}
 
 <footer class="container">
     <nav class="nav footer_nav">
         <ul>
             {% for nav_url, nav_title in footer_nav_links %}
-                {% if (nav_url == page.url|trim(".", "right")) %}
+                {% if page.url and (nav_url == page.url|trim(".", "right")) %}
                     <li class="nav-active">
                         {{ nav_title }}
                         <a class="a_context sr-only" tabindex="-1" aria-current="page" href="{{ nav_url }}">{{ nav_title }}</a>
@@ -21,6 +21,7 @@
             {% endfor %}
         </ul>
     </nav>
-    {% include "_includes/social_media.html.twig" with {class: "footer_sm"} %}
-    <div class="footer_copyright subtle-text">Images and words &copy; {{ "now"|date("Y") }} Mark Fisher</div>
+    {% set sm_class="footer_sm" %}
+    {% include "_includes/social_media.html.nunj" %}
+    <div class="footer_copyright subtle-text">Images and words &copy; {{ copyrightYear }} Mark Fisher</div>
 </footer>

@@ -1,7 +1,7 @@
-{% extends '_layouts/default.html.twig' %}
+{% extends '_layouts/default.html.nunj' %}
 
 {% set page = {
-    "meta_title": "Page Not Found",
+    "meta_title": "Page Not Found"
 } %}
 
 {% block content %}

@@ -1,6 +1,6 @@
-{% extends "_layouts/default.html.twig" %}
+s{% extends "_layouts/default.html.nunj" %}
 
-{% import("_includes/macros.html.twig") as macros %}
+{% from "_includes/macros.html.nunj" import picture %}
 
 {% block head %}
     <link rel="prefetch" href="/{{ gallery }}/{{ next_photo.SpecialInstructions }}"  />
@@ -17,7 +17,7 @@
                         <use xlink:href="/images/icons_sprite.svg#chevron-left"></use>
                     </svg></span><span class="sr-only">Previous photo</span>
                 </a>
-                {{ macros.picture((photo.SpecialInstructions), (photo.Headline), "l840", (photo.ImageAspectRatio) ) }}
+                {{ picture(photo.SpecialInstructions, photo.Headline, "l840", photo.ImageAspectRatio) }}
                 <a href="/{{ gallery }}/{{ next_photo.SpecialInstructions }}" class="a_context the-image_next" title="Go to the next image in the {{gallery_name}} gallery">
                     <svg role="img" class="ico" viewBox="0 0 256 512">
                         <use xlink:href="/images/icons_sprite.svg#chevron-right"></use>
@@ -35,7 +35,7 @@
                     </span>
                 {% endif %}
 
-                <p>{{ photo.CaptionAbstract|raw }}</p>
+                <p>{{ photo.CaptionAbstract }}</p>
 
             </figcaption>
         </figure>
@@ -55,7 +55,8 @@
                     <svg role="img" class="ico" viewBox="0 0 448 512" title="Date take">
                         <use xlink:href="/images/icons_sprite.svg#calendar-alt"></use>
                     </svg>
-                    {{ photo.DateTimeOriginal|date('F jS, Y') }}</li>
+                    {# TODO: Format date 'F jS Y' #}
+                    {{ photo.DateTimeOriginal|truncate(10, true, '') }}</li>
                 <li></li>
             </ul>
         </details>
