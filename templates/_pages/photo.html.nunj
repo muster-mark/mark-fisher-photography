@@ -56,7 +56,7 @@ s{% extends "_layouts/default.html.nunj" %}
                         <use xlink:href="/images/icons_sprite.svg#calendar-alt"></use>
                     </svg>
                     {# TODO: Format date 'F jS Y' #}
-                    {{ photo.DateTimeOriginal|truncate(10, true, '') }}</li>
+                    {{ photo.DateTimeOriginal|date('Do MMMM, YYYY') }}</li>
                 <li></li>
             </ul>
         </details>

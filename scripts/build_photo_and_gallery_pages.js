@@ -3,6 +3,7 @@ const glob = require('glob-promise');
 const galleries = require('./../local_modules/galleries.js');
 const nunjucks = require('nunjucks');
 const fs = require('fs').promises;
+const nunjucksDate = require("nunjucks-date");
 
 const templatesPath = path.resolve(__dirname + '/../templates');
 const metadataDir = path.resolve(__dirname + '/../source/metadata_json/');
@@ -14,6 +15,7 @@ const environment = nunjucks.configure(templatesPath, {
 });
 
 environment.addGlobal('header_nav_links', galleries.getUrlToNameMapping());
+environment.addFilter("date", require("nunjucks-date"));
 
 async function createGalleryPage(gallery) {
 
