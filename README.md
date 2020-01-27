@@ -9,7 +9,6 @@ A personal [landscape and nature photography website](https://www.markfisher.pho
 ### Getting started
 
 ```
-composer install
 npm install
 ```
 
@@ -37,7 +36,6 @@ The following need to be installed and in the PATH
 
   * Node.js
   * npm
-  * composer
   * exiftool
 
 ### Build
