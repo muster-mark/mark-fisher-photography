@@ -88,8 +88,10 @@
 
     //Previous / next arrows need to go above photo
 
+    $arrows-height: 2rem;
+
     .the-image_container img {
-        margin-top: 2em;
+        margin-top: $arrows-height;
     }
 
     .the-image_prev, .the-image_next {
@@ -97,7 +99,7 @@
         font-size: 1.5em;
 
         &:after {
-            top: 1.2em;
+            top: $arrows-height;
         }
     }
 

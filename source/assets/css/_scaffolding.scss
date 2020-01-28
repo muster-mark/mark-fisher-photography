@@ -32,23 +32,9 @@ figure {
     margin: 0;
 }
 
-@keyframes toggleAltText {
-    from {font-size: 0;}
-    to {font-size: 16px;}
-}
-
 img {
     max-width: 100%;
     height: auto;
-    font-size: 0;
-    animation-name: toggleAltText;
-    animation-duration: 0ms;
-    animation-timing-function: ease;
-    animation-delay: 2.5s;
-    animation-iteration-count: 1;
-    animation-direction: normal;
-    animation-fill-mode: forwards;
-    animation-play-state: running;
 }
 
 summary {
