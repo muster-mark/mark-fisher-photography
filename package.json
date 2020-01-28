@@ -22,7 +22,8 @@
     "devDependencies": {},
     "scripts": {
         "add-photo": "node scripts/extract_metadata.js && php scripts/build_photo_and_gallery_pages.php",
-        "build": "node node_modules/.bin/encore prod && node scripts/build_manual_pages.js && node scripts/build_photo_and_gallery_pages.js && node scripts/build_homepage.js",
+        "build": "node node_modules/.bin/encore prod && npm run build-pages",
+        "build-pages": "node scripts/build_manual_pages.js && node scripts/build_photo_and_gallery_pages.js && node scripts/build_homepage.js",
         "test": "echo tests not yet configured",
         "deploy": "node scripts/deploy.js"
     }

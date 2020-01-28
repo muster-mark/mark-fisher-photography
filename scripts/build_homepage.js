@@ -3,6 +3,7 @@ const path = require('path');
 const fs = require('fs').promises;
 const glob = require('glob-promise');
 const galleries = require('./../local_modules/galleries.js');
+const renderAndWriteTemplate = require('./../local_modules/render_and_write_template');
 
 const templatesPath = path.resolve(__dirname + '/../templates');
 const metadataDir = path.resolve(__dirname + '/../source/metadata_json');
@@ -29,6 +30,13 @@ const homepageImages = [
     'green-embrace',
 ];
 
+const environment = nunjucks.configure(templatesPath, {
+    throwOnUndefined: false,
+    trimBlocks: true,
+});
+
+environment.addGlobal('header_nav_links', galleries.getUrlToNameMapping());
+
 const getImageData = async slug => {
     const jsonFiles = await glob(`${metadataDir}/*/*_${slug}.json`);
     if (jsonFiles.length !== 1) {
@@ -52,44 +60,21 @@ getImagesData().then(data => {
         return imageData;
     });
 
-
-    const environment = nunjucks.configure(templatesPath, {
-        throwOnUndefined: false,
-        trimBlocks: true,
-    });
-
-    environment.addGlobal('header_nav_links', galleries.getUrlToNameMapping());
-
-    let output;
-    try {
-        output = nunjucks.render('_pages/homepage.html.nunj', {
+    renderAndWriteTemplate(
+        '_pages/homepage.html.nunj',
+        `${publicDir}/index`,
+        {
             page: {
                 url: '/'
             },
             favouriteImages: favouriteImages,
             copyrightYear: new Date().getFullYear(),
-        });
-    } catch (err) {
-        console.error('ERROR: could not render homepages');
-        console.error(err);
-        return;
-    }
+        },
+        nunjucks
+    ).catch(error => {
+        console.log(error);
+    });
 
-    if (output === null) {
-        console.error('ERROR: homepage rendered to null');
-        return;
-    }
-
-
-    const outputFile = `${publicDir}/index`;
-
-    try {
-        fs.writeFile(outputFile, output);
-        console.log('Wrote HTML for homepage');
-    } catch (error) {
-        console.error(`ERROR: could not create homepage`);
-        console.error(error);
-    }
 });
 
 

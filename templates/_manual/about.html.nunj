@@ -1,4 +1,4 @@
-{% extends "_layouts/default.html.nunj" %}
+{% extends "./../_layouts/default.html.nunj" %}
 
 {% set page = {
     "meta_title": "About",

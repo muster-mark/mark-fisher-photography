@@ -1,10 +1,10 @@
-const fs = require('fs');
 const nunjucks = require('nunjucks');
 const path = require('path');
 const glob = require('glob-promise');
-const galleries = require ('./../local_modules/galleries.js');
+const galleries = require('./../local_modules/galleries');
+const renderAndWriteTemplate = require('./../local_modules/render_and_write_template');
 
-const manualPagesDir = path.resolve(__dirname + '/../manual_pages/');
+const manualPagesDir = path.resolve(__dirname + '/../templates/_manual/');
 const publicDir = path.resolve(__dirname + '/../public/');
 const templatesPath = path.resolve(__dirname + '/../templates/');
 
@@ -24,30 +24,19 @@ async function main() {
 
         const templateName = template.replace(manualPagesDir, '');
         const outputFile = `${publicDir}${templateName}`.replace('.html.nunj', '');
-        const templateString = fs.readFileSync(template, {encoding: 'utf-8'});
 
-        let output;
-
-        try {
-            output = nunjucks.renderString(templateString, {
+        renderAndWriteTemplate(
+            template,
+            outputFile,
+            {
                 copyrightYear: new Date().getFullYear(),
+            },
+            nunjucks
+        )
+            .catch(error => {
+                console.error(error)
             });
-        } catch (err) {
-            console.error(err);
-        }
 
-        if (output === null) {
-            console.error(`ERROR: ${template} rendered to null`);
-            return;
-        }
-
-
-        try {
-            fs.promises.writeFile(outputFile, output);
-            console.log(`Wrote ${outputFile}`);
-        } catch (error) {
-            console.error(error);
-        }
 
     });
 }

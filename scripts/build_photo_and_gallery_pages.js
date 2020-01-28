@@ -3,7 +3,7 @@ const glob = require('glob-promise');
 const galleries = require('./../local_modules/galleries.js');
 const nunjucks = require('nunjucks');
 const fs = require('fs').promises;
-const nunjucksDate = require("nunjucks-date");
+const renderAndWriteTemplate = require('./../local_modules/render_and_write_template');
 
 const templatesPath = path.resolve(__dirname + '/../templates');
 const metadataDir = path.resolve(__dirname + '/../source/metadata_json/');
@@ -27,10 +27,12 @@ async function createGalleryPage(gallery) {
         return json;
     });
 
-    let output;
+    await fs.mkdir(`${publicDir}/${gallery}`, {recursive: true});
 
-    try {
-        output = nunjucks.render('_pages/gallery.html.nunj', {
+    renderAndWriteTemplate(
+        '_pages/gallery.html.nunj',
+        `${publicDir}/${gallery}/index`,
+        {
             page: {
                 meta_title: galleries.names[gallery],
                 url: `/${gallery}/`
@@ -38,67 +40,46 @@ async function createGalleryPage(gallery) {
             gallery: gallery,
             gallery_meta_description: galleries.metaDescriptions[gallery],
             photos: imageMetadata
-        });
-    } catch (error) {
+        },
+        nunjucks
+    ).catch(error => {
         console.log(error);
-    }
-
-    if (output === null) {
-        console.log('ERROR: failed to create gallery index page for ' + galleries.names[gallery]);
-        return;
-    }
-
-    try {
-        await fs.mkdir(`${publicDir}/${gallery}`, {recursive: true});
-        await fs.writeFile(`${publicDir}/${gallery}/index`, output, {encoding: 'utf-8'});
-        console.log(`Wrote gallery index page for ${galleries.names[gallery]}`);
-    } catch (error) {
-        console.error('ERROR: failed to write gallery index page for ' + galleries.names[gallery]);
-        console.log(error);
-    }
+    });
 
     await createImagePages(gallery, imageMetadata)
 
 }
 
 async function createImagePages(gallery, galleryMetadata) {
-    for (let i=0; i<galleryMetadata.length; i++) {
+    for (let i = 0; i < galleryMetadata.length; i++) {
         let previousIndex = i - 1;
         let nextIndex = i + 1;
 
-        if(i === 0) {
+        if (i === 0) {
             previousIndex = galleryMetadata.length - 1;
         } else if (i + 1 === galleryMetadata.length) {
             nextIndex = 0;
         }
 
-        let output = nunjucks.render(templatesPath + '/_pages/photo.html.nunj', {
-            page: {
-                meta_title: galleryMetadata[i].Title,
-                url: '/' + gallery + '/' + galleryMetadata[i].SpecialInstructions
+        renderAndWriteTemplate(
+            templatesPath + '/_pages/photo.html.nunj',
+            `${publicDir}/${gallery}/${galleryMetadata[i].SpecialInstructions}`,
+            {
+                page: {
+                    meta_title: galleryMetadata[i].Title,
+                    url: '/' + gallery + '/' + galleryMetadata[i].SpecialInstructions
+                },
+                gallery: gallery,
+                gallery_name: galleries.names[gallery],
+                photo: galleryMetadata[i],
+                previous_photo: galleryMetadata[previousIndex],
+                next_photo: galleryMetadata[nextIndex],
+                test_data: new Date()
             },
-            gallery: gallery,
-            gallery_name: galleries.names[gallery],
-            photo: galleryMetadata[i],
-            previous_photo: galleryMetadata[previousIndex],
-            next_photo: galleryMetadata[nextIndex],
-            test_data: new Date()
+            nunjucks
+        ).catch(error => {
+            console.log(error);
         });
-
-        if (output === null ) {
-            console.error(`ERROR: photo page for ${galleryMetadata[i].Title} rendered to null`);
-            return;
-        }
-
-        const outputFile = `${publicDir}/${gallery}/${galleryMetadata[i].SpecialInstructions}`;
-
-        try {
-            await fs.writeFile(outputFile, output);
-            console.log(`Wrote HTML in ${gallery} for photo: ${galleryMetadata[i].Title}`);
-        } catch (error) {
-            console.error(error);
-        }
-
 
     }
 }
@@ -110,7 +91,7 @@ async function main() {
 
 
     galleries.forEach(gallery => {
-       createGalleryPage(gallery);
+        createGalleryPage(gallery);
     });
 }
 
