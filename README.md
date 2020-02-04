@@ -44,6 +44,14 @@ The following need to be installed and in the PATH
 npm run build
 ```
 
+### Serve
+
+Start an express server and open in default browser
+
+```
+npm run serve
+```
+
 ### Testing
 
 Javascript is an enhancement for maximum robustness, so check with and without javascript enabled
