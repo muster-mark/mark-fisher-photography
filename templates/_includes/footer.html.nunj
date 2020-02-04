@@ -4,6 +4,8 @@
         '/contact': 'Contact'
     } %}
 
+{% from "_includes/macros.html.nunj" import social_media %}
+
 <footer class="container">
     <nav class="nav footer_nav">
         <ul>
@@ -21,7 +23,7 @@
             {% endfor %}
         </ul>
     </nav>
-    {% set sm_class="footer_sm" %}
-    {% include "_includes/social_media.html.nunj" %}
+    {{ social_media(["footer_sm"]) }}
+
     <div class="footer_copyright subtle-text">Images and words &copy; {{ copyrightYear }} Mark Fisher</div>
 </footer>

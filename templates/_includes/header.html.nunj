@@ -1,9 +1,10 @@
+{% from "_includes/macros.html.nunj" import social_media %}
+
 <header class="container">
     <a href="/">
         <img class="header_logo" src="/images/reflection_logo.svg" width="300" height="88" alt="Mark fisher"/>
     </a>
-    {% set sm_class="header_sm" %}
-    {% include "_includes/social_media.html.nunj" %}
+    {{ social_media(["header_sm"]) }}
     <nav class="nav header_nav">
         <ul>
             {% for gallery_url, gallery_name in header_nav_links %}

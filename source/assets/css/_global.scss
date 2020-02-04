@@ -1,8 +1,12 @@
 body {
     margin: 0;
+    background: url("/images/bg_tesselate.jpg");
+    background-size: 1200px 800px;
+    min-height: 100%;
 }
 
 html {
+    height: 100%;
     font-family: Verdana, sans-serif, serif;
     background-color: black;
     --font-size: calc(16px + 0.25vw);
@@ -14,18 +18,8 @@ html, body {
     width: 100%;
 }
 
-html {
-    height: 100%;
-}
-
 *:not(img) {
     box-sizing: border-box;
-}
-
-body {
-    background: url("/images/bg_tesselate.jpg");
-    background-size: 1200px 800px;
-    min-height: 100%;
 }
 
 figure {

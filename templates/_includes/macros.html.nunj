@@ -15,15 +15,35 @@
         {% endif %}
     {% else %}
     {% endif %}
-{#    <picture>#}
-        {# TODO: Use webp #}
-        {#        <source srcset="/photos/{{ size }}/{{ slug }}@2x.jpg 2x"#}
-        {#                type="image/webp">#}
-{#        <source srcset="/photos/{{ size }}/{{ slug }}@2x.jpg 2x"#}
-{#                type="image/jpeg">#}
-        <img width="{{width}}" height="{{height}}"
-             srcset="/photos/{{ size }}/{{ slug }}@2x.jpg 2x, /photos/{{ size }}/{{ slug }}.jpg 1x"
-             src="/photos/{{ size }}/{{ slug }}.jpg"
-             alt="{{ alt }}">
-{#    </picture>#}
+    {#    <picture>#}
+    {# TODO: Use webp #}
+    {#        <source srcset="/photos/{{ size }}/{{ slug }}@2x.jpg 2x"#}
+    {#                type="image/webp">#}
+    {#        <source srcset="/photos/{{ size }}/{{ slug }}@2x.jpg 2x"#}
+    {#                type="image/jpeg">#}
+    <img width="{{ width }}" height="{{ height }}"
+         srcset="/photos/{{ size }}/{{ slug }}@2x.jpg 2x, /photos/{{ size }}/{{ slug }}.jpg 1x"
+         src="/photos/{{ size }}/{{ slug }}.jpg"
+         alt="{{ alt }}">
+    {#    </picture>#}
+{% endmacro %}
+
+{% macro social_media(classes) %}
+    <span class="{{ classes.join(' ') }}">
+    <a class="a_context sm-link" href="https://www.instagram.com/mark.j.fisher/">
+        <svg role="img" class="ico" viewBox="0 0 448 512" title="Visit my Instagram profile">
+            <use xlink:href="/images/icons_sprite.svg#instagram"></use>
+        </svg>
+    </a>
+    <a class="a_context sm-link" href="https://www.flickr.com/photos/muster_mark/">
+        <svg role="img" class="ico" viewBox="0 0 448 512" title="Visit my Flickr profile">
+            <use xlink:href="/images/icons_sprite.svg#flickr"></use>
+        </svg>
+    </a>
+    <a class="a_context sm-link" href="https://500px.com/mark_fisher">
+        <svg role="img" class="ico" viewBox="0 0 448 512" title="Visit my 500px profile">
+            <use xlink:href="/images/icons_sprite.svg#500px"></use>
+        </svg>
+    </a>
+</span>
 {% endmacro %}
