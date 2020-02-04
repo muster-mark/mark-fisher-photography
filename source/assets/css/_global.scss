@@ -37,18 +37,38 @@ img {
     height: auto;
 }
 
+@keyframes showAltText {
+    from {
+        color: transparent;
+        text-decoration: none;
+    }
+    to {
+        color: $color-primary;
+        text-decoration: underline;
+    }
+}
+
+.img-link {
+    // An anchor containing an img. text-underline properties of img inherit from parent a, and cannot be over-ridden
+    // in Firefox, so need to put these properties on the containing anchor element
+
+    // The following is to initially prevent
+    color: transparent;
+    text-decoration: none;
+    animation-name: showAltText;
+    animation-duration: 0ms;
+    animation-timing-function: ease;
+    animation-delay: 2.5s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+}
+
 summary {
     cursor: pointer;
 }
 
-//summary {
-//    list-style-image: url("/images/right-arrow.svg");
-//}
-//
-//summary::-webkit-details-marker {
-//    background: url("/images/right-arrow.svg");
-//    color: transparent;
-//}
 
 .inner-container {
     margin: auto;
@@ -75,4 +95,3 @@ summary {
     position: absolute;
     width: 1px;
 }
-

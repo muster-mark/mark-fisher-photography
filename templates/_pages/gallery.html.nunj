@@ -13,7 +13,7 @@
 
             {% for photo in photos %}
                 <a href="/{{ gallery }}/{{ photo.SpecialInstructions }}"
-                   {% if photo.ImageAspectRatioIdentifier != "invalid" %}class="masonry_brick masonry_brick_{{ photo.ImageAspectRatioIdentifier }}"{% endif %}
+                   {% if photo.ImageAspectRatioIdentifier != "invalid" %}class="img-link masonry_brick masonry_brick_{{ photo.ImageAspectRatioIdentifier }}"{% endif %}
                     {% if photo.ImageAspectRatioIdentifier === "invalid" %}style="grid-row: auto/span {{ photo.cssGridRowSpan }}; height: {{ photo.cssGridRowSpan }}px"{% endif %}
                    aria-label="See more information about the photo &ldquo;{{ photo.Title }}&rdquo;"
                 >
