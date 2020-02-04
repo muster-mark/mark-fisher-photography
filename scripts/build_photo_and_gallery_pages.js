@@ -63,11 +63,11 @@ async function createImagePages(gallery, galleryMetadata) {
 
         renderAndWriteTemplate(
             templatesPath + '/_pages/photo.html.nunj',
-            `${publicDir}/${gallery}/${galleryMetadata[i].SpecialInstructions}`,
+            `${publicDir}/${gallery}/${galleryMetadata[i].Slug}`,
             {
                 page: {
                     meta_title: galleryMetadata[i].Title,
-                    url: '/' + gallery + '/' + galleryMetadata[i].SpecialInstructions
+                    url: '/' + gallery + '/' + galleryMetadata[i].Slug
                 },
                 gallery: gallery,
                 gallery_name: galleries.names[gallery],

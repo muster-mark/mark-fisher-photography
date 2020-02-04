@@ -14,12 +14,12 @@
         <div class="inner-container">
             <div class="masonry_wall">
                 {% for image in favouriteImages %}
-                    <a href="/{{ image.Gallery }}/{{ image.SpecialInstructions }}"
+                    <a href="/{{ image.Gallery }}/{{ image.Slug }}"
                        class="img-link masonry_brick {% if image.ImageAspectRatioIdentifier != "invalid" %}masonry_brick_{{ image.ImageAspectRatioIdentifier }}{% endif %}"
                         {% if image.ImageAspectRatioIdentifier == "invalid" %}style="grid-row: auto/span {{ image.cssGridRowSpan}}; height: {{ image.cssGridRowSpan }}px"{% endif %}
                        aria-label="See more information about the photo &ldquo;{{ image.Title }}&rdquo;"
                     >
-                        {{ picture(image.SpecialInstructions, image.Headline, "w200", image.ImageAspectRatio) }}
+                        {{ picture(image.Slug, image.Headline, "w200", image.ImageAspectRatio) }}
                     </a>
                 {% endfor %}
             </div>

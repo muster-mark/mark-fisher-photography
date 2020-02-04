@@ -50,7 +50,7 @@ let getMetaDataForGallery = async function getMetaDataForGallery(gallery) {
             FileName: image.FileName,
             PositionInGallery: parseInt(image.FileName),
             Gallery: gallery,
-            SpecialInstructions: slug(image.Title, {lower: true}),
+            Slug: slug(image.Title, {lower: true}),
             CaptionAbstract: image['Caption-Abstract'],
             Make: image.Make,
             Model: image.Model,
