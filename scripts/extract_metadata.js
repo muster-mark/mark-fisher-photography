@@ -7,62 +7,12 @@ const ep = new exiftool.ExiftoolProcess();
 const path = require('path');
 const fs = require('fs');
 const slug = require('slug');
+const getImageAspectRatioIdentifier = require('./../local_modules/get_image_aspect_ratio_identifier');
 
 const rootDir = path.normalize(__dirname + '/..');
 const metadataImagesDir = path.normalize(rootDir + '/source/metadata_images/');
 const metadataJsonDir = path.normalize(rootDir + '/source/metadata_json/');
 
-let getImageAspectRatioIdentifier = function getImageAspectRatioIdentifier(widthOverHeight) {
-
-    //Based on Lightroom export with long edge of 840px
-
-    if (widthOverHeight === 1) {
-        return "1to1";
-    }
-
-    if (widthOverHeight === 4 / 3) {
-        return "4to3";
-    }
-
-    if (widthOverHeight === 0.75) {
-        return "3to4";
-    }
-
-    if (widthOverHeight === 1.5) {
-        return "3to2";
-    }
-
-    if (widthOverHeight === 2 / 3) {
-        return "2to3";
-    }
-
-    if (widthOverHeight === 2) {
-        return "2to1";
-    }
-
-    if (widthOverHeight === 0.5) {
-        return "1to2";
-    }
-
-    if (Math.abs(widthOverHeight - (297 / 210)) < 0.001) {
-        return "a4landscape";
-    }
-
-    if (Math.abs(widthOverHeight - (210 / 297)) < 0.001) {
-        return "a4portrait";
-    }
-
-    if (widthOverHeight === 1.4) {
-        return "7to5";
-    }
-
-    if (Math.abs(widthOverHeight - 5 / 7) < 0.001) {
-        return "5to7";
-    }
-
-    throw new Error(`${widthOverHeight} is not a standard aspect ratio`);
-
-};
 
 let getAllGalleries = async function getAllGalleries() {
     let galleries = await fs.promises.readdir(metadataImagesDir);
@@ -89,7 +39,7 @@ let getMetaDataForGallery = async function getMetaDataForGallery(gallery) {
         let imageAspectRatioIdentifier;
 
         try {
-            imageAspectRatioIdentifier = getImageAspectRatioIdentifier(image.ImageWidth / image.ImageHeight);
+            imageAspectRatioIdentifier = getImageAspectRatioIdentifier(image.ImageWidth , image.ImageHeight);
         } catch (err) {
             console.warn(`${image.FileName} does not have a standard aspect ratio`);
             imageAspectRatioIdentifier = "invalid";
