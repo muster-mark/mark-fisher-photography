@@ -1,8 +1,0 @@
-{
-    "S3_DELETE": "true",
-    "S3_REGION": "us-west-2",
-    "S3_BUCKET": "staging-markjfisher-com",
-    "DISTRIBUTION_ID": "E2GSXFNDBLSTUE",
-    "CF_INVALIDATOR_KEY": "AKIAREEPOUNNSIIMRTU5",
-    "CF_INVALIDATOR_SECRET": "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"
-}

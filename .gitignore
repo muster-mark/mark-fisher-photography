@@ -1,7 +1,5 @@
 /public/
 /node_modules/
-/source/build/
-s3.conf
 /vendor/
 .DS_Store
 /cache/

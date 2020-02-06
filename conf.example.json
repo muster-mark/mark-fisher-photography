@@ -1,9 +1,0 @@
-{
-    "S3_DELETE" : "true",
-    "S3_REGION": "us-west-2",
-    "S3_BUCKET": "your-bucket-name",
-    "DISTRIBUTION_ID": "A1B2C3D4E5F6G7",
-    "CF_INVALIDATOR_KEY": "AKDBEKFIWHDKVJSLGJD3",
-    "CF_INVALIDATOR_SECRET": "secret"
-}
-
