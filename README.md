@@ -18,7 +18,7 @@ Add photos as desired - see [adding photos](#adding-photos)
 npm run build
 ```
 
-Use `conf.example.json` as a starting point to create config files for deployment to staging and production: `conf.staging.json` and `conf.production.json`.
+Use `.env.example` as a starting point to create config files for deployment to staging and production: `.env.production` and `.env.staging`.
 
 
 ### Adding photos

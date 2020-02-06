@@ -6,5 +6,6 @@ s3.conf
 .DS_Store
 /cache/
 /source/metadata_images/
-conf.staging.json
-conf.production.json
+sitemap.xml
+.staging.env
+.production.env

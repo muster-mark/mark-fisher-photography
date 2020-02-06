@@ -3,7 +3,7 @@ const fs = require('fs');
 const morgan = require('morgan');
 const defaultHeaders = require('./server/default_headers');
 
-const PORT = 8888;
+const PORT = process.env.PORT || 8888;
 
 const app = express();
 

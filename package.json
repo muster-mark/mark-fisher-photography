@@ -9,7 +9,9 @@
     "homepage": "https://github.com/muster-mark/markfisher.local#readme",
     "dependencies": {
         "@symfony/webpack-encore": "^0.24.0",
+        "advanced-sitemap-generator": "^1.6.9",
         "aws-sdk": "^2.599.0",
+        "dotenv": "^8.2.0",
         "express": "^4.17.1",
         "glob-promise": "^3.4.0",
         "imagemin-webp-webpack-plugin": "^3.3.1",
@@ -19,7 +21,10 @@
         "nunjucks": "^3.2.0",
         "nunjucks-date": "^1.5.0",
         "opn": "^6.0.0",
+        "request": "^2.88.0",
+        "request-promise": "^4.2.5",
         "sass-loader": "^7.0.1",
+        "sitemap-generator": "^8.4.2",
         "slug": "^2.1.0"
     },
     "devDependencies": {},
@@ -29,6 +34,7 @@
         "build-pages": "node scripts/build_manual_pages.js && node scripts/build_photo_and_gallery_pages.js && node scripts/build_homepage.js",
         "test": "echo tests not yet configured",
         "deploy": "node scripts/deploy.js",
-        "serve": "node scripts/serve.js"
+        "serve": "node scripts/serve.js",
+        "build-sitemap": "node scripts/build_sitemap.js"
     }
 }

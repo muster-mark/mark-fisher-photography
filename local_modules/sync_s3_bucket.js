@@ -2,12 +2,14 @@ const util = require('util');
 const exec = util.promisify(require('child_process').exec);
 
 
-module.exports = async function syncS3(bucketName, bucketRegion, deleteRemoved, dryRun) {
+module.exports = async function syncS3Bucket(bucketName, key='', bucketRegion, deleteRemoved, dryRun) {
+    //Syncs the public directory to a bucket
 
     const excludes = [
         'entrypoints.json',
         'manifest.json',
         '.DS_Store',
+        'sitemap.xml'
     ];
 
     let excludeArgs = '';
@@ -20,7 +22,7 @@ module.exports = async function syncS3(bucketName, bucketRegion, deleteRemoved, 
 
     const dryRunArg = dryRun ? '--dryrun' : '';
 
-    let cmd = `aws2 s3 sync ${__dirname}/../public s3://${bucketName} ${dryRunArg} ${deleteArg} --region=${bucketRegion} --size-only ${excludeArgs} --acl="public-read"`;
+    let cmd = `aws2 s3 sync ${__dirname}/../public${key} s3://${bucketName}${key} ${dryRunArg} ${deleteArg} --region=${bucketRegion} --size-only ${excludeArgs} --acl="public-read"`;
 
     console.log('Syncing to S3');
     console.log(cmd);
@@ -33,4 +35,4 @@ module.exports = async function syncS3(bucketName, bucketRegion, deleteRemoved, 
     }
 
     return Promise.resolve(stdout);
-}
+};
