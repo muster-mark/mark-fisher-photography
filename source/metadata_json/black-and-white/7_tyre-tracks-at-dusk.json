@@ -65,5 +65,12 @@
   "ImageWidth": 840,
   "ImageHeight": 840,
   "ImageAspectRatio": 1,
-  "ImageAspectRatioIdentifier": "1to1"
+  "ImageAspectRatioIdentifier": "1to1",
+  "Colors": [
+    "#3e3e3e",
+    "#bdbdbd",
+    "#898989",
+    "#a4a4a4",
+    "#9c9c9c"
+  ]
 }

@@ -53,5 +53,12 @@
   "ImageWidth": 594,
   "ImageHeight": 840,
   "ImageAspectRatio": 0.7071428571428572,
-  "ImageAspectRatioIdentifier": "a4portrait"
+  "ImageAspectRatioIdentifier": "a4portrait",
+  "Colors": [
+    "#444444",
+    "#cccccc",
+    "#8f8f8f",
+    "#acacac",
+    "#a4a4a4"
+  ]
 }

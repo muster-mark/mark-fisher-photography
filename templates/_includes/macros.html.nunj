@@ -1,4 +1,4 @@
-{% macro picture(slug, alt, size, aspect) %}
+{% macro picture(slug, alt, size, aspect, background=null) %}
     {% if size|first == "w" %}
         {% set width = size|replace('w', '') %}
         {% set height = (width / aspect)|round %}
@@ -24,7 +24,11 @@
     <img width="{{ width }}" height="{{ height }}"
          srcset="/photos/{{ size }}/{{ slug }}@2x.jpg 2x, /photos/{{ size }}/{{ slug }}.jpg 1x"
          src="/photos/{{ size }}/{{ slug }}.jpg"
-         alt="{{ alt }}">
+         alt="{{ alt }}"
+         {% if background %}
+             style="background-color: {{ background }}"
+        {% endif %}
+    >
     {#    </picture>#}
 {% endmacro %}
 

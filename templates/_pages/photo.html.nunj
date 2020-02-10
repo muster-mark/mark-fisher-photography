@@ -19,7 +19,7 @@ s{% extends "_layouts/default.html.nunj" %}
                     </svg>
                     </span><span class="sr-only">Previous photo</span>
                 </a>
-                {{ picture(photo.Slug, photo.Headline, "l840", photo.ImageAspectRatio) }}
+                {{ picture(photo.Slug, photo.Headline, "l840", photo.ImageAspectRatio, photo.Colors[0]) }}
                 <a href="/{{ gallery }}/{{ next_photo.Slug }}" class="a_context the-image_next"
                    title="Go to the next image in the {{ gallery_name }} gallery">
                     <svg role="img" class="ico" viewBox="0 0 256 512">

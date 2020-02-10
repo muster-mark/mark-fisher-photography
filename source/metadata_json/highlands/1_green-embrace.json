@@ -52,5 +52,12 @@
   "ImageWidth": 560,
   "ImageHeight": 840,
   "ImageAspectRatio": 0.6666666666666666,
-  "ImageAspectRatioIdentifier": "2to3"
+  "ImageAspectRatioIdentifier": "2to3",
+  "Colors": [
+    "#4c3f19",
+    "#cec1af",
+    "#9c9192",
+    "#91834e",
+    "#a7a75b"
+  ]
 }

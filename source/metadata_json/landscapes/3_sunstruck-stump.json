@@ -60,5 +60,12 @@
   "ImageWidth": 840,
   "ImageHeight": 576,
   "ImageAspectRatio": 1.4583333333333333,
-  "ImageAspectRatioIdentifier": "invalid"
+  "ImageAspectRatioIdentifier": "invalid",
+  "Colors": [
+    "#3d291e",
+    "#bb9580",
+    "#825b45",
+    "#97a1ab",
+    "#878e9a"
+  ]
 }

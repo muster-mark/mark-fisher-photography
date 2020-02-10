@@ -1,4 +1,4 @@
-//The end result of running this file is to end up with a bunch of json files containing the metadata for the images
+// Write a json file for each image containing metadata
 
 const util = require('util');
 const exec = util.promisify(require('child_process').exec);
@@ -8,6 +8,7 @@ const path = require('path');
 const fs = require('fs');
 const slug = require('slug');
 const getImageAspectRatioIdentifier = require('./../local_modules/get_image_aspect_ratio_identifier');
+const getColors = require('get-image-colors');
 
 const rootDir = path.normalize(__dirname + '/..');
 const metadataImagesDir = path.normalize(rootDir + '/source/metadata_images/');
@@ -16,11 +17,60 @@ const metadataJsonDir = path.normalize(rootDir + '/source/metadata_json/');
 
 let getAllGalleries = async function getAllGalleries() {
     let galleries = await fs.promises.readdir(metadataImagesDir);
-    galleries = galleries.filter(function(gallery) {
+    galleries = galleries.filter(function (gallery) {
         return gallery.charAt(0) !== "."; //Ignore e.g. .DS_Store
     });
-    return Promise.resolve(galleries);
+    return galleries;
 };
+
+async function getRelevantMetadata(image, gallery) {
+    let imageAspectRatioIdentifier;
+
+    try {
+        imageAspectRatioIdentifier = getImageAspectRatioIdentifier(image.ImageWidth, image.ImageHeight);
+    } catch (err) {
+        console.warn(`${image.FileName} does not have a standard aspect ratio`);
+        imageAspectRatioIdentifier = "invalid";
+    }
+
+    let relevantImageMetadata = [];
+
+    let colorsArray = await getColors(metadataImagesDir + gallery + '/' + image.FileName);
+
+    return {
+        FileName: image.FileName,
+        PositionInGallery: parseInt(image.FileName),
+        Gallery: gallery,
+        Slug: slug(image.Title, {lower: true}),
+        CaptionAbstract: image['Caption-Abstract'],
+        Make: image.Make,
+        Model: image.Model,
+        Lens: image.Lens,
+        ExposureTime: image.ExposureTime,
+        FNumber: image.FNumber,
+        ISO: image.ISO,
+        DateTimeOriginal: image.DateTimeOriginal.replace(/:/, '-').replace(/:/, '-'), // e.g. Change 2019:03:04 08:43:00 to 2019-03-04 08:43:00,
+        ApertureValue: image.ApertureValue,
+        ExposureCompensation: image.ExposureCompensation,
+        Flash: image.Flash,
+        FocalLength: image.FocalLength,
+        Keywords: image.Keywords,
+        Headline: image.Headline,
+        Title: image.Title,
+        ShutterSpeedValue: image.ShutterSpeedValue,
+        Sublocation: image.Location, //Don't use Sub-Location as truncated to 32 characters
+        CountryPrimaryLocationName: image['Country-PrimaryLocationName'],
+        CountryPrimaryLocationCode: image['Country-PrimaryLocationCode'],
+        State: image.State,
+        GPSLatitudeRef: image.GPSLatitudeRef,
+        GPSLongitudeRef: image.GPSLongitudeRef,
+        ImageWidth: image.ImageWidth, // Long edge is 840px
+        ImageHeight: image.ImageHeight, //Long edge is 840px
+        ImageAspectRatio: image.ImageWidth / image.ImageHeight,
+        ImageAspectRatioIdentifier: imageAspectRatioIdentifier,
+        Colors: colorsArray.map(color => color.hex())
+    };
+}
 
 let getMetaDataForGallery = async function getMetaDataForGallery(gallery) {
 
@@ -34,52 +84,9 @@ let getMetaDataForGallery = async function getMetaDataForGallery(gallery) {
         });
     }
 
-    allImageMetaData.data.forEach(function (image) {
-
-        let imageAspectRatioIdentifier;
-
-        try {
-            imageAspectRatioIdentifier = getImageAspectRatioIdentifier(image.ImageWidth , image.ImageHeight);
-        } catch (err) {
-            console.warn(`${image.FileName} does not have a standard aspect ratio`);
-            imageAspectRatioIdentifier = "invalid";
-        }
-
-
-        relevantImageMetaData.push({
-            FileName: image.FileName,
-            PositionInGallery: parseInt(image.FileName),
-            Gallery: gallery,
-            Slug: slug(image.Title, {lower: true}),
-            CaptionAbstract: image['Caption-Abstract'],
-            Make: image.Make,
-            Model: image.Model,
-            Lens: image.Lens,
-            ExposureTime: image.ExposureTime,
-            FNumber: image.FNumber,
-            ISO: image.ISO,
-            DateTimeOriginal: image.DateTimeOriginal.replace(/:/, '-').replace(/:/, '-'), // e.g. Change 2019:03:04 08:43:00 to 2019-03-04 08:43:00,
-            ApertureValue: image.ApertureValue,
-            ExposureCompensation: image.ExposureCompensation,
-            Flash: image.Flash,
-            FocalLength: image.FocalLength,
-            Keywords: image.Keywords,
-            Headline: image.Headline,
-            Title: image.Title,
-            ShutterSpeedValue: image.ShutterSpeedValue,
-            Sublocation: image.Location, //Don't use Sub-Location as truncated to 32 characters
-            CountryPrimaryLocationName: image['Country-PrimaryLocationName'],
-            CountryPrimaryLocationCode: image['Country-PrimaryLocationCode'],
-            State: image.State,
-            GPSLatitudeRef: image.GPSLatitudeRef,
-            GPSLongitudeRef: image.GPSLongitudeRef,
-            ImageWidth: image.ImageWidth, // Long edge is 840px
-            ImageHeight: image.ImageHeight, //Long edge is 840px
-            ImageAspectRatio: image.ImageWidth / image.ImageHeight,
-            ImageAspectRatioIdentifier: imageAspectRatioIdentifier,
-        });
-
-    });
+    relevantImageMetaData = await Promise.all(
+        allImageMetaData.data.map(image => getRelevantMetadata(image, gallery))
+    );
 
 
     relevantImageMetaData = relevantImageMetaData.sort(function (a, b) {

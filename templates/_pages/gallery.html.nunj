@@ -17,7 +17,7 @@
                     {% if photo.ImageAspectRatioIdentifier === "invalid" %}style="grid-row: auto/span {{ photo.cssGridRowSpan }}; height: {{ photo.cssGridRowSpan }}px"{% endif %}
                    aria-label="See more information about the photo &ldquo;{{ photo.Title }}&rdquo;"
                 >
-                    {{ picture((photo.Slug), (photo.CaptionAbstract), "w200", (photo.ImageAspectRatio)) }}
+                    {{ picture(photo.Slug, photo.CaptionAbstract, "w200", photo.ImageAspectRatio, photo.Colors[0]) }}
                 </a>
             {% endfor %}
         </div>
