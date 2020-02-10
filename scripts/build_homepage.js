@@ -56,7 +56,8 @@ let favouriteImages;
 getImagesData().then(data => {
     favouriteImages = data.map(string => {
         const imageData = JSON.parse(string);
-        imageData.cssGridRowSpan = Math.round(200 * (imageData.ImageHeight / imageData.ImageWidth) + 15);
+        imageData.brickHeight = Math.round((200 * (imageData.ImageHeight / imageData.ImageWidth) + 15));
+        imageData.cssGridRowSpan = Math.round(imageData.brickHeight / 3);
         return imageData;
     });
 

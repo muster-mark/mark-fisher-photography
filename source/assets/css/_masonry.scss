@@ -1,10 +1,14 @@
+// Note that masonry using css grid is limited to 10,000 rows in Chrome: https://bugs.chromium.org/p/chromium/issues/detail?id=688640
+// This is mitigated by not using css grid for single column, and making the brick height a multiple of 2
+// This allows for around 35 images per masonry wall
+
 $masonry-column-width: 200px;
 $masonry-gap: 15px;
 
 .masonry_wall {
     display: grid;
     grid-template-columns: repeat(4, $masonry-column-width);
-    grid-template-rows: 1px;
+    grid-template-rows: 3px;
     grid-auto-flow: dense;
     grid-gap: 0 $masonry_gap;
     width: #{4 * ($masonry-column-width + $masonry-gap) - $masonry-gap};
@@ -28,8 +32,12 @@ $masonry-gap: 15px;
 
 @media screen and (max-width: 560px) {
     .masonry_wall {
-        grid-template-columns: $masonry-column-width;
+        display: block;
         width: $masonry-column-width;
+    }
+
+    .masonry_brick {
+        display: table;
     }
 }
 
@@ -52,8 +60,13 @@ $aspect-ratios:
 
 @each $aspect-ratio in $aspect-ratios {
     .masonry_brick_#{map-get($aspect-ratio, "name")} {
-        $brick-height: #{round(200 * (map-get($aspect-ratio, "height") / map-get($aspect-ratio, "width"))  + $masonry-gap / 1px)};
-        grid-row: auto / span $brick-height;
+        $brick-height: round(200 * (map-get($aspect-ratio, "height") / map-get($aspect-ratio, "width"))  + $masonry-gap / 1px);
+        $row-span: round($brick-height / 3); //Rows are 3px high, to economise on #of rows for Chromium
+        grid-row: auto / span #{$row-span};
         height: #{$brick-height}px;
     }
+}
+
+.masonry_brick img {
+    margin-bottom: 15px;
 }

@@ -23,7 +23,8 @@ async function createGalleryPage(gallery) {
     const jsonStrings = await Promise.all(jsonFiles.map(file => fs.readFile(file, {encoding: 'utf-8'})));
     const imageMetadata = jsonStrings.map(string => {
         const json = JSON.parse(string);
-        json.cssGridRowSpan = Math.round(200 * (json.ImageHeight / json.ImageWidth) + 15);
+        json.brickHeight = Math.round((200 * (json.ImageHeight / json.ImageWidth) + 15));
+        json.cssGridRowSpan = Math.round(json.brickHeight / 3);
         return json;
     });
 
