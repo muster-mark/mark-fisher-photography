@@ -44,9 +44,9 @@
   "Title": "Insect exhibit at Hintze Hall",
   "ShutterSpeedValue": "1/35",
   "Sublocation": "Natural History Museum",
-  "CountryPrimaryLocationName": "United Kingdom",
+  "CountryPrimaryLocationName": "England",
   "CountryPrimaryLocationCode": "GB",
-  "State": "England",
+  "State": "Greater London",
   "GPSLatitudeRef": "North",
   "GPSLongitudeRef": "West",
   "ImageWidth": 840,
@@ -59,5 +59,6 @@
     "#806a56",
     "#85a8be",
     "#6f89a3"
-  ]
+  ],
+  "Season": "autumn"
 }

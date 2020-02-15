@@ -1,0 +1,37 @@
+{
+    "images": [
+        {
+            "title": "After Brendan",
+            "caption": "A fallen branch after Brendan",
+            "country": "England",
+            "season": "summer",
+            "colors": [
+                "#f00",
+                "#0f0",
+                "#00f"
+            ]
+        },
+        {
+            "title": "Glen Brittle",
+            "caption": "Black volcanic sands decorate this remote beach",
+            "country": "Scotland",
+            "season": "winter",
+            "colors": [
+                "#f00",
+                "#0f0",
+                "#00f"
+            ]
+        },
+        {
+            "title": "Garden of Eden",
+            "caption": "A typical Kentish view",
+            "country": "England",
+            "season": "spring",
+            "colors": [
+                "#f00",
+                "#0f0",
+                "#00f"
+            ]
+        }
+    ]
+}

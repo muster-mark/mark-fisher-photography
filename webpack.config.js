@@ -1,23 +1,28 @@
 const Encore = require('@symfony/webpack-encore');
-const ImageminWebpWebpackPlugin= require("imagemin-webp-webpack-plugin");
+const ImageminWebpWebpackPlugin = require("imagemin-webp-webpack-plugin");
+const bundleAnalyzer = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 Encore
-// directory where compiled assets will be stored
-    .setOutputPath('public/')
+    // directory where compiled assets will be stored
+    .setOutputPath('public/assets/')
     // public path used by the web server to access the output path
     .setPublicPath('/public')
-    .copyFiles({
-        from: './source/static',
-    })
-    .addEntry('assets/main', './source/assets/js/main.js')
+    .addEntry('main', './source/assets/js/main.js')
     .disableSingleRuntimeChunk()
     .cleanupOutputBeforeBuild()
     .enableSourceMaps(!Encore.isProduction())
     // enables hashed filenames (e.g. app.abc123.css)
     .enableVersioning(false)
     .enableSassLoader()
+    .enableVueLoader()
+    .configureTerserPlugin(function(config) {
+        return config;
+    })
+    .addPlugin(new bundleAnalyzer({
+        analyzerPort: 8889,
+        defaultSizes: 'gzip',
+    }))
 ;
-
 
 
 module.exports = Encore.getWebpackConfig();

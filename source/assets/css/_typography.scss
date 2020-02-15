@@ -8,6 +8,10 @@ html {
     font-family: Impact, Verdana, sans-serif;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    @include title-font;
+}
+
 p {
   margin-bottom: calc(24px + 0.375vw);
 }
@@ -47,4 +51,12 @@ a:focus {
 
 .text-center {
     text-align: center;
+}
+
+.smaller {
+    font-size: smaller;
+}
+
+.larger {
+    font-size: larger;
 }

@@ -50,7 +50,7 @@
   "Title": "Shoe Shop",
   "ShutterSpeedValue": "1/200",
   "Sublocation": "Oxford Street",
-  "CountryPrimaryLocationName": "United Kingdom",
+  "CountryPrimaryLocationName": "England",
   "CountryPrimaryLocationCode": "GB",
   "State": "Greater London",
   "GPSLatitudeRef": "North",
@@ -65,5 +65,6 @@
     "#98979f",
     "#74727b",
     "#8c8996"
-  ]
+  ],
+  "Season": "autumn"
 }

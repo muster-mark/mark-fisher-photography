@@ -50,9 +50,9 @@
   "Title": "Black Jack Street",
   "ShutterSpeedValue": "1/1000",
   "Sublocation": "Black Jack Street",
-  "CountryPrimaryLocationName": "United Kingdom",
+  "CountryPrimaryLocationName": "England",
   "CountryPrimaryLocationCode": "GB",
-  "State": "England",
+  "State": "Gloucestershire",
   "GPSLatitudeRef": "North",
   "GPSLongitudeRef": "West",
   "ImageWidth": 560,
@@ -65,5 +65,6 @@
     "#978c8e",
     "#aca4ac",
     "#acaca4"
-  ]
+  ],
+  "Season": "summer"
 }

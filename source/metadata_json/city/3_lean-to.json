@@ -17,6 +17,10 @@
   "Headline": "2 men waiting at a bus stop on a very steep road in Chinatown, San Francisco",
   "Title": "Lean-to",
   "ShutterSpeedValue": "1/40",
+  "Sublocation": "Chinatown",
+  "CountryPrimaryLocationName": "United States",
+  "CountryPrimaryLocationCode": "US",
+  "State": "California",
   "ImageWidth": 840,
   "ImageHeight": 560,
   "ImageAspectRatio": 1.5,
@@ -27,5 +31,6 @@
     "#673a36",
     "#706e6d",
     "#735747"
-  ]
+  ],
+  "Season": "winter"
 }

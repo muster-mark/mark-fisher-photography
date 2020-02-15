@@ -2,7 +2,6 @@
 /node_modules/
 /vendor/
 .DS_Store
-/cache/
 /source/metadata_images/
 sitemap.xml
 .staging.env

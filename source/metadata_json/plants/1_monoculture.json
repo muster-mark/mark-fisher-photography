@@ -1,6 +1,6 @@
 {
-  "FileName": "6_monoculture.jpg",
-  "PositionInGallery": 6,
+  "FileName": "1_monoculture.jpg",
+  "PositionInGallery": 1,
   "Gallery": "plants",
   "Slug": "monoculture",
   "CaptionAbstract": "Where bracken grows, little else can. It ruthlessly outcompetes other plants, and some studies have also shown that when it dies back, the rain leaches toxins from it which inhibits other plant growth.",
@@ -70,5 +70,6 @@
     "#96613d",
     "#a5a692",
     "#a294aa"
-  ]
+  ],
+  "Season": "autumn"
 }

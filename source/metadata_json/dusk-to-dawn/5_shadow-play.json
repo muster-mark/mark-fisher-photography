@@ -1,6 +1,6 @@
 {
-  "FileName": "4_shadow-play.jpg",
-  "PositionInGallery": 4,
+  "FileName": "5_shadow-play.jpg",
+  "PositionInGallery": 5,
   "Gallery": "dusk-to-dawn",
   "Slug": "shadow-play",
   "Make": "FUJIFILM",
@@ -47,7 +47,7 @@
   "Sublocation": "Lambeth",
   "CountryPrimaryLocationName": "England",
   "CountryPrimaryLocationCode": "GB",
-  "State": "England",
+  "State": "Greater London",
   "GPSLatitudeRef": "North",
   "GPSLongitudeRef": "West",
   "ImageWidth": 840,
@@ -60,5 +60,6 @@
     "#775b52",
     "#948484",
     "#948c84"
-  ]
+  ],
+  "Season": "autumn"
 }

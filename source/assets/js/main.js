@@ -1,6 +1,28 @@
+require('vue-multiselect/dist/vue-multiselect.min.css');
 require('../css/main.scss');
-//require('../photos/w200/lds-conference-center.jpg');
-//const lds = require('../photos/w200/lds-conference-center@2x.jpg');
-//console.log(lds);
 
-console.log("executing javascript");
+__webpack_public_path__ = "assets/"; //Needed for dynamic imports to work, otherwise they will load /public/0.js instead of /assets/0.js for example
+
+import Vue from 'vue';
+import explore from "./pages/explore";
+import {VueMasonryPlugin} from "vue-masonry";
+
+if (document.getElementById('explore-app')) {
+
+    Vue.use(VueMasonryPlugin);
+    new Vue({
+        el: '#explore-app',
+        data: {
+            function() {
+                return {}
+            }
+        },
+        render: h => h(explore)
+    });
+} else {
+    console.log('no element');
+}
+
+
+
+

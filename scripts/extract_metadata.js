@@ -9,6 +9,7 @@ const fs = require('fs');
 const slug = require('slug');
 const getImageAspectRatioIdentifier = require('./../local_modules/get_image_aspect_ratio_identifier');
 const getColors = require('get-image-colors');
+const dateSeason = require('date-season');
 
 const rootDir = path.normalize(__dirname + '/..');
 const metadataImagesDir = path.normalize(rootDir + '/source/metadata_images/');
@@ -33,10 +34,8 @@ async function getRelevantMetadata(image, gallery) {
         imageAspectRatioIdentifier = "invalid";
     }
 
-    let relevantImageMetadata = [];
-
     let colorsArray = await getColors(metadataImagesDir + gallery + '/' + image.FileName);
-
+    const standardDate = image.DateTimeOriginal.replace(/:/, '-').replace(/:/, '-'); // e.g. Change 2019:03:04 08:43:00 to 2019-03-04 08:43:00
     return {
         FileName: image.FileName,
         PositionInGallery: parseInt(image.FileName),
@@ -49,7 +48,7 @@ async function getRelevantMetadata(image, gallery) {
         ExposureTime: image.ExposureTime,
         FNumber: image.FNumber,
         ISO: image.ISO,
-        DateTimeOriginal: image.DateTimeOriginal.replace(/:/, '-').replace(/:/, '-'), // e.g. Change 2019:03:04 08:43:00 to 2019-03-04 08:43:00,
+        DateTimeOriginal: standardDate,
         ApertureValue: image.ApertureValue,
         ExposureCompensation: image.ExposureCompensation,
         Flash: image.Flash,
@@ -68,7 +67,8 @@ async function getRelevantMetadata(image, gallery) {
         ImageHeight: image.ImageHeight, //Long edge is 840px
         ImageAspectRatio: image.ImageWidth / image.ImageHeight,
         ImageAspectRatioIdentifier: imageAspectRatioIdentifier,
-        Colors: colorsArray.map(color => color.hex())
+        Colors: colorsArray.map(color => color.hex()),
+        Season: (new dateSeason({autumn: true, north: image.GPSLatitudeRef === "North"})(new Date(standardDate))).toLowerCase()
     };
 }
 
@@ -99,6 +99,7 @@ let getMetaDataForGallery = async function getMetaDataForGallery(gallery) {
 let main = async function main() {
 
     let galleries = await getAllGalleries();
+    let allMetadata=[];
 
     await ep.open();
 
@@ -112,10 +113,11 @@ let main = async function main() {
         }
         await fs.promises.mkdir(metadataJsonDir + gallery); //Recreate empty directory
 
-        getMetaDataForGallery(gallery)
+        await getMetaDataForGallery(gallery)
             .then(function (imagesMetadata) {
 
                 imagesMetadata.forEach(function (imageMetadata) {
+                    allMetadata.push(imageMetadata);
                     let fileName = metadataJsonDir + gallery + '/' + imageMetadata.FileName.replace('.jpg', '.json');
                     fs.writeFile(fileName, JSON.stringify(imageMetadata, null, 2), () => {
                         console.log("Writing JSON file for " + imageMetadata.FileName.replace('.jpg', '.json') + " in " + gallery); //Out of order due to asynchronicity
@@ -127,6 +129,10 @@ let main = async function main() {
                 console.error(error.message);
             });
     }
+
+    fs.writeFile(metadataJsonDir + 'all.json', JSON.stringify({"images": allMetadata}, null, 2), () => {
+        console.log("Wrote all.json to " + metadataJsonDir);
+    });
 
     await ep.close();
 
