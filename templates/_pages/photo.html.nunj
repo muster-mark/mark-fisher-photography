@@ -39,7 +39,7 @@ s{% extends "_layouts/default.html.nunj" %}
                     </span>
                 {% endif %}
 
-                <p>{{ photo.CaptionAbstract }}</p>
+                <p>{{ photo.CaptionAbstract | safe }}</p>
 
             </figcaption>
         </figure>
