@@ -17,7 +17,7 @@
                     {% if photo.ImageAspectRatioIdentifier === "invalid" %}style="grid-row: auto/span {{ photo.cssGridRowSpan }}; height: {{ photo.brickHeight }}px"{% endif %}
                    aria-label="See more information about the photo &ldquo;{{ photo.Title }}&rdquo;"
                 >
-                    {{ picture(photo.Slug, photo.CaptionAbstract, "w200", photo.ImageAspectRatio, photo.Colors[0], "lazy") }}
+                    {{ picture(photo.Slug, photo.Headline, "w200", photo.ImageAspectRatio, photo.Colors[0], "lazy") }}
                 </a>
             {% endfor %}
         </div>
