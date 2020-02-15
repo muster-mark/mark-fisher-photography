@@ -9,6 +9,7 @@ const templatesPath = path.resolve(__dirname + '/../templates');
 const metadataDir = path.resolve(__dirname + '/../source/metadata_json');
 const publicDir = path.resolve(__dirname + '/../public');
 const homepageImages = [
+    'the-other-side',
     'after-brendan',
     'monoculture',
     'the-last-of-autumns-bounty',
