@@ -52,11 +52,6 @@ Start an express server and open in default browser
 npm run serve
 ```
 
-### Testing
-
-Javascript is an enhancement for maximum robustness, so check with and without javascript enabled
-
-
 ### Deploying
 
 The deployment scripts deploys to an s3 bucket using aws2 and invalidates the relevant distribution

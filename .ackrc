@@ -5,3 +5,4 @@
 --ignore-dir=.idea
 --ignore-dir=cache
 --ignore-dir=@fortawesome
+--ignore-dir=reports

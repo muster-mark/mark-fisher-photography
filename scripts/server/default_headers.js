@@ -12,7 +12,7 @@ module.exports =  {
         // Response headers to be sent only if the Content-Type is text/html
         {
             name: 'Content-Security-Policy',
-            value: "font-src 'self'; base-uri 'self'; connect-src 'self'; form-action 'self'; frame-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; object-src 'none'; frame-ancestors 'self'; img-src 'self';"
+            value: "font-src 'self'; base-uri 'self'; connect-src 'self'; form-action 'self'; frame-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; object-src 'none'; frame-ancestors 'self'; img-src 'self';"
         },
         {
             name: 'Feature-Policy',

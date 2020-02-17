@@ -8,36 +8,38 @@ html {
     font-family: Impact, Verdana, sans-serif;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    @include title-font;
+}
+
 p {
-  margin-bottom: calc(24px + 0.375vw);
+    margin-bottom: 24px;
 }
 
 a {
-  color: $color-primary;
-  text-underline-offset: 5px;
+    color: $color-primary;
+    text-underline-offset: 5px;
 }
 
-.a_context {
-  color: $text-color;
+a:visited {
+    color: $visited-link-color;
 }
 
-a:not(.a_context):visited {
-  color: $visited-link-color;
-}
-
-a, a:not(.a_context) {
-  &:focus, &:hover {
+a:focus, a:hover {
     color: $text-color;
-  }
+}
+
+.a_context, .a_context:visited {
+    color: $text-color;
 }
 
 .a_context:hover, .a_context:focus {
-  color: $color-primary;
+    color: $color-primary;
 }
 
 a:focus {
-  /*outline: none;*/
-  /* have set manually for text, but not other elements */
+    /*outline: none;*/
+    /* have set manually for text, but not other elements */
 }
 
 .subtle-text {
@@ -47,4 +49,12 @@ a:focus {
 
 .text-center {
     text-align: center;
+}
+
+.smaller {
+    font-size: smaller;
+}
+
+.larger {
+    font-size: larger;
 }

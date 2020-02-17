@@ -1,6 +1,6 @@
 {% extends "_layouts/default.html.nunj" %}
 
-{% from "_includes/macros.html.nunj" import picture %}
+{% from "_includes/macros.html.nunj" import picture, svg_icon %}
 
 {% block meta_description_tag %}
     <meta name="description"
@@ -12,6 +12,11 @@
     <div class="container">
 
         <div class="inner-container">
+
+            <p>Below are some of my latest photos. You can browse images by theme in the galleries above, or click the button below to explore all my photos by country and season.</p>
+
+            <a class="btn" href="/explore">Explore all photos{{ svg_icon("chevron-right")}}</a>
+
             <div class="masonry_wall">
                 {% for image in favouriteImages %}
                     <a href="/{{ image.Gallery }}/{{ image.Slug }}"

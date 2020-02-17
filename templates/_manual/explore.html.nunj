@@ -1,0 +1,19 @@
+{% extends "./../_layouts/default.html.nunj" %}
+
+{% set page = {
+    "meta_title": "Explore",
+    "url": "/explore",
+    "title" : "Explore"
+} %}
+
+{% block meta_description_tag %}
+    <meta name="description" content="Explore all photos. Search by season, colour, time of day."/>
+{% endblock %}
+
+{% block content %}
+    <div class="inner-container">
+        <div id="explore-app">
+        </div>
+    </div>
+
+{% endblock %}

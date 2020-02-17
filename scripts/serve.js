@@ -2,6 +2,7 @@ const express = require('express');
 const fs = require('fs');
 const morgan = require('morgan');
 const defaultHeaders = require('./server/default_headers');
+const compression = require('compression');
 
 const PORT = process.env.PORT || 8888;
 
@@ -9,6 +10,9 @@ const app = express();
 
 // Logging middleware
 app.use(morgan('dev'));
+
+// Gzip
+app.use(compression());
 
 // Everything is static!
 app.use(express.static('public', {

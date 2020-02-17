@@ -74,3 +74,11 @@
   margin-top: 1em;
   color: $color-primary;
 }
+
+.multiselect {
+    margin-bottom: 20px;
+
+    &__label {
+        margin-bottom: 10px;
+    }
+}

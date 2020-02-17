@@ -4,32 +4,16 @@ const fs = require('fs').promises;
 const glob = require('glob-promise');
 const galleries = require('./../local_modules/galleries.js');
 const renderAndWriteTemplate = require('./../local_modules/render_and_write_template');
+const allImages = require('./../source/metadata_json/all.json').images;
 
 const templatesPath = path.resolve(__dirname + '/../templates');
 const metadataDir = path.resolve(__dirname + '/../source/metadata_json');
 const publicDir = path.resolve(__dirname + '/../public');
-const homepageImages = [
-    'the-other-side',
-    'after-brendan',
-    'monoculture',
-    'the-last-of-autumns-bounty',
-    'zebra-ngorongoro-crater',
-    'zebras-of-the-serengeti',
-    'impala-in-the-grass',
-    'swan-in-a-tree',
-    'rain-over-bryce-canyon',
-    'monet-pool',
-    'cow-pooing-at-black-rock',
-    'moonbolt',
-    'deer-at-dusk',
-    'loch-scavaig',
-    'beneath-bla-bheinn',
-    'neptunes-canvas',
-    'cows-by-loch-brittle',
-    'boreray',
-    'barnacle-unconformity',
-    'green-embrace',
-];
+
+// Get 20 most recent images
+const homepageImages = allImages.sort(function(a, b) {
+    return  new Date(b.DateTimeOriginal) - new Date(a.DateTimeOriginal)
+}).slice(0, 21).map(image => image.Slug);
 
 const environment = nunjucks.configure(templatesPath, {
     throwOnUndefined: false,

@@ -66,12 +66,12 @@ summary {
 
 .inner-container {
     margin: auto;
-    max-width: calc(845px + 6em);
-    padding: 0 1em 1em;
+    max-width: 920px;
+    padding: 0 20px 20px;
     display: flow-root;
 
     &_narrow {
-        max-width: calc(630px + 2em);
+        max-width: 670px;
     }
 }
 
@@ -88,4 +88,44 @@ summary {
     padding: 0;
     position: absolute;
     width: 1px;
+}
+
+.btn {
+    background-image: linear-gradient($color-primary, lighten($color-primary, 10%));
+    padding: 10px;
+    border-radius: 15px;
+    color: black;
+    text-decoration: none;
+    margin-bottom: 20px;
+    display: inline-block;
+    margin-bottom: 40px;
+
+    &:visited {
+        color: black;
+    }
+
+    &:hover, &:active, &:focus {
+        color: white;
+        background-image: linear-gradient(darken($color-primary, 10%), lighten($color-primary, 0%));
+
+        .ico {
+            fill: white;
+        }
+    }
+
+    .ico {
+        position: relative;
+        top: 0.16em;
+        display: inline;
+        transition: all 0.15s;
+        margin-left: 5px;
+        will-change: transform;
+    }
+
+    &:hover .ico, &:focus .ico {
+        margin-right: 5px;
+        transform: translateX(5px);
+    }
+
+
 }
