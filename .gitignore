@@ -6,3 +6,4 @@
 sitemap.xml
 .staging.env
 .production.env
+/reports/

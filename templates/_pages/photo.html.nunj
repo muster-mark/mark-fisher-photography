@@ -1,6 +1,6 @@
 s{% extends "_layouts/default.html.nunj" %}
 
-{% from "_includes/macros.html.nunj" import picture %}
+{% from "_includes/macros.html.nunj" import picture, svg_icon %}
 
 {% block head %}
     <link rel="prefetch" href="/{{ gallery }}/{{ next_photo.Slug }}"/>
@@ -14,28 +14,19 @@ s{% extends "_layouts/default.html.nunj" %}
             <div class="the-image_container">
                 <a href="/{{ gallery }}/{{ previous_photo.Slug }}" class="a_context the-image_prev"
                    title="Go to the previous image in the {{ gallery_name }} gallery">
-                    <svg role="img" class="ico" viewBox="0 0 256 512">
-                        <use xlink:href="/images/icons_sprite.svg#chevron-left"></use>
-                    </svg>
-                    </span><span class="sr-only">Previous photo</span>
+                   {{ svg_icon("chevron-left", "Previous image") }}
                 </a>
                 {{ picture(photo.Slug, photo.Headline, "l840", photo.ImageAspectRatio, photo.Colors[0]) }}
                 <a href="/{{ gallery }}/{{ next_photo.Slug }}" class="a_context the-image_next"
                    title="Go to the next image in the {{ gallery_name }} gallery">
-                    <svg role="img" class="ico" viewBox="0 0 256 512">
-                        <use xlink:href="/images/icons_sprite.svg#chevron-right"></use>
-                    </svg>
-                    </span><span class="sr-only">Next photo</span>
+                    {{ svg_icon("chevron-right", "Next image") }}
                 </a>
             </div>
             <figcaption>
                 <h1 class="the-image_title">{{ photo.Title }}</h1>
                 {% if photo.Sublocation %}
                     <span class="the-image_location">
-                        <svg role="img" class="ico" viewBox="0 0 576 512" title="Location">
-                            <use xlink:href="/images/icons_sprite.svg#map-marked-alt"></use>
-                        </svg>
-                        {{ photo.Sublocation }}{% if photo.CountryPrimaryLocationName %}, {{ photo.CountryPrimaryLocationName }}{% endif %}
+                        {{ svg_icon("map-marked-alt", "Location") }}{{ photo.Sublocation }}{% if photo.CountryPrimaryLocationName %}, {{ photo.CountryPrimaryLocationName }}{% endif %}
                     </span>
                 {% endif %}
 
@@ -49,41 +40,31 @@ s{% extends "_layouts/default.html.nunj" %}
             <ul class="image-details_list">
                 {% if photo.Sublocation %}
                     <li>
-                        <svg role="img" class="ico ico_fw" viewBox="0 0 576 512" title="Location">
-                            <use xlink:href="/images/icons_sprite.svg#map-marked-alt"></use>
-                        </svg>{{ photo.Sublocation }}{% if photo.CountryPrimaryLocationName %}, {{ photo.CountryPrimaryLocationName }}{% endif %}
+                        {{ svg_icon("map-marked-alt", "Location", true)}}{{ photo.Sublocation }}{% if photo.CountryPrimaryLocationName %}, {{ photo.CountryPrimaryLocationName }}{% endif %}
                     </li>
                 {% endif %}
 
                 {% if photo.DateTimeOriginal %}
                     <li>
-                        <svg role="img" class="ico ico_fw" viewBox="0 0 448 512" title="Date taken">
-                            <use xlink:href="/images/icons_sprite.svg#calendar-alt"></use>
-                        </svg>{{ photo.DateTimeOriginal|date('Do MMMM, YYYY') }}
+                       {{ svg_icon("calendar-alt", "Date taken", true) }}{{ photo.DateTimeOriginal|date('Do MMMM, YYYY') }}
                     </li>
                 {% endif %}
 
                 {% if photo.Model %}
                     <li>
-                        <svg role="img" class="ico ico_fw" viewBox="0 0 512 512" title="Camera">
-                            <use xlink:href="/images/icons_sprite.svg#camera-retro"></use>
-                        </svg>{{ photo.Model }}
+                        {{ svg_icon("camera-retro", "Camera", true) }}{{ photo.Model }}
                     </li>
                 {% endif %}
 
                 {% if photo.Lens %}
                     <li>
-                        <svg role="img" class="ico ico_fw" viewBox="0 0 640 512" title="Lens">
-                            <use xlink:href="/images/icons_sprite.svg#telescope"></use>
-                        </svg>{{ photo.Lens }}{% if photo.FocalLength %} at {{ photo.FocalLength|replace(' ', '') }}{% endif %}
+                        {{ svg_icon("telescope", "Lens", true) }}{{ photo.Lens }}{% if photo.FocalLength %} at {{ photo.FocalLength|replace(' ', '') }}{% endif %}
                     </li>
                 {% endif %}
 
                 {% if photo.ExposureTime and photo.FNumber and photo.ISO %}
                     <li>
-                        <svg role="img" class="ico ico_fw" viewBox="0 0 576 512" title="Exposure details">
-                            <use xlink:href="/images/icons_sprite.svg#film-canister"></use>
-                        </svg>{{ photo.ExposureTime }}s at f/{{ photo.FNumber }}, ISO {{ photo.ISO }}
+                        {{ svg_icon("film-canister", "Exposure details", true) }}{{ photo.ExposureTime }}s at f/{{ photo.FNumber }}, ISO {{ photo.ISO }}
                     </li>
                 {% endif %}
             </ul>

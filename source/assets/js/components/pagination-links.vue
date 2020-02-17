@@ -1,10 +1,7 @@
 <template>
     <div class="pagination">
         <button class="pagination_previous" @click="$emit('page-change', page - 1)" :disabled="page === 1">
-            <span class="sr-only">Previous page</span>
-            <svg role="img" class="ico" viewBox="0 0 256 512">
-                <use xlink:href="/images/icons_sprite.svg#chevron-left"></use>
-            </svg>
+            <svg-icon name="chevron-left" title="Previous page"></svg-icon>
         </button>
 
         <ol>
@@ -16,10 +13,8 @@
         </ol>
 
         <button class="pagination_next" @click="$emit('page-change', page + 1)" :disabled="page === numPages">
-            <span class="sr-only">Next page</span>
-            <svg role="img" class="ico" viewBox="0 0 256 512">
-                <use xlink:href="/images/icons_sprite.svg#chevron-right"></use>
-            </svg>
+            <svg-icon name="chevron-right" title="Next page"></svg-icon>
+
         </button>
     </div>
 
@@ -27,10 +22,15 @@
 
 <script>
 
+    import SvgIcon from "../components/svg-icon";
+
     export default {
         props: ['numPages', 'page'],
         data: function () {
             return {}
+        },
+        components: {
+            SvgIcon
         }
     }
 
@@ -93,7 +93,4 @@
         }
     }
 
-    svg {
-        fill: currentColor; //TODO - why is this needed
-    }
 </style>

@@ -75,7 +75,6 @@ async function createImagePages(gallery, galleryMetadata) {
                 photo: galleryMetadata[i],
                 previous_photo: galleryMetadata[previousIndex],
                 next_photo: galleryMetadata[nextIndex],
-                test_data: new Date()
             },
             nunjucks
         ).catch(error => {

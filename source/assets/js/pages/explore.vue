@@ -1,6 +1,18 @@
 <template>
     <div>
 
+        <div class="multiselect__label">Countries:</div> <!-- TODO declare this describes the select -->
+        <multi-select
+            v-model="selectedCountries"
+            :options="countries"
+            :multiple="true"
+            track-by="name"
+            :custom-label="countryLabel"
+            placeholder="Select one or more countries"
+            :allow-empty="false"
+        >
+        </multi-select>
+
         <div class=".multiselect__label">Seasons</div>
         <multi-select
             v-model="selectedSeasons"
@@ -14,38 +26,29 @@
             :allow-empty="false"
         ></multi-select>
 
-        <div class="multiselect__label">Countries:</div>
-        <multi-select
-            v-model="selectedCountries"
-            :options="countries"
-            :multiple="true"
-            track-by="name"
-            :custom-label="countryLabel"
-            placeholder="Select one or more countries"
-            :allow-empty="false"
-        >
-        </multi-select>
-
         <div class="explore_result-summary js_scroll-target">
             <span v-if="!filteredImages.length">No images match your search criteria</span>
-            <span class="smaller" v-else>Showing <span class="larger">{{firstShown}}-{{lastShown}}</span> of <span class="larger">{{filteredImages.length}}</span> matching images</span>
+            <span class="smaller" v-else>Showing <span class="larger">{{firstShown}}-{{lastShown}}</span> of <span
+                class="larger">{{filteredImages.length}}</span> matching images</span>
         </div>
 
 
+        <ul v-masonry
+            transition-duration="0s"
+            item-selector=".explore_result"
+            column-width="200"
+            gutter="15"
+            fit-width="true"
 
-            <ul v-masonry
-                transition-duration="0.15s"
-                item-selector=".explore_result"
-                column-width="200"
-                gutter="15"
-
+        >
+            <li v-masonry-tile
+                class="explore_result"
+                v-for="image in filteredImages.slice(firstShown - 1, lastShown - 1)"
+                :key="image.FileName"
             >
-                <li v-masonry-tile
-                    class="explore_result"
-                    v-for="image in filteredImages.slice(firstShown - 1, lastShown - 1)"
-                    :key="image.FileName"
-                ><explore-result :image="image" ></explore-result></li>
-            </ul>
+                <explore-result :image="image"></explore-result>
+            </li>
+        </ul>
 
         <pagination-links :page="page" v-on:page-change="goToPage($event)"
                           :numPages="numPages"
@@ -85,13 +88,13 @@
 
                 });
             },
-            firstShown: function() {
+            firstShown: function () {
                 return this.resultLimit * (this.page - 1) + 1;
             },
             lastShown: function () {
                 return Math.min(this.filteredImages.length, this.resultLimit * (this.page) - 1);
             },
-            numPages: function() {
+            numPages: function () {
                 return Math.ceil(this.filteredImages.length / this.resultLimit);
             }
         },
@@ -126,16 +129,24 @@
             MultiSelect,
             ExploreResult,
         },
-        created () {
+        created() {
             let self = this;
-            import(/* webpackChunkName "imageMetadata" */ './../modules/images').then(function ({default: images}) {
-                // Reduce bundle size required to render controls
-                self.allImages = images.images;
-                self.countries = images.countryCounts;
-                self.selectedCountries = images.countryCounts;
-                self.seasons = images.seasonCounts;
-                self.selectedSeasons = images.seasonCounts;
-            });
+            fetch('/data/images.json')
+                .then(data => {
+                    return data.json();
+                })
+                .then(json => {
+                    self.allImages = json.images;
+                    self.countries = json.countryCounts;
+                    self.selectedCountries = json.countryCounts;
+                    self.seasons = json.seasonCounts;
+                    self.selectedSeasons = json.seasonCounts;
+                })
+                .catch(err => {
+                    console.error('There was an error fetching data');
+                    console.log(err);
+                });
+
 
         },
         mounted() {
@@ -150,6 +161,29 @@
         list-style-type: none;
         margin: 0;
         padding: 0;
+
+        @media screen and (max-width: 240px) {
+            // 1 col
+            width: 200px;
+        }
+
+        @media screen and (max-width: 405px) {
+            // 2 cols
+            width: 415px;
+        }
+
+        @media screen and (max-width: 670px) {
+            // 3 cols
+            width: 630px;
+        }
+
+        @media screen and (max-width: 885px) {
+            //4 cols
+            width: 845px;
+        }
+
+        margin: auto;
+
     }
 
     .explore_result-summary {

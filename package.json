@@ -11,6 +11,7 @@
         "@symfony/webpack-encore": "^0.28.2",
         "advanced-sitemap-generator": "^1.6.9",
         "aws-sdk": "^2.615.0",
+        "compression": "^1.7.4",
         "core-js": "^3.6.4",
         "date-season": "0.0.2",
         "dotenv": "^8.2.0",
@@ -39,7 +40,7 @@
         "webpack-bundle-analyzer": "^3.6.0"
     },
     "scripts": {
-        "add-photo": "node scripts/extract_metadata.js && node scripts/build_photo_and_gallery_pages.js",
+        "add-photo": "node scripts/extract_metadata.js && node scripts/build_photo_and_gallery_pages.js && node scripts/build_image_data.js",
         "build": "node_modules/.bin/encore prod && npm run build-pages && cp -r source/static/* public/",
         "dev": "node_modules/.bin/encore dev && npm run build-pages && cp -r source/static/* public/",
         "build-pages": "node scripts/build_manual_pages.js && node scripts/build_photo_and_gallery_pages.js && node scripts/build_homepage.js",
@@ -48,5 +49,7 @@
         "serve": "node scripts/serve.js",
         "build-sitemap": "node scripts/build_sitemap.js"
     },
-    "sideEffects": false
+    "sideEffects": [
+        "*.vue"
+    ]
 }

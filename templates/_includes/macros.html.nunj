@@ -33,22 +33,64 @@
     {#    </picture>#}
 {% endmacro %}
 
+{% macro svg_icon(name, title, fixed_width=false) %}
+    {% set icons = {
+        instagram: {
+        },
+        flickr: {
+        },
+        '500px': {
+        },
+        'chevron-left': {
+            width: 256
+        },
+        'chevron-right': {
+            width: 256
+        },
+        'map-marked-alt': {
+            width: 576
+        },
+        'calendar-alt': {
+        },
+        'camera-retro': {
+            width: 512
+        },
+        'film-canister': {
+            width: 576
+        },
+        'telescope': {
+            width: 640
+        }
+    } %}
+
+    {% set icon = icons[name] %}
+
+    {% if (icon is defined) %}
+        {% set width = icon.width %}
+        {% set height = icon.height %}
+    {% endif %}
+
+    <svg role="img"
+         class="ico{% if(fixed_width) %} ico_fw{% endif %}"
+         viewBox="0 0 {{ width | default('448') }} {{ height | default('512') }}"
+         {% if title %}title="{{ title }}"{% endif %}
+    >
+        <use xlink:href="/images/icons_sprite.svg#{{ name }}"></use>
+    </svg>
+
+{% endmacro %}
+
 {% macro social_media(classes) %}
     <span class="{{ classes.join(' ') }}">
     <a class="a_context sm-link" href="https://www.instagram.com/mark.j.fisher/">
-        <svg role="img" class="ico" viewBox="0 0 448 512" title="Visit my Instagram profile">
-            <use xlink:href="/images/icons_sprite.svg#instagram"></use>
-        </svg>
+        {{ svg_icon('instagram', 'Visit my Instagram profile') }}
     </a>
     <a class="a_context sm-link" href="https://www.flickr.com/photos/muster_mark/">
-        <svg role="img" class="ico" viewBox="0 0 448 512" title="Visit my Flickr profile">
-            <use xlink:href="/images/icons_sprite.svg#flickr"></use>
-        </svg>
+        {{ svg_icon('flickr', 'Visit my Flickr profile') }}
     </a>
     <a class="a_context sm-link" href="https://500px.com/mark_fisher">
-        <svg role="img" class="ico" viewBox="0 0 448 512" title="Visit my 500px profile">
-            <use xlink:href="/images/icons_sprite.svg#500px"></use>
-        </svg>
+        {{ svg_icon('500px', 'Visit my 500px profile') }}
     </a>
+
 </span>
 {% endmacro %}
