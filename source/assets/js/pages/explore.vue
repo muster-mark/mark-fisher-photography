@@ -148,6 +148,7 @@
                 });
 
 
+
         },
         mounted() {
             this.scrollTarget = document.querySelector('.js_scroll-target');
@@ -193,6 +194,28 @@
         .larger {
             color: #efa929;
         }
+    }
+
+    @keyframes fadeAndGrowIn {
+        0% {
+            opacity: 0;
+            transform: scale(0.5);
+        }
+
+        50% {
+            opacity: 0.5;
+            transform: scale(1);
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    .explore_result {
+        animation-name: fadeAndGrowIn;
+        animation-iteration-count: 1;
+        animation-duration: 0.6s;
     }
 
 </style>
