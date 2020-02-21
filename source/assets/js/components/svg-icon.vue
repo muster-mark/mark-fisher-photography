@@ -32,6 +32,12 @@
         'camera-retro': {
             width: 512,
         },
+        'envelope': {
+            width: 512,
+        },
+        'exclamation-circle': {
+            width: 512,
+        },
         'film-canister': {
             width: 576,
         },
