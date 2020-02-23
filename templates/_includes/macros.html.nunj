@@ -25,7 +25,7 @@
          srcset="/photos/{{ size }}/{{ slug }}@2x.jpg 2x, /photos/{{ size }}/{{ slug }}.jpg 1x"
          src="/photos/{{ size }}/{{ slug }}.jpg"
          alt="{{ alt }}"
-         style="width:{{ width }}px; height: {{ height }}px;{% if background %}background-color: {{ background }}{% endif %}"
+         {% if background %}style="background-color: {{ background }}{% endif %}"
         {% if loading %}
         loading="{{ loading }}"
         {% endif %}
