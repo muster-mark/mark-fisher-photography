@@ -19,50 +19,27 @@
 
 {% block content %}
     <div class="inner-container ">
-{#        <form action="/api/contact" method="post"#}
-{#              class="contact-form">#}
-
-{#            <label for="contact_name">What's your name?</label>#}
-{#            <input required type="text" id="contact_name" name="name" maxlength="100"/>#}
-{#            <span class="form-help">Feel free to make one up if you want to provide some harsh but constructive criticism about my photos.</span>#}
-
-{#            <label for="contact_email">What's your email address?</label>#}
-{#            <input required type="email" id="contact_email" name="email" minlength="5"/>#}
-
-{#            <label for="contact_msg">How can I help you?</label>#}
-{#            <textarea required id="contact_msg" name="message"></textarea>#}
-
-{#            <div class="contact-form_valid-message">Please fill out all the fields correctly</div>#}
-
-{#            <input type="submit" value="Send"/>#}
-
-{#        </form>#}
-
-        <p>Please email me at <a href="mailto:mfishe@gmail.com?subject=Website%20Enquiry%20-%20markfisher.photo">mfishe@gmail.com</a> for any enquiries</p>
+        <form id="contact-app" action="api.markfisher.photo/message" method="post" class="contact-form"
+              _lpchecked="1"><label for="contact_name">What's your name?</label> <input
+                required="required" type="text" id="contact_name" name="name" maxlength="100"
+                class="input_touched"> <span class="form-help">Feel free to make one up if you want to provide some harsh but constructive criticism about my photos.</span>
+            <label for="contact_email">What's your email address?</label> <input data-v-3cdab196=""
+                                                                                                    required="required"
+                                                                                                    type="email"
+                                                                                                    id="contact_email"
+                                                                                                    name="email"
+                                                                                                    minlength="5"
+                                                                                                    class=""> <label
+                for="contact_msg">How can I help you?</label> <textarea data-v-3cdab196=""
+                                                                                           required="required"
+                                                                                           id="contact_msg"
+                                                                                           name="message"
+                                                                                           class=""></textarea> <!---->
+            <button type="submit" class="button-submit">Submit</button> <!----> <!----></form>
     </div>
 {% endblock %}
 
 {% block footer_scripts %}
     {{ super() }}
 
-{#    <script>#}
-{#        if (window.fetch) {#}
-
-{#            let contactForm = document.querySelector(".contact-form");#}
-{#            contactForm.addEventListener("submit", function(e) {#}
-{#                const data = new URLSearchParams();#}
-{#                for (const pair of new FormData(contactForm)) {#}
-{#                    data.append(pair[0], pair[1]);#}
-{#                }#}
-
-{#                fetch("/api/contact", {#}
-{#                    method: "post",#}
-{#                    body: data,#}
-{#                })#}
-{#                    .then(function(result){#}
-{#                        console.log(result);#}
-{#                    });#}
-{#            });#}
-{#        }#}
-{#    </script>#}
 {% endblock %}

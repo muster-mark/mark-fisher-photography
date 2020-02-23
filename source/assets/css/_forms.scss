@@ -1,78 +1,98 @@
 .form-help {
-  font-size: smaller;
-  font-style: italic;
+    font-size: smaller;
+    font-style: italic;
 }
 
 .contact-form input, .contact-form label {
-  display: block;
+    display: block;
 }
 
 .contact-form {
-  margin: 3vw;
+    margin: 3vw;
 }
 
 .contact-form input, .contact-form textarea {
-  font-size: var(--font-size);
-  padding: 0.5em;
-  border: 2px solid $text-color;
-  background-color: black;
-  color: $text-color;
-  width: 100%;
+    font-size: var(--font-size);
+    padding: 0.5em;
+    border: 2px solid $text-color;
+    background-color: black;
+    color: $text-color;
+    width: 100%;
 
-  &::placeholder {
-    color: $placeholder-grey;
-  }
+    &::placeholder {
+        color: $placeholder-grey;
+    }
 }
 
 .contact-form [type="submit"] {
-  width: auto;
-  cursor: pointer;
+    width: auto;
+    cursor: pointer;
 }
 
-.contact-form input:invalid, .contact-form textarea:invalid {
-  border: 2px solid $text-color;
+.contact-form input.input_touched:invalid, .contact-form textarea.input_touched:invalid {
+    border: 2px solid red;
 }
 
-.contact-form input[type="submit"] {
-  padding: 0.5em 2em;
-  margin-top: 1em;
+.contact-form [type="submit"] {
+    padding: 0.5em 2em;
+    margin: 1em 0;
+    border: none;
+    border-radius: 10px;
+    color: black;
+    font-size: 1.5em;
+    background-color: $color-primary;
+    background-image: linear-gradient(#eeb374, $color-primary);
 
-  border: none;
-  border-radius: 10px;
-  color: black;
-  font-size: 1.5em;
-  background-color: $color-primary;
-  background-image: linear-gradient(#eeb374, $color-primary);
+    &:hover, &:focus {
+        background-image: linear-gradient(darken(#eeb374, 22%), darken($color-primary, 22%));
+        color: white;
+    }
 }
-
-.contact-form [type="submit"]:hover {
-
-}
-
-
-
 
 .contact-form label {
-  margin-bottom: 0.5em;
+    margin-bottom: 0.5em;
 }
 
 .contact-form label:not(:first-child) {
-  margin-top: calc(1em + 3vh);
+    margin-top: calc(1em + 3vh);
 }
 
 .contact-form textarea {
-  resize: vertical;
-  height: 8em;
+    resize: vertical;
+    height: 8em;
 }
 
 .contact-form .contact-form_valid-message {
-  display: none;
+    display: none;
 }
 
 .contact-form:invalid .contact-form_valid-message {
-  display: block;
-  margin-top: 1em;
-  color: $color-primary;
+    display: block;
+    margin-top: 1em;
+    color: $color-primary;
+}
+
+.contact-form_success-message, .contact-form_fail-message {
+    background-color: #333;
+    padding: 1.5em;
+}
+
+.contact-form_result-message {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+}
+
+.contact-form_result-message_icon {
+    font-size: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.contact-form_result-message_text {
+    display: flex;
+    align-items: center;
+    position: relative;
+    top: -0.2em;
 }
 
 .multiselect {

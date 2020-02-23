@@ -5,6 +5,7 @@ __webpack_public_path__ = "assets/"; //Needed for dynamic imports to work, other
 
 import Vue from 'vue';
 import explore from "./pages/explore";
+import contact from "./pages/contact";
 import {VueMasonryPlugin} from "vue-masonry";
 
 if (document.getElementById('explore-app')) {
@@ -19,8 +20,18 @@ if (document.getElementById('explore-app')) {
         },
         render: h => h(explore)
     });
-} else {
-    console.log('no element');
+}
+
+if (document.getElementById('contact-app')) {
+    new Vue({
+        el: '#contact-app',
+        data: {
+            function() {
+                return {}
+            }
+        },
+        render: h => h(contact)
+    });
 }
 
 
