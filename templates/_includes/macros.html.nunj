@@ -79,8 +79,8 @@
     <svg role="img"
          class="ico{% if(fixed_width) %} ico_fw{% endif %}"
          viewBox="0 0 {{ width | default('448') }} {{ height | default('512') }}"
-         {% if title %}title="{{ title }}"{% endif %}
     >
+        {% if title %}<title>{{ title }}</title>{% endif %}
         <use xlink:href="/images/icons_sprite.svg#{{ name }}"></use>
     </svg>
 

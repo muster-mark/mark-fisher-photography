@@ -25,7 +25,7 @@
                     <div class="header-container_img-shape">
                         <img class="header-container_img"
                              alt="{{ page.header_image.alt }}"
-                             srcset="{{ page.header_image.src }}@2x.png, {{ page.header_image.src }}.png 1x"
+                             srcset="{{ page.header_image.src }}@2x.png 2x, {{ page.header_image.src }}.png 1x"
                              src="{{ page.header_image.src }}.png"
                              height="{{ page.header_image.height }}"
                              width="{{ page.header_image.width }}"
