@@ -7,3 +7,4 @@ sitemap.xml
 .staging.env
 .production.env
 /reports/
+source/static/data

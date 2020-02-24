@@ -6,3 +6,5 @@
 --ignore-dir=cache
 --ignore-dir=@fortawesome
 --ignore-dir=reports
+--ignore-dir=source/static/data/
+--ignore-dir=source/metadata_json
