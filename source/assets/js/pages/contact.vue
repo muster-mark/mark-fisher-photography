@@ -72,7 +72,7 @@
         data: function () {
 
             return {
-                action: window.location.origin.replace('www', 'api'),
+                action: window.location.origin.replace('www', 'api') + '/message',
                 fields: {
                     name: {
                         value: null,
