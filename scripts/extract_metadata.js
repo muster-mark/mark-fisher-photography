@@ -39,7 +39,6 @@ async function getRelevantMetadata(image, gallery) {
     const standardDate = image.DateTimeOriginal.replace(/:/, '-').replace(/:/, '-'); // e.g. Change 2019:03:04 08:43:00 to 2019-03-04 08:43:00
     return {
         FileName: image.FileName,
-        PositionInGallery: parseInt(image.FileName),
         Gallery: gallery,
         Slug: slug(image.Title, {lower: true}),
         CaptionAbstract: typeof image['Caption-Abstract'] === 'string' ? md.render(image['Caption-Abstract']) : null,
@@ -50,6 +49,8 @@ async function getRelevantMetadata(image, gallery) {
         FNumber: image.FNumber,
         ISO: image.ISO,
         DateTimeOriginal: standardDate,
+        //Co-opting the OriginalTransmissionReference (called Job Identifier in Lightroom) to hold the publish date in yyyy-mm-dd format
+        DatePublished: /\d{4}-\d{2}-\d{2}/.test(image.OriginalTransmissionReference) ? `${image.OriginalTransmissionReference} 00:00:00` : null,
         ApertureValue: image.ApertureValue,
         ExposureCompensation: image.ExposureCompensation,
         Flash: image.Flash,
@@ -64,8 +65,8 @@ async function getRelevantMetadata(image, gallery) {
         State: image.State,
         GPSLatitudeRef: image.GPSLatitudeRef,
         GPSLongitudeRef: image.GPSLongitudeRef,
-        ImageWidth: image.ImageWidth, // Long edge is 840px
-        ImageHeight: image.ImageHeight, //Long edge is 840px
+        ImageWidth: image.ImageWidth, // Image width when long edge is 840px
+        ImageHeight: image.ImageHeight, // Image height when long edge is 840px
         ImageAspectRatio: image.ImageWidth / image.ImageHeight,
         ImageAspectRatioIdentifier: imageAspectRatioIdentifier,
         Colors: colorsArray.map(color => color.hex()),
@@ -88,11 +89,6 @@ let getMetaDataForGallery = async function getMetaDataForGallery(gallery) {
     relevantImageMetaData = await Promise.all(
         allImageMetaData.data.map(image => getRelevantMetadata(image, gallery))
     );
-
-
-    relevantImageMetaData = relevantImageMetaData.sort(function (a, b) {
-        return a.PositionInGallery < b.PositionInGallery ? -1 : 1;
-    });
 
     return Promise.resolve(relevantImageMetaData);
 };

@@ -12,7 +12,7 @@ const publicDir = path.resolve(__dirname + '/../public');
 
 // Get 20 most recent images
 const homepageImages = allImages.sort(function(a, b) {
-    return  new Date(b.DateTimeOriginal) - new Date(a.DateTimeOriginal)
+    return  new Date(b.DatePublished) - new Date(a.DatePublished)
 }).slice(0, 21).map(image => image.Slug);
 
 const environment = nunjucks.configure(templatesPath, {
@@ -23,7 +23,7 @@ const environment = nunjucks.configure(templatesPath, {
 environment.addGlobal('header_nav_links', galleries.getUrlToNameMapping());
 
 const getImageData = async slug => {
-    const jsonFiles = await glob(`${metadataDir}/*/*_${slug}.json`);
+    const jsonFiles = await glob(`${metadataDir}/*/${slug}.json`);
     if (jsonFiles.length !== 1) {
         throw new Error(`Unexpected number of JSON files for ${slug}`);
     }

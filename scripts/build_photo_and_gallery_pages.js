@@ -27,6 +27,9 @@ async function createGalleryPage(gallery) {
         json.cssGridRowSpan = Math.round(json.brickHeight / 3);
         return json;
     });
+    imageMetadata.sort((a, b) => {
+       return new Date(b.DatePublished) - new Date(a.DatePublished);
+    });
 
     await fs.mkdir(`${publicDir}/${gallery}`, {recursive: true});
 
