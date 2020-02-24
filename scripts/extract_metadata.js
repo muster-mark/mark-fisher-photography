@@ -10,6 +10,7 @@ const slug = require('slug');
 const getImageAspectRatioIdentifier = require('./../local_modules/get_image_aspect_ratio_identifier');
 const getColors = require('get-image-colors');
 const dateSeason = require('date-season');
+const md = new require('markdown-it')();
 
 const rootDir = path.normalize(__dirname + '/..');
 const metadataImagesDir = path.normalize(rootDir + '/source/metadata_images/');
@@ -41,7 +42,7 @@ async function getRelevantMetadata(image, gallery) {
         PositionInGallery: parseInt(image.FileName),
         Gallery: gallery,
         Slug: slug(image.Title, {lower: true}),
-        CaptionAbstract: image['Caption-Abstract'],
+        CaptionAbstract: typeof image['Caption-Abstract'] === 'string' ? md.render(image['Caption-Abstract']) : null,
         Make: image.Make,
         Model: image.Model,
         Lens: image.Lens,
