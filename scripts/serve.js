@@ -14,10 +14,16 @@ app.use(morgan('dev'));
 // Gzip
 app.use(compression());
 
+// Mock response for form submissions
+app.post('/message', function(req, res) {
+    //The response body is unimportant. Only the response code is relevant.
+    res.send(JSON.stringify({"successMsg":"Your email has been successfully sent."}));
+});
+
 // Everything is static!
 app.use(express.static('public', {
     index: 'index',
-    setHeaders: function (res, path, stat) {
+    setHeaders: function (res, path) {
         // Just need to set Content-Type for requests without an extension
         if(path.split('/').pop().indexOf('.') === -1 ) {
 
@@ -36,7 +42,7 @@ app.use(express.static('public', {
 }));
 
 // static middleware only calls next() if it couldn't find the file
-app.use((req, res, next) =>{
+app.use((req, res) =>{
     res.status(404);
     fs.createReadStream("public/404").pipe(res)
 });
