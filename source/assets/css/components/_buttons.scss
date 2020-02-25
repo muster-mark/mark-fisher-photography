@@ -1,0 +1,86 @@
+$btn-color-1: #eeb374;
+$btn-color-2: $color-primary;
+
+.btn {
+    // A button, optionally containing a right chevron icon (.ico)
+
+    display: inline-block;
+    width: auto;
+    cursor: pointer;
+    padding: 0.5em 2em;
+    margin: 1em 0;
+    border: none;
+    border-radius: 10px;
+    color: black;
+    background-color: $color-primary;
+    background-image: linear-gradient(#eeb374, $color-primary);
+    text-decoration: none;
+
+    &_lg {
+        font-size: 1.5em;
+    }
+
+    &:visited {
+        color: black;
+    }
+
+    &:hover, &:focus {
+        background-image: linear-gradient(darken(#eeb374, 22%), darken($color-primary, 22%));
+        color: white;
+
+        .ico {
+            //fill: white;
+        }
+    }
+
+
+    .ico {
+        position: relative;
+        top: 0.16em;
+        display: inline;
+        transition: all 0.15s;
+        margin-left: 5px;
+        will-change: transform;
+    }
+
+    &:hover .ico, &:focus .ico {
+        margin-right: 5px;
+        transform: translateX(5px);
+    }
+}
+
+.btn_in-progress {
+    animation: pulse 800ms infinite ease-in-out, slide-background 500ms infinite linear forwards;
+    background-size: 50% 100%;
+    background-repeat: repeat-x;
+    background-position: 0 0;
+    background-image: repeating-linear-gradient(-45deg, $btn-color-1 0%, $btn-color-2 10%, $btn-color-1 20%);
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes slide-background {
+    0% {
+        background-position-x: 0%;
+    }
+
+    50% {
+        background-position-x: 50%;
+    }
+
+    100% {
+        background-position-x: 100%;
+    }
+}

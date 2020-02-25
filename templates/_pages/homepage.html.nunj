@@ -15,7 +15,7 @@
 
             <p>Below are some of my latest photos. You can browse images by theme in the galleries above, or click the button below to explore all my photos by country and season.</p>
 
-            <a class="btn" href="/explore">Explore all photos{{ svg_icon("chevron-right")}}</a>
+            <a style="display: inline-block; margin-bottom: 40px; margin-top: 0;" class="btn" href="/explore">Explore all photos{{ svg_icon("chevron-right")}}</a>
 
             <div class="masonry_wall">
                 {% for image in favouriteImages %}

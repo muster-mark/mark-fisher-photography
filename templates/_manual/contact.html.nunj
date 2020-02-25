@@ -19,37 +19,39 @@
 
 {% block content %}
     <div class="inner-container ">
-        <form
-            action="https://api.markfisher.photo/message"
-            method="post"
-            class="contact-form"
-        >
-            <label for="contact_name">What's your name?</label>
-            <input
-                required="required"
-                type="text"
-                id="contact_name"
-                name="name"
-                maxlength="100"
+        <div id="contact-app">
+            <form
+                action="https://api.markfisher.photo/message"
+                method="post"
+                class="contact-form"
             >
-            <span class="form-help">Feel free to make one up if you want to provide some harsh but constructive criticism about my photos.</span>
-            <label for="contact_email">What's your email address?</label>
-            <input
-                required="required"
-                type="email"
-                id="contact_email"
-                name="email"
-                minlength="5"
-            >
-            <label
-                for="contact_msg">How can I help you?</label>
-            <textarea
-                required="required"
-                id="contact_msg"
-                name="message"
-                class=""></textarea> <!---->
-            <button type="submit" class="button-submit">Submit</button>
-        </form>
+                <label for="contact_name">What's your name?</label>
+                <input
+                    required="required"
+                    type="text"
+                    id="contact_name"
+                    name="name"
+                    maxlength="100"
+                >
+                <span class="form-help">Feel free to make one up if you want to provide some harsh but constructive criticism about my photos.</span>
+                <label for="contact_email">What's your email address?</label>
+                <input
+                    required="required"
+                    type="email"
+                    id="contact_email"
+                    name="email"
+                    minlength="5"
+                >
+                <label
+                    for="contact_msg">How can I help you?</label>
+                <textarea
+                    required="required"
+                    id="contact_msg"
+                    name="message"
+                    class=""></textarea> <!---->
+                <button type="submit" class="btn btn_lg">Submit</button>
+            </form>
+        </div>
     </div>
 {% endblock %}
 

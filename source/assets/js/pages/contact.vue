@@ -40,7 +40,7 @@
 
         <div class="contact-form_valid-message" v-if="allFieldsTouched">Please fill out all the fields correctly</div>
 
-        <button type="submit" :class="['button-submit', ]">Submit</button>
+        <button type="submit" :class="['btn btn_lg', {'btn_in-progress': isSubmitting}]">{{ isSubmitting ? 'Submitting' : 'Submit' }}</button>
 
         <div class="contact-form_result-message contact-form_success-message" v-if="submissionSucceeded === true" aria-live="assertive">
             <div class="fadeInDown contact-form_result-message_icon">
@@ -57,7 +57,6 @@
                 <span>Sorry, something went wrong. Please try emailing me on <a
                     :href="'mailto:mfishe@gmail.com?subject=Enquiry%20via%20markfisher.photo&body=' + encodeURIComponent(fields.message.value)" target="_blank">mfishe@gmail.com</a> instead.</span>
             </div>
-
         </div>
 
 
@@ -87,6 +86,7 @@
                         touched: false,
                     }
                 },
+                isSubmitting: false,
                 submissionSucceeded: null,
             }
         },
@@ -103,9 +103,13 @@
                 });
             },
             submitForm() {
+                this.isSubmitting = true; // Puts button into progress state
                 this.submissionSucceeded = null;
+
+                // Create data for body
                 const data = {};
                 Object.keys(this.fields).forEach(key => data[key] = this.fields[key].value);
+
                 const self = this;
                 fetch(this.action, {
                     method: 'POST',
@@ -130,7 +134,11 @@
                             console.log('Form submission failed');
                             console.log(err);
                         }
-                    );
+                    )
+                .finally(() => {
+                    self.isSubmitting = false;
+                    document.querySelector('.contact-form_result-message').scrollIntoView(false);
+                });
             }
         },
         components: {
