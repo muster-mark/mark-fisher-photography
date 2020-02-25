@@ -1,8 +1,9 @@
 const path = require('path');
+const util = require('util');
 const glob = require('glob-promise');
 const galleries = require('./../local_modules/galleries.js');
 const nunjucks = require('nunjucks');
-const fs = require('fs').promises;
+const fs = require('fs');
 const renderAndWriteTemplate = require('./../local_modules/render_and_write_template');
 
 const templatesPath = path.resolve(__dirname + '/../templates');
@@ -20,7 +21,7 @@ environment.addFilter("date", require("nunjucks-date"));
 async function createGalleryPage(gallery) {
 
     const jsonFiles = await glob(metadataDir + '/' + gallery + '/*.json');
-    const jsonStrings = await Promise.all(jsonFiles.map(file => fs.readFile(file, {encoding: 'utf-8'})));
+    const jsonStrings = await Promise.all(jsonFiles.map(file => util.promisify(fs.readFile)(file, {encoding: 'utf-8'})));
     const imageMetadata = jsonStrings.map(string => {
         const json = JSON.parse(string);
         json.brickHeight = Math.round((200 * (json.ImageHeight / json.ImageWidth) + 15));
@@ -31,7 +32,7 @@ async function createGalleryPage(gallery) {
        return new Date(b.DatePublished) - new Date(a.DatePublished);
     });
 
-    await fs.mkdir(`${publicDir}/${gallery}`, {recursive: true});
+    await util.promisify(fs.mkdir)(`${publicDir}/${gallery}`, {recursive: true});
 
     renderAndWriteTemplate(
         '_pages/gallery.html.nunj',

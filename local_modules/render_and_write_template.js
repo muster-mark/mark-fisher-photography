@@ -1,4 +1,5 @@
-const fs = require('fs').promises;
+const fs = require('fs');
+const util = require('util');
 
 module.exports = async function renderAndWriteTemplate(templatePath, outputPath, data={}, nunjucks) {
 
@@ -15,7 +16,7 @@ module.exports = async function renderAndWriteTemplate(templatePath, outputPath,
     }
 
     try {
-        await fs.writeFile(outputPath, output, {encoding: 'utf-8'});
+        await util.promisify(fs.writeFile)(outputPath, output, {encoding: 'utf-8'});
         console.log(`Wrote HTML to ${outputPath}`);
     } catch (error) {
         return Promise.reject(`Could not write to ${outputPath}`);

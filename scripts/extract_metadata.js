@@ -18,7 +18,7 @@ const metadataJsonDir = path.normalize(rootDir + '/source/metadata_json/');
 
 
 let getAllGalleries = async function getAllGalleries() {
-    let galleries = await fs.promises.readdir(metadataImagesDir);
+    let galleries = await util.promisify(fs.readdir)(metadataImagesDir);
     galleries = galleries.filter(function (gallery) {
         return gallery.charAt(0) !== "."; //Ignore e.g. .DS_Store
     });
@@ -108,7 +108,7 @@ let main = async function main() {
         } catch (err) {
             //No big deal
         }
-        await fs.promises.mkdir(metadataJsonDir + gallery); //Recreate empty directory
+        await util.promisify(fs.mkdir)(metadataJsonDir + gallery); //Recreate empty directory
 
         await getMetaDataForGallery(gallery)
             .then(function (imagesMetadata) {

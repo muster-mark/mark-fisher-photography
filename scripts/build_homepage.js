@@ -1,6 +1,7 @@
 const nunjucks = require('nunjucks');
 const path = require('path');
-const fs = require('fs').promises;
+const fs = require('fs');
+const util = require('util');
 const glob = require('glob-promise');
 const galleries = require('./../local_modules/galleries.js');
 const renderAndWriteTemplate = require('./../local_modules/render_and_write_template');
@@ -28,7 +29,7 @@ const getImageData = async slug => {
         throw new Error(`Unexpected number of JSON files for ${slug}`);
     }
 
-    return fs.readFile(jsonFiles[0], {encoding: 'utf-8'});
+    return util.promisify(fs.readFile)(jsonFiles[0], {encoding: 'utf-8'});
 };
 
 const getImagesData = async () => {

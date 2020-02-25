@@ -1,8 +1,8 @@
 const allImages = require( './../source/metadata_json/all');
 const groupBy = require('lodash/groupBy');
 const path = require('path');
-
-const fs = require('fs').promises;
+const util = require('util');
+const fs = require('fs');
 
 const images = allImages.images;
 
@@ -30,7 +30,7 @@ const data = {
     "seasonCounts": seasonCounts,
 };
 
-fs.writeFile(path.resolve(__dirname + '/../source/static/data/images.json'), JSON.stringify(data))
+util.promisify(fs.writeFile)(path.resolve(__dirname + '/../source/static/data/images.json'), JSON.stringify(data))
     .then(() => {
         console.log('Wrote /data/images.json');
     })
