@@ -11,11 +11,18 @@ const getImageAspectRatioIdentifier = require('./../local_modules/get_image_aspe
 const getColors = require('get-image-colors');
 const dateSeason = require('date-season');
 const md = new require('markdown-it')();
+const colors = require('colors');
+
+colors.setTheme({
+    info: 'cyan',
+    warn: 'yellow',
+    debug: 'blue',
+    error: 'red'
+});
 
 const rootDir = path.normalize(__dirname + '/..');
 const metadataImagesDir = path.normalize(rootDir + '/source/metadata_images/');
 const metadataJsonDir = path.normalize(rootDir + '/source/metadata_json/');
-
 
 let getAllGalleries = async function getAllGalleries() {
     let galleries = await util.promisify(fs.readdir)(metadataImagesDir);
@@ -31,7 +38,7 @@ async function getRelevantMetadata(image, gallery) {
     try {
         imageAspectRatioIdentifier = getImageAspectRatioIdentifier(image.ImageWidth, image.ImageHeight);
     } catch (err) {
-        console.warn(`${image.FileName} does not have a standard aspect ratio`);
+        console.warn(`${image.FileName} does not have a standard aspect ratio`.info);
         imageAspectRatioIdentifier = "invalid";
     }
 

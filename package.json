@@ -11,6 +11,7 @@
         "@symfony/webpack-encore": "^0.28.2",
         "advanced-sitemap-generator": "^1.6.9",
         "aws-sdk": "^2.615.0",
+        "colors": "^1.4.0",
         "compression": "^1.7.4",
         "core-js": "^3.6.4",
         "date-season": "0.0.2",
