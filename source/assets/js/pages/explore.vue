@@ -3,33 +3,33 @@
 
         <div class="multiselect__label">Countries:</div> <!-- TODO declare this describes the select -->
         <multi-select
-            v-model="selectedCountries"
-            :options="countries"
-            :multiple="true"
-            track-by="name"
-            :custom-label="countryLabel"
-            placeholder="Select one or more countries"
-            :allow-empty="false"
+                v-model="selectedCountries"
+                :options="countries"
+                :multiple="true"
+                track-by="name"
+                :custom-label="countryLabel"
+                placeholder="Select one or more countries"
+                :allow-empty="false"
         >
         </multi-select>
 
         <div class=".multiselect__label">Seasons</div>
         <multi-select
-            v-model="selectedSeasons"
-            :options="seasons"
-            :multiple="true"
-            :searchable="false"
-            :close-on-select="true"
-            track-by="name"
-            :custom-label="seasonLabel"
-            placeholder="Select one or more seasons"
-            :allow-empty="false"
+                v-model="selectedSeasons"
+                :options="seasons"
+                :multiple="true"
+                :searchable="false"
+                :close-on-select="true"
+                track-by="name"
+                :custom-label="seasonLabel"
+                placeholder="Select one or more seasons"
+                :allow-empty="false"
         ></multi-select>
 
         <div class="explore_result-summary js_scroll-target">
             <span v-if="!filteredImages.length">No images match your search criteria</span>
             <span class="smaller" v-else>Showing <span class="larger">{{firstShown}}-{{lastShown}}</span> of <span
-                class="larger">{{filteredImages.length}}</span> matching images</span>
+                    class="larger">{{filteredImages.length}}</span> matching images</span>
         </div>
 
 
@@ -61,60 +61,54 @@
 
 <script>
     import MultiSelect from 'vue-multiselect';
-    import ExploreResult from './../components/explore-result';
-    import PaginationLinks from "../components/pagination-links";
+    import ExploreResult from '../components/explore-result.vue';
+    import PaginationLinks from '../components/pagination-links.vue';
 
 
     export default {
-        data: function () {
-
+        data() {
             return {
                 seasons: [],
                 selectedSeasons: [],
                 countries: [],
                 selectedCountries: [],
                 allImages: [],
-                resultLimit: 15, //rename perPage
+                resultLimit: 15, // rename perPage
                 page: 1,
-                scrollTarget: null // Element to scroll to after changing page
-            }
+                scrollTarget: null, // Element to scroll to after changing page
+            };
         },
         computed: {
-            filteredImages: function () {
-                return this.allImages.filter(image => {
-
-                    return this.matchesCountry(image)
-                        && this.matchesSeason(image);
-
-                });
+            filteredImages() {
+                return this.allImages.filter((image) => this.matchesCountry(image) && this.matchesSeason(image));
             },
-            firstShown: function () {
+            firstShown() {
                 return this.resultLimit * (this.page - 1) + 1;
             },
-            lastShown: function () {
+            lastShown() {
                 return Math.min(this.filteredImages.length, this.resultLimit * (this.page) - 1);
             },
-            numPages: function () {
+            numPages() {
                 return Math.ceil(this.filteredImages.length / this.resultLimit);
-            }
+            },
         },
         methods: {
             matchesCountry(image) {
-                return this.selectedCountries.find(obj => obj.name === image.CountryPrimaryLocationName);
+                return this.selectedCountries.find((obj) => obj.name === image.CountryPrimaryLocationName);
             },
             matchesSeason(image) {
-                return this.selectedSeasons.find(obj => obj.name === image.Season);
+                return this.selectedSeasons.find((obj) => obj.name === image.Season);
             },
-            seasonLabel({name, count}) {
-                return `${name} (${count})`
+            seasonLabel({ name, count }) {
+                return `${name} (${count})`;
             },
-            countryLabel({name, count}) {
-                return `${name} (${count})`
+            countryLabel({ name, count }) {
+                return `${name} (${count})`;
             },
             goToPage(page) {
                 this.page = page;
                 window.scrollTo(0, this.scrollTarget.offsetTop);
-            }
+            },
         },
         watch: {
             selectedCountries() {
@@ -122,7 +116,7 @@
             },
             selectedSeasons() {
                 this.page = 1;
-            }
+            },
         },
         components: {
             PaginationLinks,
@@ -130,30 +124,25 @@
             ExploreResult,
         },
         created() {
-            let self = this;
+            const self = this;
             fetch('/data/images.json')
-                .then(data => {
-                    return data.json();
-                })
-                .then(json => {
+                .then((data) => data.json())
+                .then((json) => {
                     self.allImages = json.images;
                     self.countries = json.countryCounts;
                     self.selectedCountries = json.countryCounts;
                     self.seasons = json.seasonCounts;
                     self.selectedSeasons = json.seasonCounts;
                 })
-                .catch(err => {
+                .catch((err) => {
                     console.error('There was an error fetching data');
                     console.log(err);
                 });
-
-
-
         },
         mounted() {
             this.scrollTarget = document.querySelector('.js_scroll-target');
-        }
-    }
+        },
+    };
 </script>
 
 <style lang="scss" scoped>

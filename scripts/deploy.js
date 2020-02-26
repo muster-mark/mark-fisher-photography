@@ -1,16 +1,22 @@
+/**
+ * @file Deploys public directory to S3 bucket
+ * @type {module:path | path.PlatformPath | path}
+ */
+
 const path = require('path');
+const dotEnv = require('dotenv');
+
 const clearCloudFrontCache = require('./../local_modules/clear_cloudfront_cache');
 const syncS3Bucket = require('./../local_modules/sync_s3_bucket');
 
 const main = async function main() {
-
-    const printUsage = function (exitCode = 1, message = null) {
+    function printUsage(exitCode = 1, message = null) {
         if (message) {
             console.log(message);
         }
-        console.log("Usage: node " + path.basename(__filename) + ' [--dryrun] staging|production');
+        console.log(`Usage: node ${path.basename(__filename)} [--dryrun] staging|production`);
         process.exit(exitCode);
-    };
+    }
 
     const destination = process.argv.pop();
 
@@ -19,32 +25,40 @@ const main = async function main() {
         printUsage(2);
     }
 
-    require('dotenv').config({ path: __dirname + `/../.${destination}.env` });
+    dotEnv.config({ path: `${__dirname}/../.${destination}.env` });
 
     let isDryRun = false;
 
     if (process.argv.length > 2) {
-        if (process.argv.length > 3 || process.argv[2] !== "--dryrun") {
+        if (process.argv.length > 3 || process.argv[2] !== '--dryrun') {
             printUsage(3);
         }
 
         isDryRun = true;
     }
 
-    let syncResult = await syncS3Bucket(process.env.S3_BUCKET, '', process.env.S3_REGION, process.env.S3_DELETE, isDryRun);
+    const syncResult = await syncS3Bucket(
+        process.env.S3_BUCKET,
+        '',
+        process.env.S3_REGION,
+        process.env.S3_DELETE,
+        isDryRun,
+    );
 
     console.log(`${syncResult}`);
 
 
     if (isDryRun) {
         console.log('Not invalidating CDN for dry run');
-    } else  if (!syncResult) {
-        console.log("Not invalidating CDN as no changes to sync");
+    } else if (!syncResult) {
+        console.log('Not invalidating CDN as no changes to sync');
     } else {
-        clearCloudFrontCache(process.env.DISTRIBUTION_ID, process.env.CF_INVALIDATOR_KEY, process.env.CF_INVALIDATOR_SECRET);
+        clearCloudFrontCache(
+            process.env.DISTRIBUTION_ID,
+            process.env.CF_INVALIDATOR_KEY,
+            process.env.CF_INVALIDATOR_SECRET,
+        );
     }
-
-
 };
 
-return main();
+main();

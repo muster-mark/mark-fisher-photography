@@ -6,7 +6,8 @@
 
         <ol>
             <li v-for="index in numPages" :key="index">
-                <button @click="$emit('page-change', index)" :disabled="page === index" :class="{current: page === index}">
+                <button @click="$emit('page-change', index)" :disabled="page === index"
+                        :class="{current: page === index}">
                     {{ index }}
                 </button>
             </li>
@@ -22,17 +23,17 @@
 
 <script>
 
-    import SvgIcon from "../components/svg-icon";
+    import SvgIcon from './svg-icon.vue';
 
     export default {
         props: ['numPages', 'page'],
-        data: function () {
-            return {}
+        data() {
+            return {};
         },
         components: {
-            SvgIcon
-        }
-    }
+            SvgIcon,
+        },
+    };
 
 </script>
 
@@ -87,6 +88,7 @@
         position: relative;
         top: 0.16em;
     }
+
     .pagination_previous, .pagination_next {
         &:disabled {
             color: #666; //TODO WHAT GREY?

@@ -32,7 +32,7 @@
         'camera-retro': {
             width: 512,
         },
-        'envelope': {
+        envelope: {
             width: 512,
         },
         'exclamation-circle': {
@@ -41,7 +41,7 @@
         'film-canister': {
             width: 576,
         },
-        'telescope': {
+        telescope: {
             width: 640,
         },
     };
@@ -49,9 +49,9 @@
         props: ['name', 'title'],
         data() {
             return {
-                width: iconDimensions[this.name]?.width || defaultWidth,
-                height: iconDimensions[this.name]?.width || defaultHeight
-            }
-        }
-    }
+                width: iconDimensions[this.name] ? iconDimensions[this.name].width || defaultWidth : null,
+                height: iconDimensions[this.name] ? iconDimensions[this.name].height || defaultHeight : null,
+            };
+        },
+    };
 </script>

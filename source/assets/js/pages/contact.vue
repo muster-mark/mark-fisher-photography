@@ -30,32 +30,37 @@
 
         <label for="contact_msg">How can I help you?</label>
         <textarea
-            v-model="fields.message.value"
-            @blur="fields.message.touched = true"
-            required
-            id="contact_msg"
-            name="message"
-            :class="{'input_touched': fields.message.touched}"
+                v-model="fields.message.value"
+                @blur="fields.message.touched = true"
+                required
+                id="contact_msg"
+                name="message"
+                :class="{'input_touched': fields.message.touched}"
         ></textarea>
 
         <div class="contact-form_valid-message" v-if="allFieldsTouched">Please fill out all the fields correctly</div>
 
-        <button type="submit" :class="['btn btn_lg', {'btn_in-progress': isSubmitting}]">{{ isSubmitting ? 'Submitting' : 'Submit' }}</button>
+        <button type="submit" :class="['btn btn_lg', {'btn_in-progress': isSubmitting}]">{{ isSubmitting ? 'Submitting'
+            : 'Submit' }}
+        </button>
 
-        <div class="contact-form_result-message contact-form_success-message" v-if="submissionSucceeded === true" aria-live="assertive">
+        <div class="contact-form_result-message contact-form_success-message" v-if="submissionSucceeded === true"
+             aria-live="assertive">
             <div class="fadeInDown contact-form_result-message_icon">
                 <svg-icon name="envelope"></svg-icon>
             </div>
             <div class="fadeInUp contact-form_result-message_text"><span>Your message has been sent!</span></div>
         </div>
 
-        <div class="contact-form_result-message contact-form_fail-message" v-if="submissionSucceeded === false" aria-live="assertive">
+        <div class="contact-form_result-message contact-form_fail-message" v-if="submissionSucceeded === false"
+             aria-live="assertive">
             <div class="fadeInDown contact-form_result-message_icon">
                 <svg-icon name="exclamation-circle"></svg-icon>
             </div>
             <div class="fadeInUp contact-form_result-message_text">
                 <span>Sorry, something went wrong. Please try emailing me on <a
-                    :href="'mailto:mfishe@gmail.com?subject=Enquiry%20via%20markfisher.photo&body=' + encodeURIComponent(fields.message.value)" target="_blank">mfishe@gmail.com</a> instead.</span>
+                        :href="'mailto:mfishe@gmail.com?subject=Enquiry%20via%20markfisher.photo&body=' + encodeURIComponent(fields.message.value)"
+                        target="_blank">mfishe@gmail.com</a> instead.</span>
             </div>
         </div>
 
@@ -64,14 +69,12 @@
 </template>
 
 <script>
-
-    import SvgIcon from "./../components/svg-icon";
+    import SvgIcon from '../components/svg-icon.vue';
 
     export default {
-        data: function () {
-
+        data() {
             return {
-                action: window.location.origin.replace('www', 'api') + '/message',
+                action: `${window.location.origin.replace('www', 'api')}/message`,
                 fields: {
                     name: {
                         value: null,
@@ -84,20 +87,20 @@
                     message: {
                         value: null,
                         touched: false,
-                    }
+                    },
                 },
                 isSubmitting: false,
                 submissionSucceeded: null,
-            }
+            };
         },
         computed: {
             allFieldsTouched() {
-                return Object.keys(this.fields).every(key => this.fields[key].touched)
-            }
+                return Object.keys(this.fields).every((key) => this.fields[key].touched);
+            },
         },
         methods: {
             resetForm() {
-                Object.keys(this.fields).forEach(key => {
+                Object.keys(this.fields).forEach((key) => {
                     this.fields[key].value = '';
                     this.fields[key].touched = false;
                 });
@@ -108,7 +111,9 @@
 
                 // Create data for body
                 const data = {};
-                Object.keys(this.fields).forEach(key => data[key] = this.fields[key].value);
+                Object.keys(this.fields).forEach((key) => {
+                    data[key] = this.fields[key].value;
+                });
 
                 const self = this;
                 fetch(this.action, {
@@ -116,35 +121,35 @@
                     body: JSON.stringify(data),
                     mode: 'cors',
                     headers: {
-                        'Content-Type': 'application/json'
-                    }
+                        'Content-Type': 'application/json',
+                    },
                 })
-                    .then(function (response) {
-                            if (response.ok) {
-                                self.submissionSucceeded = true;
-                                self.resetForm();
-                            } else {
-                                console.log(response);
-                                return Promise.reject(response);
-                            }
-                        }
-                    )
-                    .catch(function (err) {
-                            self.submissionSucceeded = false;
-                            console.log('Form submission failed');
-                            console.log(err);
-                        }
-                    )
-                .finally(() => {
-                    self.isSubmitting = false;
-                    document.querySelector('.contact-form_result-message').scrollIntoView(false);
-                });
-            }
+                        .then((response) => {
+                                    if (response.ok) {
+                                        self.submissionSucceeded = true;
+                                        self.resetForm();
+                                    } else {
+                                        console.log(response);
+                                        return Promise.reject(response);
+                                    }
+                                },
+                        )
+                        .catch((err) => {
+                                    self.submissionSucceeded = false;
+                                    console.log('Form submission failed');
+                                    console.log(err);
+                                },
+                        )
+                        .finally(() => {
+                            self.isSubmitting = false;
+                            document.querySelector('.contact-form_result-message').scrollIntoView(false);
+                        });
+            },
         },
         components: {
-            SvgIcon
-        }
-    }
+            SvgIcon,
+        },
+    };
 </script>
 
 <style lang="scss" scoped>

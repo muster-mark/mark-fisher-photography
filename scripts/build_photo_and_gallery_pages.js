@@ -1,14 +1,15 @@
+const fs = require('fs');
 const path = require('path');
 const util = require('util');
 const glob = require('glob-promise');
-const galleries = require('./../local_modules/galleries.js');
 const nunjucks = require('nunjucks');
-const fs = require('fs');
+
+const galleries = require('./../local_modules/galleries.js');
 const renderAndWriteTemplate = require('./../local_modules/render_and_write_template');
 
-const templatesPath = path.resolve(__dirname + '/../templates');
-const metadataDir = path.resolve(__dirname + '/../source/metadata_json/');
-const publicDir = path.resolve(__dirname + '/../public/');
+const templatesPath = path.resolve(`${__dirname}/../templates`);
+const metadataDir = path.resolve(`${__dirname}/../source/metadata_json/`);
+const publicDir = path.resolve(`${__dirname}/../public/`);
 
 const environment = nunjucks.configure(templatesPath, {
     throwOnUndefined: false,
@@ -16,44 +17,7 @@ const environment = nunjucks.configure(templatesPath, {
 });
 
 environment.addGlobal('header_nav_links', galleries.getUrlToNameMapping());
-environment.addFilter("date", require("nunjucks-date"));
-
-async function createGalleryPage(gallery) {
-
-    const jsonFiles = await glob(metadataDir + '/' + gallery + '/*.json');
-    const jsonStrings = await Promise.all(jsonFiles.map(file => util.promisify(fs.readFile)(file, {encoding: 'utf-8'})));
-    const imageMetadata = jsonStrings.map(string => {
-        const json = JSON.parse(string);
-        json.brickHeight = Math.round((200 * (json.ImageHeight / json.ImageWidth) + 15));
-        json.cssGridRowSpan = Math.round(json.brickHeight / 3);
-        return json;
-    });
-    imageMetadata.sort((a, b) => {
-       return new Date(b.DatePublished) - new Date(a.DatePublished);
-    });
-
-    await util.promisify(fs.mkdir)(`${publicDir}/${gallery}`, {recursive: true});
-
-    renderAndWriteTemplate(
-        '_pages/gallery.html.nunj',
-        `${publicDir}/${gallery}/index`,
-        {
-            page: {
-                meta_title: galleries.names[gallery],
-                url: `/${gallery}/`
-            },
-            gallery: gallery,
-            gallery_meta_description: galleries.metaDescriptions[gallery],
-            photos: imageMetadata
-        },
-        nunjucks
-    ).catch(error => {
-        console.log(error);
-    });
-
-    await createImagePages(gallery, imageMetadata)
-
-}
+environment.addFilter('date', require('nunjucks-date'));
 
 async function createImagePages(gallery, galleryMetadata) {
     for (let i = 0; i < galleryMetadata.length; i++) {
@@ -67,34 +31,66 @@ async function createImagePages(gallery, galleryMetadata) {
         }
 
         renderAndWriteTemplate(
-            templatesPath + '/_pages/photo.html.nunj',
+            `${templatesPath}/_pages/photo.html.nunj`,
             `${publicDir}/${gallery}/${galleryMetadata[i].Slug}`,
             {
                 page: {
                     meta_title: galleryMetadata[i].Title,
-                    url: '/' + gallery + '/' + galleryMetadata[i].Slug
+                    url: `/${gallery}/${galleryMetadata[i].Slug}`,
                 },
-                gallery: gallery,
+                gallery,
                 gallery_name: galleries.names[gallery],
                 photo: galleryMetadata[i],
                 previous_photo: galleryMetadata[previousIndex],
                 next_photo: galleryMetadata[nextIndex],
             },
-            nunjucks
-        ).catch(error => {
+            nunjucks,
+        ).catch((error) => {
             console.log(error);
         });
-
     }
 }
 
+async function createGalleryPage(gallery) {
+    const jsonFiles = await glob(`${metadataDir}/${gallery}/*.json`);
+    const jsonStrings = await Promise.all(
+        jsonFiles.map((file) => util.promisify(fs.readFile)(file, { encoding: 'utf-8' })),
+    );
+    const imageMetadata = jsonStrings.map((string) => {
+        const json = JSON.parse(string.toString());
+        json.brickHeight = Math.round((200 * (json.ImageHeight / json.ImageWidth) + 15));
+        json.cssGridRowSpan = Math.round(json.brickHeight / 3);
+        return json;
+    });
+    imageMetadata.sort((a, b) => new Date(b.DatePublished) - new Date(a.DatePublished));
+
+    await util.promisify(fs.mkdir)(`${publicDir}/${gallery}`, { recursive: true });
+
+    renderAndWriteTemplate(
+        '_pages/gallery.html.nunj',
+        `${publicDir}/${gallery}/index`,
+        {
+            page: {
+                meta_title: galleries.names[gallery],
+                url: `/${gallery}/`,
+            },
+            gallery,
+            gallery_meta_description: galleries.metaDescriptions[gallery],
+            photos: imageMetadata,
+        },
+        nunjucks,
+    ).catch((error) => {
+        console.log(error);
+    });
+
+    await createImagePages(gallery, imageMetadata);
+}
+
 async function main() {
+    let allGalleries = await glob(`${metadataDir}/*`);
+    allGalleries = allGalleries.map((dir) => path.basename(dir));
 
-    let galleries = await glob(metadataDir + '/*');
-    galleries = galleries.map(dir => path.basename(dir));
-
-
-    galleries.forEach(gallery => {
+    allGalleries.forEach((gallery) => {
         createGalleryPage(gallery);
     });
 }

@@ -1,4 +1,4 @@
-const galleries =  {
+const galleries = {
     names: {
         highlands: 'Highlands',
         landscapes: 'Landscapes',
@@ -21,11 +21,11 @@ const galleries =  {
     },
     getUrlToNameMapping() {
         const urlsToNames = {};
-        Object.keys(this.names).forEach(slug => {
+        Object.keys(this.names).forEach((slug) => {
             urlsToNames[`/${slug}/`] = this.names[slug];
         });
         return urlsToNames;
-    }
+    },
 };
 
 module.exports = galleries;

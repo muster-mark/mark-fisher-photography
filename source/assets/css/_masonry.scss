@@ -45,18 +45,7 @@ $masonry-gap: 15px;
     max-width: 100%;
 }
 
-$aspect-ratios:
-    ("name": "3to1", "width": 3, "height": 1)
-    ("name": "2to1", "width": 2, "height": 1)
-    ("name": "3to2", "width": 3, "height": 2)
-    ("name": "4to3", "width": 4, "height": 3)
-    ("name": "1to1", "width": 1, "height": 1)
-    ("name": "3to4", "width": 3, "height": 4)
-    ("name": "2to3", "width": 2, "height": 3)
-    ("name": "1to2", "width": 1, "height": 2)
-    ("name": "a4landscape", "width": 297, "height": 210)
-    ("name": "a4portrait", "width": 210, "height": 297)
-;
+$aspect-ratios: ("name": "3to1", "width": 3, "height": 1) ("name": "2to1", "width": 2, "height": 1) ("name": "3to2", "width": 3, "height": 2) ("name": "4to3", "width": 4, "height": 3) ("name": "1to1", "width": 1, "height": 1) ("name": "3to4", "width": 3, "height": 4) ("name": "2to3", "width": 2, "height": 3) ("name": "1to2", "width": 1, "height": 2) ("name": "a4landscape", "width": 297, "height": 210) ("name": "a4portrait", "width": 210, "height": 297);
 
 @each $aspect-ratio in $aspect-ratios {
     .masonry_brick_#{map-get($aspect-ratio, "name")} {

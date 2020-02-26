@@ -1,5 +1,5 @@
 <template>
-    <a :href="imageUrl" >
+    <a :href="imageUrl">
         <img width="200" :height="Math.round(200 / image.ImageAspectRatio)" :alt="image.Headline"
              :srcset="'/photos/w200/' + image.Slug + '@2x.jpg 2x, /photos/w200/' + image.Slug + '.jpg 1x'"
              :src="'/photos/w200/' + image.Slug + '.jpg'"
@@ -11,16 +11,15 @@
 <script>
     export default {
         props: ['image'],
-        data: function () {
-            return {}
+        data() {
+            return {};
         },
         computed: {
             imageUrl() {
-                return this.image.Gallery + "/" + this.image.Slug;
-            }
-        }
-
-    }
+                return `${this.image.Gallery}/${this.image.Slug}`;
+            },
+        },
+    };
 </script>
 
 <style scoped>
