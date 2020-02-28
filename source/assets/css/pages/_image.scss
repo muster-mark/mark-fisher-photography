@@ -47,7 +47,7 @@
     }
 
     &:hover:after {
-        background-image: linear-gradient(to right, transparentize($color-primary, 0.5), transparent );
+        background-image: linear-gradient(to right, transparentize($color-primary, 0.5), transparent);
     }
 }
 
@@ -56,12 +56,12 @@
     direction: rtl;
 
     &:after {
-        left:0;
+        left: 0;
         right: 1em;
     }
 
     &:hover:after {
-        background-image: linear-gradient(to left, transparentize($color-primary, 0.5), transparent );
+        background-image: linear-gradient(to left, transparentize($color-primary, 0.5), transparent);
     }
 }
 
@@ -118,7 +118,7 @@
     }
 
     .the-image_prev:after {
-            left: 0;
+        left: 0;
     }
 
     .the-image_next:after {

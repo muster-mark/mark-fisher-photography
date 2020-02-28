@@ -13,7 +13,7 @@ $btn-color-2: $color-primary;
     border-radius: 10px;
     color: black;
     background-color: $color-primary;
-    background-image: linear-gradient(#eeb374, $color-primary);
+    background-image: linear-gradient($btn-color-1, $color-primary);
     text-decoration: none;
 
     &_lg {
@@ -25,12 +25,8 @@ $btn-color-2: $color-primary;
     }
 
     &:hover, &:focus {
-        background-image: linear-gradient(darken(#eeb374, 22%), darken($color-primary, 22%));
+        background-image: linear-gradient(darken($btn-color-1, 22%), darken($color-primary, 22%));
         color: white;
-
-        .ico {
-            //fill: white;
-        }
     }
 
 
@@ -55,19 +51,24 @@ $btn-color-2: $color-primary;
     background-repeat: repeat-x;
     background-position: 0 0;
     background-image: repeating-linear-gradient(-45deg, $btn-color-1 0%, $btn-color-2 10%, $btn-color-1 20%);
+
+    &:focus {
+        background-image: repeating-linear-gradient(-45deg, darken($btn-color-1, 22%) 0%, darken($btn-color-2, 22%) 10%, darken($btn-color-1, 22%) 20%);
+        color: white;
+    }
 }
 
 @keyframes pulse {
     0% {
-        transform: scale(1);
+        transform: scale(0.9);
     }
 
     50% {
-        transform: scale(1.2);
+        transform: scale(1.1);
     }
 
     100% {
-        transform: scale(1);
+        transform: scale(0.9);
     }
 }
 
