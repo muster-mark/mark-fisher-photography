@@ -1,6 +1,7 @@
 const fs = require('fs');
 const express = require('express');
 const morgan = require('morgan');
+const open = require('open');
 const compression = require('compression');
 const defaultHeaders = require('./server/default_headers');
 
@@ -54,4 +55,4 @@ app.listen(PORT, () => {
 });
 
 // Open in default browser
-require('opn')(`http://localhost:${PORT}`);
+open(`http://localhost:${PORT}`);

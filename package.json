@@ -8,6 +8,8 @@
     },
     "homepage": "https://github.com/muster-mark/markfisher.local#readme",
     "dependencies": {
+        "@bugsnag/js": "^6.5.2",
+        "@bugsnag/plugin-vue": "^6.5.0",
         "@symfony/webpack-encore": "^0.28.2",
         "advanced-sitemap-generator": "^1.6.9",
         "aws-sdk": "^2.615.0",
@@ -27,6 +29,7 @@
         "node-sass": "^4.13.0",
         "nunjucks": "^3.2.0",
         "nunjucks-date": "^1.5.0",
+        "open": "^7.0.2",
         "opn": "^6.0.0",
         "request": "^2.88.0",
         "request-promise": "^4.2.5",

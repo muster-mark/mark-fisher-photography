@@ -10,7 +10,7 @@ Encore
     .addEntry('main', './source/assets/js/main.js')
     .disableSingleRuntimeChunk()
     .cleanupOutputBeforeBuild()
-    .enableSourceMaps(!Encore.isProduction())
+    .enableSourceMaps(true)
     // enables hashed filenames (e.g. app.abc123.css)
     .enableVersioning(false)
     .enableSassLoader()
