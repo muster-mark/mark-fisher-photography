@@ -1,17 +1,12 @@
 {
-  "FileName": "world-in-a-hurry.jpg",
   "Gallery": "people",
-  "Slug": "world-in-a-hurry",
-  "CaptionAbstract": "<p>A London city worker on his commute along the Strand, with the festively decorated  entrance to the Savoy Theatre in the background.</p>\n",
+  "FileName": "world-in-a-hurry.jpg",
   "Make": "Canon",
   "Model": "Canon EOS 5D Mark III",
   "Lens": "35mm",
   "ExposureTime": "1/160",
   "FNumber": 1.6,
   "ISO": 400,
-  "DateTimeOriginal": "2014-12-18 18:21:52",
-  "DatePublished": "2016-02-08 00:00:00",
-  "ApertureValue": 1.6,
   "ExposureCompensation": 0,
   "Flash": "Off, Did not fire",
   "FocalLength": "35.0 mm",
@@ -53,7 +48,6 @@
   ],
   "Headline": "A hunched elderly man with walking stick walking across the Savoy Hotel entrance.",
   "Title": "World in a Hurry",
-  "ShutterSpeedValue": "1/160",
   "Sublocation": "Savoy Hotel",
   "CountryPrimaryLocationName": "England",
   "CountryPrimaryLocationCode": "GB",
@@ -64,6 +58,10 @@
   "ImageHeight": 560,
   "ImageAspectRatio": 1.5,
   "ImageAspectRatioIdentifier": "3to2",
+  "Slug": "world-in-a-hurry",
+  "DateTimeOriginal": "2014-12-18 18:21:52",
+  "DatePublished": "2016-02-08 00:00:00",
+  "Season": "autumn",
   "Colors": [
     "#2e231d",
     "#d0b8a8",
@@ -71,5 +69,5 @@
     "#7e9978",
     "#718595"
   ],
-  "Season": "autumn"
+  "CaptionAbstract": "<p>A London city worker on his commute along the Strand, with the festively decorated  entrance to the Savoy Theatre in the background.</p>\n"
 }

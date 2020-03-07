@@ -1,17 +1,12 @@
 {
-  "FileName": "disused-mine-shaft-and-star-trails.jpg",
   "Gallery": "dusk-to-dawn",
-  "Slug": "disused-mine-shaft-and-star-trails",
-  "CaptionAbstract": "<p>After a day of extremely heavy rain while I was staying in the Coppermines Valley near Coniston, the sky cleared for the first and pretty much only time during my visit to the Lake District. I decided to head back to this disused mine shaft, The Old Engine Shaft, to try and capture some star trails.\nI was curious what exactly the tower was used for. Apparently it held a trough feeding a huge water wheel which powered the pump and winding gear used in the shaft.\nWell done if you spotted the shooting star.  This occurred within the first few frames so I was lucky enough to see it with my own eyes. Later I would have been too busy alternating between trying to sleep and trying to keep warm to notice it. Neither with much luck.</p>\n",
+  "FileName": "disused-mine-shaft-and-star-trails.jpg",
   "Make": "Canon",
   "Model": "Canon EOS 5D Mark III",
   "Lens": "EF16-35mm f/4L IS USM",
   "ExposureTime": 20,
   "FNumber": 4,
   "ISO": 1600,
-  "DateTimeOriginal": "2014-10-29 01:08:53",
-  "DatePublished": "2015-10-28 00:00:00",
-  "ApertureValue": 4,
   "ExposureCompensation": 0,
   "Flash": "Off, Did not fire",
   "FocalLength": "16.0 mm",
@@ -47,7 +42,6 @@
   ],
   "Headline": "Startrails and shooting star in the Lake District, with a disused mine shaft tower in silhouette.",
   "Title": "Disused Mine Shaft and Star Trails",
-  "ShutterSpeedValue": 20,
   "Sublocation": "Lake District",
   "CountryPrimaryLocationName": "England",
   "CountryPrimaryLocationCode": "GB",
@@ -58,6 +52,10 @@
   "ImageHeight": 420,
   "ImageAspectRatio": 2,
   "ImageAspectRatioIdentifier": "2to1",
+  "Slug": "disused-mine-shaft-and-star-trails",
+  "DateTimeOriginal": "2014-10-29 01:08:53",
+  "DatePublished": "2015-10-28 00:00:00",
+  "Season": "autumn",
   "Colors": [
     "#1a1a18",
     "#615c55",
@@ -65,5 +63,5 @@
     "#717b89",
     "#8e8073"
   ],
-  "Season": "autumn"
+  "CaptionAbstract": "<p>After a day of extremely heavy rain while I was staying in the Coppermines Valley near Coniston, the sky cleared for the first and pretty much only time during my visit to the Lake District. I decided to head back to this disused mine shaft, The Old Engine Shaft, to try and capture some star trails.\nI was curious what exactly the tower was used for. Apparently it held a trough feeding a huge water wheel which powered the pump and winding gear used in the shaft.\nWell done if you spotted the shooting star.  This occurred within the first few frames so I was lucky enough to see it with my own eyes. Later I would have been too busy alternating between trying to sleep and trying to keep warm to notice it. Neither with much luck.</p>\n"
 }

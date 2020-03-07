@@ -1,17 +1,12 @@
 {
-  "FileName": "mammoth-hot-springs.jpg",
   "Gallery": "landscapes",
-  "Slug": "mammoth-hot-springs",
-  "CaptionAbstract": "<p>Mammoth Hot Springs is a complex of hot springs in Yellowstone National Park. Travertine, a form of limestone deposited by the hot springs, is abundant here, and in places is tinted red, brown, orange or green by algae.\nBehind and on the right is Mount Everts.</p>\n",
+  "FileName": "mammoth-hot-springs.jpg",
   "Make": "Canon",
   "Model": "Canon EOS 5D Mark III",
   "Lens": "EF24-105mm f/4L IS USM",
   "ExposureTime": "1/30",
   "FNumber": 11,
   "ISO": 100,
-  "DateTimeOriginal": "2015-05-28 14:18:29",
-  "DatePublished": "2016-03-07 00:00:00",
-  "ApertureValue": 11,
   "ExposureCompensation": "+8/3",
   "Flash": "Off, Did not fire",
   "FocalLength": "24.0 mm",
@@ -45,7 +40,6 @@
   ],
   "Headline": "Dead trees at Main Terrace in Mammoth Hot Springs.",
   "Title": "Mammoth Hot Springs",
-  "ShutterSpeedValue": "1/30",
   "Sublocation": "Mammoth Hot Springs",
   "CountryPrimaryLocationName": "United States",
   "CountryPrimaryLocationCode": "US",
@@ -56,6 +50,10 @@
   "ImageHeight": 560,
   "ImageAspectRatio": 1.5,
   "ImageAspectRatioIdentifier": "3to2",
+  "Slug": "mammoth-hot-springs",
+  "DateTimeOriginal": "2015-05-28 14:18:29",
+  "DatePublished": "2016-03-07 00:00:00",
+  "Season": "spring",
   "Colors": [
     "#666a70",
     "#c9bebb",
@@ -63,5 +61,5 @@
     "#a7b5c0",
     "#9aa9bd"
   ],
-  "Season": "spring"
+  "CaptionAbstract": "<p>Mammoth Hot Springs is a complex of hot springs in Yellowstone National Park. Travertine, a form of limestone deposited by the hot springs, is abundant here, and in places is tinted red, brown, orange or green by algae.\nBehind and on the right is Mount Everts.</p>\n"
 }

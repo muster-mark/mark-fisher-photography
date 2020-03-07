@@ -1,16 +1,11 @@
 {
-  "FileName": "the-last-of-autumns-bounty.jpg",
   "Gallery": "plants",
-  "Slug": "the-last-of-autumns-bounty",
-  "CaptionAbstract": "<p>When I stopped for lunch under this small-leaved lime tree during a walk along part of Offa's Dyke Path, I didn't realise that it would also give me the strongest image of the day.</p>\n<p>Small-leaved limes are indicators of ancient woodland in the UK, and this lime tree is not lying - the misty backdrop you see here is Cadora woods, one of the many areas of ancient woodland in the Wye Valley.</p>\n",
+  "FileName": "the-last-of-autumns-bounty.jpg",
   "Make": "FUJIFILM",
   "Model": "X10",
   "ExposureTime": "1/80",
   "FNumber": 7.1,
   "ISO": 800,
-  "DateTimeOriginal": "2019-12-27 12:47:47",
-  "DatePublished": "2019-12-30 00:00:00",
-  "ApertureValue": 7.1,
   "ExposureCompensation": "+0.67",
   "Flash": "Off, Did not fire",
   "FocalLength": "19.5 mm",
@@ -46,7 +41,6 @@
   ],
   "Headline": "A small-leaved lime tree with the last of its fruits in winter, with a misty woodland background.",
   "Title": "The Last of Autumn's Bounty",
-  "ShutterSpeedValue": "1/80",
   "Sublocation": "Cadora Woods",
   "CountryPrimaryLocationName": "England",
   "CountryPrimaryLocationCode": "GB",
@@ -57,6 +51,10 @@
   "ImageHeight": 630,
   "ImageAspectRatio": 1.3333333333333333,
   "ImageAspectRatioIdentifier": "4to3",
+  "Slug": "the-last-of-autumns-bounty",
+  "DateTimeOriginal": "2019-12-27 12:47:47",
+  "DatePublished": "2019-12-30 00:00:00",
+  "Season": "winter",
   "Colors": [
     "#d7d8e6",
     "#665f6e",
@@ -64,5 +62,5 @@
     "#797e8f",
     "#b2847a"
   ],
-  "Season": "winter"
+  "CaptionAbstract": "<p>When I stopped for lunch under this small-leaved lime tree during a walk along part of Offa's Dyke Path, I didn't realise that it would also give me the strongest image of the day.</p>\n<p>Small-leaved limes are indicators of ancient woodland in the UK, and this lime tree is not lying - the misty backdrop you see here is Cadora woods, one of the many areas of ancient woodland in the Wye Valley.</p>\n"
 }

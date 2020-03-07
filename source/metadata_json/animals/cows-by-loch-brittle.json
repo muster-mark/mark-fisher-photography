@@ -1,17 +1,12 @@
 {
-  "FileName": "cows-by-loch-brittle.jpg",
   "Gallery": "animals",
-  "Slug": "cows-by-loch-brittle",
-  "CaptionAbstract": "<p>Cows by Loch Brittle on Rubha an Dùnain, the Isle of Skye.</p>\n",
+  "FileName": "cows-by-loch-brittle.jpg",
   "Make": "Canon",
   "Model": "Canon EOS 5D Mark III",
   "Lens": "EF24-105mm f/4L IS USM",
   "ExposureTime": "1/60",
   "FNumber": 5.6,
   "ISO": 500,
-  "DateTimeOriginal": "2017-09-09 18:24:05",
-  "DatePublished": "2019-03-10 00:00:00",
-  "ApertureValue": 5.6,
   "ExposureCompensation": "+2/3",
   "Flash": "Off, Did not fire",
   "FocalLength": "67.0 mm",
@@ -29,7 +24,6 @@
   ],
   "Headline": "Cows by Loch Brittle on Rubha an Dùnain, the Isle of Skye.",
   "Title": "Cows by Loch Brittle",
-  "ShutterSpeedValue": "1/60",
   "Sublocation": "Rhuba an Dùnain",
   "CountryPrimaryLocationName": "Scotland",
   "CountryPrimaryLocationCode": "GB",
@@ -40,6 +34,10 @@
   "ImageHeight": 630,
   "ImageAspectRatio": 1.3333333333333333,
   "ImageAspectRatioIdentifier": "4to3",
+  "Slug": "cows-by-loch-brittle",
+  "DateTimeOriginal": "2017-09-09 18:24:05",
+  "DatePublished": "2019-03-10 00:00:00",
+  "Season": "summer",
   "Colors": [
     "#716e7c",
     "#cdcad5",
@@ -47,5 +45,5 @@
     "#3b3026",
     "#b0bfd8"
   ],
-  "Season": "summer"
+  "CaptionAbstract": "<p>Cows by Loch Brittle on Rubha an Dùnain, the Isle of Skye.</p>\n"
 }

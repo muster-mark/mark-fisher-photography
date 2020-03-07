@@ -1,17 +1,12 @@
 {
-  "FileName": "x.jpg",
   "Gallery": "landscapes",
-  "Slug": "x",
-  "CaptionAbstract": null,
+  "FileName": "x.jpg",
   "Make": "Canon",
   "Model": "Canon EOS 5D Mark III",
   "Lens": "EF16-35mm f/4L IS USM",
   "ExposureTime": "1/500",
   "FNumber": 8,
   "ISO": 200,
-  "DateTimeOriginal": "2015-08-20 15:15:24",
-  "DatePublished": "2015-11-12 00:00:00",
-  "ApertureValue": 8,
   "ExposureCompensation": "-4/3",
   "Flash": "Off, Did not fire",
   "FocalLength": "35.0 mm",
@@ -70,7 +65,6 @@
   ],
   "Headline": "A long and straight tree-lined footpath ending at the horizon in the Bathurst Estate, Cirencester.",
   "Title": "X",
-  "ShutterSpeedValue": "1/500",
   "Sublocation": "Bathurst Estate",
   "CountryPrimaryLocationName": "England",
   "CountryPrimaryLocationCode": "GB",
@@ -81,6 +75,10 @@
   "ImageHeight": 840,
   "ImageAspectRatio": 0.6666666666666666,
   "ImageAspectRatioIdentifier": "2to3",
+  "Slug": "x",
+  "DateTimeOriginal": "2015-08-20 15:15:24",
+  "DatePublished": "2015-11-12 00:00:00",
+  "Season": "summer",
   "Colors": [
     "#2d2f26",
     "#c6c3c9",
@@ -88,5 +86,5 @@
     "#8f8d96",
     "#9b9c98"
   ],
-  "Season": "summer"
+  "CaptionAbstract": null
 }

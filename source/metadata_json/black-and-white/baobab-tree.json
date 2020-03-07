@@ -1,17 +1,12 @@
 {
-  "FileName": "baobab-tree.jpg",
   "Gallery": "black-and-white",
-  "Slug": "baobab-tree",
-  "CaptionAbstract": null,
+  "FileName": "baobab-tree.jpg",
   "Make": "Canon",
   "Model": "Canon EOS 50D",
   "Lens": "EF-S10-22mm f/3.5-4.5 USM",
   "ExposureTime": "1/250",
   "FNumber": 5.6,
   "ISO": 100,
-  "DateTimeOriginal": "2013-07-20 09:26:27",
-  "DatePublished": "2015-01-13 00:00:00",
-  "ApertureValue": 5.6,
   "ExposureCompensation": "+2/3",
   "Flash": "Off, Did not fire",
   "FocalLength": "10.0 mm",
@@ -22,7 +17,6 @@
   ],
   "Headline": "A leafless baobab tree (Adansonia digitata) in Tarangire National Park, Tanzania.",
   "Title": "Baobab Tree",
-  "ShutterSpeedValue": "1/250",
   "Sublocation": "Tarangire National Park",
   "CountryPrimaryLocationName": "Tanzania",
   "CountryPrimaryLocationCode": "TZA",
@@ -33,6 +27,10 @@
   "ImageHeight": 560,
   "ImageAspectRatio": 1.5,
   "ImageAspectRatioIdentifier": "3to2",
+  "Slug": "baobab-tree",
+  "DateTimeOriginal": "2013-07-20 09:26:27",
+  "DatePublished": "2015-01-13 00:00:00",
+  "Season": "winter",
   "Colors": [
     "#706664",
     "#d4c2b3",
@@ -40,5 +38,5 @@
     "#afa8ad",
     "#b4b4a7"
   ],
-  "Season": "winter"
+  "CaptionAbstract": null
 }

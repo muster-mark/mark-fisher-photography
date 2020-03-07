@@ -1,17 +1,12 @@
 {
-  "FileName": "weir-walking.jpg",
   "Gallery": "people",
-  "Slug": "weir-walking",
-  "CaptionAbstract": "<p>Braving the elements, a group of walkers wait for an ebb in the flow of water over Levers Water weir to make a crossing.</p>\n",
+  "FileName": "weir-walking.jpg",
   "Make": "Canon",
   "Model": "Canon EOS 5D Mark III",
   "Lens": "EF16-35mm f/4L IS USM",
   "ExposureTime": "1/13",
   "FNumber": 5.6,
   "ISO": 125,
-  "DateTimeOriginal": "2014-10-28 12:41:28",
-  "DatePublished": "2016-02-11 00:00:00",
-  "ApertureValue": 5.6,
   "ExposureCompensation": "+4/3",
   "Flash": "Off, Did not fire",
   "FocalLength": "16.0 mm",
@@ -50,7 +45,6 @@
   ],
   "Headline": "A man walking his dog over a weir at Levers Water reservoir in the Lake District.",
   "Title": "Weir Walking",
-  "ShutterSpeedValue": "1/13",
   "Sublocation": "Levers Water",
   "CountryPrimaryLocationName": "England",
   "CountryPrimaryLocationCode": "GB",
@@ -61,6 +55,10 @@
   "ImageHeight": 525,
   "ImageAspectRatio": 1.6,
   "ImageAspectRatioIdentifier": "invalid",
+  "Slug": "weir-walking",
+  "DateTimeOriginal": "2014-10-28 12:41:28",
+  "DatePublished": "2016-02-11 00:00:00",
+  "Season": "autumn",
   "Colors": [
     "#50483f",
     "#e7e6e4",
@@ -68,5 +66,5 @@
     "#938c84",
     "#696f79"
   ],
-  "Season": "autumn"
+  "CaptionAbstract": "<p>Braving the elements, a group of walkers wait for an ebb in the flow of water over Levers Water weir to make a crossing.</p>\n"
 }

@@ -1,17 +1,12 @@
 {
-  "FileName": "barnacle-unconformity.jpg",
   "Gallery": "highlands",
-  "Slug": "barnacle-unconformity",
-  "CaptionAbstract": "<p>These barnacles are jostling for space so much here that at first glance it looks like there is a junction between two types of rock, which is actually what I thought was the case at first.\nIf you do want to find 2 different types of rocks adjoining each other, then not far from here you will find Hutton's Unconformity, one of several places noted by geologist James Hutton where different types of rocks of different ages are found adjoining each other, with the younger rock on top. Hutton used such locations as evidence for his theory of how the Earth's crust is continually undergoing the same natural processes today which formed it as it is in the present day. This theory of Uniformitarianism, as it was called, challenged the then accepted idea that the Earth was only a few thousand years old.\nThat was in the late 18th century, but it was only in the early 20th century that estimates of the age of the Earth reached the billions rather than millions of years, at least without being largely ignored.</p>\n",
+  "FileName": "barnacle-unconformity.jpg",
   "Make": "Canon",
   "Model": "Canon EOS 5D Mark III",
   "Lens": "EF16-35mm f/4L IS USM",
   "ExposureTime": 20,
   "FNumber": 10,
   "ISO": 100,
-  "DateTimeOriginal": "2019-06-01 20:22:45",
-  "DatePublished": "2019-06-24 00:00:00",
-  "ApertureValue": 10,
   "ExposureCompensation": 0,
   "Flash": "Off, Did not fire",
   "FocalLength": "27.0 mm",
@@ -50,7 +45,6 @@
   ],
   "Headline": "Barnacles create a streak of white on black schist on the North coast of Arran.",
   "Title": "Barnacle Unconformity",
-  "ShutterSpeedValue": 20,
   "Sublocation": "Cock of Arran",
   "CountryPrimaryLocationName": "Scotland",
   "CountryPrimaryLocationCode": "GB",
@@ -61,6 +55,10 @@
   "ImageHeight": 840,
   "ImageAspectRatio": 0.6666666666666666,
   "ImageAspectRatioIdentifier": "2to3",
+  "Slug": "barnacle-unconformity",
+  "DateTimeOriginal": "2019-06-01 20:22:45",
+  "DatePublished": "2019-06-24 00:00:00",
+  "Season": "spring",
   "Colors": [
     "#363d4e",
     "#7298d9",
@@ -68,5 +66,5 @@
     "#cdc3c6",
     "#908990"
   ],
-  "Season": "spring"
+  "CaptionAbstract": "<p>These barnacles are jostling for space so much here that at first glance it looks like there is a junction between two types of rock, which is actually what I thought was the case at first.\nIf you do want to find 2 different types of rocks adjoining each other, then not far from here you will find Hutton's Unconformity, one of several places noted by geologist James Hutton where different types of rocks of different ages are found adjoining each other, with the younger rock on top. Hutton used such locations as evidence for his theory of how the Earth's crust is continually undergoing the same natural processes today which formed it as it is in the present day. This theory of Uniformitarianism, as it was called, challenged the then accepted idea that the Earth was only a few thousand years old.\nThat was in the late 18th century, but it was only in the early 20th century that estimates of the age of the Earth reached the billions rather than millions of years, at least without being largely ignored.</p>\n"
 }

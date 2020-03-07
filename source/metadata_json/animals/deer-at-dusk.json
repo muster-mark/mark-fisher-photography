@@ -1,17 +1,12 @@
 {
-  "FileName": "deer-at-dusk.jpg",
   "Gallery": "animals",
-  "Slug": "deer-at-dusk",
-  "CaptionAbstract": "<p>A herd of fallow deer stretch out along a hill top after sunset in Knole Park, with two Scots Pine trees illuminated from the side by the orange glow lingering in the sky.</p>\n",
+  "FileName": "deer-at-dusk.jpg",
   "Make": "Canon",
   "Model": "Canon EOS 5D Mark III",
   "Lens": "EF24-105mm f/4L IS USM",
   "ExposureTime": "1/125",
   "FNumber": 5.6,
   "ISO": 500,
-  "DateTimeOriginal": "2016-02-02 17:42:08",
-  "DatePublished": "2016-02-04 00:00:00",
-  "ApertureValue": 5.6,
   "ExposureCompensation": "+4/3",
   "Flash": "Off, Did not fire",
   "FocalLength": "105.0 mm",
@@ -50,7 +45,6 @@
   ],
   "Headline": "Fallow deer on a hill top with two Scots Pine trees in Knole Park.",
   "Title": "Deer at Dusk",
-  "ShutterSpeedValue": "1/125",
   "Sublocation": "Knole Park",
   "CountryPrimaryLocationName": "England",
   "CountryPrimaryLocationCode": "GB",
@@ -61,6 +55,10 @@
   "ImageHeight": 560,
   "ImageAspectRatio": 1.5,
   "ImageAspectRatioIdentifier": "3to2",
+  "Slug": "deer-at-dusk",
+  "DateTimeOriginal": "2016-02-02 17:42:08",
+  "DatePublished": "2016-02-04 00:00:00",
+  "Season": "winter",
   "Colors": [
     "#b8b7c1",
     "#34361a",
@@ -68,5 +66,5 @@
     "#a68e78",
     "#939d7f"
   ],
-  "Season": "winter"
+  "CaptionAbstract": "<p>A herd of fallow deer stretch out along a hill top after sunset in Knole Park, with two Scots Pine trees illuminated from the side by the orange glow lingering in the sky.</p>\n"
 }

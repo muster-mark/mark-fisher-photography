@@ -1,17 +1,12 @@
 {
-  "FileName": "ngorongoro-lion.jpg",
   "Gallery": "animals",
-  "Slug": "ngorongoro-lion",
-  "CaptionAbstract": "<p>A male lion in Ngorongoro Conservation Area in Tanzania.</p>\n",
+  "FileName": "ngorongoro-lion.jpg",
   "Make": "Canon",
   "Model": "Canon EOS 50D",
   "Lens": "EF70-200mm f/4L USM",
   "ExposureTime": "1/800",
   "FNumber": 4,
   "ISO": 100,
-  "DateTimeOriginal": "2013-07-16 08:47:35",
-  "DatePublished": "2016-02-01 00:00:00",
-  "ApertureValue": 4,
   "ExposureCompensation": "+1/3",
   "Flash": "Off, Did not fire",
   "FocalLength": "200.0 mm",
@@ -34,7 +29,6 @@
   ],
   "Headline": "A male lion lying down in grass in Ngorongoro Conservation Area, Tanzania.",
   "Title": "Ngorongoro Lion",
-  "ShutterSpeedValue": "1/800",
   "Sublocation": "Ngorongoro Conservation Area",
   "CountryPrimaryLocationName": "Tanzania",
   "CountryPrimaryLocationCode": "TZ",
@@ -45,6 +39,10 @@
   "ImageHeight": 560,
   "ImageAspectRatio": 1.5,
   "ImageAspectRatioIdentifier": "3to2",
+  "Slug": "ngorongoro-lion",
+  "DateTimeOriginal": "2013-07-16 08:47:35",
+  "DatePublished": "2016-02-01 00:00:00",
+  "Season": "winter",
   "Colors": [
     "#9e7c5b",
     "#3d2617",
@@ -52,5 +50,5 @@
     "#563217",
     "#c8b4b0"
   ],
-  "Season": "winter"
+  "CaptionAbstract": "<p>A male lion in Ngorongoro Conservation Area in Tanzania.</p>\n"
 }

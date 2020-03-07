@@ -1,17 +1,12 @@
 {
-  "FileName": "rain-over-bryce-canyon.jpg",
   "Gallery": "landscapes",
-  "Slug": "rain-over-bryce-canyon",
-  "CaptionAbstract": null,
+  "FileName": "rain-over-bryce-canyon.jpg",
   "Make": "Canon",
   "Model": "Canon EOS 5D Mark III",
   "Lens": "EF24-105mm f/4L IS USM",
   "ExposureTime": "1/100",
   "FNumber": 9,
   "ISO": 100,
-  "DateTimeOriginal": "2015-05-25 12:22:55",
-  "DatePublished": "2016-03-21 00:00:00",
-  "ApertureValue": 9,
   "ExposureCompensation": "+2/3",
   "Flash": "Off, Did not fire",
   "FocalLength": "92.0 mm",
@@ -28,7 +23,6 @@
   ],
   "Headline": "Rain falls from dark clouds above a red-orange landscape of hoodooes and coniferous trees.",
   "Title": "Rain over Bryce Canyon",
-  "ShutterSpeedValue": "1/100",
   "CountryPrimaryLocationName": "United States",
   "CountryPrimaryLocationCode": "US",
   "State": "Utah",
@@ -38,6 +32,10 @@
   "ImageHeight": 560,
   "ImageAspectRatio": 1.5,
   "ImageAspectRatioIdentifier": "3to2",
+  "Slug": "rain-over-bryce-canyon",
+  "DateTimeOriginal": "2015-05-25 12:22:55",
+  "DatePublished": "2016-03-21 00:00:00",
+  "Season": "spring",
   "Colors": [
     "#675a5b",
     "#cb8968",
@@ -45,5 +43,5 @@
     "#aca4ac",
     "#acacab"
   ],
-  "Season": "spring"
+  "CaptionAbstract": null
 }

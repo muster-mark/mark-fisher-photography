@@ -1,17 +1,12 @@
 {
-  "FileName": "impala-in-the-grass.jpg",
   "Gallery": "animals",
-  "Slug": "impala-in-the-grass",
-  "CaptionAbstract": "<p>An impala in Tarangire National Park - not the largest National Park in Tanzania, but home to an incredibly diverse mix of landscape and vegetation.</p>\n",
+  "FileName": "impala-in-the-grass.jpg",
   "Make": "Canon",
   "Model": "Canon EOS 50D",
   "Lens": "EF70-200mm f/4L USM",
   "ExposureTime": "1/250",
   "FNumber": 5.6,
   "ISO": 125,
-  "DateTimeOriginal": "2013-07-20 09:54:23",
-  "DatePublished": "2015-08-11 00:00:00",
-  "ApertureValue": 5.6,
   "ExposureCompensation": "+2/3",
   "Flash": "Off, Did not fire",
   "FocalLength": "200.0 mm",
@@ -33,7 +28,6 @@
   ],
   "Headline": "An impala in Tarangire National Park, Tanzania",
   "Title": "Impala in the Grass",
-  "ShutterSpeedValue": "1/250",
   "Sublocation": "Tarangire National Park",
   "CountryPrimaryLocationName": "Tanzania",
   "CountryPrimaryLocationCode": "TZ",
@@ -44,6 +38,10 @@
   "ImageHeight": 560,
   "ImageAspectRatio": 1.5,
   "ImageAspectRatioIdentifier": "3to2",
+  "Slug": "impala-in-the-grass",
+  "DateTimeOriginal": "2013-07-20 09:54:23",
+  "DatePublished": "2015-08-11 00:00:00",
+  "Season": "winter",
   "Colors": [
     "#b2977f",
     "#dbd2d2",
@@ -51,5 +49,5 @@
     "#65472d",
     "#765838"
   ],
-  "Season": "winter"
+  "CaptionAbstract": "<p>An impala in Tarangire National Park - not the largest National Park in Tanzania, but home to an incredibly diverse mix of landscape and vegetation.</p>\n"
 }

@@ -1,17 +1,12 @@
 {
-  "FileName": "sunstruck-stump.jpg",
   "Gallery": "landscapes",
-  "Slug": "sunstruck-stump",
-  "CaptionAbstract": "<p>I didn't set out to photograph these two tree stumps, but the setting sun came out from behind the clouds to create such an enticing composition that I thought it would be rude not to.</p>\n",
+  "FileName": "sunstruck-stump.jpg",
   "Make": "Canon",
   "Model": "Canon EOS 5D Mark III",
   "Lens": "EF16-35mm f/4L IS USM",
   "ExposureTime": "1/6",
   "FNumber": 9,
   "ISO": 100,
-  "DateTimeOriginal": "2016-01-16 16:44:02",
-  "DatePublished": "2016-01-28 00:00:00",
-  "ApertureValue": 9,
   "ExposureCompensation": -1,
   "Flash": "Off, Did not fire",
   "FocalLength": "16.0 mm",
@@ -50,7 +45,6 @@
   ],
   "Headline": "A tree stump in Meenfield Wood",
   "Title": "Sunstruck Stump",
-  "ShutterSpeedValue": "1/6",
   "Sublocation": "Meenfield Wood",
   "CountryPrimaryLocationName": "England",
   "CountryPrimaryLocationCode": "GB",
@@ -61,6 +55,10 @@
   "ImageHeight": 576,
   "ImageAspectRatio": 1.4583333333333333,
   "ImageAspectRatioIdentifier": "invalid",
+  "Slug": "sunstruck-stump",
+  "DateTimeOriginal": "2016-01-16 16:44:02",
+  "DatePublished": "2016-01-28 00:00:00",
+  "Season": "winter",
   "Colors": [
     "#3d291e",
     "#bb9580",
@@ -68,5 +66,5 @@
     "#97a1ab",
     "#878e9a"
   ],
-  "Season": "winter"
+  "CaptionAbstract": "<p>I didn't set out to photograph these two tree stumps, but the setting sun came out from behind the clouds to create such an enticing composition that I thought it would be rude not to.</p>\n"
 }

@@ -1,17 +1,12 @@
 {
-  "FileName": "loch-scavaig.jpg",
   "Gallery": "highlands",
-  "Slug": "loch-scavaig",
-  "CaptionAbstract": "<p>A view across Loch Scavaig towards Gars-bheinn and the Black Cuillin surrounding Loch Coruisk, appropriately cast into shadows by the clouds.</p>\n",
+  "FileName": "loch-scavaig.jpg",
   "Make": "Canon",
   "Model": "Canon EOS 5D Mark III",
   "Lens": "EF16-35mm f/4L IS USM",
   "ExposureTime": 3.2,
   "FNumber": 10,
   "ISO": 100,
-  "DateTimeOriginal": "2017-09-06 15:47:37",
-  "DatePublished": "2019-04-28 00:00:00",
-  "ApertureValue": 10,
   "ExposureCompensation": 0,
   "Flash": "Off, Did not fire",
   "FocalLength": "18.0 mm",
@@ -38,7 +33,6 @@
   ],
   "Headline": "A view of the Black Cuillins across Loch Scavaig",
   "Title": "Loch Scavaig",
-  "ShutterSpeedValue": 3.2,
   "CountryPrimaryLocationName": "Scotland",
   "CountryPrimaryLocationCode": "GB",
   "State": "Highland",
@@ -48,6 +42,10 @@
   "ImageHeight": 525,
   "ImageAspectRatio": 1.6,
   "ImageAspectRatioIdentifier": "invalid",
+  "Slug": "loch-scavaig",
+  "DateTimeOriginal": "2017-09-06 15:47:37",
+  "DatePublished": "2019-04-28 00:00:00",
+  "Season": "summer",
   "Colors": [
     "#4d5158",
     "#d1d2d5",
@@ -55,5 +53,5 @@
     "#adb7c2",
     "#9fa9bc"
   ],
-  "Season": "summer"
+  "CaptionAbstract": "<p>A view across Loch Scavaig towards Gars-bheinn and the Black Cuillin surrounding Loch Coruisk, appropriately cast into shadows by the clouds.</p>\n"
 }

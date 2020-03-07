@@ -1,17 +1,12 @@
 {
-  "FileName": "boreray.jpg",
   "Gallery": "highlands",
-  "Slug": "boreray",
-  "CaptionAbstract": "<p>Boreray, part of the St. Kilda archipelago, wastes no time getting to the point, being the smallest Scottish island with an elevation of over 1000ft. It is home to the world's 2nd largest colony of northern gannet, which were the staple food of the St. Kildans for most of the island's history, until a demand for fulmar products (oil and feathers) in the 18th century persuaded them to develop a taste for the smaller bird.\nDespite being even more inhospitable than Hirta, the main island of the archipelago, archaeological evidence suggests Boreray was inhabited at one point. In more recent times, Boreray was only temporarily inhabited for the purposes of catching gannets and puffins (the latter quarry being reserved for the women), and tending the semi-feral sheep. When in distress, communication was made with Hirta by inverting patches of turf, the position and size of which could signify either lack of provisions, illness, injury or death.</p>\n",
+  "FileName": "boreray.jpg",
   "Make": "Canon",
   "Model": "Canon EOS 5D Mark III",
   "Lens": "EF16-35mm f/4L IS USM",
   "ExposureTime": "1/500",
   "FNumber": 5.6,
   "ISO": 160,
-  "DateTimeOriginal": "2018-06-06 16:34:10",
-  "DatePublished": "2018-08-27 00:00:00",
-  "ApertureValue": 5.6,
   "ExposureCompensation": 0,
   "Flash": "Off, Did not fire",
   "FocalLength": "25.0 mm",
@@ -60,7 +55,6 @@
   ],
   "Headline": "Northern gannet colony at Boreray, St. Kilda",
   "Title": "Boreray",
-  "ShutterSpeedValue": "1/500",
   "Sublocation": "St. Kilda",
   "CountryPrimaryLocationName": "Scotland",
   "CountryPrimaryLocationCode": "GB",
@@ -71,6 +65,10 @@
   "ImageHeight": 560,
   "ImageAspectRatio": 1.5,
   "ImageAspectRatioIdentifier": "3to2",
+  "Slug": "boreray",
+  "DateTimeOriginal": "2018-06-06 16:34:10",
+  "DatePublished": "2018-08-27 00:00:00",
+  "Season": "spring",
   "Colors": [
     "#f0f0f4",
     "#49513d",
@@ -78,5 +76,5 @@
     "#929faa",
     "#8e908a"
   ],
-  "Season": "spring"
+  "CaptionAbstract": "<p>Boreray, part of the St. Kilda archipelago, wastes no time getting to the point, being the smallest Scottish island with an elevation of over 1000ft. It is home to the world's 2nd largest colony of northern gannet, which were the staple food of the St. Kildans for most of the island's history, until a demand for fulmar products (oil and feathers) in the 18th century persuaded them to develop a taste for the smaller bird.\nDespite being even more inhospitable than Hirta, the main island of the archipelago, archaeological evidence suggests Boreray was inhabited at one point. In more recent times, Boreray was only temporarily inhabited for the purposes of catching gannets and puffins (the latter quarry being reserved for the women), and tending the semi-feral sheep. When in distress, communication was made with Hirta by inverting patches of turf, the position and size of which could signify either lack of provisions, illness, injury or death.</p>\n"
 }

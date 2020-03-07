@@ -1,17 +1,12 @@
 {
-  "FileName": "chickens-for-sale.jpg",
   "Gallery": "city",
-  "Slug": "chickens-for-sale",
-  "CaptionAbstract": "<p>Chickens in market in Stone Town, Zanzibar.</p>\n",
+  "FileName": "chickens-for-sale.jpg",
   "Make": "Canon",
   "Model": "Canon EOS 50D",
   "Lens": "35mm",
   "ExposureTime": "1/60",
   "FNumber": 1.6,
   "ISO": 1250,
-  "DateTimeOriginal": "2013-07-22 08:55:43",
-  "DatePublished": "2015-09-21 00:00:00",
-  "ApertureValue": 1.6,
   "ExposureCompensation": 0,
   "Flash": "Off, Did not fire",
   "FocalLength": "35.0 mm",
@@ -29,7 +24,6 @@
   ],
   "Headline": "Chickens for sale at a market in Stone Town, Zanzibar.",
   "Title": "Chickens for Sale",
-  "ShutterSpeedValue": "1/60",
   "Sublocation": "Darajani Market",
   "CountryPrimaryLocationName": "Tanzania",
   "CountryPrimaryLocationCode": "TZ",
@@ -40,6 +34,10 @@
   "ImageHeight": 560,
   "ImageAspectRatio": 1.5,
   "ImageAspectRatioIdentifier": "3to2",
+  "Slug": "chickens-for-sale",
+  "DateTimeOriginal": "2013-07-22 08:55:43",
+  "DatePublished": "2015-09-21 00:00:00",
+  "Season": "winter",
   "Colors": [
     "#25170f",
     "#c29978",
@@ -47,5 +45,5 @@
     "#869979",
     "#848c8c"
   ],
-  "Season": "winter"
+  "CaptionAbstract": "<p>Chickens in market in Stone Town, Zanzibar.</p>\n"
 }

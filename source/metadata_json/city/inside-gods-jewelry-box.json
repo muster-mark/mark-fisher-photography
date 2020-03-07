@@ -1,17 +1,12 @@
 {
-  "FileName": "inside-gods-jewelry-box.jpg",
   "Gallery": "city",
-  "Slug": "inside-gods-jewelry-box",
-  "CaptionAbstract": "<p>If you ever find yourself in a flurry to see the sights in Paris, do you self a favour -  give the massive queues for Notre Dame a miss and pay a visit to Sainte Chapelle instead.\nWhat Notre Dame's less visited neighbour may lack in brutish grandeur, it makes up for in this; an impossible ratio of spindly stone to dazzling glass that will make you question how the roof stays up.</p>\n",
+  "FileName": "inside-gods-jewelry-box.jpg",
   "Make": "Canon",
   "Model": "Canon EOS 50D",
   "Lens": "EF-S10-22mm f/3.5-4.5 USM",
   "ExposureTime": 0.3,
   "FNumber": 9,
   "ISO": 500,
-  "DateTimeOriginal": "2014-07-21 13:22:07",
-  "DatePublished": "2015-10-24 00:00:00",
-  "ApertureValue": 9,
   "ExposureCompensation": "+4/3",
   "Flash": "Off, Did not fire",
   "FocalLength": "10.0 mm",
@@ -41,7 +36,6 @@
   ],
   "Headline": "The interior of Sainte Chapelle, showing the stained glass windows and vaulted ceiling.",
   "Title": "Inside God's Jewelry Box",
-  "ShutterSpeedValue": 0.3,
   "Sublocation": "Sainte-Chapelle",
   "CountryPrimaryLocationName": "France",
   "CountryPrimaryLocationCode": "FR",
@@ -52,6 +46,10 @@
   "ImageHeight": 560,
   "ImageAspectRatio": 1.5,
   "ImageAspectRatioIdentifier": "3to2",
+  "Slug": "inside-gods-jewelry-box",
+  "DateTimeOriginal": "2014-07-21 13:22:07",
+  "DatePublished": "2015-10-24 00:00:00",
+  "Season": "summer",
   "Colors": [
     "#3c2621",
     "#c38d95",
@@ -59,5 +57,5 @@
     "#8c79a5",
     "#91a6af"
   ],
-  "Season": "summer"
+  "CaptionAbstract": "<p>If you ever find yourself in a flurry to see the sights in Paris, do you self a favour -  give the massive queues for Notre Dame a miss and pay a visit to Sainte Chapelle instead.\nWhat Notre Dame's less visited neighbour may lack in brutish grandeur, it makes up for in this; an impossible ratio of spindly stone to dazzling glass that will make you question how the roof stays up.</p>\n"
 }

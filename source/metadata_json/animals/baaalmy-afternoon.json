@@ -1,17 +1,12 @@
 {
-  "FileName": "baaalmy-afternoon.jpg",
   "Gallery": "animals",
-  "Slug": "baaalmy-afternoon",
-  "CaptionAbstract": null,
+  "FileName": "baaalmy-afternoon.jpg",
   "Make": "Canon",
   "Model": "Canon EOS 50D",
   "Lens": "EF70-200mm f/4L USM",
   "ExposureTime": "1/320",
   "FNumber": 6.3,
   "ISO": 125,
-  "DateTimeOriginal": "2010-08-30 17:39:54",
-  "DatePublished": "2015-10-22 00:00:00",
-  "ApertureValue": 6.3,
   "ExposureCompensation": "-1/3",
   "Flash": "Off, Did not fire",
   "FocalLength": "200.0 mm",
@@ -39,7 +34,6 @@
   ],
   "Headline": "A sheep running in warm sunlight in a field in Shoreham, Kent",
   "Title": "Baaalmy Afternoon",
-  "ShutterSpeedValue": "1/320",
   "CountryPrimaryLocationName": "England",
   "CountryPrimaryLocationCode": "GB",
   "State": "Kent",
@@ -49,6 +43,10 @@
   "ImageHeight": 560,
   "ImageAspectRatio": 1.5,
   "ImageAspectRatioIdentifier": "3to2",
+  "Slug": "baaalmy-afternoon",
+  "DateTimeOriginal": "2010-08-30 17:39:54",
+  "DatePublished": "2015-10-22 00:00:00",
+  "Season": "summer",
   "Colors": [
     "#ba8f62",
     "#45321b",
@@ -56,5 +54,5 @@
     "#f0d7c4",
     "#eecca2"
   ],
-  "Season": "summer"
+  "CaptionAbstract": null
 }

@@ -1,17 +1,12 @@
 {
-  "FileName": "next-stop-the-shard.jpg",
   "Gallery": "dusk-to-dawn",
-  "Slug": "next-stop-the-shard",
-  "CaptionAbstract": null,
+  "FileName": "next-stop-the-shard.jpg",
   "Make": "Canon",
   "Model": "Canon EOS 5D Mark III",
   "Lens": "EF24-105mm f/4L IS USM",
   "ExposureTime": 5,
   "FNumber": 8,
   "ISO": 100,
-  "DateTimeOriginal": "2015-08-28 22:34:35",
-  "DatePublished": "2015-09-18 00:00:00",
-  "ApertureValue": 8,
   "ExposureCompensation": "-4/3",
   "Flash": "Off, Did not fire",
   "FocalLength": "88.0 mm",
@@ -60,7 +55,6 @@
   ],
   "Headline": "A view of the Shard from London Waterloo East Railway Station at night.",
   "Title": "Next Stop: The Shard",
-  "ShutterSpeedValue": 5,
   "Sublocation": "Waterloo East Station",
   "CountryPrimaryLocationName": "England",
   "CountryPrimaryLocationCode": "GB",
@@ -71,6 +65,10 @@
   "ImageHeight": 840,
   "ImageAspectRatio": 0.5988095238095238,
   "ImageAspectRatioIdentifier": "invalid",
+  "Slug": "next-stop-the-shard",
+  "DateTimeOriginal": "2015-08-28 22:34:35",
+  "DatePublished": "2015-09-18 00:00:00",
+  "Season": "summer",
   "Colors": [
     "#23262d",
     "#c2a596",
@@ -78,5 +76,5 @@
     "#2cbfb6",
     "#428c9e"
   ],
-  "Season": "summer"
+  "CaptionAbstract": null
 }

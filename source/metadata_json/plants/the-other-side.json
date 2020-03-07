@@ -1,17 +1,12 @@
 {
-  "FileName": "the-other-side.jpg",
   "Gallery": "plants",
-  "Slug": "the-other-side",
-  "CaptionAbstract": "<p>I had spotted this oak tree some distance off the path during my walks in Crofton woods, and had been intending to return with my camera to capture what looked, at least from a distance, like a promising subject. When I finally did, and went off the path to approach the it, I was shocked to discover that it was right next to another path that I had walked along several times before, completely failing to notice this ancient oak as anything of particular interest from the other side, from which it's verdant cloak was not visible.\nIt just goes to show what a change of direction can do, and also just how disorienting woods can be. Even when you think you know them, they still have the ability to surprise you.</p>\n",
+  "FileName": "the-other-side.jpg",
   "Make": "Canon",
   "Model": "Canon EOS 5D Mark III",
   "Lens": "EF16-35mm f/4L IS USM",
   "ExposureTime": 0.6,
   "FNumber": 7.1,
   "ISO": 100,
-  "DateTimeOriginal": "2020-01-28 15:50:52",
-  "DatePublished": "2020-02-15 00:00:00",
-  "ApertureValue": 7.1,
   "ExposureCompensation": 0,
   "Flash": "Off, Did not fire",
   "FocalLength": "19.0 mm",
@@ -54,7 +49,6 @@
   ],
   "Headline": "A thick-trunked oak tree in Crofton woods, leafless and covered in ivy and moss in winter.",
   "Title": "The Other Side",
-  "ShutterSpeedValue": 0.6,
   "Sublocation": "Crofton Woods",
   "CountryPrimaryLocationName": "England",
   "CountryPrimaryLocationCode": "GB",
@@ -65,6 +59,10 @@
   "ImageHeight": 560,
   "ImageAspectRatio": 1.5,
   "ImageAspectRatioIdentifier": "3to2",
+  "Slug": "the-other-side",
+  "DateTimeOriginal": "2020-01-28 15:50:52",
+  "DatePublished": "2020-02-15 00:00:00",
+  "Season": "winter",
   "Colors": [
     "#404935",
     "#deebea",
@@ -72,5 +70,5 @@
     "#858771",
     "#8f9ea1"
   ],
-  "Season": "winter"
+  "CaptionAbstract": "<p>I had spotted this oak tree some distance off the path during my walks in Crofton woods, and had been intending to return with my camera to capture what looked, at least from a distance, like a promising subject. When I finally did, and went off the path to approach the it, I was shocked to discover that it was right next to another path that I had walked along several times before, completely failing to notice this ancient oak as anything of particular interest from the other side, from which it's verdant cloak was not visible.\nIt just goes to show what a change of direction can do, and also just how disorienting woods can be. Even when you think you know them, they still have the ability to surprise you.</p>\n"
 }

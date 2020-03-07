@@ -1,17 +1,12 @@
 {
-  "FileName": "shoe-shop.jpg",
   "Gallery": "black-and-white",
-  "Slug": "shoe-shop",
-  "CaptionAbstract": null,
+  "FileName": "shoe-shop.jpg",
   "Make": "Canon",
   "Model": "Canon EOS 5D Mark III",
   "Lens": "EF16-35mm f/4L IS USM",
   "ExposureTime": "1/200",
   "FNumber": 4,
   "ISO": 800,
-  "DateTimeOriginal": "2014-12-18 20:46:48",
-  "DatePublished": "2015-10-30 00:00:00",
-  "ApertureValue": 4,
   "ExposureCompensation": 0,
   "Flash": "Off, Did not fire",
   "FocalLength": "28.0 mm",
@@ -49,7 +44,6 @@
   ],
   "Headline": "A man wearing Converse shoes walking past a shoe shop on Oxford Street at Christmas.",
   "Title": "Shoe Shop",
-  "ShutterSpeedValue": "1/200",
   "Sublocation": "Oxford Street",
   "CountryPrimaryLocationName": "England",
   "CountryPrimaryLocationCode": "GB",
@@ -60,6 +54,10 @@
   "ImageHeight": 560,
   "ImageAspectRatio": 1.5,
   "ImageAspectRatioIdentifier": "3to2",
+  "Slug": "shoe-shop",
+  "DateTimeOriginal": "2014-12-18 20:46:48",
+  "DatePublished": "2015-10-30 00:00:00",
+  "Season": "autumn",
   "Colors": [
     "#c2c1c5",
     "#1d1c22",
@@ -67,5 +65,5 @@
     "#74727b",
     "#8c8996"
   ],
-  "Season": "autumn"
+  "CaptionAbstract": null
 }

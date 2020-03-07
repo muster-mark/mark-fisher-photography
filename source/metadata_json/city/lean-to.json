@@ -1,23 +1,17 @@
 {
-  "FileName": "lean-to.jpg",
   "Gallery": "city",
-  "Slug": "lean-to",
-  "CaptionAbstract": null,
+  "FileName": "lean-to.jpg",
   "Make": "Canon",
   "Model": "Canon EOS 5D Mark III",
   "Lens": "EF24-105mm f/4L IS USM",
   "ExposureTime": "1/40",
   "FNumber": 7.1,
   "ISO": 100,
-  "DateTimeOriginal": "2016-09-13 00:51:18",
-  "DatePublished": "2019-05-15 00:00:00",
-  "ApertureValue": 7.1,
   "ExposureCompensation": 0,
   "Flash": "Off, Did not fire",
   "FocalLength": "47.0 mm",
   "Headline": "2 men waiting at a bus stop on a very steep road in Chinatown, San Francisco",
   "Title": "Lean-to",
-  "ShutterSpeedValue": "1/40",
   "Sublocation": "Chinatown",
   "CountryPrimaryLocationName": "United States",
   "CountryPrimaryLocationCode": "US",
@@ -26,6 +20,10 @@
   "ImageHeight": 560,
   "ImageAspectRatio": 1.5,
   "ImageAspectRatioIdentifier": "3to2",
+  "Slug": "lean-to",
+  "DateTimeOriginal": "2016-09-13 00:51:18",
+  "DatePublished": "2019-05-15 00:00:00",
+  "Season": "winter",
   "Colors": [
     "#b7aea8",
     "#2f2c2c",
@@ -33,5 +31,5 @@
     "#706e6d",
     "#735747"
   ],
-  "Season": "winter"
+  "CaptionAbstract": null
 }

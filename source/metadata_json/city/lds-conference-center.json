@@ -1,17 +1,12 @@
 {
-  "FileName": "lds-conference-center.jpg",
   "Gallery": "city",
-  "Slug": "lds-conference-center",
-  "CaptionAbstract": "<p>A 92 foot tower atop the roof of this building (yes roof, don't be fooled by the trees) gives a clue as to its religious significance, serving as the premier meeting place of the Mormon Church and housing, for this purpose, the largest theatre style auditorium in the world. Just walk into the building and in true Mormon style, someone will be there to greet you, eager to give you a tour. Out of view to the right is what is surely Salt Lake City's finest roof-top garden, so it's well worth a visit.</p>\n",
+  "FileName": "lds-conference-center.jpg",
   "Make": "Canon",
   "Model": "Canon EOS 5D Mark III",
   "Lens": "EF16-35mm f/4L IS USM",
   "ExposureTime": "1/60",
   "FNumber": 10,
   "ISO": 100,
-  "DateTimeOriginal": "2015-05-26 18:17:35",
-  "DatePublished": "2015-09-26 00:00:00",
-  "ApertureValue": 10,
   "ExposureCompensation": "+1",
   "Flash": "Off, Did not fire",
   "FocalLength": "22.0 mm",
@@ -25,7 +20,6 @@
   ],
   "Headline": "The roof of the LDS Conference Centre in Salt Lake City, showing reflecting pool and spire.",
   "Title": "LDS Conference Center",
-  "ShutterSpeedValue": "1/60",
   "Sublocation": "Downtown",
   "CountryPrimaryLocationName": "United States",
   "CountryPrimaryLocationCode": "US",
@@ -36,6 +30,10 @@
   "ImageHeight": 840,
   "ImageAspectRatio": 1,
   "ImageAspectRatioIdentifier": "1to1",
+  "Slug": "lds-conference-center",
+  "DateTimeOriginal": "2015-05-26 18:17:35",
+  "DatePublished": "2015-09-26 00:00:00",
+  "Season": "spring",
   "Colors": [
     "#9ea3b2",
     "#323131",
@@ -43,5 +41,5 @@
     "#4e484b",
     "#595a4a"
   ],
-  "Season": "spring"
+  "CaptionAbstract": "<p>A 92 foot tower atop the roof of this building (yes roof, don't be fooled by the trees) gives a clue as to its religious significance, serving as the premier meeting place of the Mormon Church and housing, for this purpose, the largest theatre style auditorium in the world. Just walk into the building and in true Mormon style, someone will be there to greet you, eager to give you a tour. Out of view to the right is what is surely Salt Lake City's finest roof-top garden, so it's well worth a visit.</p>\n"
 }

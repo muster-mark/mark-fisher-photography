@@ -1,17 +1,12 @@
 {
-  "FileName": "the-london-eye.jpg",
   "Gallery": "dusk-to-dawn",
-  "Slug": "the-london-eye",
-  "CaptionAbstract": "<p>The London Eye looking pretty at night before it <a href=\"https://www.theguardian.com/commentisfree/2015/jan/25/corporate-sponsorship-everywhere-why-red-coca-cola-london-eye\">turned a sickly shade of Coca-Cola</a>.</p>\n",
+  "FileName": "the-london-eye.jpg",
   "Make": "Canon",
   "Model": "Canon EOS 5D Mark III",
   "Lens": "EF16-35mm f/4L IS USM",
   "ExposureTime": 30,
   "FNumber": 8,
   "ISO": 200,
-  "DateTimeOriginal": "2014-09-28 20:53:40",
-  "DatePublished": "2016-02-18 00:00:00",
-  "ApertureValue": 8,
   "ExposureCompensation": "+1",
   "Flash": "Off, Did not fire",
   "FocalLength": "17.0 mm",
@@ -30,7 +25,6 @@
   ],
   "Headline": "The Coca-Cola London Eye, then the EDF Energy London Eye, at night viewed from below.",
   "Title": "The London Eye",
-  "ShutterSpeedValue": 30,
   "Sublocation": "Lambeth",
   "CountryPrimaryLocationName": "England",
   "CountryPrimaryLocationCode": "GB",
@@ -41,6 +35,10 @@
   "ImageHeight": 560,
   "ImageAspectRatio": 1.5,
   "ImageAspectRatioIdentifier": "3to2",
+  "Slug": "the-london-eye",
+  "DateTimeOriginal": "2014-09-28 20:53:40",
+  "DatePublished": "2016-02-18 00:00:00",
+  "Season": "autumn",
   "Colors": [
     "#311e43",
     "#cccbe5",
@@ -48,5 +46,5 @@
     "#485dc4",
     "#7f5350"
   ],
-  "Season": "autumn"
+  "CaptionAbstract": "<p>The London Eye looking pretty at night before it <a href=\"https://www.theguardian.com/commentisfree/2015/jan/25/corporate-sponsorship-everywhere-why-red-coca-cola-london-eye\">turned a sickly shade of Coca-Cola</a>.</p>\n"
 }

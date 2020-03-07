@@ -1,17 +1,12 @@
 {
-  "FileName": "an-egrets-egress.jpg",
   "Gallery": "animals",
-  "Slug": "an-egrets-egress",
-  "CaptionAbstract": null,
+  "FileName": "an-egrets-egress.jpg",
   "Make": "Canon",
   "Model": "Canon EOS 50D",
   "Lens": "EF24-105mm f/4L IS USM",
   "ExposureTime": "1/400",
   "FNumber": 5.6,
   "ISO": 100,
-  "DateTimeOriginal": "2014-08-01 18:29:01",
-  "DatePublished": "2015-10-26 00:00:00",
-  "ApertureValue": 5.6,
   "ExposureCompensation": "+2/3",
   "Flash": "Off, Did not fire",
   "FocalLength": "105.0 mm",
@@ -43,7 +38,6 @@
   ],
   "Headline": "A little egret (Egretta garzetta) taking off from a cable over the river Danube in evening light.",
   "Title": "An Egret's Egress",
-  "ShutterSpeedValue": "1/400",
   "Sublocation": "Danube",
   "CountryPrimaryLocationName": "Romania",
   "CountryPrimaryLocationCode": "RO",
@@ -54,6 +48,10 @@
   "ImageHeight": 560,
   "ImageAspectRatio": 1.5,
   "ImageAspectRatioIdentifier": "3to2",
+  "Slug": "an-egrets-egress",
+  "DateTimeOriginal": "2014-08-01 18:29:01",
+  "DatePublished": "2015-10-26 00:00:00",
+  "Season": "summer",
   "Colors": [
     "#807f85",
     "#242d38",
@@ -61,5 +59,5 @@
     "#bab2bc",
     "#bbbcb6"
   ],
-  "Season": "summer"
+  "CaptionAbstract": null
 }

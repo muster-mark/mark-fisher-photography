@@ -1,17 +1,12 @@
 {
-  "FileName": "beneath-bla-bheinn.jpg",
   "Gallery": "highlands",
-  "Slug": "beneath-bla-bheinn",
-  "CaptionAbstract": "<p>Taken from near the shore of Loch Slapin, where the road makes a sharp U-turn to circumvent it on the way to Elgol. To me, the cows and sheep are as integral a part of the Skye landscape as the sweeping sea lochs and lofty peaks.</p>\n",
+  "FileName": "beneath-bla-bheinn.jpg",
   "Make": "Canon",
   "Model": "Canon EOS 5D Mark III",
   "Lens": "EF24-105mm f/4L IS USM",
   "ExposureTime": "1/125",
   "FNumber": 6.3,
   "ISO": 640,
-  "DateTimeOriginal": "2017-09-06 17:47:16",
-  "DatePublished": "2019-05-08 00:00:00",
-  "ApertureValue": 6.3,
   "ExposureCompensation": 0,
   "Flash": "Off, Did not fire",
   "FocalLength": "80.0 mm",
@@ -44,7 +39,6 @@
   ],
   "Headline": "3 cows grazing, with the Cuillin peak of  Blà Bheinn in the background.",
   "Title": "Beneath Blà Bheinn",
-  "ShutterSpeedValue": "1/125",
   "Sublocation": "Blà Bheinn",
   "CountryPrimaryLocationName": "Scotland",
   "CountryPrimaryLocationCode": "GB",
@@ -55,6 +49,10 @@
   "ImageHeight": 840,
   "ImageAspectRatio": 0.6666666666666666,
   "ImageAspectRatioIdentifier": "2to3",
+  "Slug": "beneath-bla-bheinn",
+  "DateTimeOriginal": "2017-09-06 17:47:16",
+  "DatePublished": "2019-05-08 00:00:00",
+  "Season": "summer",
   "Colors": [
     "#79593d",
     "#f8e6e5",
@@ -62,5 +60,5 @@
     "#332328",
     "#c5a6a9"
   ],
-  "Season": "summer"
+  "CaptionAbstract": "<p>Taken from near the shore of Loch Slapin, where the road makes a sharp U-turn to circumvent it on the way to Elgol. To me, the cows and sheep are as integral a part of the Skye landscape as the sweeping sea lochs and lofty peaks.</p>\n"
 }

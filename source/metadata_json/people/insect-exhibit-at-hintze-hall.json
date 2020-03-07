@@ -1,16 +1,11 @@
 {
-  "FileName": "insect-exhibit-at-hintze-hall.jpg",
   "Gallery": "people",
-  "Slug": "insect-exhibit-at-hintze-hall",
-  "CaptionAbstract": "<p>Pretty busy at the Natural History Museum, even before you count the tourists.</p>\n",
+  "FileName": "insect-exhibit-at-hintze-hall.jpg",
   "Make": "HTC",
   "Model": "HTC U11",
   "ExposureTime": "1/35",
   "FNumber": 1.7,
   "ISO": 335,
-  "DateTimeOriginal": "2017-12-17 13:55:34",
-  "DatePublished": "2018-02-19 00:00:00",
-  "ApertureValue": 1.7,
   "FocalLength": "4.3 mm",
   "Keywords": [
     "Anisoptera",
@@ -45,7 +40,6 @@
   ],
   "Headline": "Visitors at the Natural History Museum in London examine a display of insects in Hintze Hall.",
   "Title": "Insect exhibit at Hintze Hall",
-  "ShutterSpeedValue": "1/35",
   "Sublocation": "Natural History Museum",
   "CountryPrimaryLocationName": "England",
   "CountryPrimaryLocationCode": "GB",
@@ -56,6 +50,10 @@
   "ImageHeight": 630,
   "ImageAspectRatio": 1.3333333333333333,
   "ImageAspectRatioIdentifier": "4to3",
+  "Slug": "insect-exhibit-at-hintze-hall",
+  "DateTimeOriginal": "2017-12-17 13:55:34",
+  "DatePublished": "2018-02-19 00:00:00",
+  "Season": "autumn",
   "Colors": [
     "#39312e",
     "#d1cabd",
@@ -63,5 +61,5 @@
     "#85a8be",
     "#6f89a3"
   ],
-  "Season": "autumn"
+  "CaptionAbstract": "<p>Pretty busy at the Natural History Museum, even before you count the tourists.</p>\n"
 }

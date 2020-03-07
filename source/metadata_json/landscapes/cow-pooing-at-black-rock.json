@@ -1,23 +1,17 @@
 {
-  "FileName": "cow-pooing-at-black-rock.jpg",
   "Gallery": "landscapes",
-  "Slug": "cow-pooing-at-black-rock",
-  "CaptionAbstract": "<p>I managed to snap this cow with it's poo in mid-air (I hope it's not a reflection on what she thinks of my photo). Henri Cartier-Bresson would be proud.</p>\n",
+  "FileName": "cow-pooing-at-black-rock.jpg",
   "Make": "Canon",
   "Model": "Canon EOS 5D Mark III",
   "Lens": "EF24-105mm f/4L IS USM",
   "ExposureTime": "1/200",
   "FNumber": 4,
   "ISO": 500,
-  "DateTimeOriginal": "2015-08-22 19:42:09",
-  "DatePublished": "2016-03-09 00:00:00",
-  "ApertureValue": 4,
   "ExposureCompensation": 0,
   "Flash": "Off, Did not fire",
   "FocalLength": "45.0 mm",
   "Headline": "A puddle meanders towards a cow by the Severn Estuary, with a lighthouse on a small island in the background.",
   "Title": "Cow Pooing at Black Rock",
-  "ShutterSpeedValue": "1/200",
   "Sublocation": "Black Rock",
   "CountryPrimaryLocationName": "Wales",
   "CountryPrimaryLocationCode": "GB",
@@ -28,6 +22,10 @@
   "ImageHeight": 840,
   "ImageAspectRatio": 0.6666666666666666,
   "ImageAspectRatioIdentifier": "2to3",
+  "Slug": "cow-pooing-at-black-rock",
+  "DateTimeOriginal": "2015-08-22 19:42:09",
+  "DatePublished": "2016-03-09 00:00:00",
+  "Season": "summer",
   "Colors": [
     "#4c3c29",
     "#938da5",
@@ -35,5 +33,5 @@
     "#917f3f",
     "#b2944c"
   ],
-  "Season": "summer"
+  "CaptionAbstract": "<p>I managed to snap this cow with it's poo in mid-air (I hope it's not a reflection on what she thinks of my photo). Henri Cartier-Bresson would be proud.</p>\n"
 }

@@ -1,6 +1,5 @@
 const Encore = require('@symfony/webpack-encore');
-const bundleAnalyzer = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-const path = require('path');
+const BundleAnalyzer = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 Encore
     // directory where compiled assets will be stored
@@ -15,22 +14,18 @@ Encore
     .enableVersioning(false)
     .enableSassLoader()
     .enableVueLoader()
-    .configureTerserPlugin(function(config) {
+    .configureTerserPlugin((config) => {
         return config;
-    })
+    });
 
-;
-
-if (process.env.NODE_ENV === "production" || true) {
-    Encore.addPlugin(new bundleAnalyzer({
+if (process.env.NODE_ENV === 'production' || true) {
+    Encore.addPlugin(new BundleAnalyzer({
         analyzerPort: 8889,
         defaultSizes: 'gzip',
         analyzerMode: 'static',
         reportFilename: `./../../reports/bundle_analyzer/${new Date().toISOString()}.html`,
-        openAnalyzer: true
-    }))
-
+        openAnalyzer: true,
+    }));
 }
-
 
 module.exports = Encore.getWebpackConfig();

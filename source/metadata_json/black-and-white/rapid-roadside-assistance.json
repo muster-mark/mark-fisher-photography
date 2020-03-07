@@ -1,17 +1,12 @@
 {
-  "FileName": "rapid-roadside-assistance.jpg",
   "Gallery": "black-and-white",
-  "Slug": "rapid-roadside-assistance",
-  "CaptionAbstract": null,
+  "FileName": "rapid-roadside-assistance.jpg",
   "Make": "Canon",
   "Model": "Canon EOS 50D",
   "Lens": "35mm",
   "ExposureTime": "1/640",
   "FNumber": 4,
   "ISO": 100,
-  "DateTimeOriginal": "2013-07-21 10:04:21",
-  "DatePublished": "2016-02-16 00:00:00",
-  "ApertureValue": 4,
   "ExposureCompensation": 0,
   "Flash": "Off, Did not fire",
   "FocalLength": "35.0 mm",
@@ -22,7 +17,6 @@
   ],
   "Headline": "A man rolling a huge tyre along a dust road in Arusha, Tanzania. ",
   "Title": "Rapid Roadside Assistance",
-  "ShutterSpeedValue": "1/640",
   "CountryPrimaryLocationName": "Tanzania",
   "CountryPrimaryLocationCode": "TZ",
   "State": "Arusha",
@@ -32,6 +26,10 @@
   "ImageHeight": 560,
   "ImageAspectRatio": 1.5,
   "ImageAspectRatioIdentifier": "3to2",
+  "Slug": "rapid-roadside-assistance",
+  "DateTimeOriginal": "2013-07-21 10:04:21",
+  "DatePublished": "2016-02-16 00:00:00",
+  "Season": "winter",
   "Colors": [
     "#414148",
     "#c1bab9",
@@ -39,5 +37,5 @@
     "#a4a4a4",
     "#a49cac"
   ],
-  "Season": "winter"
+  "CaptionAbstract": null
 }

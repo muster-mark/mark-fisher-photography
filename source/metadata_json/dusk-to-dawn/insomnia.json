@@ -1,16 +1,11 @@
 {
-  "FileName": "insomnia.jpg",
   "Gallery": "dusk-to-dawn",
-  "Slug": "insomnia",
-  "CaptionAbstract": null,
+  "FileName": "insomnia.jpg",
   "Make": "FUJIFILM",
   "Model": "X10",
   "ExposureTime": "1/5",
   "FNumber": 2.2,
   "ISO": 1600,
-  "DateTimeOriginal": "2015-10-21 01:57:25",
-  "DatePublished": "2015-11-16 00:00:00",
-  "ApertureValue": 2.2,
   "ExposureCompensation": -2,
   "Flash": "Off, Did not fire",
   "FocalLength": "7.1 mm",
@@ -58,7 +53,6 @@
   ],
   "Headline": "A Mini Cooper lit by a street light at night in Orpington.",
   "Title": "Insomnia",
-  "ShutterSpeedValue": "1/5",
   "Sublocation": "Dale Wood Road",
   "CountryPrimaryLocationName": "England",
   "CountryPrimaryLocationCode": "GB",
@@ -69,6 +63,10 @@
   "ImageHeight": 630,
   "ImageAspectRatio": 1.3333333333333333,
   "ImageAspectRatioIdentifier": "4to3",
+  "Slug": "insomnia",
+  "DateTimeOriginal": "2015-10-21 01:57:25",
+  "DatePublished": "2015-11-16 00:00:00",
+  "Season": "autumn",
   "Colors": [
     "#17100e",
     "#c38411",
@@ -76,5 +74,5 @@
     "#8c7c44",
     "#7c747c"
   ],
-  "Season": "autumn"
+  "CaptionAbstract": null
 }

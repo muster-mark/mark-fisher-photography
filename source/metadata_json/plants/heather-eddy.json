@@ -1,17 +1,12 @@
 {
-  "FileName": "heather-eddy.jpg",
   "Gallery": "plants",
-  "Slug": "heather-eddy",
-  "CaptionAbstract": "<p>An abstraction of newly enflowered heather and a fallen birch branch on Chobham Common.</p>\n",
+  "FileName": "heather-eddy.jpg",
   "Make": "Canon",
   "Model": "Canon EOS 5D Mark III",
   "Lens": "35mm",
   "ExposureTime": "1/4",
   "FNumber": 2.8,
   "ISO": 100,
-  "DateTimeOriginal": "2015-08-12 05:58:17",
-  "DatePublished": "2015-11-28 00:00:00",
-  "ApertureValue": 2.8,
   "ExposureCompensation": 0,
   "Flash": "Off, Did not fire",
   "FocalLength": "35.0 mm",
@@ -42,7 +37,6 @@
   ],
   "Headline": "An abstract image of heather with purple flowers and a birch branch on Chobham common. The camera was rotated during the exposure",
   "Title": "Heather Eddy",
-  "ShutterSpeedValue": "1/4",
   "Sublocation": "Chobham Common",
   "CountryPrimaryLocationName": "England",
   "CountryPrimaryLocationCode": "GB",
@@ -53,6 +47,10 @@
   "ImageHeight": 560,
   "ImageAspectRatio": 1.5,
   "ImageAspectRatioIdentifier": "3to2",
+  "Slug": "heather-eddy",
+  "DateTimeOriginal": "2015-08-12 05:58:17",
+  "DatePublished": "2015-11-28 00:00:00",
+  "Season": "summer",
   "Colors": [
     "#524641",
     "#b1a9c2",
@@ -60,5 +58,5 @@
     "#a8a69c",
     "#a68492"
   ],
-  "Season": "summer"
+  "CaptionAbstract": "<p>An abstraction of newly enflowered heather and a fallen birch branch on Chobham Common.</p>\n"
 }

@@ -28,7 +28,7 @@ Use `.env.example` as a starting point to create config files for deployment to 
     * photos in w200 directory should contain photos 200px wide
     * photos in h300 directory should contain photos 300px tall
 * Add thumbnail image containing all metadata to source/metadata_images/&lt;gallery&gt;/ folder
-* `npm run add-photo` extracts metadata and rebuilds the gallery and photo pages
+* `npm run add-photos` extracts metadata and rebuilds the gallery and photo pages
 
 ### Environment
 
