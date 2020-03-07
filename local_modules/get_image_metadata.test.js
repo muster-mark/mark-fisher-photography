@@ -68,4 +68,5 @@ test('Throws if crucial metadata missing', async () => {
     await expect(getImageMetadata(`${testImagesDir}/headline-missing.jpg`)).rejects.toThrow(/headline/i);
     await expect(getImageMetadata(`${testImagesDir}/country-missing.jpg`)).rejects.toThrow(/country/i);
     await expect(getImageMetadata(`${testImagesDir}/country-code-invalid.jpg`)).rejects.toThrow(/country.*code/i);
+    await expect(getImageMetadata(`${testImagesDir}/publish-date-invalid.jpg`)).rejects.toThrow(/publish.*date/i);
 });

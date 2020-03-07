@@ -5,6 +5,7 @@ const path = require('path');
 const fs = require('fs');
 const exec = util.promisify(require('child_process').exec);
 const colors = require('colors');
+const junk = require('junk');
 
 
 const getImageMetadata = require('./../local_modules/get_image_metadata.js');
@@ -22,16 +23,14 @@ const metadataJsonDir = path.normalize(`${rootDir}/source/metadata_json`);
 
 const getAllGalleries = async function getAllGalleries() {
     let galleries = await util.promisify(fs.readdir)(metadataImagesDir);
-    galleries = galleries.filter((gallery) => gallery.charAt(0) !== '.'); // Ignore e.g. .DS_Store
+    galleries = galleries.filter(junk.not);
     return galleries;
 };
 
 
 const getMetaDataForGallery = async function getMetaDataForGallery(gallery) {
     const imageFiles = await util.promisify(fs.readdir)(`${metadataImagesDir}/${gallery}`)
-        .then((files) => {
-            return files.filter((imageFile) => !/^\./.test(imageFile));
-        });
+        .then((files) => files.filter(junk.not));
 
 
     if (!imageFiles.length) {
@@ -70,7 +69,7 @@ const main = async function main() {
                 });
             })
             .catch((error) => {
-                console.error(error.message.error);
+                console.error(error.message);
                 console.trace();
             });
     }));
@@ -78,8 +77,6 @@ const main = async function main() {
     fs.writeFile(`${metadataJsonDir}/all.json`, JSON.stringify({ images: allMetadata }, null, 2), () => {
         console.log(`Wrote all.json to ${metadataJsonDir}`);
     });
-
-    return Promise.resolve(0);
 };
 
 main();

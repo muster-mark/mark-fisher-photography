@@ -61,10 +61,7 @@ const transformedFields = {
         return metadata.DateTimeOriginal.replace(/:/, '-').replace(/:/, '-');
     },
     async DatePublished(metadata) {
-        if (/\d{4}-\d{2}-\d{2}/.test(metadata.OriginalTransmissionReference)) {
-            return `${metadata.OriginalTransmissionReference} 00:00:00`;
-        }
-        return null;
+        return `${metadata.OriginalTransmissionReference} 00:00:00`;
     },
     async Colors(metadata, args) {
         const colorsArray = await getColors(args.pathToFile);
@@ -94,8 +91,12 @@ function validateMetadata(metadata, fileName) {
 
     const countryCode = metadata['Country-PrimaryLocationCode'];
 
-    if (!/^[A-Z]{2,3}$/.test(countryCode)) {
+    if (!/^[A-Z]{2}$/.test(countryCode)) {
         throw new Error(`Country code ${countryCode} stored in ${fileName} is an invalid format`);
+    }
+
+    if (!/\d{4}-\d{2}-\d{2}/.test(metadata.OriginalTransmissionReference)) {
+        throw new Error(`Publish date (in Job Identifier field) is invalid or not supplied for ${fileName}`);
     }
 }
 
