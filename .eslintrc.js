@@ -31,6 +31,7 @@ module.exports = {
             "switchCase": 1,
             "ignores": []
         }],
+        'arrow-parens': "off",
     },
     'overrides': [
         {

@@ -24,8 +24,7 @@ module.exports = function clearCloudfrontCache(distributionId, key, secret) {
 
     cloudfront.createInvalidation(invalidationParams, (err, data) => {
         if (err) {
-            console.log(err, err.stack);
-            process.exit(1);
+            throw new Error(`Could not invalidate the cache for distribution ${distributionId}: ${err.message}`);
         } else {
             console.log(data);
             console.log(`Invalidating CF cache for distribution: ${distributionId}`);

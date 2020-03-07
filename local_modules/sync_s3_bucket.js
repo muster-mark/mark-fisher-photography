@@ -30,8 +30,7 @@ module.exports = async function syncS3Bucket(bucketName, key = '', bucketRegion,
     const { stdout, stderr } = await exec(cmd);
 
     if (stderr) {
-        console.error('There was a problem syncing');
-        process.exit(1);
+        throw new Error(`There was a problem syncing to ${bucketName}: ${stderr}`);
     }
 
     return Promise.resolve(stdout);
