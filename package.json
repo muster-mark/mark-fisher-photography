@@ -11,15 +11,9 @@
     "dependencies": {
         "@bugsnag/js": "^6.5.2",
         "@bugsnag/plugin-vue": "^6.5.0",
-        "@symfony/webpack-encore": "^0.28.3",
-        "advanced-sitemap-generator": "^1.6.9",
-        "aws-sdk": "^2.635.0",
-        "colors": "^1.4.0",
-        "compression": "^1.7.4",
         "core-js": "^3.6.4",
         "date-season": "0.0.2",
         "dotenv": "^8.2.0",
-        "express": "^4.17.1",
         "get-image-colors": "^2.0.0",
         "glob-promise": "^3.4.0",
         "imagemin-webp-webpack-plugin": "^3.3.1",
@@ -32,7 +26,6 @@
         "nunjucks": "^3.2.0",
         "nunjucks-date": "^1.5.0",
         "open": "^7.0.2",
-        "opn": "^6.0.0",
         "request": "^2.88.2",
         "request-promise": "^4.2.5",
         "sass-loader": "^7.0.1",
@@ -60,10 +53,16 @@
         "*.vue"
     ],
     "devDependencies": {
+        "@symfony/webpack-encore": "^0.28.3",
+        "advanced-sitemap-generator": "^1.6.9",
+        "aws-sdk": "^2.635.0",
+        "colors": "^1.4.0",
+        "compression": "^1.7.4",
         "eslint": "^6.8.0",
         "eslint-config-airbnb-base": "^14.0.0",
         "eslint-plugin-import": "^2.20.1",
         "eslint-plugin-vue": "^6.2.1",
+        "express": "^4.17.1",
         "jest": "^25.1.0"
     }
 }
