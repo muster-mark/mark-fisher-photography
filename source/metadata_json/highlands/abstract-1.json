@@ -1,0 +1,33 @@
+{
+  "Gallery": "highlands",
+  "FileName": "abstract-1.jpg",
+  "Make": "Canon",
+  "Model": "Canon EOS 5D Mark III",
+  "Lens": "EF16-35mm f/4L IS USM",
+  "ExposureTime": "1/50",
+  "FNumber": 9,
+  "ISO": 100,
+  "ExposureCompensation": 0,
+  "Flash": "Off, Did not fire",
+  "FocalLength": "27.0 mm",
+  "Headline": "An abstract photo. See in it what you will.",
+  "Title": "Abstract #1",
+  "CountryPrimaryLocationName": "Scotland",
+  "CountryPrimaryLocationCode": "GB",
+  "ImageWidth": 840,
+  "ImageHeight": 840,
+  "ImageAspectRatio": 1,
+  "ImageAspectRatioIdentifier": "1to1",
+  "Slug": "abstract-1",
+  "DateTimeOriginal": "2019-06-03 10:32:19",
+  "DatePublished": "2020-03-15 00:00:00",
+  "Season": "autumn",
+  "Colors": [
+    "#8b8480",
+    "#2f2628",
+    "#d7d0cb",
+    "#46393a",
+    "#5d4d35"
+  ],
+  "CaptionAbstract": null
+}
