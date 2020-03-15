@@ -95,7 +95,7 @@ function validateMetadata(metadata, fileName) {
         throw new Error(`Country code ${countryCode} stored in ${fileName} is an invalid format`);
     }
 
-    if (!/\d{4}-\d{2}-\d{2}/.test(metadata.OriginalTransmissionReference)) {
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(metadata.OriginalTransmissionReference)) {
         throw new Error(`Publish date (in Job Identifier field) is invalid or not supplied for ${fileName}`);
     }
 }

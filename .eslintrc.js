@@ -32,6 +32,7 @@ module.exports = {
             "ignores": []
         }],
         'arrow-parens': "off",
+        "import/no-extraneous-dependencies": ["error", {"devDependencies": ["local_modules/*"]}]
     },
     'overrides': [
         {
