@@ -34,7 +34,7 @@ Use `.env.example` as a starting point to create config files for deployment to 
 
 The following need to be installed and in the PATH
 
-  * Node.js
+  * Node.js - version as specified in .nvmrc
   * npm
   * exiftool
 
