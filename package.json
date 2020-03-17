@@ -40,6 +40,7 @@
         "webpack-bundle-analyzer": "^3.6.1"
     },
     "scripts": {
+        "postinstall": "command -v nvm && nvm use || echo \"Please make sure you are using the version of node specified in .nvmrc\"",
         "add-photos": "node scripts/extract_metadata.js && node scripts/build_photo_and_gallery_pages.js && node scripts/build_image_data.js",
         "build": "node_modules/.bin/encore prod && npm run build-pages && cp -r source/static/* public/",
         "dev": "node_modules/.bin/encore dev && npm run build-pages && cp -r source/static/* public/",
