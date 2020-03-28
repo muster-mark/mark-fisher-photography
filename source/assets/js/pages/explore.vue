@@ -43,7 +43,7 @@
         >
             <li v-masonry-tile
                 class="explore_result"
-                v-for="image in filteredImages.slice(firstShown - 1, lastShown - 1)"
+                v-for="image in filteredImages.slice(firstShown - 1, lastShown)"
                 :key="image.FileName"
             >
                 <explore-result :image="image"></explore-result>
@@ -86,7 +86,7 @@
                 return this.resultLimit * (this.page - 1) + 1;
             },
             lastShown() {
-                return Math.min(this.filteredImages.length, this.resultLimit * (this.page) - 1);
+                return Math.min(this.filteredImages.length, this.resultLimit * (this.page));
             },
             numPages() {
                 return Math.ceil(this.filteredImages.length / this.resultLimit);
