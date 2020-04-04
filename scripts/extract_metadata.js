@@ -74,9 +74,14 @@ const main = async function main() {
             });
     }));
 
-    fs.writeFile(`${metadataJsonDir}/all.json`, JSON.stringify({ images: allMetadata }, null, 2), () => {
-        console.log(`Wrote all.json to ${metadataJsonDir}`);
-    });
+    fs.writeFile(
+        `${metadataJsonDir}/all.json`,
+        JSON.stringify({
+            images: allMetadata.sort((a, b) => (a.DatePublished > b.DatePublished ? -1 : 1)),
+        }, null, 2), () => {
+            console.log(`Wrote all.json to ${metadataJsonDir}`);
+        },
+    );
 };
 
 main();
