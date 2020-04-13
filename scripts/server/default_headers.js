@@ -6,11 +6,11 @@ const cspHeaderDirectives = [
     'connect-src \'self\' sessions.bugsnag.com notify.bugsnag.com;',
     'form-action \'self\';',
     'frame-src \'self\';',
-    'script-src \'self\' \'unsafe-inline\' \'unsafe-eval\';',
+    'script-src \'self\' \'unsafe-inline\' \'unsafe-eval\' *.usefathom.com;',
     'style-src \'self\' \'unsafe-inline\';',
     'object-src \'none\';',
     'frame-ancestors \'self\';',
-    'img-src \'self\';',
+    'img-src \'self\' *.usefathom.com;',
 ];
 
 const featurePolicyHeaderDirectives = [
