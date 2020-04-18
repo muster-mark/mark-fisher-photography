@@ -43,29 +43,11 @@
 
 {% include "_includes/footer.html.nunj" %}
 
-<script src="/assets/main.js" defer></script>
+<script src="/assets/main.js" defer ></script>
 {% block footer_scripts %}
 
 {% endblock %}
-{# Start Fathom - https://usefathom.com #}>
-<script>
-    if (window.location.hostname === "www.markfisher.photo") {
-        (function (f, a, t, h, o, m) {
-            a[h] = a[h] || function () {
-                (a[h].q = a[h].q || []).push(arguments)
-            };
-            o = f.createElement('script'),
-                    m = f.getElementsByTagName('script')[0];
-            o.async = 1;
-            o.src = t;
-            o.id = 'fathom-script';
-            m.parentNode.insertBefore(o, m)
-        })(document, window, 'https://cdn.usefathom.com/tracker.js', 'fathom');
-        fathom('set', 'siteId', 'YVOWMTPK');
-        fathom('trackPageview');
-    }
-</script>
-{# End Fathom #}
+
 
 </body>
 
