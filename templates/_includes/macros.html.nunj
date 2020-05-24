@@ -37,8 +37,6 @@
     {% set icons = {
         instagram: {
         },
-        flickr: {
-        },
         '500px': {
         },
         'chevron-left': {
@@ -90,9 +88,6 @@
     <span class="{{ classes.join(' ') }}">
     <a class="a_context sm-link" href="https://www.instagram.com/mark.j.fisher/">
         {{ svg_icon('instagram', 'Visit my Instagram profile') }}
-    </a>
-    <a class="a_context sm-link" href="https://www.flickr.com/photos/muster_mark/">
-        {{ svg_icon('flickr', 'Visit my Flickr profile') }}
     </a>
     <a class="a_context sm-link" href="https://500px.com/mark_fisher">
         {{ svg_icon('500px', 'Visit my 500px profile') }}
