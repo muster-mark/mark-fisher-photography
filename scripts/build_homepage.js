@@ -1,15 +1,12 @@
-const path = require('path');
-const fs = require('fs');
-const util = require('util');
+const path = require("path");
+const fs = require("fs");
+const util = require("util");
+const glob = require("glob-promise");
 
-const nunjucks = require('nunjucks');
-const glob = require('glob-promise');
+const nunjucks = require("../local_modules/nunjucks");
+const renderAndWriteTemplate = require("../local_modules/render_and_write_template");
+const allImages = require("../source/metadata_json/all.json").images;
 
-const galleries = require('./../local_modules/galleries.js');
-const renderAndWriteTemplate = require('./../local_modules/render_and_write_template');
-const allImages = require('./../source/metadata_json/all.json').images;
-
-const templatesPath = path.resolve(`${__dirname}/../templates`);
 const metadataDir = path.resolve(`${__dirname}/../source/metadata_json`);
 const publicDir = path.resolve(`${__dirname}/../public`);
 
@@ -19,24 +16,16 @@ const homepageImages = allImages
     .slice(0, 21)
     .map((image) => image.Slug);
 
-const environment = nunjucks.configure(templatesPath, {
-    throwOnUndefined: false,
-    trimBlocks: true,
-});
-
-environment.addGlobal('header_nav_links', galleries.getUrlToNameMapping());
-
 const getImageData = async (slug) => {
     const jsonFiles = await glob(`${metadataDir}/*/${slug}.json`);
     if (jsonFiles.length !== 1) {
         throw new Error(`Unexpected number of JSON files for ${slug}`);
     }
 
-    return util.promisify(fs.readFile)(jsonFiles[0], { encoding: 'utf-8' });
+    return util.promisify(fs.readFile)(jsonFiles[0], { encoding: "utf-8" });
 };
 
 const getImagesData = async () => Promise.all(homepageImages.map((image) => getImageData(image)));
-
 
 let favouriteImages;
 
@@ -49,11 +38,11 @@ getImagesData().then((data) => {
     });
 
     renderAndWriteTemplate(
-        '_pages/homepage.html.nunj',
+        "_pages/homepage.html.nunj",
         `${publicDir}/index`,
         {
             page: {
-                url: '/',
+                url: "/",
             },
             favouriteImages,
             copyrightYear: new Date().getFullYear(),
