@@ -1,23 +1,15 @@
-const fs = require('fs');
-const path = require('path');
-const util = require('util');
-const glob = require('glob-promise');
-const nunjucks = require('nunjucks');
+const fs = require("fs");
+const path = require("path");
+const util = require("util");
+const glob = require("glob-promise");
+const nunjucks = require("../local_modules/nunjucks");
 
-const galleries = require('./../local_modules/galleries.js');
-const renderAndWriteTemplate = require('./../local_modules/render_and_write_template');
+const galleries = require("../local_modules/galleries.js");
+const renderAndWriteTemplate = require("../local_modules/render_and_write_template");
 
 const templatesPath = path.resolve(`${__dirname}/../templates`);
 const metadataDir = path.resolve(`${__dirname}/../source/metadata_json/`);
 const publicDir = path.resolve(`${__dirname}/../public/`);
-
-const environment = nunjucks.configure(templatesPath, {
-    throwOnUndefined: false,
-    trimBlocks: true,
-});
-
-environment.addGlobal('header_nav_links', galleries.getUrlToNameMapping());
-environment.addFilter('date', require('nunjucks-date'));
 
 async function createImagePages(gallery, galleryMetadata) {
     for (let i = 0; i < galleryMetadata.length; i++) {
@@ -54,7 +46,7 @@ async function createImagePages(gallery, galleryMetadata) {
 async function createGalleryPage(gallery) {
     const jsonFiles = await glob(`${metadataDir}/${gallery}/*.json`);
     const jsonStrings = await Promise.all(
-        jsonFiles.map((file) => util.promisify(fs.readFile)(file, { encoding: 'utf-8' })),
+        jsonFiles.map((file) => util.promisify(fs.readFile)(file, { encoding: "utf-8" })),
     );
     const imageMetadata = jsonStrings.map((string) => {
         const json = JSON.parse(string.toString());
@@ -67,7 +59,7 @@ async function createGalleryPage(gallery) {
     await util.promisify(fs.mkdir)(`${publicDir}/${gallery}`, { recursive: true });
 
     renderAndWriteTemplate(
-        '_pages/gallery.html.nunj',
+        "_pages/gallery.html.nunj",
         `${publicDir}/${gallery}/index`,
         {
             page: {

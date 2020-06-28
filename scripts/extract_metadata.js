@@ -1,20 +1,19 @@
 // Write a json file for each image containing metadata
 
-const util = require('util');
-const path = require('path');
-const fs = require('fs');
-const exec = util.promisify(require('child_process').exec);
-const colors = require('colors');
-const junk = require('junk');
+const util = require("util");
+const path = require("path");
+const fs = require("fs");
+const exec = util.promisify(require("child_process").exec);
+const colors = require("colors");
+const junk = require("junk");
 
-
-const getImageMetadata = require('./../local_modules/get_image_metadata.js');
+const getImageMetadata = require("../local_modules/get_image_metadata.js");
 
 colors.setTheme({
-    info: 'cyan',
-    warn: 'yellow',
-    debug: 'blue',
-    error: 'red',
+    info: "cyan",
+    warn: "yellow",
+    debug: "blue",
+    error: "red",
 });
 
 const rootDir = path.normalize(`${__dirname}/..`);
@@ -27,19 +26,15 @@ const getAllGalleries = async function getAllGalleries() {
     return galleries;
 };
 
-
 const getMetaDataForGallery = async function getMetaDataForGallery(gallery) {
     const imageFiles = await util.promisify(fs.readdir)(`${metadataImagesDir}/${gallery}`)
         .then((files) => files.filter(junk.not));
-
 
     if (!imageFiles.length) {
         return Promise.reject(new Error(`Gallery ${gallery} is empty`));
     }
 
-    const galleryMetadata = await Promise.all(imageFiles.map((imageFile) => {
-        return getImageMetadata(`${metadataImagesDir}/${gallery}/${imageFile}`, gallery);
-    }));
+    const galleryMetadata = await Promise.all(imageFiles.map((imageFile) => getImageMetadata(`${metadataImagesDir}/${gallery}/${imageFile}`, gallery)));
 
     return Promise.resolve(galleryMetadata);
 };
@@ -61,10 +56,10 @@ const main = async function main() {
             .then((imagesMetadata) => {
                 imagesMetadata.forEach((imageMetadata) => {
                     allMetadata.push(imageMetadata);
-                    const fileName = `${metadataJsonDir}/${gallery}/${imageMetadata.FileName.replace('.jpg', '.json')}`;
+                    const fileName = `${metadataJsonDir}/${gallery}/${imageMetadata.FileName.replace(".jpg", ".json")}`;
                     fs.writeFile(fileName, JSON.stringify(imageMetadata, null, 2), () => {
                         // Out of order due to asynchronicity
-                        console.log(`Writing JSON file for ${imageMetadata.FileName.replace('.jpg', '.json')} in ${gallery}`);
+                        console.log(`Writing JSON file for ${imageMetadata.FileName.replace(".jpg", ".json")} in ${gallery}`);
                     });
                 });
             })

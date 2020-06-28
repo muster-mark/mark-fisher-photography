@@ -1,9 +1,11 @@
 const path = require("path");
 
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const BundleAnalyzer = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 const TerserPlugin = require("terser-webpack-plugin");
 const VueLoaderPlugin = require("vue-loader/lib/plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const ManifestPlugin = require("webpack-manifest-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 
 const productionPlugins = [
@@ -23,7 +25,7 @@ module.exports = {
     entry: "./source/assets/js/main.js",
     output: {
         path: path.resolve(__dirname, "public/assets/"),
-        filename: "main.js",
+        filename: "[name].[contentHash].bundle.js",
         publicPath: "/public/",
     },
     module: {
@@ -57,8 +59,21 @@ module.exports = {
     },
     plugins: [
         ...productionPlugins,
+        new CleanWebpackPlugin({
+            cleanOnceBeforeBuildPatterns: ["../**/*", "**/*"],
+            dangerouslyAllowCleanPatternsOutsideProject: true,
+            dry: false,
+            verbose: true,
+        }),
         new VueLoaderPlugin(),
-        new MiniCssExtractPlugin(),
+        new MiniCssExtractPlugin({
+            filename: "[name].[hash].css",
+        }),
+        new ManifestPlugin({
+            filter: (descriptor) => {
+                return descriptor.chunk;
+            },
+        }),
         new CopyPlugin({
             patterns: [
                 {
