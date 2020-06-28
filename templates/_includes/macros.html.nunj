@@ -33,7 +33,7 @@
     {#    </picture>#}
 {% endmacro %}
 
-{% macro svg_icon(name, title, fixed_width=false) %}
+{% macro svg_icon(name, title='', fixed_width=false, display_width=null, display_height=null) %}
     {% set icons = {
         instagram: {
         },
@@ -75,6 +75,8 @@
     {% endif %}
 
     <svg role="img"
+         {% if display_width %}width="{{ display_width }}"{% endif %}
+            {% if display_height %}height="{{ display_height }}"{% endif %}
          class="ico{% if(fixed_width) %} ico_fw{% endif %}"
          viewBox="0 0 {{ width | default('448') }} {{ height | default('512') }}"
     >

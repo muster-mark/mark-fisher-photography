@@ -59,11 +59,11 @@
 
 </template>
 
-<script>
+<script lang="js">
     import MultiSelect from 'vue-multiselect';
+
     import ExploreResult from '../components/explore-result.vue';
     import PaginationLinks from '../components/pagination-links.vue';
-
 
     export default {
         data() {
@@ -109,6 +109,22 @@
                 this.page = page;
                 window.scrollTo(0, this.scrollTarget.offsetTop);
             },
+            onCreate() {
+                const self = this;
+                fetch('/data/images.json')
+                        .then((data) => data.json())
+                        .then((json) => {
+                            self.allImages = json.images;
+                            self.countries = json.countryCounts;
+                            self.selectedCountries = json.countryCounts;
+                            self.seasons = json.seasonCounts;
+                            self.selectedSeasons = json.seasonCounts;
+                        })
+                        .catch((err) => {
+                            console.error('There was an error fetching data');
+                            console.log(err);
+                        });
+            }
         },
         watch: {
             selectedCountries() {
@@ -125,19 +141,16 @@
         },
         created() {
             const self = this;
-            fetch('/data/images.json')
-                .then((data) => data.json())
-                .then((json) => {
-                    self.allImages = json.images;
-                    self.countries = json.countryCounts;
-                    self.selectedCountries = json.countryCounts;
-                    self.seasons = json.seasonCounts;
-                    self.selectedSeasons = json.seasonCounts;
-                })
-                .catch((err) => {
-                    console.error('There was an error fetching data');
-                    console.log(err);
+
+            if (typeof window.fetch === "undefined") {
+                import("whatwg-fetch")
+                .then(() => {
+                    self.onCreate();
                 });
+            } else {
+                this.onCreate();
+            }
+
         },
         mounted() {
             this.scrollTarget = document.querySelector('.js_scroll-target');
@@ -149,7 +162,7 @@
 
     ul {
         list-style-type: none;
-        margin: 0;
+        margin:auto;
         padding: 0;
 
         @media screen and (max-width: 240px) {
@@ -171,8 +184,6 @@
             //4 cols
             width: 845px;
         }
-
-        margin: auto;
 
     }
 

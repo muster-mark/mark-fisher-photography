@@ -68,7 +68,7 @@
     </form>
 </template>
 
-<script>
+<script lang="js">
     import SvgIcon from '../components/svg-icon.vue';
 
     export default {
