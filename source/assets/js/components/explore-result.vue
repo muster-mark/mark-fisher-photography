@@ -8,9 +8,9 @@
     </a>
 </template>
 
-<script>
+<script lang="js">
     export default {
-        props: ['image'],
+        props: ["image"],
         data() {
             return {};
         },
@@ -22,7 +22,7 @@
     };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
     img {
         display: block;
         margin-bottom: 15px; /* same as masonry gutter width */
