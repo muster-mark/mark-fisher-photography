@@ -30,6 +30,10 @@ module.exports = function getImageAspectRatioIdentifier(width, height) {
             return '7to5';
         case 5 / 7:
             return '5to7';
+        case 3:
+            return '3to1';
+        case 1 / 3:
+            return "1to3";
         default:
             throw new Error(`${widthOverHeight} is not a standard aspect ratio`);
     }
