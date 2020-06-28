@@ -1,6 +1,6 @@
 import Vue from 'vue';
-import bugsnag from '@bugsnag/js';
-import bugsnagVue from '@bugsnag/plugin-vue';
+import Bugsnag from '@bugsnag/js';
+import BugsnagPluginVue from '@bugsnag/plugin-vue';
 import { VueMasonryPlugin } from 'vue-masonry';
 import explore from './pages/explore.vue';
 import contact from './pages/contact.vue';
@@ -12,8 +12,12 @@ require('../css/main.scss');
 // eslint-disable-next-line camelcase,no-undef
 __webpack_public_path__ = 'assets/';
 
-const bugsnagClient = bugsnag('b1a1880b2f0b2119db9d3d82e2ac2e50');
-bugsnagClient.use(bugsnagVue, Vue);
+Bugsnag.start({
+    apiKey: 'b1a1880b2f0b2119db9d3d82e2ac2e50',
+    plugins: [
+        new BugsnagPluginVue()
+    ]
+})
 
 if (document.getElementById('explore-app')) {
     Vue.use(VueMasonryPlugin);
