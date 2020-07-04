@@ -64,17 +64,16 @@
             </div>
         </div>
 
-
     </form>
 </template>
 
 <script lang="js">
-    import SvgIcon from '../components/svg-icon.vue';
+    import SvgIcon from "../components/svg-icon.vue";
 
     export default {
         data() {
             return {
-                action: `${window.location.origin.replace('www', 'api')}/message`,
+                action: `${window.location.origin.replace("www", "api")}/message`,
                 fields: {
                     name: {
                         value: null,
@@ -101,7 +100,7 @@
         methods: {
             resetForm() {
                 Object.keys(this.fields).forEach((key) => {
-                    this.fields[key].value = '';
+                    this.fields[key].value = "";
                     this.fields[key].touched = false;
                 });
             },
@@ -117,33 +116,31 @@
 
                 const self = this;
                 fetch(this.action, {
-                    method: 'POST',
+                    method: "POST",
                     body: JSON.stringify(data),
-                    mode: 'cors',
+                    mode: "cors",
                     headers: {
-                        'Content-Type': 'application/json',
+                        "Content-Type": "application/json",
                     },
                 })
-                        .then((response) => {
-                                    if (response.ok) {
-                                        self.submissionSucceeded = true;
-                                        self.resetForm();
-                                    } else {
-                                        console.log(response);
-                                        return Promise.reject(response);
-                                    }
-                                },
-                        )
-                        .catch((err) => {
-                                    self.submissionSucceeded = false;
-                                    console.log('Form submission failed');
-                                    console.log(err);
-                                },
-                        )
-                        .finally(() => {
-                            self.isSubmitting = false;
-                            document.querySelector('.contact-form_result-message').scrollIntoView(false);
-                        });
+                    .then((response) => {
+                        if (response.ok) {
+                            self.submissionSucceeded = true;
+                            self.resetForm();
+                        } else {
+                            console.log(response);
+                            return Promise.reject(response);
+                        }
+                    })
+                    .catch((err) => {
+                        self.submissionSucceeded = false;
+                        console.log("Form submission failed");
+                        console.log(err);
+                    })
+                    .finally(() => {
+                        self.isSubmitting = false;
+                        document.querySelector(".contact-form_result-message").scrollIntoView(false);
+                    });
             },
         },
         components: {
