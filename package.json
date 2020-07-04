@@ -8,6 +8,20 @@
     },
     "homepage": "https://github.com/muster-mark/markfisher.local#readme",
     "repository": "https://github.com/muster-mark/markfisher.local",
+    "scripts": {
+        "postinstall": "command -v nvm && nvm use || echo \"Please make sure you are using the version of node specified in .nvmrc\"",
+        "add-photos": "node scripts/extract_metadata.js && node scripts/build_photo_and_gallery_pages.js && node scripts/build_image_data.js",
+        "build": "cross-env NODE_ENV='production' webpack --config webpack.config.js && npm run build-pages",
+        "dev": "cross-env NODE_ENV='development' webpack --config webpack.config.js && npm run build-pages",
+        "build-pages": "node scripts/build_manual_pages.js && node scripts/build_photo_and_gallery_pages.js && node scripts/build_homepage.js",
+        "test": "jest",
+        "deploy": "node scripts/deploy.js",
+        "serve": "node scripts/serve.js",
+        "build-sitemap": "node scripts/build_sitemap.js"
+    },
+    "sideEffects": [
+        "*.vue"
+    ],
     "dependencies": {
         "@bugsnag/js": "^7.1.1",
         "@bugsnag/plugin-vue": "^7.1.1",
@@ -38,19 +52,6 @@
         "webpack-bundle-analyzer": "^3.8.0",
         "whatwg-fetch": "^3.0.0"
     },
-    "scripts": {
-        "postinstall": "command -v nvm && nvm use || echo \"Please make sure you are using the version of node specified in .nvmrc\"",
-        "add-photos": "node scripts/extract_metadata.js && node scripts/build_photo_and_gallery_pages.js && node scripts/build_image_data.js",
-        "build": "webpack --config webpack.config.js && npm run build-pages",
-        "build-pages": "node scripts/build_manual_pages.js && node scripts/build_photo_and_gallery_pages.js && node scripts/build_homepage.js",
-        "test": "jest",
-        "deploy": "node scripts/deploy.js",
-        "serve": "node scripts/serve.js",
-        "build-sitemap": "node scripts/build_sitemap.js"
-    },
-    "sideEffects": [
-        "*.vue"
-    ],
     "devDependencies": {
         "@babel/plugin-syntax-dynamic-import": "^7.8.3",
         "@babel/plugin-transform-runtime": "^7.10.3",
@@ -63,6 +64,7 @@
         "compression": "^1.7.4",
         "copy-webpack-plugin": "^6.0.2",
         "core-js": "^3.6.5",
+        "cross-env": "^7.0.2",
         "css-loader": "^3.6.0",
         "eslint": "^6.0.0",
         "eslint-config-airbnb-base": "^14.2.0",

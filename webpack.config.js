@@ -8,6 +8,8 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const ManifestPlugin = require("webpack-manifest-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 
+const isDevelopment = process.env.NODE_ENV !== "production";
+
 const productionPlugins = [
     new BundleAnalyzer({
         analyzerPort: 8889,
@@ -19,9 +21,8 @@ const productionPlugins = [
     new TerserPlugin(),
 ];
 
-
 module.exports = {
-    mode: "production",
+    mode: isDevelopment ? "development" : "production",
     entry: "./source/assets/js/main.js",
     output: {
         path: path.resolve(__dirname, "public/assets/"),
@@ -58,7 +59,7 @@ module.exports = {
         ],
     },
     plugins: [
-        ...productionPlugins,
+        ...(isDevelopment ? [] : productionPlugins),
         new CleanWebpackPlugin({
             cleanOnceBeforeBuildPatterns: ["../**/*", "**/*"],
             dangerouslyAllowCleanPatternsOutsideProject: true,
