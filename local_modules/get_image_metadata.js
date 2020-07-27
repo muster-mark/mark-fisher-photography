@@ -71,7 +71,7 @@ const transformedFields = {
         const standardDate = metadata.DateTimeOriginal.replace(/:/, '-').replace(/:/, '-');
         return (new DateSeason({
             autumn: true,
-            north: metadata.GPSLatitudeRef === 'North',
+            north: metadata.GPSLatitudeRef !== 'South',
         })(new Date(standardDate))).toLowerCase();
     },
 };
