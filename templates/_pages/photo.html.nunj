@@ -7,6 +7,12 @@ s{% extends "_layouts/default.html.nunj" %}
     <link rel="prefetch" href="/{{ gallery }}/{{ previous_photo.Slug }}"/>
 {% endblock %}
 
+{% block meta_description_tag %}
+    {% if photo.CaptionAbstract %}
+        <meta name="description" content="{{ photo.CaptionAbstract | captionToMetaDesc | escape }}">
+    {% endif %}
+{% endblock %}
+
 {% block content %}
 
     <div class="inner-container ">
@@ -14,7 +20,7 @@ s{% extends "_layouts/default.html.nunj" %}
             <div class="the-image_container">
                 <a href="/{{ gallery }}/{{ previous_photo.Slug }}" class="a_context the-image_prev"
                    title="Go to the previous image in the {{ gallery_name }} gallery">
-                   {{ svg_icon("chevron-left", "Previous image") }}
+                    {{ svg_icon("chevron-left", "Previous image") }}
                 </a>
                 {{ picture(photo.Slug, photo.Headline, "l840", photo.ImageAspectRatio, photo.Colors[0]) }}
                 <a href="/{{ gallery }}/{{ next_photo.Slug }}" class="a_context the-image_next"
@@ -40,13 +46,13 @@ s{% extends "_layouts/default.html.nunj" %}
             <ul class="image-details_list">
                 {% if photo.Sublocation %}
                     <li>
-                        {{ svg_icon("map-marked-alt", "Location", true)}}{{ photo.Sublocation }}{% if photo.CountryPrimaryLocationName %}, {{ photo.CountryPrimaryLocationName }}{% endif %}
+                        {{ svg_icon("map-marked-alt", "Location", true) }}{{ photo.Sublocation }}{% if photo.CountryPrimaryLocationName %}, {{ photo.CountryPrimaryLocationName }}{% endif %}
                     </li>
                 {% endif %}
 
                 {% if photo.DateTimeOriginal %}
                     <li>
-                       {{ svg_icon("calendar-alt", "Date taken", true) }}{{ photo.DateTimeOriginal|date('Do MMMM, YYYY') }}
+                        {{ svg_icon("calendar-alt", "Date taken", true) }}{{ photo.DateTimeOriginal|date('Do MMMM, YYYY') }}
                     </li>
                 {% endif %}
 
@@ -64,7 +70,8 @@ s{% extends "_layouts/default.html.nunj" %}
 
                 {% if photo.ExposureTime and photo.FNumber and photo.ISO %}
                     <li>
-                        {{ svg_icon("film-canister", "Exposure details", true) }}{{ photo.ExposureTime }}s at f/{{ photo.FNumber }}, ISO {{ photo.ISO }}
+                        {{ svg_icon("film-canister", "Exposure details", true) }}{{ photo.ExposureTime }}s at
+                        f/{{ photo.FNumber }}, ISO {{ photo.ISO }}
                     </li>
                 {% endif %}
             </ul>
