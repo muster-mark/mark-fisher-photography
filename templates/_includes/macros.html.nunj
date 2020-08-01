@@ -88,10 +88,16 @@
 
 {% macro social_media(classes) %}
     <span class="{{ classes.join(' ') }}">
-    <a class="a_context sm-link" href="https://www.instagram.com/mark.j.fisher/">
+    <a class="a_context sm-link"
+       href="https://www.instagram.com/mark.j.fisher/"
+       aria-label="Visit Mark Fisher's Instagram profile"
+    >
         {{ svg_icon('instagram', 'Visit my Instagram profile') }}
     </a>
-    <a class="a_context sm-link" href="https://500px.com/mark_fisher">
+    <a class="a_context sm-link"
+       href="https://500px.com/mark_fisher"
+       aria-label="Visit Mark Fisher's 500px profile"
+    >
         {{ svg_icon('500px', 'Visit my 500px profile') }}
     </a>
 
