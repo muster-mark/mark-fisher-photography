@@ -13,6 +13,8 @@ const environment = nunjucks.configure(templatesPath, {
     trimBlocks: true,
 });
 
+const stripHTML = string => string.replace(/(<([^>]+)>)/gi, "");
+
 environment.addGlobal("header_nav_links", galleries.getUrlToNameMapping());
 environment.addFilter("date", nunjucksDate);
 environment.addFilter("chunk", (name) => {
@@ -21,6 +23,21 @@ environment.addFilter("chunk", (name) => {
         throw new Error(`No entry in manifest.json for ${name}`);
     }
     return `/assets/${outputFile.replace("/public/", "")}`;
+});
+environment.addFilter("captionToMetaDesc", caption => {
+    // Remove html tags
+    const MIN_DESC_LENGTH = 300;
+
+    const split = stripHTML(caption).split(". ");
+    let desc = "";
+
+    while (desc.length < MIN_DESC_LENGTH && split.length) {
+        desc += `${split.shift()}`;
+        if (split.length) {
+            desc += ". ";
+        }
+    }
+    return desc;
 });
 
 module.exports = nunjucks;
