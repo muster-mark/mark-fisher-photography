@@ -1,13 +1,13 @@
-const fs = require('fs');
-const util = require('util');
+const fs = require("fs");
+const util = require("util");
 
 module.exports = async function renderAndWriteTemplate(templatePath, outputPath, data = {}, nunjucks) {
     let output;
-
     try {
         output = nunjucks.render(templatePath, data);
     } catch (error) {
-        return Promise.reject(new Error(`Could not render template ${templatePath} using data: ${JSON.stringify(data)}`));
+        console.error(error);
+        process.exit();
     }
 
     if (output === null) {
@@ -15,7 +15,7 @@ module.exports = async function renderAndWriteTemplate(templatePath, outputPath,
     }
 
     try {
-        await util.promisify(fs.writeFile)(outputPath, output, { encoding: 'utf-8' });
+        await util.promisify(fs.writeFile)(outputPath, output, { encoding: "utf-8" });
         console.log(`Wrote HTML to ${outputPath}`);
     } catch (error) {
         return Promise.reject(new Error(`Could not write to ${outputPath}`));
