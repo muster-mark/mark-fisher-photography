@@ -3,7 +3,7 @@
 const cspHeaderDirectives = [
     "font-src 'self';",
     "base-uri 'self';",
-    "connect-src 'self' sessions.bugsnag.com notify.bugsnag.com;",
+    "connect-src 'self';",
     "form-action 'self';",
     "frame-src 'self';",
     "script-src 'self' 'unsafe-inline' 'unsafe-eval';",
