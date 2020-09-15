@@ -40,7 +40,7 @@
         "open": "^7.2.1",
         "request": "^2.88.2",
         "request-promise": "^4.2.6",
-        "sitemap-generator": "^8.5.0",
+        "sitemap-generator": "^8.5.1",
         "slug": "^3.3.4",
         "terser-webpack-plugin": "^4.1.0",
         "vue": "^2.6.12",
