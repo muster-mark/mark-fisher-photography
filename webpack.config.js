@@ -68,7 +68,7 @@ module.exports = {
         }),
         new VueLoaderPlugin(),
         new MiniCssExtractPlugin({
-            filename: "[name].[hash].css",
+            filename: "[name].[hash].css", //TODO should this be chunkhash (or even contentHash)
         }),
         new ManifestPlugin({
             filter: (descriptor) => {
