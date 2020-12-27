@@ -1,0 +1,29 @@
+{% extends "./../_layouts/default.html.nunj" %}
+
+{% from "_includes/macros.html.nunj" import svg_icon %}
+
+{% set page = {
+    "meta_title": "Privacy",
+    "url": "/privacy",
+    "title" : "Privacy Policy"
+} %}
+
+{% block headline %}
+    <p>Your privacy is of the utmost importance to me.</p>
+
+    <p>And I really do mean that. That's why this page is so short.</p>
+
+    <div>{{ svg_icon("calendar-alt", "Last updated", true) }}Last updated: December 27, 2020</div>
+
+{% endblock %}
+
+{% block meta_description_tag %}
+    <meta name="description" content="Your privacy is my priority. This website does "/>
+{% endblock %}
+
+{% block content %}
+    <div class="inner-container">
+        <p>This website does not set cookies on your computer for any purpose whatsoever.</p>
+        <p>This website does not collect or store any personally identifiable information, other than anything you explicitly submit on the contact page (that's right, not even your IP address).  </p>
+    </div>
+{% endblock %}
