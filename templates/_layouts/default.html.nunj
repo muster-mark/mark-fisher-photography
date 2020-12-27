@@ -43,9 +43,11 @@
 
 {% include "_includes/footer.html.nunj" %}
 
-<script src="{{ 'main.js' | chunk }}" defer ></script>
+<script src="{{ 'main.js' | chunk }}" defer></script>
 {% block footer_scripts %}
-
+    {# Cloudflare Web Analytics #}
+    <script defer src='https://static.cloudflareinsights.com/beacon.min.js'
+            data-cf-beacon='{"token": "2759a35cdfb54c33b50fefbdf1aac034"}'></script>
 {% endblock %}
 
 

@@ -3,10 +3,10 @@
 const cspHeaderDirectives = [
     "font-src 'self';",
     "base-uri 'self';",
-    "connect-src 'self';",
+    "connect-src 'self' cloudflareinsights.com;",
     "form-action 'self';",
     "frame-src 'self';",
-    "script-src 'self' 'unsafe-inline' 'unsafe-eval';",
+    "script-src 'self' 'unsafe-inline' 'unsafe-eval' static.cloudflareinsights.com;",
     "style-src 'self' 'unsafe-inline';",
     "object-src 'none';",
     "frame-ancestors 'self';",
