@@ -123,7 +123,7 @@
                         "Content-Type": "application/json",
                     },
                 })
-                    .then((response) => {
+                    .then(response => {
                         if (response.ok) {
                             self.submissionSucceeded = true;
                             self.resetForm();
