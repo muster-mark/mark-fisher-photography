@@ -23,10 +23,10 @@
 
 <script>
 
-    import SvgIcon from './svg-icon.vue';
+    import SvgIcon from "./svg-icon.vue";
 
     export default {
-        props: ['numPages', 'page'],
+        props: ["numPages", "page"],
         data() {
             return {};
         },

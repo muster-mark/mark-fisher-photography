@@ -16,27 +16,27 @@
         // },
         // '500px': {
         // },
-        'chevron-left': {
+        "chevron-left": {
             width: 256,
         },
-        'chevron-right': {
+        "chevron-right": {
             width: 256,
         },
-        'map-marked-alt': {
+        "map-marked-alt": {
             width: 576,
         },
         // 'calendar-alt': {
         // },
-        'camera-retro': {
+        "camera-retro": {
             width: 512,
         },
         envelope: {
             width: 512,
         },
-        'exclamation-circle': {
+        "exclamation-circle": {
             width: 512,
         },
-        'film-canister': {
+        "film-canister": {
             width: 576,
         },
         telescope: {
@@ -44,7 +44,7 @@
         },
     };
     export default {
-        props: ['name', 'title'],
+        props: ["name", "title"],
         data() {
             return {
                 width: iconDimensions[this.name] ? iconDimensions[this.name].width || defaultWidth : null,
