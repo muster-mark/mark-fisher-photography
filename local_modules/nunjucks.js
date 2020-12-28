@@ -1,9 +1,8 @@
 const path = require("path");
 const nunjucks = require("nunjucks");
-const fs = require("fs");
 const nunjucksDate = require("nunjucks-date");
 
-const manifest = JSON.parse(fs.readFileSync(path.resolve(`${__dirname}/../public/assets/manifest.json`), "utf-8"));
+const manifest = require("../public/assets/manifest.json");
 
 const templatesPath = path.resolve(`${__dirname}/../templates`);
 const { galleries } = require("./galleries.json");
