@@ -5,7 +5,7 @@ const BundleAnalyzer = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 const TerserPlugin = require("terser-webpack-plugin");
 const VueLoaderPlugin = require("vue-loader/lib/plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const ManifestPlugin = require("webpack-manifest-plugin");
+const { WebpackManifestPlugin } = require("webpack-manifest-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 
 const isDevelopment = process.env.NODE_ENV !== "production";
@@ -70,7 +70,7 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: "[name].[hash].css", // TODO should this be chunkhash (or even contentHash)
         }),
-        new ManifestPlugin({
+        new WebpackManifestPlugin({
             filter: descriptor => descriptor.chunk,
         }),
         new CopyPlugin({
