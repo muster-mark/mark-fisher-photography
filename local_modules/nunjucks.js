@@ -6,7 +6,7 @@ const nunjucksDate = require("nunjucks-date");
 const manifest = JSON.parse(fs.readFileSync(path.resolve(`${__dirname}/../public/assets/manifest.json`), "utf-8"));
 
 const templatesPath = path.resolve(`${__dirname}/../templates`);
-const galleries = require("./galleries.js");
+const { galleries } = require("./galleries.json");
 
 const environment = nunjucks.configure(templatesPath, {
     throwOnUndefined: false,

@@ -1,4 +1,4 @@
-const galleries = require("./galleries.js");
+const { galleries } = require("./galleries.json").galleries;
 
 test("Meta descriptions all end in full stop", () => expect(galleries
     .map(gallery => gallery.metaDescription[gallery.metaDescription.length - 1])
