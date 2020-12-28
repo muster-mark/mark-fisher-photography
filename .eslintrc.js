@@ -5,14 +5,15 @@ module.exports = {
     },
     extends: [
         "plugin:vue/essential",
-        "airbnb-base",
     ],
     globals: {
         Atomics: "readonly",
         SharedArrayBuffer: "readonly",
         expect: "readonly",
     },
+    parser: "vue-eslint-parser",
     parserOptions: {
+        parser: "@babel/eslint-parser",
         ecmaVersion: 2018,
         sourceType: "module",
     },
@@ -32,7 +33,6 @@ module.exports = {
             ignores: [],
         }],
         "arrow-parens": "off",
-        "import/no-extraneous-dependencies": ["error", { devDependencies: true }],
     },
     overrides: [
         {

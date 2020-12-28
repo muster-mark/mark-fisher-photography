@@ -4,7 +4,7 @@ const util = require("util");
 const glob = require("glob-promise");
 const nunjucks = require("../local_modules/nunjucks");
 
-const galleries = require("../local_modules/galleries.json").galleries;
+const { galleries } = require("../local_modules/galleries.json");
 const renderAndWriteTemplate = require("../local_modules/render_and_write_template");
 
 const templatesPath = path.resolve(`${__dirname}/../templates`);
@@ -82,9 +82,7 @@ async function createGalleryPage(gallery) {
 
 async function main() {
     let allGalleries = await glob(`${metadataDir}/*`);
-    allGalleries = allGalleries.filter(gallery => {
-       return fs.statSync(gallery)?.isDirectory();
-    });
+    allGalleries = allGalleries.filter(gallery => fs.statSync(gallery)?.isDirectory());
     allGalleries = allGalleries.map((dir) => path.basename(dir));
 
     allGalleries.forEach((gallery) => {
