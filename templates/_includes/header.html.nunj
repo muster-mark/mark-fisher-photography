@@ -7,15 +7,15 @@
     {{ social_media(["header_sm"]) }}
     <nav class="nav header_nav">
         <ul>
-            {% for gallery_url, gallery_name in header_nav_links %}
-                {% if page.url and (gallery_url == page.url|trim(".", "right")) %}
+            {% for gallery in featured_galleries %}
+                {% if page.url and (("/" + gallery.slug + "/") == page.url|trim(".", "right")) %}
                     <li class="nav-active">
-                        {{ gallery_name }}
-                        <a class="a_context sr-only" tabindex="-1" aria-current="page" href="{{ gallery_url }}">{{ gallery_name }}</a>
+                        {{ gallery.name }}
+                        <a class="a_context sr-only" tabindex="-1" aria-current="page" href="/{{ gallery.slug }}">{{ gallery.name }}</a>
                     </li>
                 {% else %}
                     <li>
-                        <a class="a_context" href="{{ gallery_url }}">{{ gallery_name }}</a>
+                        <a class="a_context" href="/{{ gallery.slug }}">{{ gallery.name }}</a>
                     </li>
                 {% endif %}
             {% endfor %}

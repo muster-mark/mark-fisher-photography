@@ -15,7 +15,7 @@ const environment = nunjucks.configure(templatesPath, {
 
 const stripHTML = string => string.replace(/(<([^>]+)>)/gi, "");
 
-environment.addGlobal("header_nav_links", galleries.getUrlToNameMapping());
+environment.addGlobal("featured_galleries", galleries.filter(gallery => gallery.featured));
 environment.addFilter("date", nunjucksDate);
 environment.addFilter("chunk", (name) => {
     const outputFile = manifest[name];
