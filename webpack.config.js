@@ -26,7 +26,7 @@ module.exports = {
     entry: "./source/assets/js/main.js",
     output: {
         path: path.resolve(__dirname, "public/assets/"),
-        filename: "[name].[contentHash].bundle.js",
+        filename: "[name].[contenthash].bundle.js",
         publicPath: "/public/",
     },
     module: {
