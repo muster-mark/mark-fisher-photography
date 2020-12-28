@@ -112,8 +112,8 @@
             onCreate() {
                 const self = this;
                 fetch('/data/images.json')
-                        .then((data) => data.json())
-                        .then((json) => {
+                        .then(data => data.json())
+                        .then(json => {
                             self.allImages = json.images;
                             self.countries = json.countryCounts;
                             self.selectedCountries = json.countryCounts;

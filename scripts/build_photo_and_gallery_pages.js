@@ -11,7 +11,7 @@ const templatesPath = path.resolve(`${__dirname}/../templates`);
 const metadataDir = path.resolve(`${__dirname}/../source/metadata_json/`);
 const publicDir = path.resolve(`${__dirname}/../public/`);
 
-async function createImagePages(gallery, galleryMetadata) {
+async function createImagePages(galleryData, galleryMetadata) {
     for (let i = 0; i < galleryMetadata.length; i++) {
         let previousIndex = i - 1;
         let nextIndex = i + 1;
@@ -24,14 +24,14 @@ async function createImagePages(gallery, galleryMetadata) {
 
         renderAndWriteTemplate(
             `${templatesPath}/_pages/photo.html.nunj`,
-            `${publicDir}/${gallery}/${galleryMetadata[i].Slug}`,
+            `${publicDir}/${galleryData.slug}/${galleryMetadata[i].Slug}`,
             {
                 page: {
                     meta_title: galleryMetadata[i].Title,
-                    url: `/${gallery}/${galleryMetadata[i].Slug}`,
+                    url: `/${galleryData.slug}/${galleryMetadata[i].Slug}`,
                 },
-                gallery,
-                gallery_name: galleries.names[gallery],
+                gallery: galleryData.slug,
+                gallery_name: galleryData.name,
                 photo: galleryMetadata[i],
                 previous_photo: galleryMetadata[previousIndex],
                 next_photo: galleryMetadata[nextIndex],
@@ -58,16 +58,18 @@ async function createGalleryPage(gallery) {
 
     await util.promisify(fs.mkdir)(`${publicDir}/${gallery}`, { recursive: true });
 
+    const galleryData = galleries.find(data => data.slug === gallery);
+
     renderAndWriteTemplate(
         "_pages/gallery.html.nunj",
         `${publicDir}/${gallery}/index`,
         {
             page: {
-                meta_title: galleries.names[gallery],
+                meta_title: galleryData.name,
                 url: `/${gallery}/`,
             },
             gallery,
-            gallery_meta_description: galleries.metaDescriptions[gallery],
+            gallery_meta_description: galleryData.metaDescription,
             photos: imageMetadata,
         },
         nunjucks,
@@ -75,11 +77,14 @@ async function createGalleryPage(gallery) {
         console.log(error);
     });
 
-    await createImagePages(gallery, imageMetadata);
+    await createImagePages(galleryData, imageMetadata);
 }
 
 async function main() {
     let allGalleries = await glob(`${metadataDir}/*`);
+    allGalleries = allGalleries.filter(gallery => {
+       return fs.statSync(gallery)?.isDirectory();
+    });
     allGalleries = allGalleries.map((dir) => path.basename(dir));
 
     allGalleries.forEach((gallery) => {
