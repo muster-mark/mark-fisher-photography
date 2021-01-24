@@ -29,11 +29,11 @@
       "DatePublished": "2021-01-24 00:00:00",
       "Season": "summer",
       "Colors": [
-        "#856a54",
+        "#866a54",
         "#2c1b12",
-        "#efc9a9",
+        "#edc8a9",
         "#d6a98a",
-        "#d4b2a6"
+        "#d5b0a6"
       ],
       "CaptionAbstract": "<p>An ancient, lichen-encrusted piece of wood, once a majestic tree, forms a natural piece of art.</p>\n"
     },
@@ -342,7 +342,7 @@
         "Water",
         "Waves"
       ],
-      "Headline": "An orange red sunset falls over Uig Bay on the Isle of Lewis and Harris",
+      "Headline": "An orange-red sunset falls over Uig Bay on the Isle of Lewis and Harris",
       "Title": "Hebridean Rhythms",
       "Sublocation": "Uig Bay",
       "CountryPrimaryLocationName": "Scotland",
@@ -365,7 +365,7 @@
         "#5a5f66",
         "#7c8484"
       ],
-      "CaptionAbstract": "<p>Surprisingly, though I remember the day clearly, I have no recollection of taking this particular photograph and was quite suprised by it when going through my library. There were a lot of interesting things going on with the light that evening, and given that this was such an easy shot to take - no need to carefully compose with the foreground for example - I guess it didn't really register that much and was pushed out of my mind by other images from that day which took more deliberation to make, and which I probably thought stronger at the time.</p>\n<p>Still a good one though, I'd say.</p>\n"
+      "CaptionAbstract": "<p>Surprisingly, though I remember the day clearly, I have no recollection of taking this particular photograph and was quite surprised by it when going through my library. There were a lot of interesting things going on with the light that evening, and given that this was such an easy shot to take - no need to carefully compose with the foreground for example - I guess it didn't really register that much and was pushed out of my mind by other images from that day which took more deliberation to make, and which I probably thought stronger at the time.</p>\n<p>Still a good one though, I'd say.</p>\n"
     },
     {
       "Gallery": "plants",
@@ -476,11 +476,12 @@
         "Water",
         "Waves"
       ],
-      "Headline": "A view from Uig Beach",
+      "Headline": "A tranquil view of Uig Bay from Uig Beach on the Isle of Lewis.",
       "Title": "Longer Days to Come",
-      "CountryPrimaryLocationName": "United Kingdom",
+      "Sublocation": "Uig Bay",
+      "CountryPrimaryLocationName": "Scotland",
       "CountryPrimaryLocationCode": "GB",
-      "State": "Scotland",
+      "State": "Na h-Eileanan an Iar",
       "GPSLatitudeRef": "North",
       "GPSLongitudeRef": "West",
       "ImageWidth": 630,
@@ -2876,6 +2877,42 @@
       "CaptionAbstract": "<p>A herd of fallow deer stretch out along a hill top after sunset in Knole Park, with two Scots Pine trees illuminated from the side by the orange glow lingering in the sky.</p>\n"
     },
     {
+      "Gallery": "landscapes",
+      "FileName": "cow-and-lighthouse.jpg",
+      "Make": "Canon",
+      "Model": "Canon EOS 5D Mark III",
+      "Lens": "EF24-105mm f/4L IS USM",
+      "ExposureTime": 0.3,
+      "FNumber": 9,
+      "ISO": 100,
+      "ExposureCompensation": 0,
+      "Flash": "Off, Did not fire",
+      "FocalLength": "47.0 mm",
+      "Headline": "Black Rock, along the River Severn in Monmouthsire. A cow and Charston Rock Lighthouse lie in the background.",
+      "Title": "Cow and Lighthouse",
+      "CountryPrimaryLocationName": "Wales",
+      "CountryPrimaryLocationCode": "GB",
+      "State": "Monmouthshire",
+      "GPSLatitudeRef": "North",
+      "GPSLongitudeRef": "West",
+      "ImageWidth": 560,
+      "ImageHeight": 840,
+      "ImageAspectRatio": 0.6666666666666666,
+      "ImageAspectRatioIdentifier": "2to3",
+      "Slug": "cow-and-lighthouse",
+      "DateTimeOriginal": "2015-08-22 19:39:00",
+      "DatePublished": "2016-02-01 00:00:00",
+      "Season": "summer",
+      "Colors": [
+        "#605c45",
+        "#cababc",
+        "#9a99aa",
+        "#1a1810",
+        "#a6b6bf"
+      ],
+      "CaptionAbstract": "<p>A solitary cow munches grass on the waterlogged banks of the River Severn at Black Rock. In the background, Charston rock lighthouse sits primed for action.</p>\n"
+    },
+    {
       "Gallery": "animals",
       "FileName": "ngorongoro-lion.jpg",
       "Make": "Canon",
@@ -2928,42 +2965,6 @@
         "#c8b4b0"
       ],
       "CaptionAbstract": "<p>A male lion in Ngorongoro Conservation Area in Tanzania.</p>\n"
-    },
-    {
-      "Gallery": "landscapes",
-      "FileName": "cow-and-lighthouse.jpg",
-      "Make": "Canon",
-      "Model": "Canon EOS 5D Mark III",
-      "Lens": "EF24-105mm f/4L IS USM",
-      "ExposureTime": 0.3,
-      "FNumber": 9,
-      "ISO": 100,
-      "ExposureCompensation": 0,
-      "Flash": "Off, Did not fire",
-      "FocalLength": "47.0 mm",
-      "Headline": "Black Rock, along the River Severn in Monmouthsire. A cow and Charston Rock Lighthouse lie in the background.",
-      "Title": "Cow and Lighthouse",
-      "CountryPrimaryLocationName": "Wales",
-      "CountryPrimaryLocationCode": "GB",
-      "State": "Monmouthshire",
-      "GPSLatitudeRef": "North",
-      "GPSLongitudeRef": "West",
-      "ImageWidth": 560,
-      "ImageHeight": 840,
-      "ImageAspectRatio": 0.6666666666666666,
-      "ImageAspectRatioIdentifier": "2to3",
-      "Slug": "cow-and-lighthouse",
-      "DateTimeOriginal": "2015-08-22 19:39:00",
-      "DatePublished": "2016-02-01 00:00:00",
-      "Season": "summer",
-      "Colors": [
-        "#605c45",
-        "#cababc",
-        "#9a99aa",
-        "#1a1810",
-        "#a6b6bf"
-      ],
-      "CaptionAbstract": "<p>A solitary cow munches grass on the waterlogged banks of the River Severn at Black Rock. In the background, Charston rock lighthouse sits primed for action.</p>\n"
     },
     {
       "Gallery": "landscapes",
