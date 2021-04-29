@@ -1,0 +1,33 @@
+{
+    "compilerOptions": {
+        "baseUrl": "./",
+        "sourceMap": true,
+        "noImplicitAny": true,
+        "noImplicitReturns": true,
+        "module": "esnext",
+        "experimentalDecorators": true,
+        "moduleResolution": "node",
+        "esModuleInterop": true,
+        "lib": [
+            "es2015",
+            "es2018",
+            "dom",
+        ],
+        "target": "es5",
+        "resolveJsonModule": true,
+        "typeRoots": [
+            "./"
+        ],
+        "types": [
+        ],
+        "paths": {
+            "*": [
+                "./node_modules/*",
+                "./node_modules/@types/*"
+            ]
+        }
+    },
+    "include": [
+        "./source/**/*"
+    ]
+}

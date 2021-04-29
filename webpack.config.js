@@ -29,6 +29,14 @@ module.exports = {
         filename: "[name].[contenthash].bundle.js",
         publicPath: "/public/",
     },
+    // used for resolving webpack's loader packages
+    resolveLoader: {
+        extensions: [ '.js', '.json', '.ts' ],
+        mainFields: [ 'loader', 'main' ]
+    },
+    resolve: {
+        extensions: ['.ts', '.js', '.vue', '.json']
+    },
     module: {
         rules: [
             {
@@ -55,6 +63,16 @@ module.exports = {
             {
                 test: /\.js$/,
                 loader: "babel-loader",
+            },
+            {
+                test: /\.tsx?$/,
+                use: {
+                    loader:'ts-loader',
+                    options: {
+                        configFile: __dirname + "/tsconfig.json",
+                        appendTsSuffixTo: [/\.vue$/],
+                    },
+                }
             },
         ],
     },

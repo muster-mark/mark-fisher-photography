@@ -1,6 +1,5 @@
 <template>
     <div>
-
         <div class="multiselect__label">Countries:</div> <!-- TODO declare this describes the select -->
         <multi-select
                 v-model="selectedCountries"
@@ -59,72 +58,87 @@
 
 </template>
 
-<script lang="js">
-    import MultiSelect from "vue-multiselect";
+<script lang="ts">
+import MultiSelect from "vue-multiselect";
 
-    import ExploreResult from "../components/explore-result.vue";
-    import PaginationLinks from "../components/pagination-links.vue";
+import ExploreResult from "../components/explore-result.vue";
+import PaginationLinks from "../components/pagination-links.vue";
+import {
+    Image,
+    CountryCount,
+    SeasonCount,
+} from "../../../types";
 
-    export default {
-        data() {
-            return {
-                seasons: [],
-                selectedSeasons: [],
-                countries: [],
-                selectedCountries: [],
-                allImages: [],
-                resultLimit: 15, // rename perPage
-                page: 1,
-                scrollTarget: null, // Element to scroll to after changing page
-            };
+export default {
+    data() {
+        const data: {
+            seasons: SeasonCount[];
+            selectedSeasons: SeasonCount[];
+            countries: CountryCount[];
+            selectedCountries: CountryCount[];
+            allImages: Image[];
+            resultLimit: number;
+            page: number;
+            scrollTarget: HTMLElement;
+        } = {
+            seasons: [],
+            selectedSeasons: [],
+            countries: [],
+            selectedCountries: [],
+            allImages: [],
+            resultLimit: 15, // rename perPage
+            page: 1,
+            scrollTarget: null, // Element to scroll to after changing page
+        };
+        return data;
+    },
+    computed: {
+        filteredImages() {
+            return this.allImages.filter((image: Image) => this.matchesCountry(image) && this.matchesSeason(image));
         },
-        computed: {
-            filteredImages() {
-                return this.allImages.filter((image) => this.matchesCountry(image) && this.matchesSeason(image));
-            },
-            firstShown() {
-                return this.resultLimit * (this.page - 1) + 1;
-            },
-            lastShown() {
-                return Math.min(this.filteredImages.length, this.resultLimit * (this.page));
-            },
-            numPages() {
-                return Math.ceil(this.filteredImages.length / this.resultLimit);
-            },
+        firstShown() {
+            return this.resultLimit * (this.page - 1) + 1;
         },
-        methods: {
-            matchesCountry(image) {
-                return this.selectedCountries.find((obj) => obj.name === image.CountryPrimaryLocationName);
-            },
-            matchesSeason(image) {
-                return this.selectedSeasons.find((obj) => obj.name === image.Season);
-            },
-            seasonLabel({ name, count }) {
-                return `${name} (${count})`;
-            },
-            countryLabel({ name, count }) {
-                return `${name} (${count})`;
-            },
-            goToPage(page) {
-                this.page = page;
-                window.scrollTo(0, this.scrollTarget.offsetTop);
-            },
+        lastShown() {
+            return Math.min(this.filteredImages.length, this.resultLimit * (this.page));
         },
-        watch: {
-            selectedCountries() {
-                this.page = 1;
-            },
-            selectedSeasons() {
-                this.page = 1;
-            },
+        numPages() {
+            return Math.ceil(this.filteredImages.length / this.resultLimit);
         },
-        components: {
-            PaginationLinks,
-            MultiSelect,
-            ExploreResult,
+    },
+    methods: {
+        matchesCountry(image: Image) {
+            return this.selectedCountries.find((obj: CountryCount) => obj.name === image.CountryPrimaryLocationName);
         },
-        created() {
-            fetch("/data/images.json")
+        matchesSeason(image: Image) {
+            return this.selectedSeasons.find((obj: SeasonCount) => obj.name === image.Season);
+        },
+        seasonLabel({name, count}: SeasonCount) {
+            return `${name} (${count})`;
+        },
+        countryLabel({name, count}: CountryCount) {
+            return `${name} (${count})`;
+        },
+        goToPage(page: number) {
+            this.page = page;
+            window.scrollTo(0, this.scrollTarget.offsetTop);
+        },
+    },
+    watch: {
+        selectedCountries() {
+            this.page = 1;
+        },
+        selectedSeasons() {
+            this.page = 1;
+        },
+    },
+    components: {
+        PaginationLinks,
+        MultiSelect,
+        ExploreResult,
+    },
+    created() {
+        fetch("/data/images.json")
                 .then(data => data.json())
                 .then(json => {
                     this.allImages = json.images;
@@ -137,11 +151,11 @@
                     console.error("There was an error fetching data");
                     console.log(err);
                 });
-        },
-        mounted() {
-            this.scrollTarget = document.querySelector(".js_scroll-target");
-        },
-    };
+    },
+    mounted() {
+        this.scrollTarget = document.querySelector(".js_scroll-target");
+    },
+};
 </script>
 
 <style lang="scss" scoped>

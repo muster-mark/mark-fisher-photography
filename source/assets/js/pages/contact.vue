@@ -67,12 +67,17 @@
     </form>
 </template>
 
-<script lang="js">
+<script lang="ts">
     import SvgIcon from "../components/svg-icon.vue";
 
     export default {
         data() {
-            return {
+            const data: {
+                action: string;
+                fields: {[key: string]: {value: string, touched: boolean}};
+                isSubmitting: boolean;
+                submissionSucceeded: boolean;
+            } = {
                 action: `${window.location.origin.replace("www", "api")}/message`,
                 fields: {
                     name: {
@@ -86,11 +91,13 @@
                     message: {
                         value: null,
                         touched: false,
-                    },
+                    }
                 },
                 isSubmitting: false,
                 submissionSucceeded: null,
             };
+
+            return data;
         },
         computed: {
             allFieldsTouched() {
@@ -109,7 +116,7 @@
                 this.submissionSucceeded = null;
 
                 // Create data for body
-                const data = {};
+                const data: {[key: string]: string} = {};
                 Object.keys(this.fields).forEach((key) => {
                     data[key] = this.fields[key].value;
                 });
@@ -127,6 +134,7 @@
                         if (response.ok) {
                             self.submissionSucceeded = true;
                             self.resetForm();
+                            return Promise.resolve();
                         } else {
                             console.log(response);
                             return Promise.reject(response);
