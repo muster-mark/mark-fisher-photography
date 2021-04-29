@@ -10,7 +10,8 @@
         "esModuleInterop": true,
         "lib": [
             "es2015",
-            "es2018"
+            "es2018",
+            "dom",
         ],
         "target": "es5",
         "resolveJsonModule": true,
@@ -18,7 +19,6 @@
             "./"
         ],
         "types": [
-            "@types/express"
         ],
         "paths": {
             "*": [

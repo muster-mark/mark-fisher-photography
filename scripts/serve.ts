@@ -1,9 +1,9 @@
+const express: typeof import("express") = require("express");
 const fs = require("fs");
-const express = require("express");
 const morgan = require("morgan");
-const open = require("open");
+const browse = require("open");
 const compression = require("compression");
-const defaultHeaders = require("./server/default_headers");
+const defaultHeaders: {[key: string]: {name: string; value: string}[]} = require("./server/default_headers");
 
 const PORT = process.env.PORT || 8888;
 
@@ -29,13 +29,13 @@ app.use(express.static("public", {
         if (path.split("/").pop().indexOf(".") === -1) {
             // Set default headers for documents only
             res.set("Content-Type", "text/html; charset=utf-8");
-            defaultHeaders.document.forEach((header) => {
+            defaultHeaders.document.forEach((header: {name: string, value: string}) => {
                 res.set(header.name, header.value);
             });
         }
 
         // Set default headers
-        defaultHeaders.all.forEach((header) => {
+        defaultHeaders.all.forEach((header: {name: string, value: string}) => {
             res.set(header.name, header.value);
         });
     },
@@ -53,4 +53,4 @@ app.listen(PORT, () => {
 });
 
 // Open in default browser
-open(`http://localhost:${PORT}`);
+browse(`http://localhost:${PORT}`);
