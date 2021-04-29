@@ -5,8 +5,14 @@
     <inspection_tool class="HtmlUnknownAttribute" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="myValues">
         <value>
-          <list size="1">
+          <list size="7">
             <item index="0" class="java.lang.String" itemvalue="v-masonry-tile" />
+            <item index="1" class="java.lang.String" itemvalue="v-masonry" />
+            <item index="2" class="java.lang.String" itemvalue="transition-duration" />
+            <item index="3" class="java.lang.String" itemvalue="item-selector" />
+            <item index="4" class="java.lang.String" itemvalue="column-width" />
+            <item index="5" class="java.lang.String" itemvalue="gutter" />
+            <item index="6" class="java.lang.String" itemvalue="fit-width" />
           </list>
         </value>
       </option>
