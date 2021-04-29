@@ -13,7 +13,7 @@
         >
         </multi-select>
 
-        <div class=".multiselect__label">Seasons</div>
+        <div class="multiselect__label">Seasons</div>
         <multi-select
                 v-model="selectedSeasons"
                 :options="seasons"
