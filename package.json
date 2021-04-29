@@ -41,7 +41,7 @@
         "sitemap-generator": "^8.5.1",
         "slug": "^4.0.4",
         "vue": "^2.6.12",
-        "vue-masonry": "^0.12.0",
+        "vue-masonry": "^0.13.0",
         "vue-multiselect": "^2.1.6",
         "vue-template-compiler": "^2.6.12",
         "webpack-cli": "^4.6.0",
