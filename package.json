@@ -34,8 +34,6 @@
         "nunjucks": "^3.2.3",
         "nunjucks-date": "^1.5.0",
         "open": "^8.0.7",
-        "request": "^2.88.2",
-        "request-promise": "^4.2.6",
         "sitemap-generator": "^8.5.1",
         "slug": "^4.0.4",
         "vue": "^2.6.12",

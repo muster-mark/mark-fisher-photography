@@ -1,9 +1,21 @@
 const path = require("path");
-
-const request = require("request-promise");
+const https = require('https');
 const sitemapGenerator = require("sitemap-generator");
-
 const uploadToS3 = require("../local_modules/upload_to_s3");
+
+const ping = function(url) {
+    return new Promise((resolve, reject) => {
+        const options = new URL(url);
+        const req = https.request(options, res => {
+            if (res.statusCode < 200 || res.statusCode > 299) {
+                reject(`Status code for ${url} was ${res.statusCode}`);
+            } else {
+                resolve();
+            }
+        });
+        req.end();
+    });
+}
 
 const allowedDestinations = ["staging", "production"];
 
@@ -17,7 +29,7 @@ if (allowedDestinations.indexOf(destination) === -1) {
 require("dotenv").config({ path: `${__dirname}/../.${destination}.env` });
 
 const filePath = path.resolve(`${__dirname}/../sitemap.xml`);
-const fileName = path.resolve(filePath);
+const sitemapUrl = `https://${process.env.URL}/sitemap.xml`;
 
 // create generator
 const generator = sitemapGenerator(`https://${process.env.URL}`, {
@@ -41,23 +53,26 @@ generator.on("error", (error) => {
 generator.on("done", () => {
     console.log(`Finished building sitemap, and wrote to ${filePath}`);
     uploadToS3(process.env.S3_BUCKET, filePath, process.env.S3_REGION, process.env.S3_DELETE)
-        .then(() => {
+        .then(async () => {
             console.log(`Sitemap uploaded to ${process.env.S3_BUCKET}.`);
 
             if (destination === "production") {
-                return Promise.all([
-                    request(`https://www.google.com/webmasters/sitemaps/ping?sitemap=https://${process.env.URL}/${fileName}`),
-                    request(`http://www.bing.com/ping?sitemap=https://${process.env.URL}/${fileName}`),
-                ]);
+                const googleUrl = `https://www.google.com/webmasters/sitemaps/ping?sitemap=${sitemapUrl}`;
+                const bingUrl = `https://www.bing.com/ping?sitemap=${sitemapUrl}`;
+
+                console.log(`Pinging ${googleUrl}`);
+                console.log(`Pinging ${bingUrl}`);
+
+                return Promise.all([ping(googleUrl), ping(bingUrl)]);
             }
 
             console.log("Not pinging search engines for staging.");
 
-            return Promise.resolve(null);
+            return Promise.resolve();
         })
         .then((result) => {
             if (result) {
-                console.log("Pinged Google and Bing about new sitemap.");
+                console.log("Successfully Pinged Google and Bing about new sitemap.");
             }
         })
         .catch((err) => {
