@@ -243,7 +243,7 @@ ij_html_space_around_equality_in_attribute = false
 ij_html_space_inside_empty_tag = false
 ij_html_text_wrap = normal
 
-[{composer.lock,.babelrc,.stylelintrc,.eslintrc,jest.config,bowerrc,*.json,*.jsb3,*.jsb2}]
+[{composer.lock,.babelrc,.stylelintrc,jest.config,bowerrc,*.json,*.jsb3,*.jsb2}]
 indent_size = 4
 ij_json_keep_blank_lines_in_code = 0
 ij_json_keep_indents_on_empty_lines = false

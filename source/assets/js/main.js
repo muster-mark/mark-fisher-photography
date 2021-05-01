@@ -8,13 +8,11 @@ require("../css/main.scss");
 
 // Needed for dynamic imports to work, otherwise they will load /public/0.js instead of /assets/0.js for example
 // Note dynamic imports currently only used in IE11 (fetch polyfill)
-// eslint-disable-next-line camelcase,no-undef
 __webpack_public_path__ = "assets/";
 
 if (document.getElementById("explore-app")) {
     Vue.use(VueMasonryPlugin);
 
-    // eslint-disable-next-line no-new
     new Vue({
         el: "#explore-app",
         data: {
@@ -27,7 +25,6 @@ if (document.getElementById("explore-app")) {
 }
 
 if (document.getElementById("contact-app")) {
-    // eslint-disable-next-line no-new
     new Vue({
         el: "#contact-app",
         data: {
