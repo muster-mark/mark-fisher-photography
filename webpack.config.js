@@ -23,7 +23,7 @@ const productionPlugins = [
 
 module.exports = {
     mode: isDevelopment ? "development" : "production",
-    entry: "./source/assets/js/main.js",
+    entry: "./source/assets/js/main.ts",
     output: {
         path: path.resolve(__dirname, "public/assets/"),
         filename: "[name].[contenthash].bundle.js",
