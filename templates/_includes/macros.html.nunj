@@ -15,12 +15,6 @@
         {% endif %}
     {% else %}
     {% endif %}
-    {#    <picture>#}
-    {# TODO: Use webp #}
-    {#        <source srcset="/photos/{{ size }}/{{ slug }}@2x.jpg 2x"#}
-    {#                type="image/webp">#}
-    {#        <source srcset="/photos/{{ size }}/{{ slug }}@2x.jpg 2x"#}
-    {#                type="image/jpeg">#}
     <img width="{{ width }}" height="{{ height }}"
          srcset="/photos/{{ size }}/{{ slug }}@2x.jpg 2x, /photos/{{ size }}/{{ slug }}.jpg 1x"
          src="/photos/{{ size }}/{{ slug }}.jpg"
@@ -30,7 +24,6 @@
         loading="{{ loading }}"
         {% endif %}
     >
-    {#    </picture>#}
 {% endmacro %}
 
 {% macro svg_icon(name, title='', fixed_width=false, display_width=null, display_height=null) %}
