@@ -1,12 +1,14 @@
+const IncomingMessage = require("http").IncomingMessage;
+
 const path = require("path");
 const https = require('https');
 const sitemapGenerator = require("sitemap-generator");
 const uploadToS3 = require("../local_modules/upload_to_s3");
 
-const ping = function(url) {
+const ping = function(url: string): Promise<void> {
     return new Promise((resolve, reject) => {
         const options = new URL(url);
-        const req = https.request(options, res => {
+        const req = https.request(options, (res: typeof IncomingMessage) => {
             if (res.statusCode < 200 || res.statusCode > 299) {
                 reject(`Status code for ${url} was ${res.statusCode}`);
             } else {
@@ -41,12 +43,12 @@ const generator = sitemapGenerator(`https://${process.env.URL}`, {
 });
 
 // register event listeners
-generator.on("add", (url) => {
+generator.on("add", (url: string) => {
     console.log(`Added page to sitemap: ${url}`);
 });
 
-generator.on("error", (error) => {
-    console.log(error);
+generator.on("error", ({code, message, url}: {code: number, message: string, url: string}) => {
+    console.log(`Error fetching ${url} for sitemap. Code was ${code}. ${message}`);
     process.exit();
 });
 
@@ -63,22 +65,21 @@ generator.on("done", () => {
                 console.log(`Pinging ${googleUrl}`);
                 console.log(`Pinging ${bingUrl}`);
 
-                return Promise.all([ping(googleUrl), ping(bingUrl)]);
+                await Promise.all([ping(googleUrl), ping(bingUrl)]);
+                return Promise.resolve();
+            } else {
+                console.log("Not pinging search engines for staging.");
+                return Promise.resolve();
             }
 
-            console.log("Not pinging search engines for staging.");
 
-            return Promise.resolve();
         })
-        .then((result) => {
-            if (result) {
-                console.log("Successfully Pinged Google and Bing about new sitemap.");
-            }
+        .then(() => {
+            console.log("Successfully Pinged Google and Bing about new sitemap.");
         })
-        .catch((err) => {
+        .catch((err: any) => {
             console.log(err);
         });
 });
 
-// start the crawler
 generator.start();

@@ -16,8 +16,8 @@
         "build-pages": "node scripts/build_manual_pages.js && node scripts/build_photo_and_gallery_pages.js && node scripts/build_homepage.js",
         "test": "jest",
         "deploy": "node scripts/deploy.js",
-        "serve": "node -r ts-node/register/transpile-only scripts/serve.ts",
-        "build-sitemap": "node scripts/build_sitemap.js"
+        "serve": "node -r ts-node/register scripts/serve.ts",
+        "build-sitemap": "node -r ts-node/register scripts/build_sitemap.ts"
     },
     "sideEffects": [
         "*.vue"
