@@ -6,17 +6,18 @@
 const path = require("path");
 const dotEnv = require("dotenv");
 
-const clearCloudFrontCache = require("./../local_modules/clear_cloudfront_cache");
-const syncS3Bucket = require("./../local_modules/sync_s3_bucket");
+const clearCloudFrontCache = require("../local_modules/clear_cloudfront_cache");
+const syncS3Bucket = require("../local_modules/sync_s3_bucket");
+
+function printUsage(exitCode = 1, message: string = null) {
+    if (message) {
+        console.log(message);
+    }
+    console.log(`Usage: node ${path.basename(__filename)} [--dryrun] staging|production`);
+    process.exit(exitCode);
+}
 
 const main = async function main() {
-    function printUsage(exitCode = 1, message = null) {
-        if (message) {
-            console.log(message);
-        }
-        console.log(`Usage: node ${path.basename(__filename)} [--dryrun] staging|production`);
-        process.exit(exitCode);
-    }
 
     const destination = process.argv.pop();
 
@@ -46,7 +47,6 @@ const main = async function main() {
     );
 
     console.log(`${syncResult}`);
-
 
     if (isDryRun) {
         console.log("Not invalidating CDN for dry run");

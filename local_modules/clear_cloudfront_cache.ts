@@ -1,6 +1,9 @@
+const AWSError = require("aws-sdk").AWSError;
+const CreateInvalidationResult = require("aws-sdk/clients/cloudfront").CreateInvalidationResult;
+
 const AWS = require('aws-sdk');
 
-module.exports = function clearCloudfrontCache(distributionId, key, secret) {
+module.exports = function clearCloudfrontCache(distributionId: string, key: string, secret: string) {
     const config = new AWS.Config({
         accessKeyId: key,
         secretAccessKey: secret,
@@ -22,12 +25,12 @@ module.exports = function clearCloudfrontCache(distributionId, key, secret) {
         },
     };
 
-    cloudfront.createInvalidation(invalidationParams, (err, data) => {
+    cloudfront.createInvalidation(invalidationParams, (err: typeof AWSError, data: typeof CreateInvalidationResult) => {
         if (err) {
             throw new Error(`Could not invalidate the cache for distribution ${distributionId}: ${err.message}`);
         } else {
+            console.log(`Invalidated CF cache for distribution: ${distributionId}`);
             console.log(data);
-            console.log(`Invalidating CF cache for distribution: ${distributionId}`);
         }
     });
 };
