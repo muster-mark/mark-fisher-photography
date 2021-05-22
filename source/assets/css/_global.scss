@@ -1,3 +1,5 @@
+$inner-container-side-padding: 20px;
+
 body {
     margin: 0;
     background: url("/images/bg_tesselate.jpg");
@@ -7,7 +9,7 @@ body {
 
 html {
     height: 100%;
-    font-family: Verdana, sans-serif, serif;
+    font-family: Optima, Verdana, arial, sans-serif, serif;
     background-color: black;
     --font-size: calc(16px + 0.25vw);
     font-size: var(--font-size);
@@ -68,7 +70,7 @@ summary {
 .inner-container {
     margin: auto;
     max-width: 920px;
-    padding: 0 20px 20px;
+    padding: 0 $inner-container-side-padding 20px;
     display: flow-root;
 
     &_narrow {

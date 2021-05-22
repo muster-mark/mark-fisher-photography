@@ -13,9 +13,28 @@
 
         <div class="inner-container">
 
-            <p>Below are some of my latest photos. You can browse images by theme in the galleries above, or click the button below to explore all my photos by country and season.</p>
+            {% for gallery in featuredGalleries %}
+                <a class="a_context homepage-feature" href="/{{ gallery.slug }}">
+{#                {{ picture(gallery.image.Slug, gallery.name, "l484", gallery.image.ImageAspectRatio, gallery.image.Colors[0], null, "homepage-feature_image" ) }}#}
+                    <img width="484" height="{{ (484 / gallery.image.ImageAspectRatio)|round }}"
+                         srcset="/photos/l484/{{ gallery.image.Slug }}@2x.jpg 968w, /photos/l484/{{ gallery.image.Slug }}.jpg 484w"
+                         sizes="calc(45vw - 20px)"
+                         src="/photos/l484/{{ gallery.image.Slug }}.jpg"
+                         alt="{{ alt }}"
+                         {% if gallery.image.Colors[0] %}style="background-color: {{ gallery.image.Colors[0] }}{% endif %}"
+                         class="homepage-feature_image"
+                    >
+                    <div class="homepage-feature_title">
+                        <div class="homepage-feature_title_inner">
+                            <h3 class="homepage-feature_heading">{{ gallery.name }}</h3>
+                        </div>
+                    </div>
+                </a>
+            {% endfor %}
 
-            <a style="display: inline-block; margin-bottom: 40px; margin-top: 0;" class="btn" href="/explore">Explore all photos{{ svg_icon("chevron-right", '', false, 12, 19)}}</a>
+            <a style="display: inline-block; margin-bottom: 40px; margin-top: 40px;" class="btn" href="/explore">Explore all photos{{ svg_icon("chevron-right", '', false, 12, 19)}}</a>
+
+            <h2>Recent Work:</h2>
 
             <div class="masonry_wall">
                 {% for image in favouriteImages %}

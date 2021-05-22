@@ -4,31 +4,41 @@
             "slug": "highlands",
             "name": "Highlands",
             "metaDescription": "Stunning landscape images of the Scottish highlands and islands, including Skye, St. Kilda, Lewis and Harris and Arran.",
-            "featured": true
+            "_unused_homepageDescription": "The UK's crown jewels",
+            "featured": true,
+            "imageSlug": "rainbow-valley"
         },
         {
             "slug": "landscapes",
             "name": "Landscapes",
             "metaDescription": "Landscape photographs by Mark Fisher. Stunning images of England, Wales, the United States and more.",
-            "featured": true
+            "_unused_homepageDescription": "Everywhere other than the Highlands",
+            "featured": true,
+            "imageSlug": "last-light"
         },
         {
             "slug": "animals",
             "name": "Animals",
             "metaDescription": "Nature photos by Mark Fisher from the UK and Africa.",
-            "featured": true
+            "_unused_homepageDescription": "Lorem ipsum dolor sit amet",
+            "featured": true,
+            "imageSlug": "cows-by-loch-brittle"
         },
         {
             "slug": "plants",
             "name": "Plants",
             "metaDescription": "From lilies to lime trees, and birch to bracken - photographs of plants and trees by Mark Fisher.",
-            "featured": true
+            "homepageDescription": "Bringing colour and calm",
+            "featured": true,
+            "imageSlug": "the-other-side"
         },
         {
             "slug": "dusk-to-dawn",
             "name": "Dusk to Dawn",
             "metaDescription": "A collection of photos taken after the sun has set, or when it is not yet risen. More of the former, as Mark is an expert sleeper.",
-            "featured": true
+            "homepageDescription": "When darkness reigns",
+            "featured": true,
+            "imageSlug": "moonbolt"
         },
         {
             "slug": "city",

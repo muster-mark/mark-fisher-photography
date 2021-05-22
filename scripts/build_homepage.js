@@ -6,6 +6,7 @@ const glob = require("glob-promise");
 const nunjucks = require("../local_modules/nunjucks");
 const renderAndWriteTemplate = require("../local_modules/render_and_write_template");
 const allImages = require("../source/metadata_json/all.json").images;
+const galleries = require("../local_modules/galleries.json").galleries;
 
 const metadataDir = path.resolve(`${__dirname}/../source/metadata_json`);
 const publicDir = path.resolve(`${__dirname}/../public`);
@@ -27,15 +28,16 @@ const getImageData = async (slug) => {
 
 const getImagesData = async () => Promise.all(homepageImages.map((image) => getImageData(image)));
 
-let favouriteImages;
-
-getImagesData().then((data) => {
-    favouriteImages = data.map((string) => {
-        const imageData = JSON.parse(string.toString());
-        imageData.brickHeight = Math.round((200 * (imageData.ImageHeight / imageData.ImageWidth) + 15));
-        imageData.cssGridRowSpan = Math.round(imageData.brickHeight / 3);
-        return imageData;
-    });
+const main = async function() {
+    const favouriteImages = await getImagesData()
+        .then(data => {
+            return data.map(string => {
+                const imageData = JSON.parse(string.toString());
+                imageData.brickHeight = Math.round((200 * (imageData.ImageHeight / imageData.ImageWidth) + 15));
+                imageData.cssGridRowSpan = Math.round(imageData.brickHeight / 3);
+                return imageData;
+            });
+        });
 
     renderAndWriteTemplate(
         "_pages/homepage.html.nunj",
@@ -45,10 +47,18 @@ getImagesData().then((data) => {
                 url: "/",
             },
             favouriteImages,
+            featuredGalleries: galleries
+                .filter(gallery => gallery.featured)
+                .map(gallery=> {
+                    gallery.image = allImages.find(image => image.Slug === gallery.imageSlug);
+                    return gallery;
+                }),
             copyrightYear: new Date().getFullYear(),
         },
         nunjucks,
     ).catch((error) => {
         console.log(error);
     });
-});
+};
+
+main();
