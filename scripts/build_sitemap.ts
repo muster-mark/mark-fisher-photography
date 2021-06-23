@@ -1,6 +1,6 @@
 const IncomingMessage = require("http").IncomingMessage;
 
-const path = require("path");
+const path1 = require("path");
 const https = require('https');
 const sitemapGenerator = require("sitemap-generator");
 const uploadToS3 = require("../local_modules/upload_to_s3");
@@ -30,7 +30,7 @@ if (allowedDestinations.indexOf(destination) === -1) {
 
 require("dotenv").config({ path: `${__dirname}/../.${destination}.env` });
 
-const filePath = path.resolve(`${__dirname}/../sitemap.xml`);
+const filePath = path1.resolve(`${__dirname}/../sitemap.xml`);
 const sitemapUrl = `https://${process.env.URL}/sitemap.xml`;
 
 // create generator
@@ -38,7 +38,7 @@ const generator = sitemapGenerator(`https://${process.env.URL}`, {
     stripQuerystring: false,
     ignoreHreflang: true,
     lastMod: true,
-    filepath: path.resolve(`${__dirname}/../sitemap.xml`),
+    filepath: path1.resolve(`${__dirname}/../sitemap.xml`),
 
 });
 
