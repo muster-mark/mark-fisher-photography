@@ -2,6 +2,8 @@
 // This is mitigated by not using css grid for single column, and making the brick height a multiple of 2
 // This allows for around 35 images per masonry wall
 
+@use "sass:math";
+
 $masonry-column-width: 200px;
 $masonry-gap: 15px;
 
@@ -49,8 +51,8 @@ $aspect-ratios: ("name": "3to1", "width": 3, "height": 1) ("name": "2to1", "widt
 
 @each $aspect-ratio in $aspect-ratios {
     .masonry_brick_#{map-get($aspect-ratio, "name")} {
-        $brick-height: round(200 * (map-get($aspect-ratio, "height") / map-get($aspect-ratio, "width"))  + $masonry-gap / 1px);
-        $row-span: round($brick-height / 3); //Rows are 3px high, to economise on #of rows for Chromium
+        $brick-height: round(200 * (math.div(map-get($aspect-ratio, "height"), map-get($aspect-ratio, "width")))  + math.div($masonry-gap, 1px));
+        $row-span: round(math.div($brick-height, 3)); //Rows are 3px high, to economise on #of rows for Chromium
         grid-row: auto / span #{$row-span};
         height: #{$brick-height}px;
     }
