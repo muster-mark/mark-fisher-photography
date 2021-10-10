@@ -74,10 +74,9 @@
     top: -0.2em;
 }
 
-.multiselect {
-    margin-bottom: 20px;
-
-    &__label {
-        margin-bottom: 10px;
-    }
+input[type="checkbox"] {
+    accent-color: $color-primary;
+    width: 20px;
+    height: 20px;
+    vertical-align: -0.1em
 }

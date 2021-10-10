@@ -42,6 +42,9 @@
         telescope: {
             width: 640,
         },
+        filter: {
+            width: 512,
+        }
     };
     export default {
         props: ["name", "title"],

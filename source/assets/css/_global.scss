@@ -62,8 +62,8 @@ img {
 
 summary {
     cursor: pointer;
+    margin-bottom: 1em;
 }
-
 
 .inner-container {
     margin: auto;
@@ -89,4 +89,8 @@ summary {
     padding: 0;
     position: absolute;
     width: 1px;
+}
+
+label {
+    cursor: pointer;
 }

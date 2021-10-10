@@ -1,29 +1,30 @@
 <template>
     <div>
-        <div class="multiselect__label">Countries:</div> <!-- TODO declare this describes the select -->
-        <multi-select
-                v-model="selectedCountries"
-                :options="countries"
-                :multiple="true"
-                track-by="name"
-                :custom-label="countryLabel"
-                placeholder="Select one or more countries"
-                :allow-empty="false"
-        >
-        </multi-select>
+        <details class="explore-filter">
+            <summary>
+                <svg-icon name="filter"></svg-icon>
+                <span class="explore-filter_details-closed">Show filters</span>
+                <span class="explore-filter_details-open">Hide filters</span></summary>
+            <div class="explore-filter_title">Seasons:</div>
+            <div class="checkbox-grid">
+                <template v-for="season in seasonCounts">
+                    <label>
+                        <input type="checkbox" :value="season.name" v-model="selectedSeasons" />{{season.name[0].toUpperCase() + season.name.substr(1)}}&nbsp;({{season.count}})
+                    </label>
+                </template>
+            </div>
 
-        <div class="multiselect__label">Seasons</div>
-        <multi-select
-                v-model="selectedSeasons"
-                :options="seasons"
-                :multiple="true"
-                :searchable="false"
-                :close-on-select="true"
-                track-by="name"
-                :custom-label="seasonLabel"
-                placeholder="Select one or more seasons"
-                :allow-empty="false"
-        ></multi-select>
+            <div class="explore-filter_title">Countries:</div>
+            <div class="checkbox-grid">
+                <template v-for="obj in countryCounts">
+                    <label>
+                        <input type="checkbox" :value="obj.name" v-model="selectedCountries" />{{obj.name.replace(" ", " ")}}&nbsp;({{obj.count}})
+                    </label>
+                </template>
+            </div>
+        </details>
+
+
 
         <div class="explore_result-summary js_scroll-target">
             <span v-if="!filteredImages.length">No images match your search criteria</span>
@@ -59,38 +60,40 @@
 </template>
 
 <script lang="ts">
-import MultiSelect from "vue-multiselect";
+import _ from "underscore";
 
 import ExploreResult from "../components/explore-result.vue";
 import PaginationLinks from "../components/pagination-links.vue";
+import SvgIcon from "../components/svg-icon.vue";
 import {
     Image,
     CountryCount,
     SeasonCount,
 } from "../../../types";
 
+enum Season {
+    spring = "spring",
+    summer = "summer",
+    autumn = "autumn",
+    winter = "winter",
+}
 export default {
+    components: {
+        PaginationLinks,
+        ExploreResult,
+        SvgIcon
+    },
     data() {
-        const data: {
-            seasons: SeasonCount[];
-            selectedSeasons: SeasonCount[];
-            countries: CountryCount[];
-            selectedCountries: CountryCount[];
-            allImages: Image[];
-            resultLimit: number;
-            page: number;
-            scrollTarget: HTMLElement;
-        } = {
-            seasons: [],
-            selectedSeasons: [],
-            countries: [],
-            selectedCountries: [],
-            allImages: [],
+        return {
+            seasonCounts: [] as SeasonCount[],
+            selectedSeasons: [Season.spring, Season.summer, Season.autumn, Season.winter] as Season[],
+            countryCounts: [] as CountryCount[],
+            selectedCountries: [] as string[],
+            allImages: [] as Image[],
             resultLimit: 15, // rename perPage
             page: 1,
-            scrollTarget: null, // Element to scroll to after changing page
+            scrollTarget: null as HTMLElement, // Element to scroll to after changing page
         };
-        return data;
     },
     computed: {
         filteredImages() {
@@ -108,15 +111,12 @@ export default {
     },
     methods: {
         matchesCountry(image: Image) {
-            return this.selectedCountries.find((obj: CountryCount) => obj.name === image.CountryPrimaryLocationName);
+            return this.selectedCountries.find((country: string) => country === image.CountryPrimaryLocationName);
         },
         matchesSeason(image: Image) {
-            return this.selectedSeasons.find((obj: SeasonCount) => obj.name === image.Season);
+            return this.selectedSeasons.find((season: Season) => season === image.Season);
         },
         seasonLabel({name, count}: SeasonCount) {
-            return `${name} (${count})`;
-        },
-        countryLabel({name, count}: CountryCount) {
             return `${name} (${count})`;
         },
         goToPage(page: number) {
@@ -132,20 +132,14 @@ export default {
             this.page = 1;
         },
     },
-    components: {
-        PaginationLinks,
-        MultiSelect,
-        ExploreResult,
-    },
     created() {
         fetch("/data/images.json")
                 .then(data => data.json())
                 .then(json => {
                     this.allImages = json.images;
-                    this.countries = json.countryCounts;
-                    this.selectedCountries = json.countryCounts;
-                    this.seasons = json.seasonCounts;
-                    this.selectedSeasons = json.seasonCounts;
+                    this.countryCounts = json.countryCounts;
+                    this.selectedCountries = _.uniq(_.pluck(json.countryCounts, "name"));
+                    this.seasonCounts = json.seasonCounts;
                 })
                 .catch((err) => {
                     console.error("There was an error fetching data");
@@ -216,6 +210,44 @@ ul {
     animation-name: fadeAndGrowIn;
     animation-iteration-count: 1;
     animation-duration: 0.6s;
+}
+
+.explore-filter {
+    &[open] {
+        .explore-filter_details-closed {
+            display: none;
+        }
+    }
+
+    &:not([open]) {
+        .explore-filter_details-open {
+            display: none;
+        }
+    }
+
+    summary .ico {
+        vertical-align: -.1em;
+    }
+
+    &_title {
+        margin-bottom: 0.5em;
+    }
+}
+
+.checkbox-grid {
+    margin-bottom: 1em;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(max-content, 200px));
+    gap: 8px 16px;
+}
+
+input[type="checkbox"] {
+    margin-right: 0.5em;
+    margin-left: 0;
+}
+
+label {
+    white-space: nowrap;
 }
 
 </style>

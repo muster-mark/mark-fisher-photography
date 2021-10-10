@@ -4,7 +4,6 @@ import { VueMasonryPlugin } from "vue-masonry";
 import explore from "./pages/explore.vue";
 import contact from "./pages/contact.vue";
 
-require("vue-multiselect/dist/vue-multiselect.min.css");
 require("../css/main.scss");
 
 // Needed for dynamic imports to work, otherwise they will load /public/0.js instead of /assets/0.js for example
