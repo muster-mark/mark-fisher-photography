@@ -9,7 +9,8 @@
             <div class="checkbox-grid">
                 <template v-for="season in seasonCounts">
                     <label>
-                        <input type="checkbox" :value="season.name" v-model="selectedSeasons" />{{season.name[0].toUpperCase() + season.name.substr(1)}}&nbsp;({{season.count}})
+                        <input type="checkbox" :value="season.name"
+                               v-model="selectedSeasons"/>{{ season.name[0].toUpperCase() + season.name.substr(1) }}&nbsp;({{ season.count }})
                     </label>
                 </template>
             </div>
@@ -18,12 +19,12 @@
             <div class="checkbox-grid">
                 <template v-for="obj in countryCounts">
                     <label>
-                        <input type="checkbox" :value="obj.name" v-model="selectedCountries" />{{obj.name.replace(" ", " ")}}&nbsp;({{obj.count}})
+                        <input type="checkbox" :value="obj.name"
+                               v-model="selectedCountries"/>{{ obj.name.replace(" ", " ") }}&nbsp;({{ obj.count }})
                     </label>
                 </template>
             </div>
         </details>
-
 
 
         <div class="explore_result-summary js_scroll-target">
@@ -69,14 +70,9 @@ import {
     Image,
     CountryCount,
     SeasonCount,
+    Season,
 } from "../../../types";
 
-enum Season {
-    spring = "spring",
-    summer = "summer",
-    autumn = "autumn",
-    winter = "winter",
-}
 export default {
     components: {
         PaginationLinks,

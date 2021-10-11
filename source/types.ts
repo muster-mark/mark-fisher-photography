@@ -8,6 +8,13 @@ export interface CountryCount {
     count: number;
 }
 
+export enum Season {
+    spring = "spring",
+    summer = "summer",
+    autumn = "autumn",
+    winter = "winter",
+}
+
 export interface SeasonCount {
     name: string;
     count: number;

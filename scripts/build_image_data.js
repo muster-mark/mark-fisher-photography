@@ -13,8 +13,8 @@ for (let i = 0; i < images.length; i++) {
 
 const seasonGroups = groupBy(images, "Season");
 const seasonCounts = [];
-Object.keys(seasonGroups).forEach((key) => {
-    seasonCounts.push({ name: key, count: seasonGroups[key].length });
+["spring", "summer", "autumn", "winter"].forEach(season => {
+    seasonCounts.push({ name: season, count: seasonGroups[season].length });
 });
 
 const countryGroups = groupBy(images, "CountryPrimaryLocationName");
@@ -22,6 +22,11 @@ const countryCounts = [];
 Object.keys(countryGroups).forEach((key) => {
     countryCounts.push({ name: key, count: countryGroups[key].length });
 });
+
+countryCounts.sort((a, b) => {
+    return a.name < b.name ? -1 : 1;
+});
+
 
 const data = {
     images,
