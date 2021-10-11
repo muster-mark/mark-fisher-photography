@@ -55,17 +55,17 @@
     "Wild hyacinth",
     "Wood bell"
   ],
-  "Headline": "A flash of new-growth green in Shoreham wood, putting on one of the UK's best displays of bluebells.",
+  "Headline": "A flash of new-growth green in Meenfied wood near Shoreham, putting on one of the UK's best displays of bluebells.",
   "Title": "A Few Thousand of my Favourite Things",
-  "Sublocation": "Shoreham",
-  "CountryPrimaryLocationName": "United Kingdom",
+  "Sublocation": "Meenfield Wood",
+  "CountryPrimaryLocationName": "England",
   "CountryPrimaryLocationCode": "GB",
   "State": "Kent",
   "GPSLatitudeRef": "North",
   "GPSLongitudeRef": "East",
   "ImageWidth": 840,
-  "ImageHeight": 473,
-  "ImageAspectRatio": 1.7758985200845665,
+  "ImageHeight": 472,
+  "ImageAspectRatio": 1.7796610169491525,
   "ImageAspectRatioIdentifier": "invalid",
   "Slug": "a-few-thousand-of-my-favourite-things",
   "DateTimeOriginal": "2016-05-01 19:32:21",
@@ -73,10 +73,10 @@
   "Season": "spring",
   "Colors": [
     "#75684f",
-    "#d1cb83",
-    "#a08abe",
-    "#b7c451",
-    "#2f2915"
+    "#ccce73",
+    "#a18bbe",
+    "#36271a",
+    "#c1ab7c"
   ],
   "CaptionAbstract": "<p>Bluebells, bluebells and bluebells... these are a few thousand of my favourite things. More, probably. I didn't count them all.</p>\n<p>This is the best location that I know of to see one of the UK's best seasonal displays. Unfortunately I probably won't be able to get there this year now un-necessary travel is banned, but the bluebells in the woods near my house are coming along nicely. Nothing to match Shoreham woods, but nothing to be sniffed at either.</p>\n"
 }
