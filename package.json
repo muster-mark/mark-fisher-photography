@@ -34,7 +34,7 @@
         "nunjucks": "^3.2.3",
         "nunjucks-date": "^1.5.0",
         "sitemap-generator": "^8.5.1",
-        "slug": "^4.1.0",
+        "slug": "^5.1.0",
         "underscore": "^1.13.1",
         "vue": "^2.6.14",
         "vue-masonry": "^0.13.0",
