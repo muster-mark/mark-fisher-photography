@@ -26,7 +26,7 @@ module.exports = {
     entry: "./source/assets/js/main.ts",
     output: {
         path: path.resolve(__dirname, "public/assets/"),
-        filename: "[name].[contenthash].bundle.js",
+        filename: "[name].[contenthash:6].bundle.js",
         publicPath: "/public/",
     },
     // used for resolving webpack's loader packages
@@ -91,7 +91,7 @@ module.exports = {
         }),
         new VueLoaderPlugin(),
         new MiniCssExtractPlugin({
-            filename: "[name].[hash].css", // TODO should this be chunkhash (or even contentHash)
+            filename: "[name].[contenthash:6].css",
         }),
         new WebpackManifestPlugin({
             filter: descriptor => descriptor.chunk,
