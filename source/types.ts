@@ -1,6 +1,11 @@
 export interface Image {
     CountryPrimaryLocationName: string;
     Season: "spring" | "summer" | "autumn" | "winter";
+    FileName: string;
+    ImageAspectRatio: number;
+    Slug: string;
+    Colors: string[];
+    Gallery: string;
 }
 
 export interface CountryCount {

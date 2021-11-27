@@ -92,7 +92,7 @@ export default {
         };
     },
     computed: {
-        filteredImages() {
+        filteredImages(): Image[] {
             return this.allImages.filter((image: Image) => this.matchesCountry(image) && this.matchesSeason(image));
         },
         firstShown() {

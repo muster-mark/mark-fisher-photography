@@ -1,14 +1,14 @@
 const path = require("path");
 const util = require("util");
 const fs = require("fs");
+const _ = require("underscore");
 
 const groupBy = require("lodash/groupBy");
 
 const { images } = require("../source/metadata_json/all");
 
 for (let i = 0; i < images.length; i++) {
-    delete images[i].CaptionAbstract;
-    delete images[i].Keywords;
+    images[i] = _.pick(images[i],"ImageAspectRatio", "Headline", "Slug", "Colors", "Season", "CountryPrimaryLocationName", "Gallery");
 }
 
 const seasonGroups = groupBy(images, "Season");
