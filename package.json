@@ -49,7 +49,7 @@
         "@types/underscore": "^1.11.3",
         "aws-sdk": "^2.1037.0",
         "babel-loader": "^8.2.3",
-        "clean-webpack-plugin": "^3.0.0",
+        "clean-webpack-plugin": "^4.0.0",
         "colors": "^1.4.0",
         "compression": "^1.7.4",
         "copy-webpack-plugin": "^10.0.0",
