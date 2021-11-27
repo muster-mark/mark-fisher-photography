@@ -45,7 +45,7 @@
             <li v-masonry-tile
                 class="explore_result"
                 v-for="image in filteredImages.slice(firstShown - 1, lastShown)"
-                :key="image.FileName"
+                :key="image.Slug"
             >
                 <explore-result :image="image"></explore-result>
             </li>
