@@ -55,7 +55,7 @@
         "copy-webpack-plugin": "^10.0.0",
         "core-js": "^3.19.1",
         "cross-env": "^7.0.3",
-        "css-loader": "^5.2.7",
+        "css-loader": "^6.5.1",
         "express": "^4.17.1",
         "get-image-colors": "^4.0.0",
         "jest": "^27.3.1",
