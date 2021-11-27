@@ -1,7 +1,6 @@
 const express: typeof import("express") = require("express");
 const fs = require("fs");
 const morgan = require("morgan");
-const browse = require("open");
 const compression = require("compression");
 const defaultHeaders: {[key: string]: {name: string; value: string}[]} = require("./server/default_headers");
 
@@ -52,5 +51,4 @@ app.listen(PORT, () => {
     console.log(`Server is listening on ${PORT}`);
 });
 
-// Open in default browser
-browse(`http://localhost:${PORT}`);
+console.log(`Website is available at http://localhost:${PORT}`);

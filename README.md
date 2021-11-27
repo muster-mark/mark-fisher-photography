@@ -46,7 +46,7 @@ npm run build
 
 ### Serve
 
-Start an express server and open in default browser
+Start an express server
 
 ```
 npm run serve
