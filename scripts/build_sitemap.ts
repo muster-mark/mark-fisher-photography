@@ -54,7 +54,7 @@ generator.on("error", ({code, message, url}: {code: number, message: string, url
 
 generator.on("done", () => {
     console.log(`Finished building sitemap, and wrote to ${filePath}`);
-    uploadToS3(process.env.S3_BUCKET, filePath, process.env.S3_REGION, process.env.S3_DELETE)
+    uploadToS3(process.env.S3_BUCKET, filePath, process.env.S3_REGION)
         .then(async () => {
             console.log(`Sitemap uploaded to ${process.env.S3_BUCKET}.`);
 
