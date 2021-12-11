@@ -1,4 +1,29 @@
-*.png diff=exif
-*.jpg diff=exif
-*.gif diff=exif
-*.webp diff=exif
+* text=auto !eol
+*.css text diff=css
+*.env text
+*.gif binary diff=exif
+*.html text diff=html
+*.ico binary
+*.iml text
+*.jpg binary diff=exif
+*.js text diff=js
+*.json text
+*.map text -diff
+*.md text diff=markdown
+*.nunj text
+*.pdf binary
+*.png binary diff=exif
+*.svg text
+*.ts text
+*.txt text
+*.webp binary diff=exif
+*.woff binary
+*.woff2 binary
+*.yaml text
+*.yml text
+*.xml text
+.ackrc text
+.editorconfig text
+.gitattributes text
+.gitignore text
+.nvmrc text
