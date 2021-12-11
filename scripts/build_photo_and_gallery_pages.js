@@ -52,7 +52,6 @@ async function createGalleryPage(gallery) {
     const imageMetadata = jsonStrings.map((string) => {
         const json = JSON.parse(string.toString());
         json.brickHeight = Math.round((200 * (json.ImageHeight / json.ImageWidth) + 15));
-        json.cssGridRowSpan = Math.round(json.brickHeight / 3);
         return json;
     });
     imageMetadata.sort((a, b) => new Date(b.DatePublished) - new Date(a.DatePublished));

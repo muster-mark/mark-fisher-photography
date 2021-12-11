@@ -34,7 +34,6 @@ const main = async function() {
             return data.map(string => {
                 const imageData = JSON.parse(string.toString());
                 imageData.brickHeight = Math.round((200 * (imageData.ImageHeight / imageData.ImageWidth) + 15));
-                imageData.cssGridRowSpan = Math.round(imageData.brickHeight / 3);
                 return imageData;
             });
         });
