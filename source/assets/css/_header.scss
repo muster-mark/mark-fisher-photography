@@ -26,9 +26,19 @@ header {
     //text-underline-offset: 7px; //Waiting on Chromium support
     color: $color-primary;
     position: relative;
+
+    .a_context {
+        &, &:visited {
+            color: $color-primary;
+        }
+
+        &:hover, &:focus {
+            color: $text-color;
+        }
+    }
 }
 
-.nav-active::before {
+.nav-active.nav-active__exact::before {
     display: block;
     width: calc(100% - 2rem);
     height: 1px;
@@ -38,7 +48,7 @@ header {
     bottom: 6px;
 }
 
-.nav-active::after {
+.nav-active.nav-active__exact::after {
     display: block;
     width: 0;
     height: 0;
