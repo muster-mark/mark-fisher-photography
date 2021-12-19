@@ -7,22 +7,33 @@
                 <span class="explore-filter_details-open">Hide filters</span></summary>
             <div class="explore-filter_title">Seasons:</div>
             <div class="checkbox-grid">
-                <template v-for="season in seasonCounts">
-                    <label>
-                        <input type="checkbox" :value="season.name"
-                               v-model="selectedSeasons"/>{{ season.name[0].toUpperCase() + season.name.substr(1) }}&nbsp;({{ season.count }})
+                <span v-for="seasonCount in seasonCounts" :key="`season-checkbox_${seasonCount.name}`">
+                    <input type="checkbox"
+                           :value="seasonCount.name"
+                           v-model="selectedSeasons"
+                           :id="`season-checkbox_${seasonCount.name}`"
+                    />
+                    <label :for="`season-checkbox_${seasonCount.name}`">
+                        {{ seasonCount.name[0].toUpperCase() + seasonCount.name.substr(1) }}&nbsp;({{
+                            seasonCount.count
+                        }})
                     </label>
-                </template>
+                </span>
             </div>
 
             <div class="explore-filter_title">Countries:</div>
             <div class="checkbox-grid">
-                <template v-for="obj in countryCounts">
-                    <label>
-                        <input type="checkbox" :value="obj.name"
-                               v-model="selectedCountries"/>{{ obj.name.replace(" ", " ") }}&nbsp;({{ obj.count }})
+                <span v-for="countryCount in countryCounts" :key="`country-checkbox_${countryCount.name}`">
+                    <input
+                            type="checkbox"
+                            :value="countryCount.name"
+                            v-model="selectedCountries"
+                            :id="`country-checkbox_${countryCount.name}`"
+                    />
+                    <label :for="`country-checkbox_${countryCount.name}`">
+                        {{ countryCount.name.replace(" ", " ") }}&nbsp;({{ countryCount.count }})
                     </label>
-                </template>
+                </span>
             </div>
         </details>
 
@@ -237,13 +248,74 @@ ul {
     gap: 8px 16px;
 }
 
+$checkbox-size: 20px;
+
 input[type="checkbox"] {
-    margin-right: 0.5em;
-    margin-left: 0;
+    display: none;
 }
 
+label::before {
+    grid-row: 1;
+    grid-column: 1;
+    display: inline-block;
+    content: "";
+    width: $checkbox-size;
+    height: $checkbox-size;
+    background-color: orange;
+    margin-right: 1em;
+    transition: clip-path 0.25s;
+    clip-path: polygon(
+                    0% 0%,
+                    100% 0%,
+                    100% 100%,
+                    0% 100%,
+                    0% 52.3%,
+                    10% 10%,
+                    10% 90%,
+                    90% 90%,
+                    90% 10%,
+                    41% 10%,
+                    10% 10%,
+                    10% 52.3%,
+                    0% 52.3%,
+                    0% 0%);
+}
+
+input[type="checkbox"]:checked + label::before {
+    clip-path: polygon(
+                    0% 0%,
+                    100% 0%,
+                    100% 100%,
+                    0% 100%,
+                    0% 52.3%,
+                    14.1% 52.3%,
+                    41% 79.7%,
+                    86.6% 33.5%,
+                    76.3% 25.6%,
+                    41% 60.5%,
+                    23.2% 43.2%,
+                    14.1% 52.3%,
+                    0% 52.3%,
+                    0% 0%);
+}
+
+
 label {
+    display: inline-grid;
+    gap: 1em;
+    grid-template-columns: $checkbox-size 1fr;
+    align-items: center;
+    color: white;
     white-space: nowrap;
+
+    &::after {
+        /* Needed as as a click target; */
+        grid-column: 1;
+        grid-row: 1;
+        content: "";
+        width: $checkbox-size;
+        height: $checkbox-size;
+    }
 }
 
 </style>
