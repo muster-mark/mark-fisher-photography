@@ -6,7 +6,7 @@
     {% block meta_description_tag %}{% endblock %}
     <meta name="viewport" content="width=device-width, initial-scale=1"> {# Ensure not zoomed out on mobile #}
     <link rel="stylesheet" href="{{ 'main.css' | chunk }}"/>
-    <link rel="canonical" href="{{ page.url }}"/>
+    <link rel="canonical" href="{{ env.URL }}{{ page.url }}"/>
     <meta name="theme-color" content="#efa929">
 
     {% block head %}

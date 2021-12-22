@@ -7,6 +7,8 @@ const manifest = require("../public/assets/manifest.json");
 const templatesPath = path.resolve(`${__dirname}/../templates`);
 const { galleries } = require("./galleries.json");
 
+require("dotenv").config({ path: `${__dirname}/../.production.env` });
+
 const environment = nunjucks.configure(templatesPath, {
     throwOnUndefined: false,
     trimBlocks: true,
@@ -15,6 +17,7 @@ const environment = nunjucks.configure(templatesPath, {
 const stripHTML = string => string.replace(/(<([^>]+)>)/gi, "");
 
 environment.addGlobal("featured_galleries", galleries.filter(gallery => gallery.featured));
+environment.addGlobal("env", process.env);
 environment.addFilter("date", nunjucksDate);
 environment.addFilter("chunk", (name) => {
     const outputFile = manifest[name];
