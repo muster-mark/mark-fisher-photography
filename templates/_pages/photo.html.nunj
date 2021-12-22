@@ -1,6 +1,6 @@
 s{% extends "_layouts/default.html.nunj" %}
 
-{% from "_includes/macros.html.nunj" import picture, svg_icon %}
+{% from "_includes/macros.html.nunj" import sizespicture, svg_icon %}
 
 {% block head %}
     <link rel="prefetch" href="/{{ gallery }}/{{ next_photo.Slug }}"/>
@@ -22,7 +22,7 @@ s{% extends "_layouts/default.html.nunj" %}
                    title="Go to the previous image in the {{ gallery_name }} gallery">
                     {{ svg_icon("chevron-left", "Previous image") }}
                 </a>
-                {{ picture(photo.Slug, photo.Headline, "l840", photo.ImageAspectRatio, photo.Colors[0]) }}
+                {{ sizespicture(photo.Slug, photo.Headline, "l840", photo.ImageAspectRatio, photo.Colors[0], null, null, "calc(100vw - 40px)") }}
                 <a href="/{{ gallery }}/{{ next_photo.Slug }}" class="a_context the-image_next"
                    title="Go to the next image in the {{ gallery_name }} gallery">
                     {{ svg_icon("chevron-right", "Next image") }}

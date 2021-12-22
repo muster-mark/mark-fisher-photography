@@ -29,6 +29,40 @@
     >
 {% endmacro %}
 
+{% macro sizespicture(slug, alt, size, aspect, background=null, loading=null, classes=null, sizes=null) %}
+    {% if size|first == "w" %}
+        {% set width = size|replace('w', '') %}
+        {% set height = (width / aspect)|round %}
+    {% elseif size|first == "h" %}
+        {% set height = size|replace('h', '') %}
+        {% set width = (height * aspect)|round %}
+    {% elseif size|first == "l" %}
+        {% if aspect > 1 %}
+            {% set width = size|replace('l', '') %}
+            {% set height = (width / aspect)|round %}
+        {% else %}
+            {% set height = size|replace('l', '') %}
+            {% set width = (height * aspect)|round %}
+        {% endif %}
+    {% else %}
+    {% endif %}
+    <img width="{{ width }}" height="{{ height }}"
+         srcset="/photos/{{ size }}/{{ slug }}@2x.jpg {{ width * 2 }}w, /photos/{{ size }}/{{ slug }}.jpg {{ width }}w"
+         {% if sizes %}
+            sizes="{{ sizes }}"
+         {% endif %}
+         src="/photos/{{ size }}/{{ slug }}.jpg"
+         alt="{{ alt }}"
+         {% if background %}style="background-color: {{ background }}{% endif %}"
+            {% if loading %}
+                loading="{{ loading }}"
+            {% endif %}
+            {% if classes %}
+                class="{{ classes }}"
+            {% endif %}
+    >
+{% endmacro %}
+
 {% macro svg_icon(name, title='', fixed_width=false, display_width=null, display_height=null) %}
     {% set icons = {
         instagram: {
