@@ -1,8 +1,13 @@
 $inner-container-side-padding: 20px;
 
 body {
+    $fallback-background-color: #111;
     margin: 0;
-    background: url("/images/bg_tesselate.jpg");
+    background: $fallback-background-color url("/images/bg_tesselate.webp");
+    @media (prefers-reduced-data: reduce) {
+        background: $fallback-background-color;
+    }
+
     background-size: 1200px 800px;
     min-height: 100%;
 }
