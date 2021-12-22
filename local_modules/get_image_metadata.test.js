@@ -1,4 +1,4 @@
-const path = require('path');
+const path = require('node:path');
 const getImageMetadata = require('./get_image_metadata.js');
 
 const rootDir = path.resolve(`${__dirname}/../`);

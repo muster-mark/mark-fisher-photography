@@ -1,9 +1,9 @@
 // Write a json file for each image containing metadata
 
-const util = require("util");
-const path = require("path");
-const fs = require("fs");
-const exec = util.promisify(require("child_process").exec);
+const util = require("node:util");
+const path = require("node:path");
+const fs = require("node:fs");
+const exec = util.promisify(require("node:child_process").exec);
 const colors = require("colors");
 const junk = require("junk");
 

@@ -1,4 +1,4 @@
-const path = require("path");
+const path = require("node:path");
 const glob = require("glob-promise");
 
 const nunjucks = require("../local_modules/nunjucks");

@@ -1,6 +1,6 @@
-const path = require("path");
-const util = require("util");
-const fs = require("fs");
+const path = require("node:path");
+const util = require("node:util");
+const fs = require("node:fs");
 const _ = require("underscore");
 
 const groupBy = require("lodash/groupBy");

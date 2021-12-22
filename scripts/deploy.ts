@@ -3,7 +3,7 @@
  * @type {module:path | path.PlatformPath | path}
  */
 
-const path = require("path");
+const path = require("node:path");
 const dotEnv = require("dotenv");
 
 const clearCloudFrontCache = require("../local_modules/clear_cloudfront_cache");

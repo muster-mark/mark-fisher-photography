@@ -1,6 +1,6 @@
-const util = require('util');
-const path = require('path');
-const exec = util.promisify(require('child_process').exec);
+const util = require('node:util');
+const path = require('node:path');
+const exec = util.promisify(require('node:child_process').exec);
 
 module.exports = async function uploadToS3(bucketName: string, file: string, bucketRegion: string) {
     // Uploads a file to an S3 bucket

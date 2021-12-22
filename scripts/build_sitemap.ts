@@ -1,7 +1,7 @@
-const IncomingMessage = require("http").IncomingMessage;
+const IncomingMessage = require("node:http").IncomingMessage;
 
-const path1 = require("path");
-const https = require('https');
+const path1 = require("node:path");
+const https = require('node:https');
 const sitemapGenerator = require("sitemap-generator");
 const uploadToS3 = require("../local_modules/upload_to_s3");
 
