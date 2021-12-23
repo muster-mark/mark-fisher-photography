@@ -21,7 +21,7 @@ module.exports = async function syncS3Bucket(bucketName: string, key = "", bucke
 
     const dryRunArg = dryRun ? "--dryrun" : "";
 
-    const cmd = `aws2 s3 sync ${__dirname}/../public${key} s3://${bucketName}${key} ${dryRunArg} ${deleteArg} --region=${bucketRegion} ${excludeArgs} --acl="public-read"`;
+    const cmd = `aws2 s3 sync ${__dirname}/../public${key} s3://${bucketName}${key} ${dryRunArg} ${deleteArg} --region=${bucketRegion} ${excludeArgs} --acl="public-read" --size-only`;
 
     console.log("Syncing to S3");
     console.log(cmd);
