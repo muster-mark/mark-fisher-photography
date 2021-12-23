@@ -5,6 +5,28 @@ s{% extends "_layouts/default.html.nunj" %}
 {% block head %}
     <link rel="prefetch" href="/{{ gallery }}/{{ next_photo.Slug }}"/>
     <link rel="prefetch" href="/{{ gallery }}/{{ previous_photo.Slug }}"/>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org/"
+            ,"@type": "Photograph"
+            ,"name": "{{ photo.Title }}"
+            {% if photo.Keywords and photo.Keywords.length %}
+                ,"keywords": {{ photo.Keywords | json }}
+                ,"abstract": {{ photo.Headline | json }}
+                ,"accessMode": "visual"
+                ,"creator": {
+                    "@type": "Person",
+                    "name": "Mark Fisher",
+                    "url": "{{ env.URL }}",
+                    "identifier": "{{ env.URL }}",
+                    "sameAs": "{{ env.URL }}"
+                }
+                ,"isAccessibleForFree": true
+                ,"isFamilyFriendly": true
+                ,"image": "{{ env.URL }}/photos/l840/{{ photo.Slug }}@2x.jpg"
+        {% endif %}
+        }
+    </script>
 {% endblock %}
 
 {% block meta_description_tag %}
