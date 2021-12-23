@@ -16,7 +16,7 @@ const productionPlugins = [
         defaultSizes: "gzip",
         analyzerMode: "static",
         reportFilename: `./../../reports/bundle_analyzer/${new Date().toISOString()}.html`,
-        openAnalyzer: true,
+        openAnalyzer: false,
     }),
     new TerserPlugin(),
 ];
