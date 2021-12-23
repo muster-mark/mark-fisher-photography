@@ -45,33 +45,45 @@ s{% extends "_layouts/default.html.nunj" %}
             <summary>More details</summary>
             <ul class="image-details_list">
                 {% if photo.Sublocation %}
-                    <li>
+                    <li class="image-details_list-item">
                         {{ svg_icon("map-marked-alt", "Location", true) }}{{ photo.Sublocation }}{% if photo.CountryPrimaryLocationName %}, {{ photo.CountryPrimaryLocationName }}{% endif %}
                     </li>
                 {% endif %}
 
                 {% if photo.DateTimeOriginal %}
-                    <li>
+                    <li class="image-details_list-item">
                         {{ svg_icon("calendar-alt", "Date taken", true) }}{{ photo.DateTimeOriginal|date('Do MMMM, YYYY') }}
                     </li>
                 {% endif %}
 
                 {% if photo.Model %}
-                    <li>
+                    <li class="image-details_list-item">
                         {{ svg_icon("camera-retro", "Camera", true) }}{{ photo.Model }}
                     </li>
                 {% endif %}
 
                 {% if photo.Lens %}
-                    <li>
+                    <li class="image-details_list-item">
                         {{ svg_icon("telescope", "Lens", true) }}{{ photo.Lens }}{% if photo.FocalLength %} at {{ photo.FocalLength|replace(' ', '') }}{% endif %}
                     </li>
                 {% endif %}
 
                 {% if photo.ExposureTime and photo.FNumber and photo.ISO %}
-                    <li>
+                    <li class="image-details_list-item">
                         {{ svg_icon("film-canister", "Exposure details", true) }}{{ photo.ExposureTime }}s at
                         f/{{ photo.FNumber }}, ISO {{ photo.ISO }}
+                    </li>
+                {% endif %}
+
+                {% if photo.Keywords and photo.Keywords.length %}
+                    <li class="image-details_list-item">
+                        {{ svg_icon("hashtag", "Keywords", true) }}
+
+                        <ul class="comma-list">
+                            {% for keyword in photo.Keywords %}
+                                <li>{{ keyword }}</li>
+                            {% endfor %}
+                        </ul>
                     </li>
                 {% endif %}
             </ul>

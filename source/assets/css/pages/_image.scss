@@ -74,8 +74,31 @@
     list-style-type: none;
     padding-left: 0;
 
+    &-item {
+        display: flex;
+        flex-direction: row;
+    }
+
     .ico {
         margin-right: 1em;
+        position: relative;
+        flex-shrink: 0;
+        top: 0.11em; // Align with capital letter
+    }
+}
+
+.comma-list {
+    list-style-type: none;
+    display: inline;
+    padding: 0;
+    margin: 0;
+
+    > li {
+        display: inline-block;
+
+        &:not(:last-child)::after {
+            content: ",";
+        }
     }
 }
 
