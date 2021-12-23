@@ -14,8 +14,6 @@
     const iconDimensions = {
         // instagram: {
         // },
-        // '500px': {
-        // },
         "chevron-left": {
             width: 256,
         },

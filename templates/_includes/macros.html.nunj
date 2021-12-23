@@ -67,8 +67,6 @@
     {% set icons = {
         instagram: {
         },
-        '500px': {
-        },
         'chevron-left': {
             width: 256
         },
@@ -127,12 +125,5 @@
     >
         {{ svg_icon('instagram', 'Visit my Instagram profile') }}
     </a>
-    <a class="a_context sm-link"
-       href="https://500px.com/mark_fisher"
-       aria-label="Visit Mark Fisher's 500px profile"
-    >
-        {{ svg_icon('500px', 'Visit my 500px profile') }}
-    </a>
-
 </span>
 {% endmacro %}
