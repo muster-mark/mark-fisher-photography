@@ -29,6 +29,7 @@ async function createImagePages(galleryData, galleryMetadata) {
                 page: {
                     meta_title: galleryMetadata[i].Title,
                     url: `/${galleryData.slug}/${galleryMetadata[i].Slug}`,
+                    skipJs: true,
                 },
                 gallery: galleryData.slug,
                 gallery_name: galleryData.name,

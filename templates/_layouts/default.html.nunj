@@ -42,8 +42,9 @@
 </main>
 
 {% include "_includes/footer.html.nunj" %}
-
-<script src="{{ 'main.js' | chunk }}" defer></script>
+{% if not page.skipJs %}
+    <script src="{{ 'main.js' | chunk }}" defer></script>
+{% endif %}
 {% block footer_scripts %}
     {# Cloudflare Web Analytics #}
     <script defer src='https://static.cloudflareinsights.com/beacon.min.js'

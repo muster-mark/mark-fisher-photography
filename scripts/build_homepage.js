@@ -45,6 +45,7 @@ const main = async function() {
         {
             page: {
                 url: "/",
+                skipJs: true,
             },
             favouriteImages,
             featuredGalleries: galleries
