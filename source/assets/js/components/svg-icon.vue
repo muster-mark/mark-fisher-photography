@@ -44,6 +44,9 @@
         },
         filter: {
             width: 512,
+        },
+        hashtag: {
+            width: 448
         }
     };
     export default {
