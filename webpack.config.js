@@ -26,7 +26,7 @@ module.exports = {
     entry: "./source/assets/js/main.ts",
     output: {
         path: path.resolve(__dirname, "public/assets/"),
-        filename: "[name].[contenthash:6].bundle.js",
+        filename: "[name].bundle.js?v=[contenthash:6]",  // Hash must be in query not file name, to allow --size-only S3 sync
         publicPath: "/public/",
     },
     // used for resolving webpack's loader packages
@@ -91,7 +91,7 @@ module.exports = {
         }),
         new VueLoaderPlugin(),
         new MiniCssExtractPlugin({
-            filename: "[name].[contenthash:6].css",
+            filename: "[name].css?v=[contenthash:6]", // Hash must be in query not file name, to allow --size-only S3 sync
         }),
         new WebpackManifestPlugin({
             filter: descriptor => descriptor.chunk,
