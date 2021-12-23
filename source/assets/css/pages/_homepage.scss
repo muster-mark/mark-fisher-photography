@@ -27,6 +27,7 @@
 }
 
 .homepage-feature_image {
+    display: flex;
     grid-row: 1;
     grid-column: 1 / 3;
     transition: transform 0.1s;

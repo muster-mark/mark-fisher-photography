@@ -16,14 +16,28 @@
             {% for gallery in featuredGalleries %}
                 <a class="a_context homepage-feature" href="/{{ gallery.slug }}">
 {#                {{ picture(gallery.image.Slug, gallery.name, "l484", gallery.image.ImageAspectRatio, gallery.image.Colors[0], null, "homepage-feature_image" ) }}#}
-                    <img width="484" height="{{ (484 / gallery.image.ImageAspectRatio)|round }}"
-                         srcset="/photos/l484/{{ gallery.image.Slug }}@2x.jpg 968w, /photos/l484/{{ gallery.image.Slug }}.jpg 484w"
-                         sizes="calc(45vw - 20px)"
-                         src="/photos/l484/{{ gallery.image.Slug }}.jpg"
-                         alt="{{ alt }}"
-                         {% if gallery.image.Colors[0] %}style="background-color: {{ gallery.image.Colors[0] }}{% endif %}"
-                         class="homepage-feature_image"
+                    <picture
+                            class="homepage-feature_image"
+                            {% if gallery.image.Colors[0] %}style="background-color: {{ gallery.image.Colors[0] }}{% endif %}"
                     >
+                        <source
+                                type="image/jxl"
+                                srcset="/photos/l484/{{ gallery.image.Slug }}@2x.jxl 968w, /photos/l484/{{ gallery.image.Slug }}.jxl 484w"
+                                sizes="calc(45vw - 20px)"
+                        />
+                        <source
+                                type="image/webp"
+                                srcset="/photos/l484/{{ gallery.image.Slug }}@2x.webp 968w, /photos/l484/{{ gallery.image.Slug }}.webp 484w"
+                                sizes="calc(45vw - 20px)"
+                        />
+                        <img width="484" height="{{ (484 / gallery.image.ImageAspectRatio)|round }}"
+                             srcset="/photos/l484/{{ gallery.image.Slug }}@2x.jpg 968w, /photos/l484/{{ gallery.image.Slug }}.jpg 484w"
+                             sizes="calc(45vw - 20px)"
+                             src="/photos/l484/{{ gallery.image.Slug }}.jpg"
+                             alt="{{ alt }}"
+                        >
+                    </picture>
+
                     <div class="homepage-feature_title">
                         <div class="homepage-feature_title_inner">
                             <h3 class="homepage-feature_heading">{{ gallery.name }}</h3>
