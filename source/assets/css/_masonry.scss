@@ -58,6 +58,7 @@ $aspect-ratios: ("name": "3to1", "width": 3, "height": 1) ("name": "2to1", "widt
     }
 }
 
-.masonry_brick img {
+.masonry_brick picture {
+    display: flex;
     margin-bottom: 15px;
 }

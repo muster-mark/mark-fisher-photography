@@ -15,7 +15,7 @@
 
             {% for gallery in featuredGalleries %}
                 <a class="a_context homepage-feature" href="/{{ gallery.slug }}">
-{#                {{ picture(gallery.image.Slug, gallery.name, "l484", gallery.image.ImageAspectRatio, gallery.image.Colors[0], null, "homepage-feature_image" ) }}#}
+                    {#                {{ picture(gallery.image.Slug, gallery.name, "l484", gallery.image.ImageAspectRatio, gallery.image.Colors[0], null, "homepage-feature_image" ) }} #}
                     <picture
                             class="homepage-feature_image"
                             {% if gallery.image.Colors[0] %}style="background-color: {{ gallery.image.Colors[0] }}{% endif %}"
@@ -46,7 +46,8 @@
                 </a>
             {% endfor %}
 
-            <a style="display: inline-block; margin-bottom: 40px; margin-top: 40px;" class="btn" href="/explore">Explore all photos{{ svg_icon("chevron-right", '', false, 12, 19)}}</a>
+            <a style="display: inline-block; margin-bottom: 40px; margin-top: 40px;" class="btn" href="/explore">Explore
+                all photos{{ svg_icon("chevron-right", '', false, 12, 19) }}</a>
 
             <h2>Recent Work:</h2>
 
@@ -54,10 +55,27 @@
                 {% for image in favouriteImages %}
                     <a href="/{{ image.Gallery }}/{{ image.Slug }}"
                        class="img-link masonry_brick {% if image.ImageAspectRatioIdentifier != "invalid" %}masonry_brick_{{ image.ImageAspectRatioIdentifier }}{% endif %}"
-                        {% if image.ImageAspectRatioIdentifier == "invalid" %}style="grid-row: auto/span {{ image.cssGridRowSpan}}; height: {{ image.brickHeight }}px"{% endif %}
+                       {% if image.ImageAspectRatioIdentifier == "invalid" %}style="grid-row: auto/span {{ image.cssGridRowSpan }}; height: {{ image.brickHeight }}px"{% endif %}
                        aria-label="See more information about the photo &ldquo;{{ image.Title }}&rdquo;"
                     >
-                        {{ picture(image.Slug, image.Headline, "w200", image.ImageAspectRatio, image.Colors[0], "lazy") }}
+                        {#                        {{ picture(image.Slug, image.Headline, "w200", image.ImageAspectRatio, image.Colors[0], "lazy") }} #}
+                        <picture
+                                {% if image.Colors[0] %}style="background-color: {{ image.Colors[0] }}{% endif %}"
+                        >
+                            <source
+                                    type="image/jxl"
+                                    srcset="/photos/w200/{{ image.Slug }}@2x.jxl 400w, /photos/w200/{{ image.Slug }}.jxl 200w"/>
+                            <source
+                                    type="image/webp"
+                                    srcset="/photos/w200/{{ image.Slug }}@2x.webp 400w, /photos/w200/{{ image.Slug }}.webp 200w"/>
+                            <img width="200"
+                                 height="{{ (200 / image.ImageAspectRatio)|round }}"
+                                 srcset="/photos/w200/{{ image.Slug }}@2x.jpg 400w, /photos/w200/{{ image.Slug }}.jpg 200w"
+                                 src="/photos/w200/{{ image.Slug }}.jpg"
+                                 alt="{{ image.Headline }}"
+                                 loading="lazy">
+                        </picture>
+
                     </a>
                 {% endfor %}
             </div>
