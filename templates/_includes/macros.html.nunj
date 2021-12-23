@@ -94,6 +94,9 @@
         },
         'telescope': {
             width: 640
+        },
+        'hashtag': {
+            width: 448
         }
     } %}
 
