@@ -1,6 +1,6 @@
 const slugify = require("slug");
 const DateSeason = require("date-season");
-const getColors = require("get-image-colors");
+const getColors = require("./get_image_colors");
 const exiftool = require("node-exiftool");
 const colors = require("colors");
 const MarkdownIt = require("markdown-it");
