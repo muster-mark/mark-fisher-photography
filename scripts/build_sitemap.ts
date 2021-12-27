@@ -1,85 +1,61 @@
-const IncomingMessage = require("node:http").IncomingMessage;
+const path = require("node:path");
+const fs = require("node:fs/promises");
 
-const path1 = require("node:path");
-const https = require('node:https');
-const sitemapGenerator = require("sitemap-generator");
-const uploadToS3 = require("../local_modules/upload_to_s3");
+const Mustache = require("mustache");
 
-const ping = function(url: string): Promise<void> {
-    return new Promise((resolve, reject) => {
-        const options = new URL(url);
-        const req = https.request(options, (res: typeof IncomingMessage) => {
-            if (res.statusCode < 200 || res.statusCode > 299) {
-                reject(`Status code for ${url} was ${res.statusCode}`);
-            } else {
-                resolve();
-            }
-        });
-        req.end();
+const {galleries} = require("../local_modules/galleries.json");
+const {images} = require("../source/metadata_json/all.json");
+
+const base = "https://www.markfisher.photo";
+const publicDir = path.resolve(`${__dirname}/../public`);
+
+const urls: {
+    loc: string;
+    lastMod: string;
+}[] = [];
+
+async function main() {
+    urls.push({
+        loc: `${base}/`,
+        lastMod: new Date().toISOString(),
     });
+
+    ["about", "contact", "privacy", "explore"].forEach(page => {
+        urls.push({
+            loc: `${base}/${page}`,
+            lastMod: new Date().toISOString(),
+        })
+    });
+
+    galleries.forEach((gallery: any) => {
+        urls.push({
+            loc: `${base}/${gallery.slug}`,
+            lastMod: new Date().toISOString(),
+        })
+    });
+
+    images.forEach((image: any) => {
+        urls.push({
+            loc: `${base}/${image.Gallery}/${image.Slug}`,
+            lastMod: new Date().toISOString(),
+        })
+    });
+
+    const output = Mustache.render(
+            `<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml-stylesheet type="text/xsl" href="/sitemap.xsl" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{{#urls}}
+    <url>
+        <loc>{{&loc}}</loc>
+        <lastmod>{{&lastMod}}</lastmod>
+    </url>
+{{/urls}}
+</urlset>
+`
+            , {urls,});
+
+    await fs.writeFile(`${publicDir}/sitemap.xml`, output, {encoding: "utf-8"});
 }
 
-const allowedDestinations = ["staging", "production"];
-
-const destination = process.argv[2];
-
-if (allowedDestinations.indexOf(destination) === -1) {
-    console.error(`Please select one of the following destinations: ${allowedDestinations.join(" ")}`);
-    process.exit();
-}
-
-require("dotenv").config({ path: `${__dirname}/../.${destination}.env` });
-
-const filePath = path1.resolve(`${__dirname}/../sitemap.xml`);
-const sitemapUrl = `https://${process.env.URL}/sitemap.xml`;
-
-// create generator
-const generator = sitemapGenerator(`https://${process.env.URL}`, {
-    stripQuerystring: false,
-    ignoreHreflang: true,
-    lastMod: true,
-    filepath: path1.resolve(`${__dirname}/../sitemap.xml`),
-
-});
-
-// register event listeners
-generator.on("add", (url: string) => {
-    console.log(`Added page to sitemap: ${url}`);
-});
-
-generator.on("error", ({code, message, url}: {code: number, message: string, url: string}) => {
-    console.log(`Error fetching ${url} for sitemap. Code was ${code}. ${message}`);
-    process.exit();
-});
-
-generator.on("done", () => {
-    console.log(`Finished building sitemap, and wrote to ${filePath}`);
-    uploadToS3(process.env.S3_BUCKET, filePath, process.env.S3_REGION)
-        .then(async () => {
-            console.log(`Sitemap uploaded to ${process.env.S3_BUCKET}.`);
-
-            if (destination === "production") {
-                const googleUrl = `https://www.google.com/webmasters/sitemaps/ping?sitemap=${sitemapUrl}`;
-                const bingUrl = `https://www.bing.com/ping?sitemap=${sitemapUrl}`;
-
-                console.log(`Pinging ${googleUrl}`);
-                console.log(`Pinging ${bingUrl}`);
-
-                await Promise.all([ping(googleUrl), ping(bingUrl)]);
-                return Promise.resolve();
-            } else {
-                console.log("Not pinging search engines for staging.");
-                return Promise.resolve();
-            }
-
-
-        })
-        .then(() => {
-            console.log("Successfully Pinged Google and Bing about new sitemap.");
-        })
-        .catch((err: any) => {
-            console.log(err);
-        });
-});
-
-generator.start();
+main();

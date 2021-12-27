@@ -8,7 +8,6 @@ module.exports = async function syncS3Bucket(bucketName: string, key = "", bucke
         "entrypoints.json",
         "manifest.json",
         ".DS_Store",
-        "sitemap.xml",
     ];
 
     let excludeArgs = "";

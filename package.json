@@ -13,11 +13,11 @@
         "add-photos": "node scripts/extract_metadata.js && node scripts/build_photo_and_gallery_pages.js && node scripts/build_image_data.js",
         "build": "cross-env NODE_ENV='production' webpack --config webpack.config.js && npm run build-pages",
         "dev": "cross-env NODE_ENV='development' webpack --config webpack.config.js && npm run build-pages",
-        "build-pages": "node scripts/build_manual_pages.js && node scripts/build_photo_and_gallery_pages.js && node scripts/build_homepage.js",
+        "build-pages": "node scripts/build_manual_pages.js && node scripts/build_photo_and_gallery_pages.js && node scripts/build_homepage.js && node -r ts-node/register scripts/build_sitemap.ts",
         "test": "jest",
         "deploy": "node -r ts-node/register scripts/deploy.ts",
         "serve": "node -r ts-node/register scripts/serve.ts",
-        "build-sitemap": "node -r ts-node/register scripts/build_sitemap.ts"
+        "ping-sitemap": "node -r ts-node/register scripts/ping_sitemap.ts"
     },
     "sideEffects": [
         "*.vue"
@@ -33,7 +33,6 @@
         "node-exiftool": "^2.3.0",
         "nunjucks": "^3.2.3",
         "nunjucks-date": "^1.5.0",
-        "sitemap-generator": "^8.5.1",
         "slug": "^5.1.0",
         "underscore": "^1.13.1",
         "vue": "^2.6.14",
@@ -61,6 +60,7 @@
         "jest": "^27.3.1",
         "markdown-it": "^12.2.0",
         "mini-css-extract-plugin": "^2.4.5",
+        "mustache": "^4.2.0",
         "node": "^16.13.0",
         "sass": "^1.43.5",
         "sass-loader": "^12.3.0",

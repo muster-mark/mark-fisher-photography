@@ -8,6 +8,15 @@ export interface Image {
     Gallery: string;
 }
 
+export interface Gallery {
+    slug: string;
+    name: string;
+    metadataDescription: string;
+    _unused_homepageDescription: string;
+    featured: boolean;
+    imageSlug: string;
+}
+
 export interface CountryCount {
     name: string;
     count: number;
