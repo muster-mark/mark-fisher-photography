@@ -64,7 +64,7 @@ const transformedFields = {
         return `${metadata.OriginalTransmissionReference} 00:00:00`;
     },
     async Colors(metadata, args) {
-        const colorsArray = await getColors(args.pathToFile);
+        const colorsArray = await getColors(args.pathToFile, {count: 1});
         return colorsArray.map((color) => color.hex());
     },
     async Season(metadata) {
