@@ -14,7 +14,7 @@
         <div class="inner-container">
 
             {% for gallery in featuredGalleries %}
-                <a class="a_context homepage-feature" href="/{{ gallery.slug }}">
+                <a class="a_context homepage-feature" href="/{{ gallery.slug }}/">
                     {#                {{ picture(gallery.image.Slug, gallery.name, "l484", gallery.image.ImageAspectRatio, gallery.image.Colors[0], null, "homepage-feature_image" ) }} #}
                     <picture
                             class="homepage-feature_image"
