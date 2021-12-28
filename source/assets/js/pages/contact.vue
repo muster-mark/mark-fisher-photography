@@ -59,8 +59,8 @@
             </div>
             <div class="fadeInUp contact-form_result-message_text">
                 <span>Sorry, something went wrong. Please try emailing me on <a
-                        :href="'mailto:mfishe@gmail.com?subject=Enquiry%20via%20markfisher.photo&body=' + encodeURIComponent(fields.message.value)"
-                        target="_blank">mfishe@gmail.com</a> instead.</span>
+                        :href="fallbackEmailHref"
+                        target="_blank">{{fallbackEmail}}</a> instead.</span>
             </div>
         </div>
 
@@ -77,6 +77,7 @@
                 fields: {[key: string]: {value: string, touched: boolean}};
                 isSubmitting: boolean;
                 submissionSucceeded: boolean;
+                fallbackEmail: string;
             } = {
                 action: `${window.location.origin.replace("www", "api")}/message`,
                 fields: {
@@ -95,6 +96,7 @@
                 },
                 isSubmitting: false,
                 submissionSucceeded: null,
+                fallbackEmail: "mfishe@gmail.com"
             };
 
             return data;
@@ -103,6 +105,15 @@
             allFieldsTouched() {
                 return Object.keys(this.fields).every((key) => this.fields[key].touched);
             },
+            fallbackEmailHref() {
+                const query = new URLSearchParams();
+                query.set("subject", "Enquiry via markfisher.photo");
+                if (this.fields.message.value) {
+                    query.set("body", this.fields.message.value);
+                }
+
+                return `mailto:${this.fallbackEmail}?${query.toString()}`;
+            }
         },
         methods: {
             resetForm() {
