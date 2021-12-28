@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="{{ 'main.css' | chunk }}"/>
     <link rel="canonical" href="https://{{ env.URL }}{{ page.url }}"/>
     <meta name="theme-color" content="#efa929">
+    {% if page.skipJs %}
+        <link rel="prefetch" as="script" href="{{ 'main.js' | chunk }}" />
+    {% endif %}
 
     {% block head %}
 
