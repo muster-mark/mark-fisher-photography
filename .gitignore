@@ -8,3 +8,4 @@ sitemap.xml
 .production.env
 /reports/
 source/static/data
+.idea/httpRequests
