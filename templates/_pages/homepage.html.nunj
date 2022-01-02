@@ -49,9 +49,8 @@
             <a style="display: inline-block; margin-bottom: 40px; margin-top: 40px;" class="btn" href="/explore">Explore
                 all photos{{ svg_icon("chevron-right", '', false, 12, 19) }}</a>
 
-            <h2>Recent Work:</h2>
-
             <div class="masonry_wall">
+                <h2 style="grid-row: auto / span 2; grid-column: 1 / -1">Recent Work:</h2>
                 {% for image in favouriteImages %}
                     <a href="/{{ image.Gallery }}/{{ image.Slug }}"
                        class="img-link masonry_brick {% if image.ImageAspectRatioIdentifier != "invalid" %}masonry_brick_{{ image.ImageAspectRatioIdentifier }}{% endif %}"
