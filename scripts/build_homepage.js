@@ -20,7 +20,7 @@ const homepageImages = allImages
 const getImageData = async (slug) => {
     const jsonFiles = await glob(`${metadataDir}/*/${slug}.json`);
     if (jsonFiles.length !== 1) {
-        throw new Error(`Unexpected number of JSON files for ${slug}`);
+        throw new Error(`Unexpected number of JSON files for ${slug}. ${jsonFiles.length} files were found`);
     }
 
     return util.promisify(fs.readFile)(jsonFiles[0], { encoding: "utf-8" });
