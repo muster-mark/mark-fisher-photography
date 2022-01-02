@@ -6,7 +6,7 @@ const glob = require("glob-promise");
 const nunjucks = require("../local_modules/nunjucks");
 const renderAndWriteTemplate = require("../local_modules/render_and_write_template");
 const allImages = require("../source/metadata_json/all.json").images;
-const galleries = require("../local_modules/galleries.json").galleries;
+const galleries = require("../local_modules/galleries.js").galleries;
 
 const metadataDir = path.resolve(`${__dirname}/../source/metadata_json`);
 const publicDir = path.resolve(`${__dirname}/../public`);

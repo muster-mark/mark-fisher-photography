@@ -1,0 +1,2 @@
+My photography is mainly focused on the [Scottish highlands](/highlands/). Here is a selection of landscape photographs
+from everywhere else &mdash; mainly Wales and England, with a smattering of other countries thrown in.

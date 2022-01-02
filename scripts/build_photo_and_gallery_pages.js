@@ -4,7 +4,7 @@ const util = require("node:util");
 const glob = require("glob-promise");
 const nunjucks = require("../local_modules/nunjucks");
 
-const { galleries } = require("../local_modules/galleries.json");
+const { galleries } = require("../local_modules/galleries.js");
 const renderAndWriteTemplate = require("../local_modules/render_and_write_template");
 
 const templatesPath = path.resolve(`${__dirname}/../templates`);

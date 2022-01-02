@@ -5,7 +5,7 @@ const nunjucksDate = require("nunjucks-date");
 const manifest = require("../public/assets/manifest.json");
 
 const templatesPath = path.resolve(`${__dirname}/../templates`);
-const { galleries } = require("./galleries.json");
+const { galleries } = require("./galleries.js");
 
 require("dotenv").config({ path: `${__dirname}/../.production.env` });
 

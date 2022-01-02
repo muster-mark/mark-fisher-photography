@@ -1,4 +1,17 @@
-{
+const fs = require("node:fs");
+const path = require("node:path");
+
+const MarkdownIt = require('markdown-it');
+
+
+const md = new MarkdownIt();
+const rootDir = path.resolve(`${__dirname}/../`);
+
+const getGalleryDescription = function (galleryName) {
+    return md.render(fs.readFileSync(`${rootDir}/source/content/gallery_descriptions/${galleryName}.md`).toString());
+}
+
+module.exports = {
     "galleries": [
         {
             "slug": "highlands",
@@ -7,7 +20,7 @@
             "_unused_homepageDescription": "The UK's crown jewels",
             "featured": true,
             "imageSlug": "rainbow-valley",
-            "description": "<p>I am always either on a Scotland trip or have one coming up. The wild, untamed emptiness draws me back time and time again.</p>"
+            "description": getGalleryDescription("highlands"),
         },
         {
             "slug": "landscapes",
@@ -16,7 +29,7 @@
             "_unused_homepageDescription": "Everywhere other than the Highlands",
             "featured": true,
             "imageSlug": "last-light",
-            "description": "<p>My photography is mainly focused on the <a href=\"/highlands/\">Scottish highlands</a>. Here is a selection of landscape photographs from everywhere else &mdash; mainly Wales and England, with a smattering of other countries thrown in.</p>"
+            "description": getGalleryDescription("landscapes"),
         },
         {
             "slug": "animals",
@@ -25,7 +38,7 @@
             "_unused_homepageDescription": "Lorem ipsum dolor sit amet",
             "featured": true,
             "imageSlug": "cows-by-loch-brittle",
-            "description": "<p>I'm not much of a wildlife photographer to be honest. I prefer to be moving around and exploring rather than sitting around waiting in a hide for an animal that may or may not come. And as all good adventures are made on foot rather than in a vehicle, I prefer to travel light and don't even own a lens long enough to be considered a proper wildlife lens.</p><p>Nevertheless, I have acquired the odd animal photo over the years. I hope you enjoy them.</p>"
+            "description": getGalleryDescription("animals"),
         },
         {
             "slug": "plants",
@@ -34,7 +47,7 @@
             "homepageDescription": "Bringing colour and calm",
             "featured": true,
             "imageSlug": "the-other-side",
-            "description": null
+            "description": null,
         },
         {
             "slug": "dusk-to-dawn",
@@ -43,21 +56,21 @@
             "homepageDescription": "When darkness reigns",
             "featured": true,
             "imageSlug": "moonbolt",
-            "description": "<p>Walking in the woods at night is the surest way of having it for yourself. Which is just the way I like it. Many people like to go to the woods for the mindfulness aspect of it, but this is multiplied 10 times when walking by moonlight. Being mostly deprived of your primary sense of vision and no longer bombarded by a deluge of information, you become much more aware of your other senses and are able to pay attention to everything happening both inside and outside of you.</p><p>If you do plan on going out walking by the full moon, make sure to stick to well-known paths that you know present no significant hazards. And bring a phone with a charged battery just in case &mdash; though it would be just as well to keep it switched off unless you are given cause to need it. After all, the entire point is to feel unplugged for once.</p>"
+            "description": getGalleryDescription("dusk-to-dawn"),
         },
         {
             "slug": "city",
             "name": "City",
             "metaDescription": "Urban photographs of the UK, Europe and the United States by Mark Fisher.",
             "featured": false,
-            "description": null
+            "description": null,
         },
         {
             "slug": "people",
             "name": "People",
             "metaDescription": "On rare occasions, I pluck up the courage to point my camera at other people. Here are the results.",
             "featured": false,
-            "description": null
+            "description": null,
         }
     ]
 }

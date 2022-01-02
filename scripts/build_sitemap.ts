@@ -3,7 +3,7 @@ const fs = require("node:fs/promises");
 
 const Mustache = require("mustache");
 
-const {galleries} = require("../local_modules/galleries.json");
+const {galleries} = require("../local_modules/galleries.js");
 const {images} = require("../source/metadata_json/all.json");
 
 const base = "https://www.markfisher.photo";
