@@ -15,6 +15,7 @@ export interface Gallery {
     _unused_homepageDescription: string;
     featured: boolean;
     imageSlug: string;
+    description: string; // HTML
 }
 
 export interface CountryCount {

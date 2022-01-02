@@ -71,6 +71,8 @@ async function createGalleryPage(gallery) {
             },
             gallery,
             gallery_meta_description: galleryData.metaDescription,
+            gallery_description: galleryData.description,
+            gallery_title: galleryData.name,
             photos: imageMetadata,
         },
         nunjucks,

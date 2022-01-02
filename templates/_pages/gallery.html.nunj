@@ -7,8 +7,13 @@
 {% endblock %}
 
 {% block content %}
-
     <div class="inner-container">
+        <h1 class="h2 gallery-title">{{ gallery_title }}</h1>
+
+        {% if gallery_description %}
+            {{ gallery_description | safe }}
+        {% endif %}
+
         <div class="masonry_wall">
 
             {% for photo in photos %}
