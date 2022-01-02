@@ -9,38 +9,14 @@ $masonry-gap: 15px;
 
 .masonry_wall {
     display: grid;
-    grid-template-columns: repeat(4, $masonry-column-width);
+    grid-template-columns: repeat(auto-fit, minmax($masonry-column-width, max-content));
+    justify-content: center;
     grid-template-rows: 3px;
     grid-auto-flow: dense;
     grid-gap: 0 $masonry_gap;
     width: #{4 * ($masonry-column-width + $masonry-gap) - $masonry-gap};
     max-width: 100%;
     margin: auto;
-}
-
-@media screen and (max-width: 885px) {
-    .masonry_wall {
-        grid-template-columns: repeat(3, $masonry-column-width);
-        width: #{3 * ($masonry-column-width + $masonry-gap) - $masonry-gap};
-    }
-}
-
-@media screen and (max-width: 670px) {
-    .masonry_wall {
-        grid-template-columns: repeat(2, $masonry-column-width);
-        width: #{2 * ($masonry-column-width + $masonry-gap) - $masonry-gap};
-    }
-}
-
-@media screen and (max-width: 455px) {
-    .masonry_wall {
-        display: block;
-        width: $masonry-column-width;
-    }
-
-    .masonry_brick {
-        display: table;
-    }
 }
 
 .masonry_brick {
