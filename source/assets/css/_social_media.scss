@@ -37,6 +37,7 @@ $screen-width-show-social-media-in-footer: 500px;
     color: $text-color;
     padding: 20px 0.4em;
     text-decoration: none;
+    transition: scale 0.3s;
 }
 
 .sm-link:hover {
