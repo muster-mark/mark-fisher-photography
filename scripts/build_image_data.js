@@ -1,14 +1,22 @@
 const path = require("node:path");
 const util = require("node:util");
 const fs = require("node:fs");
-const _ = require("underscore");
 
 const groupBy = require("lodash/groupBy");
 
 const { images } = require("../source/metadata_json/all");
 
 for (let i = 0; i < images.length; i++) {
-    images[i] = _.pick(images[i],"ImageAspectRatio", "Headline", "Slug", "Colors", "Season", "CountryPrimaryLocationName", "Gallery");
+    const {ImageAspectRatio, Headline, Slug, Colors, Season, CountryPrimaryLocationName, Gallery} = images[i];
+    images[i] = {
+        ImageAspectRatio,
+        Headline,
+        Slug,
+        Colors,
+        Season,
+        CountryPrimaryLocationName,
+        Gallery,
+    }
 }
 
 const seasonGroups = groupBy(images, "Season");

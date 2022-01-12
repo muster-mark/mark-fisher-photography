@@ -72,7 +72,6 @@
 </template>
 
 <script lang="ts">
-import _ from "underscore";
 
 import ExploreResult from "../components/explore-result.vue";
 import PaginationLinks from "../components/pagination-links.vue";
@@ -145,7 +144,8 @@ export default {
                 .then(json => {
                     this.allImages = json.images;
                     this.countryCounts = json.countryCounts;
-                    this.selectedCountries = _.uniq(_.pluck(json.countryCounts, "name"));
+                    const selectedCountries = json.countryCounts.map((countryCount: CountryCount) => countryCount.name);
+                    this.selectedCountries = Array.from(new Set(selectedCountries));
                     this.seasonCounts = json.seasonCounts;
                 })
                 .catch((err) => {
