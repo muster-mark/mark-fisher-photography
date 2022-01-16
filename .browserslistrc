@@ -1,0 +1,6 @@
+# defaults: > 0.5%, last 2 version, Firefox ESR, not dead (excludes browsers without official support in the last 24 months
+# Run "npx browserslist" to see what browsers this results in
+defaults
+> 0.3%
+not op_mini all
+not ie 11
