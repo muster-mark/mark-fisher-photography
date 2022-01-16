@@ -50,6 +50,9 @@ module.exports = {
                             url: false
                         }
                     },
+                    {
+                        loader: "postcss-loader"
+                    },
                     // Compiles Sass to CSS
                     "sass-loader",
                 ],
