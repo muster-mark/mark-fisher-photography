@@ -17,7 +17,8 @@
         "test": "jest",
         "deploy": "node -r ts-node/register scripts/deploy.ts",
         "serve": "node -r ts-node/register scripts/serve.ts",
-        "ping-sitemap": "node -r ts-node/register scripts/ping_sitemap.ts"
+        "ping-sitemap": "node -r ts-node/register scripts/ping_sitemap.ts",
+        "update-browserslist": "npx browserslist@latest --update-db"
     },
     "sideEffects": [
         "*.vue"
