@@ -65,6 +65,7 @@
         "mini-css-extract-plugin": "^2.4.6",
         "mustache": "^4.2.0",
         "node": "^16.13.0",
+        "postcss-clamp": "^3.0.0",
         "postcss-loader": "^6.2.1",
         "postcss-logical": "^5.0.3",
         "sass": "^1.47.0",
