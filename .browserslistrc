@@ -4,3 +4,4 @@ defaults
 > 0.3%
 not op_mini all
 not ie 11
+not dead
