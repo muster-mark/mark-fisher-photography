@@ -5,16 +5,15 @@
     "url": "/contact",
     "title" : "Contact Mark",
     "header_image" : {
-        "src" : "/images/mark-fisher-jump-out_150x150",
+        "src" : "/images/mark-fisher-rhossili",
         "alt" : "Mark Fisher, photographer",
-        "height" : 150,
-        "width" : 150
+        "height" : 160,
+        "width" : 240
     }
 } %}
 
 {% block headline %}
     <p>Do you have a question about my photography, or something to share? Don't hesitate to get in touch!</p>
-    <p>You can also connect with me via any of my social media channels.</p>
 {% endblock %}
 
 {% block content %}

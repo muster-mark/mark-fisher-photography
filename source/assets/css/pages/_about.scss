@@ -1,0 +1,11 @@
+.jellyfish-image {
+    float: left;
+    margin-right: -60px;
+    margin-top: -40px;
+    mask-image: radial-gradient(ellipse at center, white, white 30%, transparent 80%);
+    shape-outside: ellipse(157px 216px at 167px 158px)
+
+    @media screen and (max-width: 590px) {
+        margin-right: -100%;
+    }
+}

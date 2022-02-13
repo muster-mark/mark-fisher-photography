@@ -5,10 +5,10 @@
     "url": "/about",
     "title" : "About Mark",
     "header_image" : {
-        "src" : "/images/mark-fisher-jump-out_150x150",
+        "src" : "/images/mark-fisher-rhossili",
         "alt" : "Mark Fisher, photographer",
-        "height" : 150,
-        "width" : 150
+        "height" : 160,
+        "width" : 240
     }
 } %}
 
@@ -50,7 +50,12 @@
 {% endblock %}
 
 {% block content %}
-    <div class="inner-container">
+    <div class="inner-container" style="z-index: 0; position: relative;">
+
+        <img width="375" height="500" src="images/me_jellyfish_bnw_brighter.jpg" class="jellyfish-image"
+             style="position: relative; z-index: -1;"
+        />
+
         <p>Hi there. I'm a web developer currently living and working in London, while trying to find as much time as
             possible outside of work to self-medicate on what I find to be the perfect antidote to sitting at a computer
             all day &mdash; immersing myself in nature and taking the odd picture or two while I'm at it.</p>
