@@ -15,41 +15,46 @@ input, textarea {
     margin: 3vw;
 }
 
-.contact-form :is(input[type="text"], input[type="email"], textarea) {
+.contact-form {
+    input[type="text"], input[type="email"], textarea {
+        $focus-outline: 2px solid $color-primary;
 
-    $focus-outline: 2px solid $color-primary;
+        font-size: var(--font-size);
+        padding: 0.5em;
+        border: 2px solid $text-color;
+        background-color: black;
+        color: $text-color;
+        width: 100%;
+        outline-offset: -2px;
 
-    font-size: var(--font-size);
-    padding: 0.5em;
-    border: 2px solid $text-color;
-    background-color: black;
-    color: $text-color;
-    width: 100%;
-    outline-offset: -2px;
+        &::placeholder {
+            color: $placeholder-grey;
+        }
 
-    &::placeholder {
-        color: $placeholder-grey;
-    }
+        &:focus {
+            outline: $focus-outline;
+            outline-offset: 2px;
+            transition: outline-offset 200ms;
+        }
 
-    &:focus {
-        outline: $focus-outline;
-        outline-offset: 2px;
-        transition: outline-offset 200ms;
-    }
+        &:focus:not(:focus-visible) {
+            outline: none;
+        }
 
-    &:focus:not(:focus-visible) {
-        outline: none;
-    }
-
-    &:focus-visible {
-        outline: $focus-outline;
-        outline-offset: 2px;
-        transition: outline-offset 200ms;
+        &:focus-visible {
+            outline: $focus-outline;
+            outline-offset: 2px;
+            transition: outline-offset 200ms;
+        }
     }
 }
 
-.contact-form .input_touched:invalid:not(:focus-visible):is(input[type="text"], input[type="email"], textarea) {
-    border: 2px solid red;
+.contact-form {
+    input[type="text"], input[type="email"], textarea {
+        &.input_touched:invalid:not(:focus-visible) {
+            border: 2px solid red;
+        }
+    }
 }
 
 .contact-form label {
