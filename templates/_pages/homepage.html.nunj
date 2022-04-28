@@ -34,7 +34,7 @@
                              srcset="/photos/l484/{{ gallery.image.Slug }}@2x.jpg 968w, /photos/l484/{{ gallery.image.Slug }}.jpg 484w"
                              sizes="calc(45vw - 20px)"
                              src="/photos/l484/{{ gallery.image.Slug }}.jpg"
-                             alt="{{ alt }}"
+                             alt="{{ gallery.imageAltText }}"
                         >
                     </picture>
 

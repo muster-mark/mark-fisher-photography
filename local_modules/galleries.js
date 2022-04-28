@@ -20,6 +20,7 @@ module.exports = {
             "_unused_homepageDescription": "The UK's crown jewels",
             "featured": true,
             "imageSlug": "rainbow-valley",
+            "imageAltText": "Scottish Highlands photography by Mark Fisher",
             "description": getGalleryDescription("highlands"),
         },
         {
@@ -29,6 +30,7 @@ module.exports = {
             "_unused_homepageDescription": "Everywhere other than the Highlands",
             "featured": true,
             "imageSlug": "last-light",
+            "imageAltText": "Landscape photography by Mark Fisher",
             "description": getGalleryDescription("landscapes"),
         },
         {
@@ -38,6 +40,7 @@ module.exports = {
             "_unused_homepageDescription": "Lorem ipsum dolor sit amet",
             "featured": true,
             "imageSlug": "cows-by-loch-brittle",
+            "imageAltText": "Wildlife photography by Mark Fisher",
             "description": getGalleryDescription("animals"),
         },
         {
@@ -47,6 +50,7 @@ module.exports = {
             "homepageDescription": "Bringing colour and calm",
             "featured": true,
             "imageSlug": "the-other-side",
+            "imageAltText": "Photographs of the plant kingdom, from grass to trees, by Orpington based photographer Mark Fisher",
             "description": null,
         },
         {
@@ -56,6 +60,7 @@ module.exports = {
             "homepageDescription": "When darkness reigns",
             "featured": true,
             "imageSlug": "moonbolt",
+            "imageAltText": "Images taken when the sun don't shine. Photography by Mark Fisher",
             "description": getGalleryDescription("dusk-to-dawn"),
         },
         {
