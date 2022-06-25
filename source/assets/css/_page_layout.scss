@@ -25,4 +25,9 @@
 .header-container_img{
     float: left;
     margin-right: 30px;
+    margin-bottom: 8px;
+
+    @media screen and (max-width: 450px) {
+        float: none;
+    }
 }
