@@ -25,7 +25,7 @@ $aspect-ratios: ("name": "3to1", "width": 3, "height": 1) ("name": "2to1", "widt
 @each $aspect-ratio in $aspect-ratios {
     .masonry_brick_#{map-get($aspect-ratio, "name")} {
         $brick-height: round($masonry-column-width / 1px * (math.div(map-get($aspect-ratio, "height"), map-get($aspect-ratio, "width")))  + math.div($masonry-gap, 1px));
-        $row-span: round(math.div($brick-height, 1));
+        $row-span: round($brick-height);
         grid-row: auto / span #{$row-span};
         height: #{$brick-height}px;
     }
