@@ -1,37 +1,56 @@
 @use "sass:math";
 
-$masonry-column-width: 200px;
-$masonry-gap: 15px;
-
 .masonry_wall {
+    --column-width-unitless: #{200};
+    --column-width: calc(var(--column-width-unitless) * 1px);
+    --masonry-gap-unitless: 15;
+    --masonry-gap: calc(var(--masonry-gap-unitless) * 1px);
+
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax($masonry-column-width, max-content));
+    grid-template-columns: repeat(auto-fit, minmax(var(--column-width), max-content));
     justify-content: center;
     grid-template-rows: none;
     grid-auto-rows: 1px;
     grid-auto-flow: dense;
-    grid-gap: 0 $masonry_gap;
-    width: #{4 * ($masonry-column-width + $masonry-gap) - $masonry-gap};
+    grid-gap: 0 var(--masonry-gap);
+    width: calc(4 * (var(--column-width + var(--masonry-gap))) - var(--masonry-gap));
     max-width: 100%;
     margin: auto;
-}
 
-.masonry_brick {
-    max-width: 100%;
-}
+    // Catering for a maximum scrollbar width of 17px
 
-$aspect-ratios: ("name": "3to1", "width": 3, "height": 1) ("name": "2to1", "width": 2, "height": 1) ("name": "3to2", "width": 3, "height": 2) ("name": "4to3", "width": 4, "height": 3) ("name": "1to1", "width": 1, "height": 1) ("name": "3to4", "width": 3, "height": 4) ("name": "2to3", "width": 2, "height": 3) ("name": "1to2", "width": 1, "height": 2) ("name": "a4landscape", "width": 297, "height": 210) ("name": "a4portrait", "width": 210, "height": 297);
+    @media screen and (max-width: 471px) {
+        --column-width-unitless: 180;
+    }
 
-@each $aspect-ratio in $aspect-ratios {
-    .masonry_brick_#{map-get($aspect-ratio, "name")} {
-        $brick-height-unitless: round($masonry-column-width / 1px * (math.div(map-get($aspect-ratio, "height"), map-get($aspect-ratio, "width")))  + math.div($masonry-gap, 1px));
-        $row-span: round($brick-height-unitless);
-        grid-row: auto / span #{$row-span};
-        height: #{$brick-height-unitless}px;
+    @media screen and (max-width: 431px) {
+        --column-width-unitless:  160;
+    }
+
+    @media screen and (max-width: 411px) {
+        --column-width-unitless: 150;
+        --masonry-gap-unitless: 8;
+    }
+
+    @media screen and (max-width: 391px) {
+        --column-width-unitless: 140;
     }
 }
 
-.masonry_brick picture {
-    display: flex;
-    margin-bottom: 15px;
+.masonry_brick {
+    --brick-height-unitless: calc(var(--column-width-unitless) / var(--aspect-ratio) + var(--masonry-gap-unitless));
+    --brick-height: calc(var(--brick-height-unitless) * 1px);
+    max-width: 100%;
+    grid-row: auto / span var(--brick-height-unitless);
+    height: var(--brick-height);
+
+    img {
+        width: var(--column-width);
+        height: auto;
+    }
+
+    picture {
+        display: inline-flex;
+        margin-bottom: var(--masonry-gap);
+    }
 }

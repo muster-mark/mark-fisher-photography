@@ -50,11 +50,11 @@
                 all photos{{ svg_icon("chevron-right", '', false, 12, 19) }}</a>
 
             <div class="masonry_wall">
-                <h2 style="grid-row: auto / span 2; grid-column: 1 / -1">Recent Work:</h2>
+                <h2 style="grid-row: auto / span 60; grid-column: 1 / -1">Recent Work:</h2>
                 {% for image in favouriteImages %}
                     <a href="/{{ image.Gallery }}/{{ image.Slug }}"
-                       class="img-link masonry_brick {% if image.ImageAspectRatioIdentifier != "invalid" %}masonry_brick_{{ image.ImageAspectRatioIdentifier }}{% endif %}"
-                        {% if image.ImageAspectRatioIdentifier == "invalid" %}style="grid-row: auto/span {{ image.brickHeight}}; height: {{ image.brickHeight }}px"{% endif %}
+                       class="img-link masonry_brick"
+                       style="--aspect-ratio: {{ image.ImageAspectRatio }}"
                        aria-label="See more information about the photo &ldquo;{{ image.Title }}&rdquo;"
                     >
                         {#                        {{ picture(image.Slug, image.Headline, "w200", image.ImageAspectRatio, image.Colors[0], "lazy") }} #}

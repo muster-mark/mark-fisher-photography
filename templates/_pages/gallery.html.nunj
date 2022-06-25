@@ -18,8 +18,8 @@
 
             {% for photo in photos %}
                 <a href="/{{ gallery }}/{{ photo.Slug }}"
-                   class="img-link masonry_brick {% if photo.ImageAspectRatioIdentifier != "invalid" %}masonry_brick_{{ photo.ImageAspectRatioIdentifier }}{% endif %}"
-                    {% if photo.ImageAspectRatioIdentifier === "invalid" %}style="grid-row: auto/span {{ photo.brickHeight }}; height: {{ photo.brickHeight }}px"{% endif %}
+                   class="img-link masonry_brick"
+                   style="--aspect-ratio: {{ photo.ImageAspectRatio }}"
                    aria-label="See more information about the photo &ldquo;{{ photo.Title }}&rdquo;"
                 >
                     {{ picture(photo.Slug, photo.Headline, "w200", photo.ImageAspectRatio, photo.Colors[0], "lazy") }}
