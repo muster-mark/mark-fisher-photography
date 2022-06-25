@@ -48,8 +48,17 @@
 {% endif %}
 {% block footer_scripts %}
     {# Cloudflare Web Analytics #}
-    <script defer src='https://static.cloudflareinsights.com/beacon.min.js'
-            data-cf-beacon='{"token": "2759a35cdfb54c33b50fefbdf1aac034"}'></script>
+    <script id="cf-script">
+        if (document.location.host.includes("markfisher.photo")) {
+            const script = document.createElement("script");
+            script.defer = true;
+            script.src= 'https://static.cloudflareinsights.com/beacon.min.js';
+            script.dataset.cfBeacon = '{"token": "2759a35cdfb54c33b50fefbdf1aac034"}';
+            const thisElement = document.getElementById("cf-script");
+            thisElement.parentElement.insertBefore(script, thisElement);
+            thisElement.remove();
+        }
+    </script>
 {% endblock %}
 
 
