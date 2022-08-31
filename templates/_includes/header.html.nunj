@@ -2,7 +2,7 @@
 
 <header class="container">
     <a href="/">
-        <img class="header_logo" src="/images/reflection_logo.svg" width="300" height="88" alt="Mark fisher"/>
+        <img class="header_logo" src="/images/reflection_logo.svg" width="300" height="88" alt="Mark Fisher"/>
     </a>
     {{ social_media(["header_sm"]) }}
     <nav class="nav header_nav">
