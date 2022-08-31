@@ -3,7 +3,7 @@ $inner-container-side-padding: 20px;
 body {
     $fallback-background-color: #090909;
     margin: 0;
-    background: $fallback-background-color url("/images/bg_tesselate.webp");
+    background: $fallback-background-color url("/images/bg_tesselate.webp"); // Have link rel="preload" for this
     @media (prefers-reduced-data: reduce) {
         background: $fallback-background-color;
     }

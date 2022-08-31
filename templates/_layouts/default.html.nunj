@@ -11,6 +11,7 @@
     {% if page.skipJs %}
         <link rel="prefetch" as="script" href="{{ 'main.js' | chunk }}" />
     {% endif %}
+    <link rel="preload" as="image" href="/images/bg_tesselate.webp" /> {# Could not measure any difference in LCP since Lighthouse precision lacking #}
 
     {% block head %}
 
