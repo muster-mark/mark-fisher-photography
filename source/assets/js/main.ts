@@ -1,6 +1,5 @@
-import Vue from "vue";
-//@ts-ignore
-import { VueMasonryPlugin } from "vue-masonry";
+import {createApp} from "vue";
+import {VueMasonryPlugin} from "vue-masonry";
 import explore from "./pages/explore.vue";
 import contact from "./pages/contact.vue";
 
@@ -12,27 +11,11 @@ require("../css/main.scss");
 __webpack_public_path__ = "assets/";
 
 if (document.getElementById("explore-app")) {
-    Vue.use(VueMasonryPlugin);
-
-    new Vue({
-        el: "#explore-app",
-        data: {
-            function() {
-                return {};
-            },
-        },
-        render: (h) => h(explore),
-    });
+    createApp(explore)
+            .use(VueMasonryPlugin)
+            .mount(document.getElementById("explore-app"));
 }
 
 if (document.getElementById("contact-app")) {
-    new Vue({
-        el: "#contact-app",
-        data: {
-            function() {
-                return {};
-            },
-        },
-        render: (h) => h(contact),
-    });
+    createApp(contact).mount(document.getElementById("contact-app"));
 }

@@ -8,12 +8,17 @@
             <div class="explore-filter_title">Seasons:</div>
             <div class="checkbox-grid">
                 <span v-for="seasonCount in seasonCounts" :key="`season-checkbox_${seasonCount.name}`">
-                    <input type="checkbox"
+                    <input
+                            type="checkbox"
                            :value="seasonCount.name"
                            v-model="selectedSeasons"
                            :id="`season-checkbox_${seasonCount.name}`"
+                            class="explore-filter-checkbox"
                     />
-                    <label :for="`season-checkbox_${seasonCount.name}`">
+                    <label
+                            class="explore-filter-label"
+                            :for="`season-checkbox_${seasonCount.name}`"
+                    >
                         {{ seasonCount.name[0].toUpperCase() + seasonCount.name.substr(1) }}&nbsp;({{
                             seasonCount.count
                         }})
@@ -29,14 +34,17 @@
                             :value="countryCount.name"
                             v-model="selectedCountries"
                             :id="`country-checkbox_${countryCount.name}`"
+                            class="explore-filter-checkbox"
                     />
-                    <label :for="`country-checkbox_${countryCount.name}`">
+                    <label
+                            :for="`country-checkbox_${countryCount.name}`"
+                            class="explore-filter-label"
+                    >
                         {{ countryCount.name.replace(" ", " ") }}&nbsp;({{ countryCount.count }})
                     </label>
                 </span>
             </div>
         </details>
-
 
         <div class="explore_result-summary js_scroll-target">
             <span v-if="!filteredImages.length">No images match your search criteria</span>
@@ -51,7 +59,7 @@
             column-width="200"
             gutter="15"
             fit-width="true"
-
+            class="explore-results-list"
         >
             <li v-masonry-tile
                 class="explore_result"
@@ -68,7 +76,6 @@
         ></pagination-links>
 
     </div>
-
 </template>
 
 <script lang="ts">
@@ -122,9 +129,6 @@ export default {
         matchesSeason(image: Image) {
             return this.selectedSeasons.find((season: Season) => season === image.Season);
         },
-        seasonLabel({name, count}: SeasonCount) {
-            return `${name} (${count})`;
-        },
         goToPage(page: number) {
             this.page = page;
             window.scrollTo(0, this.scrollTarget.offsetTop);
@@ -148,7 +152,7 @@ export default {
                     this.selectedCountries = Array.from(new Set(selectedCountries));
                     this.seasonCounts = json.seasonCounts;
                 })
-                .catch((err) => {
+                .catch(err => {
                     console.error("There was an error fetching data");
                     console.log(err);
                 });
@@ -159,9 +163,11 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 
-ul {
+// Scoped styles not working here because of https://github.com/vuejs/vue-loader/issues/1915
+
+.explore-results-list {
     list-style-type: none;
     margin: auto;
     padding: 0;
@@ -250,11 +256,11 @@ ul {
 
 $checkbox-size: 20px;
 
-input[type="checkbox"] {
+.explore-filter-checkbox {
     display: none;
 }
 
-label::before {
+.explore-filter-label::before {
     grid-row: 1;
     grid-column: 1;
     display: inline-block;
@@ -281,7 +287,7 @@ label::before {
                     0% 0%);
 }
 
-input[type="checkbox"]:checked + label::before {
+.explore-filter-checkbox:checked + label::before {
     clip-path: polygon(
                     0% 0%,
                     100% 0%,
@@ -300,7 +306,7 @@ input[type="checkbox"]:checked + label::before {
 }
 
 
-label {
+.explore-filter-label {
     display: inline-grid;
     gap: 1em;
     grid-template-columns: $checkbox-size 1fr;
