@@ -72,7 +72,12 @@ const main = async function main() {
     fs.writeFile(
         `${metadataJsonDir}/all.json`,
         JSON.stringify({
-            images: allMetadata.sort((a, b) => (a.DatePublished > b.DatePublished ? -1 : 1)),
+            images: allMetadata.sort((a, b) => {
+                if (a.DatePublished === b.DatePublished) {
+                    return Math.sign(Number(new Date(b.DateTimeOriginal)) - Number(new Date(a.DateTimeOriginal)));
+                }
+                return Math.sign(Number(new Date(b.DatePublished)) - Number(new Date(a.DatePublished)));
+            }),
         }, null, 2), () => {
             console.log(`Wrote all.json to ${metadataJsonDir}`);
         },
