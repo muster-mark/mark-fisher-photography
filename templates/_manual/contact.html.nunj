@@ -5,9 +5,9 @@
     "url": "/contact",
     "title" : "Contact Mark",
     "header_image" : {
-        "src" : "/images/mark-fisher-rhossili",
+        "src" : "/images/mark-fisher-rhossili_240x180",
         "alt" : "Mark Fisher, photographer",
-        "height" : 160,
+        "height" : 180,
         "width" : 240
     }
 } %}

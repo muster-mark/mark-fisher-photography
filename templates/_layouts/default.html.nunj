@@ -27,7 +27,7 @@
                 {% if page.header_image %}
                         <img class="header-container_img"
                              alt="{{ page.header_image.alt }}"
-                             srcset="{{ page.header_image.src }}.jpg 1x"
+                             srcset="{{ page.header_image.src }}.jpg 1x, {{ page.header_image.src }}@2x.jpg 2x"
                              src="{{ page.header_image.src }}.jpg"
                              height="{{ page.header_image.height }}"
                              width="{{ page.header_image.width }}"
