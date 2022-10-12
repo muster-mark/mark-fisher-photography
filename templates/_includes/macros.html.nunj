@@ -51,21 +51,25 @@
         {% endif %}
     {% else %}
     {% endif %}
-    <img width="{{ width }}" height="{{ height }}"
-         srcset="/photos/{{ size }}/{{ slug }}@2x.jpg {{ width * 2 }}w, /photos/{{ size }}/{{ slug }}.jpg {{ width }}w"
-         {% if sizes %}
-            sizes="{{ sizes }}"
-         {% endif %}
-         src="/photos/{{ size }}/{{ slug }}.jpg"
-         alt="{{ alt }}"
-         {% if background %}style="background-color: {{ background }}{% endif %}"
-            {% if loading %}
-                loading="{{ loading }}"
-            {% endif %}
-            {% if classes %}
-                class="{{ classes }}"
-            {% endif %}
-    >
+    <picture>
+        <source type="image/jxl" srcset="/photos/{{ size }}/{{ slug }}@2x.jxl {{ width * 2 }}w, /photos/{{ size }}/{{ slug }}.jxl {{ width }}w" />
+        <source type="image/webp" srcset="/photos/{{ size }}/{{ slug }}@2x.webp {{ width * 2 }}w, /photos/{{ size }}/{{ slug }}.webp {{ width }}w" />
+        <img width="{{ width }}" height="{{ height }}"
+             srcset="/photos/{{ size }}/{{ slug }}@2x.jpg {{ width * 2 }}w, /photos/{{ size }}/{{ slug }}.jpg {{ width }}w"
+                {% if sizes %}
+                    sizes="{{ sizes }}"
+                {% endif %}
+             src="/photos/{{ size }}/{{ slug }}.jpg"
+             alt="{{ alt }}"
+             {% if background %}style="background-color: {{ background }}{% endif %}"
+                {% if loading %}
+                    loading="{{ loading }}"
+                {% endif %}
+                {% if classes %}
+                    class="{{ classes }}"
+                {% endif %}
+        >
+    </picture>
 {% endmacro %}
 
 {% macro svg_icon(name, title='', fixed_width=false, display_width=null, display_height=null) %}
