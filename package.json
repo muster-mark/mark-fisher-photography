@@ -4,10 +4,10 @@
     "author": "Mark Fisher <mfishe@gmail.com>",
     "license": "SEE LICENSE IN LICENSE.md",
     "bugs": {
-        "url": "https://github.com/muster-mark/markfisher.local/issues"
+        "url": "https://github.com/muster-mark/mark-fisher-photography/issues"
     },
-    "homepage": "https://github.com/muster-mark/markfisher.local#readme",
-    "repository": "https://github.com/muster-mark/markfisher.local",
+    "homepage": "https://github.com/muster-mark/mark-fisher-photography#readme",
+    "repository": "https://github.com/muster-mark/mark-fisher-photography",
     "scripts": {
         "postinstall": "command -v nvm && nvm use || echo \"Please make sure you are using the version of node specified in .nvmrc\"",
         "add-photos": "node scripts/extract_metadata.js && node scripts/build_image_data.js",
