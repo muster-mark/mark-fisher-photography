@@ -46,40 +46,43 @@
             </div>
         </details>
 
-        <div class="explore_result-summary js_scroll-target">
+        <div ref="scrollTarget" class="explore_result-summary">
             <span v-if="!filteredImages.length">No images match your search criteria</span>
             <span class="smaller" v-else>Showing <span class="larger">{{ firstShown }}-{{ lastShown }}</span> of <span
                     class="larger">{{ filteredImages.length }}</span> matching images</span>
         </div>
 
-
-        <ul v-masonry
-            transition-duration="0s"
-            item-selector=".explore_result"
-            column-width="200"
-            gutter="15"
-            fit-width="true"
-            class="explore-results-list"
-        >
-            <li v-masonry-tile
-                class="explore_result"
-                v-for="image in filteredImages.slice(firstShown - 1, lastShown)"
-                :key="image.Slug"
+        <div ref="masonryLayoutContainer">
+            <masonry-layout
+                    ref="masonry"
+                    class="explore-results"
+                    :cols="numColumns"
+                    :gap="masonryGap"
+                    :maxcolwidth="columnWidth"
+                    :style="`width: ${masonryWidth}px`"
             >
-                <explore-result :image="image"></explore-result>
-            </li>
-        </ul>
+                <div
+                        class="explore_result"
+                        v-for="image in filteredImages.slice(firstShown - 1, lastShown)"
+                        :key="image.Slug"
+                >
+                    <explore-result :image="image"></explore-result>
+                </div>
+            </masonry-layout>
+        </div>
 
-        <pagination-links :page="page" v-on:page-change="goToPage($event)"
-                          :numPages="numPages"
-                          aria-controls=""
+        <pagination-links
+                :page="page"
+                @page-change="goToPage($event)"
+                :numPages="numPages"
+                aria-controls=""
         ></pagination-links>
-
     </div>
 </template>
 
 <script lang="ts">
 
+import "@appnest/masonry-layout";
 import ExploreResult from "../components/explore-result.vue";
 import PaginationLinks from "../components/pagination-links.vue";
 import SvgIcon from "../components/svg-icon.vue";
@@ -105,7 +108,9 @@ export default {
             allImages: [] as Image[],
             resultLimit: 15, // rename perPage
             page: 1,
-            scrollTarget: null as HTMLElement, // Element to scroll to after changing page
+            numColumns: 4,
+            masonryGap: 15,
+            columnWidth: 200,
         };
     },
     computed: {
@@ -121,6 +126,9 @@ export default {
         numPages() {
             return Math.ceil(this.filteredImages.length / this.resultLimit);
         },
+        masonryWidth() {
+            return this.numColumns * (this.columnWidth + this.masonryGap) - this.masonryGap;
+        }
     },
     methods: {
         matchesCountry(image: Image) {
@@ -131,7 +139,11 @@ export default {
         },
         goToPage(page: number) {
             this.page = page;
-            window.scrollTo(0, this.scrollTarget.offsetTop);
+            window.scrollTo(0, this.$refs.scrollTarget.offsetTop);
+        },
+        updateColumns() {
+            this.numColumns = Math.floor((this.$refs.masonryLayoutContainer.clientWidth + this.masonryGap) / (this.columnWidth + this.masonryGap));
+            this.$refs.masonry.setAttribute("gap", `${this.masonryGap}`); // Seems to be bug in @appnest component
         },
     },
     watch: {
@@ -158,8 +170,24 @@ export default {
                 });
     },
     mounted() {
-        this.scrollTarget = document.querySelector(".js_scroll-target");
+        this.$refs.masonry.setAttribute("gap", `${this.masonryGap}`); // Seems to be bug in @appnest component
+        if ("ResizeObserver" in window) {
+            const resizeObserver = new ResizeObserver((entries) => {
+                this.updateColumns();
+            });
+            resizeObserver.observe(this.$refs.masonryLayoutContainer);
+        } else {
+            // Fallback for Safari < 13.1
+            (["resize", "orientationchange"] as const).forEach(event => {
+                window.addEventListener(event, this.updateColumns, {passive: true})
+            });
+        }
     },
+    destroyed() {
+        (["resize", "orientationchange"] as const).forEach(event => {
+            window.removeEventListener(event, this.updateColumns);
+        });
+    }
 };
 </script>
 
@@ -167,31 +195,9 @@ export default {
 
 // Scoped styles not working here because of https://github.com/vuejs/vue-loader/issues/1915
 
-.explore-results-list {
-    list-style-type: none;
+.explore-results {
     margin: auto;
     padding: 0;
-
-    @media screen and (max-width: 240px) {
-        // 1 col
-        width: 200px;
-    }
-
-    @media screen and (max-width: 405px) {
-        // 2 cols
-        width: 415px;
-    }
-
-    @media screen and (max-width: 670px) {
-        // 3 cols
-        width: 630px;
-    }
-
-    @media screen and (max-width: 885px) {
-        //4 cols
-        width: 845px;
-    }
-
 }
 
 .explore_result-summary {

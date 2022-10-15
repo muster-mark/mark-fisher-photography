@@ -24,6 +24,7 @@
         "*.vue"
     ],
     "dependencies": {
+        "@appnest/masonry-layout": "^2.0.8",
         "babel-preset-vue": "^2.0.2",
         "date-season": "0.0.2",
         "dotenv": "^16.0.2",
@@ -36,7 +37,6 @@
         "nunjucks-date": "^1.5.0",
         "slug": "^8.2.2",
         "vue": "^3.2.39",
-        "vue-masonry": "^0.16.0",
         "vue-template-compiler": "^2.7.10",
         "webpack-cli": "^4.10.0"
     },

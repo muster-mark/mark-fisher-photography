@@ -29,6 +29,6 @@
 <style lang="scss" scoped>
     img {
         display: block;
-        margin-bottom: 15px; /* same as masonry gutter width */
+        //margin-bottom: 15px; /* same as masonry gutter width */
     }
 </style>
