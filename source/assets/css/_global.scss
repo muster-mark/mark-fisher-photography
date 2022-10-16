@@ -5,6 +5,7 @@ body {
     margin: 0;
     background: $fallback-background-color url("/images/bg_tesselate.webp");
     @media (prefers-reduced-data: reduce) {
+        // prefers-reduced data not currently supported anywhere (behind a flag in Chromium)
         background: $fallback-background-color;
     }
 
