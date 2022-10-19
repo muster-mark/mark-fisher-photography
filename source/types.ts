@@ -6,6 +6,7 @@ export interface Image {
     Slug: string;
     Colors: string[];
     Gallery: string;
+    Headline: string;
 }
 
 export interface Gallery {

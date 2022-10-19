@@ -10,9 +10,9 @@
                 <span v-for="seasonCount in seasonCounts" :key="`season-checkbox_${seasonCount.name}`">
                     <input
                             type="checkbox"
-                           :value="seasonCount.name"
-                           v-model="selectedSeasons"
-                           :id="`season-checkbox_${seasonCount.name}`"
+                            :value="seasonCount.name"
+                            v-model="selectedSeasons"
+                            :id="`season-checkbox_${seasonCount.name}`"
                             class="explore-filter-checkbox"
                     />
                     <label
@@ -54,7 +54,7 @@
 
         <div ref="masonryLayoutContainer">
             <masonry-layout
-                    ref="masonry"
+                    ref="masonryElement"
                     class="explore-results"
                     :cols="numColumns"
                     :gap="masonryGap"
@@ -71,18 +71,21 @@
             </masonry-layout>
         </div>
 
-        <pagination-links
+        <PaginationLinks
                 :page="page"
                 @page-change="goToPage($event)"
                 :numPages="numPages"
                 aria-controls=""
-        ></pagination-links>
+        ></PaginationLinks>
     </div>
 </template>
 
 <script lang="ts">
-
 import "@appnest/masonry-layout";
+</script>
+
+<script lang="ts" setup>
+import {computed, onMounted, onUnmounted, ref, watch} from "vue";
 import ExploreResult from "../components/explore-result.vue";
 import PaginationLinks from "../components/pagination-links.vue";
 import SvgIcon from "../components/svg-icon.vue";
@@ -93,102 +96,100 @@ import {
     Season,
 } from "../../../types";
 
-export default {
-    components: {
-        PaginationLinks,
-        ExploreResult,
-        SvgIcon
-    },
-    data() {
-        return {
-            seasonCounts: [] as SeasonCount[],
-            selectedSeasons: [Season.spring, Season.summer, Season.autumn, Season.winter] as Season[],
-            countryCounts: [] as CountryCount[],
-            selectedCountries: [] as string[],
-            allImages: [] as Image[],
-            resultLimit: 15, // rename perPage
-            page: 1,
-            numColumns: 4,
-            masonryGap: 15,
-            columnWidth: 200,
-        };
-    },
-    computed: {
-        filteredImages(): Image[] {
-            return this.allImages.filter((image: Image) => this.matchesCountry(image) && this.matchesSeason(image));
-        },
-        firstShown() {
-            return this.resultLimit * (this.page - 1) + 1;
-        },
-        lastShown() {
-            return Math.min(this.filteredImages.length, this.resultLimit * (this.page));
-        },
-        numPages() {
-            return Math.ceil(this.filteredImages.length / this.resultLimit);
-        },
-        masonryWidth() {
-            return this.numColumns * (this.columnWidth + this.masonryGap) - this.masonryGap;
-        }
-    },
-    methods: {
-        matchesCountry(image: Image) {
-            return this.selectedCountries.find((country: string) => country === image.CountryPrimaryLocationName);
-        },
-        matchesSeason(image: Image) {
-            return this.selectedSeasons.find((season: Season) => season === image.Season);
-        },
-        goToPage(page: number) {
-            this.page = page;
-            window.scrollTo(0, this.$refs.scrollTarget.offsetTop);
-        },
-        updateColumns() {
-            this.numColumns = Math.floor((this.$refs.masonryLayoutContainer.clientWidth + this.masonryGap) / (this.columnWidth + this.masonryGap));
-            this.$refs.masonry.setAttribute("gap", `${this.masonryGap}`); // Seems to be bug in @appnest component
-        },
-    },
-    watch: {
-        selectedCountries() {
-            this.page = 1;
-        },
-        selectedSeasons() {
-            this.page = 1;
-        },
-    },
-    created() {
-        fetch("/data/images.json")
-                .then(data => data.json())
-                .then(json => {
-                    this.allImages = json.images;
-                    this.countryCounts = json.countryCounts;
-                    const selectedCountries = json.countryCounts.map((countryCount: CountryCount) => countryCount.name);
-                    this.selectedCountries = Array.from(new Set(selectedCountries));
-                    this.seasonCounts = json.seasonCounts;
-                })
-                .catch(err => {
-                    console.error("There was an error fetching data");
-                    console.log(err);
-                });
-    },
-    mounted() {
-        this.$refs.masonry.setAttribute("gap", `${this.masonryGap}`); // Seems to be bug in @appnest component
-        if ("ResizeObserver" in window) {
-            const resizeObserver = new ResizeObserver((entries) => {
-                this.updateColumns();
-            });
-            resizeObserver.observe(this.$refs.masonryLayoutContainer);
-        } else {
-            // Fallback for Safari < 13.1
-            (["resize", "orientationchange"] as const).forEach(event => {
-                window.addEventListener(event, this.updateColumns, {passive: true})
-            });
-        }
-    },
-    destroyed() {
+const seasonCounts = ref<SeasonCount[]>([]);
+const selectedSeasons = ref<Season[]>([Season.spring, Season.summer, Season.autumn, Season.winter]);
+const countryCounts = ref<CountryCount[]>([]);
+const selectedCountries = ref<string[]>([]);
+const allImages = ref<Image[]>([]);
+const resultLimit = 15;
+const page = ref(1);
+const numColumns = ref(4);
+const masonryGap = ref(15);
+const columnWidth = 200;
+const scrollTarget = ref<HTMLElement>(null);
+const masonryLayoutContainer = ref<HTMLElement>(null);
+const masonryElement = ref<HTMLElement>(null);
+
+const filteredImages = computed(() => {
+    return allImages.value.filter(image => matchesCountry(image) && matchesSeason(image));
+});
+
+const firstShown = computed(() => {
+    return resultLimit * (page.value - 1) + 1;
+});
+
+const lastShown = computed(() => {
+    return Math.min(filteredImages.value.length, resultLimit * (page.value));
+});
+
+const numPages = computed(() => {
+    return Math.ceil(filteredImages.value.length / resultLimit);
+});
+
+const masonryWidth = computed(() => {
+    return numColumns.value * (columnWidth + masonryGap.value) - masonryGap.value;
+});
+
+function matchesCountry(image: Image) {
+    return selectedCountries.value.find((country) => country === image.CountryPrimaryLocationName);
+}
+
+function matchesSeason(image: Image) {
+    return selectedSeasons.value.find((season) => season === image.Season);
+}
+
+watch(selectedCountries, () => {
+    page.value = 1;
+});
+
+watch(selectedSeasons, () => {
+    page.value = 1;
+});
+
+function goToPage(pageNumber: number) {
+    page.value = pageNumber;
+    window.scrollTo(0, scrollTarget.value.offsetTop);
+}
+
+function updateColumns() {
+    numColumns.value = Math.floor((masonryLayoutContainer.value.clientWidth + masonryGap.value) / (columnWidth + masonryGap.value));
+    masonryElement.value.setAttribute("gap", `${masonryGap.value}`); // Seems to be bug in @appnest component
+}
+
+fetch("/data/images.json")
+        .then(data => data.json())
+        .then(json => {
+            allImages.value = json.images;
+            countryCounts.value = json.countryCounts;
+            selectedCountries.value = json.countryCounts.map((countryCount: CountryCount) => countryCount.name);
+            selectedCountries.value = Array.from(new Set(selectedCountries.value));
+            seasonCounts.value = json.seasonCounts;
+        })
+        .catch(err => {
+            console.error("There was an error fetching data");
+            console.log(err);
+        });
+
+onMounted(() => {
+    masonryElement.value.setAttribute("gap", `${masonryGap.value}`); // Seems to be bug in @appnest component
+    if ("ResizeObserver" in window) {
+        const resizeObserver = new ResizeObserver(() => {
+            updateColumns();
+        });
+        resizeObserver.observe(masonryLayoutContainer.value);
+    } else {
+        // Fallback for Safari < 13.1
         (["resize", "orientationchange"] as const).forEach(event => {
-            window.removeEventListener(event, this.updateColumns);
+            window.addEventListener(event, updateColumns, {passive: true})
         });
     }
-};
+});
+
+onUnmounted(() => {
+    (["resize", "orientationchange"] as const).forEach(event => {
+        window.removeEventListener(event, updateColumns);
+    });
+});
 </script>
 
 <style lang="scss">

@@ -40,14 +40,16 @@
 
         <div class="contact-form_valid-message" v-if="allFieldsTouched">Please fill out all the fields correctly</div>
 
-        <button type="submit" :class="['btn btn_lg', {'btn_in-progress': isSubmitting}]">{{ isSubmitting ? 'Submitting'
-            : 'Submit' }}
+        <button type="submit" :class="['btn btn_lg', {'btn_in-progress': isSubmitting}]">{{
+                isSubmitting ? "Submitting"
+                        : "Submit"
+            }}
         </button>
 
         <div class="contact-form_result-message contact-form_success-message" v-if="submissionSucceeded === true"
              aria-live="assertive">
             <div class="fadeInDown contact-form_result-message_icon">
-                <svg-icon name="envelope"></svg-icon>
+                <SvgIcon name="envelope"></SvgIcon>
             </div>
             <div class="fadeInUp contact-form_result-message_text"><span>Your message has been sent!</span></div>
         </div>
@@ -55,119 +57,102 @@
         <div class="contact-form_result-message contact-form_fail-message" v-if="submissionSucceeded === false"
              aria-live="assertive">
             <div class="fadeInDown contact-form_result-message_icon">
-                <svg-icon name="exclamation-circle"></svg-icon>
+                <SvgIcon name="exclamation-circle"></SvgIcon>
             </div>
             <div class="fadeInUp contact-form_result-message_text">
                 <span>Sorry, something went wrong. Please try emailing me on <a
                         :href="fallbackEmailHref"
-                        target="_blank">{{fallbackEmail}}</a> instead.</span>
+                        target="_blank">{{ fallbackEmail }}</a> instead.</span>
             </div>
         </div>
 
     </form>
 </template>
 
-<script lang="ts">
-    import SvgIcon from "../components/svg-icon.vue";
+<script lang="ts" setup>
+import {computed, ref} from "vue";
+import SvgIcon from "../components/svg-icon.vue";
 
-    export default {
-        data() {
-            const data: {
-                action: string;
-                fields: {[key: string]: {value: string, touched: boolean}};
-                isSubmitting: boolean;
-                submissionSucceeded: boolean;
-                fallbackEmail: string;
-            } = {
-                action: `${window.location.origin.replace("www", "api")}/message`,
-                fields: {
-                    name: {
-                        value: null,
-                        touched: false,
-                    },
-                    email: {
-                        value: null,
-                        touched: false,
-                    },
-                    message: {
-                        value: null,
-                        touched: false,
-                    }
-                },
-                isSubmitting: false,
-                submissionSucceeded: null,
-                fallbackEmail: "mfishe@gmail.com"
-            };
+type Fields = {
+    name: { value: string, touched: boolean },
+    email: { value: string, touched: boolean },
+    message: { value: string, touched: boolean }
+};
 
-            return data;
+const action = `${window.location.origin.replace("www", "api")}/message` as const;
+
+const fields = ref<Fields>({
+    name: {
+        value: null,
+        touched: false,
+    },
+    email: {
+        value: null,
+        touched: false,
+    },
+    message: {
+        value: null,
+        touched: false,
+    }
+});
+
+const isSubmitting = ref(false);
+const submissionSucceeded = ref<boolean>(null);
+const fallbackEmail = "mfishe@gmail.com";
+const allFieldsTouched = computed(() => Object.keys(fields.value).every((key: keyof Fields) => fields.value[key].touched));
+const fallbackEmailHref = computed(() => {
+    const query = new URLSearchParams();
+    query.set("subject", "Enquiry via markfisher.photo");
+    if (fields.value.message.value) {
+        query.set("body", fields.value.message.value);
+    }
+
+    return `mailto:${fallbackEmail}?${query.toString()}`;
+});
+
+function resetForm() {
+    Object.keys(fields.value).forEach((key: keyof Fields) => {
+        fields.value[key].value = "";
+        fields.value[key].touched = false;
+    });
+}
+
+function submitForm() {
+    isSubmitting.value = true; // Puts button into progress state
+    submissionSucceeded.value = null;
+
+    // Create data for body
+    const data: { [key: string]: string } = {};
+    Object.keys(fields.value).forEach((key: keyof Fields) => {
+        data[key] = fields.value[key].value;
+    });
+
+    fetch(action, {
+        method: "POST",
+        body: JSON.stringify(data),
+        mode: "cors",
+        headers: {
+            "Content-Type": "application/json",
         },
-        computed: {
-            allFieldsTouched() {
-                return Object.keys(this.fields).every((key) => this.fields[key].touched);
-            },
-            fallbackEmailHref() {
-                const query = new URLSearchParams();
-                query.set("subject", "Enquiry via markfisher.photo");
-                if (this.fields.message.value) {
-                    query.set("body", this.fields.message.value);
+    })
+            .then(response => {
+                if (response.ok) {
+                    submissionSucceeded.value = true;
+                    resetForm();
+                    return Promise.resolve();
+                } else {
+                    console.log(response);
+                    return Promise.reject(response);
                 }
-
-                return `mailto:${this.fallbackEmail}?${query.toString()}`;
-            }
-        },
-        methods: {
-            resetForm() {
-                Object.keys(this.fields).forEach((key) => {
-                    this.fields[key].value = "";
-                    this.fields[key].touched = false;
-                });
-            },
-            submitForm() {
-                this.isSubmitting = true; // Puts button into progress state
-                this.submissionSucceeded = null;
-
-                // Create data for body
-                const data: {[key: string]: string} = {};
-                Object.keys(this.fields).forEach((key) => {
-                    data[key] = this.fields[key].value;
-                });
-
-                const self = this;
-                fetch(this.action, {
-                    method: "POST",
-                    body: JSON.stringify(data),
-                    mode: "cors",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                })
-                    .then(response => {
-                        if (response.ok) {
-                            self.submissionSucceeded = true;
-                            self.resetForm();
-                            return Promise.resolve();
-                        } else {
-                            console.log(response);
-                            return Promise.reject(response);
-                        }
-                    })
-                    .catch((err) => {
-                        self.submissionSucceeded = false;
-                        console.log("Form submission failed");
-                        console.log(err);
-                    })
-                    .finally(() => {
-                        self.isSubmitting = false;
-                        document.querySelector(".contact-form_result-message").scrollIntoView(false);
-                    });
-            },
-        },
-        components: {
-            SvgIcon,
-        },
-    };
+            })
+            .catch((err) => {
+                submissionSucceeded.value = false;
+                console.log("Form submission failed");
+                console.log(err);
+            })
+            .finally(() => {
+                isSubmitting.value = false;
+                document.querySelector(".contact-form_result-message").scrollIntoView(false);
+            });
+}
 </script>
-
-<style lang="scss" scoped>
-
-</style>
