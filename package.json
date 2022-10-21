@@ -12,7 +12,7 @@
         "postinstall": "command -v nvm && nvm use || echo \"Please make sure you are using the version of node specified in .nvmrc\"",
         "add-photos": "node scripts/extract_metadata.js && node scripts/build_image_data.js",
         "build": "cross-env NODE_ENV='production' webpack --config webpack.config.js && npm run build-pages",
-        "dev": "cross-env NODE_ENV='development' webpack --config webpack.config.js && npm run build-pages",
+        "dev": "cross-env NODE_ENV='development' webpack --config webpack.config.js --watch",
         "build-pages": "node scripts/build_manual_pages.js && node scripts/build_photo_and_gallery_pages.js && node scripts/build_homepage.js && node -r ts-node/register scripts/build_sitemap.ts",
         "test": "jest",
         "deploy": "node -r ts-node/register scripts/deploy.ts",

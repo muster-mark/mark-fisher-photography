@@ -19,6 +19,12 @@ const productionPlugins = [
         openAnalyzer: false,
     }),
     new TerserPlugin(),
+    new CleanWebpackPlugin({
+        cleanOnceBeforeBuildPatterns: ["../**/*", "**/*"],
+        dangerouslyAllowCleanPatternsOutsideProject: true,
+        dry: false,
+        verbose: true,
+    }),
 ];
 
 module.exports = {
@@ -86,12 +92,6 @@ module.exports = {
     },
     plugins: [
         ...(isDevelopment ? [] : productionPlugins),
-        new CleanWebpackPlugin({
-            cleanOnceBeforeBuildPatterns: ["../**/*", "**/*"],
-            dangerouslyAllowCleanPatternsOutsideProject: true,
-            dry: false,
-            verbose: true,
-        }),
         new VueLoaderPlugin(),
         new MiniCssExtractPlugin({
             filename: "[name].css?v=[contenthash:6]", // Hash must be in query not file name, to allow --size-only S3 sync
