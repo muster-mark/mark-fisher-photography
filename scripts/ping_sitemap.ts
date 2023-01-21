@@ -1,5 +1,4 @@
-const https = require('node:https');
-const IncomingMessage = require("node:http").IncomingMessage;
+const https: typeof import("node:https") = require('node:https');
 require("dotenv").config({ path: `${__dirname}/../.production.env` });
 
 const sitemapUrl = `https://${process.env.URL}/sitemap.xml`;
@@ -7,7 +6,7 @@ const sitemapUrl = `https://${process.env.URL}/sitemap.xml`;
 const ping = function(url: string): Promise<void> {
     return new Promise((resolve, reject) => {
         const options = new URL(url);
-        const req = https.request(options, (res: typeof IncomingMessage) => {
+        const req = https.request(options, (res) => {
             if (res.statusCode < 200 || res.statusCode > 299) {
                 reject(`Status code for ${url} was ${res.statusCode}`);
             } else {

@@ -3,8 +3,8 @@
  * @type {module:path | path.PlatformPath | path}
  */
 
-const path = require("node:path");
-const dotEnv = require("dotenv");
+const path: typeof import ("node:path") = require("node:path");
+const dotEnv: typeof import("dotenv") = require("dotenv");
 
 const clearCloudFrontCache = require("../local_modules/clear_cloudfront_cache");
 const syncS3Bucket = require("../local_modules/sync_s3_bucket");

@@ -1,7 +1,7 @@
-const path = require("node:path");
-const fs = require("node:fs/promises");
+const path: typeof import("node:path") = require("node:path");
+const fs: typeof import("node:fs/promises") = require("node:fs/promises");
 
-const Mustache = require("mustache");
+const Mustache: typeof import ("mustache") = require("mustache");
 
 const {galleries} = require("../local_modules/galleries.js");
 const {images} = require("../source/metadata_json/all.json");

@@ -19,7 +19,10 @@
             "./"
         ],
         "types": [
-            "@types/express"
+            "@types/compression",
+            "@types/express",
+            "@types/morgan",
+            "@types/mustache",
         ],
         "paths": {
             "*": [
