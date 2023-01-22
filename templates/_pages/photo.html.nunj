@@ -44,7 +44,7 @@ s{% extends "_layouts/default.html.nunj" %}
                    title="Go to the previous image in the {{ gallery_name }} gallery">
                     {{ svg_icon("chevron-left", "Previous image") }}
                 </a>
-                {{ sizespicture(photo.Slug, photo.Headline, "l840", photo.ImageAspectRatio, photo.Colors[0], null, null, "calc(100vw - 40px)") }}
+                {{ sizespicture(photo.Slug, photo.Headline, "l840", photo.ImageAspectRatio, photo.Colors[0], null, null, "calc(100vw - 40px)", "high") }}
                 <a href="/{{ gallery }}/{{ next_photo.Slug }}" class="a_context the-image_next" rel="next"
                    title="Go to the next image in the {{ gallery_name }} gallery">
                     {{ svg_icon("chevron-right", "Next image") }}

@@ -34,7 +34,7 @@
 
 {% endmacro %}
 
-{% macro sizespicture(slug, alt, size, aspect, background=null, loading=null, classes=null, sizes=null) %}
+{% macro sizespicture(slug, alt, size, aspect, background=null, loading=null, classes=null, sizes=null, fetchpriority="auto") %}
     {% if size|first == "w" %}
         {% set width = size|replace('w', '') %}
         {% set height = (width / aspect)|round %}
@@ -67,6 +67,9 @@
                 {% endif %}
                 {% if classes %}
                     class="{{ classes }}"
+                {% endif %}
+                {%  if fetchpriority !== "auto" %}
+                fetchpriority="{{ fetchpriority }}"
                 {% endif %}
         >
     </picture>
