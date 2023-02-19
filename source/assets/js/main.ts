@@ -1,4 +1,5 @@
 import {createApp} from "vue";
+
 import explore from "./pages/explore.vue";
 import contact from "./pages/contact.vue";
 

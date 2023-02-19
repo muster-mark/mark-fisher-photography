@@ -1,5 +1,8 @@
-const path = require('node:path');
-const getImageMetadata = require('./get_image_metadata.js');
+import path from 'node:path';
+
+import {test, expect} from "@jest/globals";
+
+import getImageMetadata from "./get_image_metadata";
 
 const rootDir = path.resolve(`${__dirname}/../`);
 const testImagesDir = `${rootDir}/source/tests/images`;
@@ -12,7 +15,7 @@ test('Returns correct number of fields', async () => {
 
 test('Fields which should be truthy are truthy for file with correct metadata', async () => {
     const metaData = await getImageMetadata(`${testImagesDir}/green-sotol.jpg`, 'plants');
-    expect(metaData.Gallery).toBeTruthy();
+    expect(metaData.Gallery).toStrictEqual('plants');
     expect(metaData.FileName).toBeTruthy();
     expect(metaData.Slug).toBeTruthy();
     expect(metaData.Make).toBeTruthy();
@@ -64,9 +67,9 @@ test('Fields are of correct format for file with correct metadata', async () => 
 });
 
 test('Throws if crucial metadata missing', async () => {
-    await expect(getImageMetadata(`${testImagesDir}/title-missing.jpg`)).rejects.toThrow(/title/i);
-    await expect(getImageMetadata(`${testImagesDir}/headline-missing.jpg`)).rejects.toThrow(/headline/i);
-    await expect(getImageMetadata(`${testImagesDir}/country-missing.jpg`)).rejects.toThrow(/country/i);
-    await expect(getImageMetadata(`${testImagesDir}/country-code-invalid.jpg`)).rejects.toThrow(/country.*code/i);
-    await expect(getImageMetadata(`${testImagesDir}/publish-date-invalid.jpg`)).rejects.toThrow(/publish.*date/i);
+    await expect(getImageMetadata(`${testImagesDir}/title-missing.jpg`, "gallery")).rejects.toThrow(/title/i);
+    await expect(getImageMetadata(`${testImagesDir}/headline-missing.jpg`, "gallery")).rejects.toThrow(/headline/i);
+    await expect(getImageMetadata(`${testImagesDir}/country-missing.jpg`, "gallery")).rejects.toThrow(/country/i);
+    await expect(getImageMetadata(`${testImagesDir}/country-code-invalid.jpg`, "gallery")).rejects.toThrow(/country.*code/i);
+    await expect(getImageMetadata(`${testImagesDir}/publish-date-invalid.jpg`, "gallery")).rejects.toThrow(/publish.*date/i);
 });

@@ -1,5 +1,6 @@
 // For a detailed explanation regarding each configuration property, visit:
 // https://jestjs.io/docs/en/configuration.html
+const { defaults: tsjPreset } = require('ts-jest/presets')
 
 module.exports = {
     // All imported modules in your tests should be mocked automatically
@@ -58,7 +59,12 @@ module.exports = {
     // globalTeardown: undefined,
 
     // A set of global variables that need to be available in all test environments
-    // globals: {},
+    globals: {
+        'ts-jest': {
+            // ts-jest configuration goes here
+            tsconfig: "<rootDir>/tsconfig.json"
+        },
+    },
 
     // The maximum amount of workers used to run your tests. Can be specified as % or a number. E.g. maxWorkers: 10% will use 10% of your CPU amount + 1 as the maximum worker number. maxWorkers: 2 will use a maximum of 2 workers.
     // maxWorkers: "50%",
@@ -167,7 +173,10 @@ module.exports = {
     // timers: "real",
 
     // A map from regular expressions to paths to transformers
-    // transform: undefined,
+    transform: {
+        "^.+\\.js$": "babel-jest",
+        ...tsjPreset.transform
+    },
 
     // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
     // transformIgnorePatterns: [

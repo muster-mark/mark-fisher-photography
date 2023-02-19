@@ -25,7 +25,7 @@ const featurePolicyHeaderDirectives = [
     "usb 'none'",
 ];
 
-module.exports = {
+export default {
     all: [
         // Response headers to be sent for all Content-Types
         {

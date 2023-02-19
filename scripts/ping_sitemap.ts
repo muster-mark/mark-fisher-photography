@@ -1,5 +1,6 @@
-const https: typeof import("node:https") = require('node:https');
-require("dotenv").config({ path: `${__dirname}/../.production.env` });
+import https from "node:https";
+import dotenv from "dotenv";
+dotenv.config({ path: `${__dirname}/../.production.env` });
 
 const sitemapUrl = `https://${process.env.URL}/sitemap.xml`;
 

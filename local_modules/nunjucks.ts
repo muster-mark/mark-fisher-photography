@@ -1,32 +1,36 @@
-const path = require("node:path");
-const nunjucks = require("nunjucks");
-const nunjucksDate = require("nunjucks-date");
+import path from "node:path";
+import nunjucks from "nunjucks";
+//@ts-ignore
+import nunjucksDate from "nunjucks-date";
+import dotenv from "dotenv";
 
-const manifest = require("../public/assets/manifest.json");
+import manifest from "../public/assets/manifest.json";
+import galleries from "./galleries";
 
 const templatesPath = path.resolve(`${__dirname}/../templates`);
-const { galleries } = require("./galleries.js");
 
-require("dotenv").config({ path: `${__dirname}/../.production.env` });
+
+dotenv.config({ path: `${__dirname}/../.production.env` });
 
 const environment = nunjucks.configure(templatesPath, {
     throwOnUndefined: false,
     trimBlocks: true,
 });
 
-const stripHTML = string => string.replace(/(<([^>]+)>)/gi, "");
+const stripHTML = (string: string) => string.replace(/(<([^>]+)>)/gi, "");
 
 environment.addGlobal("featured_galleries", galleries.filter(gallery => gallery.featured));
 environment.addGlobal("env", process.env);
 environment.addFilter("date", nunjucksDate);
-environment.addFilter("chunk", (name) => {
-    const outputFile = manifest[name];
+environment.addFilter("chunk", (name: string) => {
+    //@ts-ignore
+    const outputFile: string = manifest[name];
     if (!outputFile) {
         throw new Error(`No entry in manifest.json for ${name}`);
     }
     return `/assets/${outputFile.replace("/public/", "")}`;
 });
-environment.addFilter("captionToMetaDesc", caption => {
+environment.addFilter("captionToMetaDesc", (caption: string) => {
     // Remove html tags
     const MIN_DESC_LENGTH = 300;
 
@@ -49,12 +53,13 @@ environment.addFilter("captionToMetaDesc", caption => {
  * Output is NOT safe for inclusion in HTML! If that's what you need, use the
  * built-in 'dump' filter instead.
  */
-environment.addFilter("json", function (value, spaces) {
+environment.addFilter("json", function (value: any, spaces: number) {
     if (value instanceof nunjucks.runtime.SafeString) {
         value = value.toString();
     }
-    const jsonString = JSON.stringify(value, null, spaces).replace(/</g, '\\u003c')
+    const jsonString = JSON.stringify(value, null, spaces).replace(/</g, '\\u003c');
+    //@ts-ignore
     return nunjucks.runtime.markSafe(jsonString)
 })
 
-module.exports = nunjucks;
+export default nunjucks;

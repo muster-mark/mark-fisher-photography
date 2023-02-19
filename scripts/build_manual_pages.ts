@@ -1,8 +1,8 @@
-const path = require("node:path");
-const glob = require("glob-promise");
+import path from "node:path";
+import glob from "glob-promise";
 
-const nunjucks = require("../local_modules/nunjucks");
-const renderAndWriteTemplate = require("../local_modules/render_and_write_template");
+import nunjucks from "../local_modules/nunjucks";
+import renderAndWriteTemplate from "../local_modules/render_and_write_template";
 
 const manualPagesDir = path.resolve(`${__dirname}/../templates/_manual/`);
 const publicDir = path.resolve(`${__dirname}/../public/`);

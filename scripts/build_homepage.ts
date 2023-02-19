@@ -1,23 +1,25 @@
-const path = require("node:path");
-const fs = require("node:fs");
-const util = require("node:util");
-const glob = require("glob-promise");
+import path from "node:path";
+import fs from "node:fs";
+import util from "node:util";
+import glob from "glob-promise";
 
-const nunjucks = require("../local_modules/nunjucks");
-const renderAndWriteTemplate = require("../local_modules/render_and_write_template");
-const allImages = require("../source/metadata_json/all.json").images;
-const galleries = require("../local_modules/galleries.js").galleries;
+import nunjucks from "../local_modules/nunjucks";
+import renderAndWriteTemplate from "../local_modules/render_and_write_template";
+import allImages from "../source/metadata_json/all.json";
+import galleries from "../local_modules/galleries";
 
-const metadataDir = path.resolve(`${__dirname}/../source/metadata_json`);
-const publicDir = path.resolve(`${__dirname}/../public`);
+const rootPath = path.join(__dirname, "..");
+
+const metadataDir = path.join(rootPath, "source", "metadata_json");
+const publicDir = path.join(rootPath, "public");
 
 // Get 20 most recent images
 const homepageImages = allImages
-    .sort((a, b) => new Date(b.DatePublished) - new Date(a.DatePublished))
+    .sort((a, b) => new Date(b.DatePublished).getTime() - new Date(a.DatePublished).getTime())
     .slice(0, 21)
     .map((image) => image.Slug);
 
-const getImageData = async (slug) => {
+const getImageData = async (slug: string) => {
     const jsonFiles = await glob(`${metadataDir}/*/${slug}.json`);
     if (jsonFiles.length !== 1) {
         throw new Error(`Unexpected number of JSON files for ${slug}. ${jsonFiles.length} files were found`);
@@ -50,8 +52,10 @@ const main = async function() {
             featuredGalleries: galleries
                 .filter(gallery => gallery.featured)
                 .map(gallery=> {
-                    gallery.image = allImages.find(image => image.Slug === gallery.imageSlug);
-                    return gallery;
+                    return {
+                        ...gallery,
+                        image: allImages.find(image => image.Slug === gallery.imageSlug),
+                    }
                 }),
             copyrightYear: new Date().getFullYear(),
         },

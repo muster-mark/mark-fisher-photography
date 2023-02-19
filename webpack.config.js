@@ -83,8 +83,9 @@ module.exports = {
                 use: {
                     loader:'ts-loader',
                     options: {
-                        configFile: __dirname + "/tsconfig.json",
+                        configFile: path.join(__dirname, "tsconfig.json"),
                         appendTsSuffixTo: [/\.vue$/],
+                        transpileOnly: true,
                     },
                 }
             },

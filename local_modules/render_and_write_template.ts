@@ -1,7 +1,7 @@
-const fs = require("node:fs");
-const util = require("node:util");
+import fs from "node:fs";
+import util from "node:util";
 
-module.exports = async function renderAndWriteTemplate(templatePath, outputPath, data = {}, nunjucks) {
+export default async function renderAndWriteTemplate(templatePath: string, outputPath: string, data = {}, nunjucks: typeof import("nunjucks")) {
     let output;
     try {
         output = nunjucks.render(templatePath, data);

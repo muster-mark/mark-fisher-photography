@@ -1,18 +1,17 @@
-const slugify = require("slug");
-const DateSeason = require("date-season");
-const getColors = require("./get_image_colors");
-const exiftool = require("node-exiftool");
-const colors = require("colors");
-const MarkdownIt = require("markdown-it");
+//@ts-ignore
+import slugify from "slug";
+//@ts-ignore
+import DateSeason from "date-season";
+import getColors from "./get_image_colors";
+//@ts-ignore
+import exiftool from "node-exiftool";
+import colors from "colors/safe";
+//@ts-ignore
+import MarkdownIt from "markdown-it";
 
-const getImageAspectRatioIdentifier = require("./get_image_aspect_ratio_identifier");
+import type {ImageMetadata} from "../types";
 
-colors.setTheme({
-    info: "cyan",
-    warn: "yellow",
-    debug: "blue",
-    error: "red",
-});
+import getImageAspectRatioIdentifier from "./get_image_aspect_ratio_identifier";
 
 const copiedFields = {
     // Map field on input to field on output
@@ -38,36 +37,36 @@ const copiedFields = {
     GPSLongitudeRef: "GPSLongitudeRef",
     ImageWidth: "ImageWidth",
     ImageHeight: "ImageHeight",
-};
+} as const;
 
 const transformedFields = {
-    async ImageAspectRatio(metadata) {
+    async ImageAspectRatio(metadata: ImageMetadata) {
         return metadata.ImageWidth / metadata.ImageHeight;
     },
-    async ImageAspectRatioIdentifier(metadata) {
+    async ImageAspectRatioIdentifier(metadata: ImageMetadata) {
         let imageAspectRatioIdentifier;
         try {
             imageAspectRatioIdentifier = getImageAspectRatioIdentifier(metadata.ImageWidth, metadata.ImageHeight);
         } catch (err) {
-            console.warn(`${metadata.FileName} does not have a standard aspect ratio`.warn);
+            console.warn(colors.yellow(`${metadata.FileName} does not have a standard aspect ratio`));
             imageAspectRatioIdentifier = "invalid";
         }
         return imageAspectRatioIdentifier;
     },
-    async Slug(metadata) {
+    async Slug(metadata: ImageMetadata) {
         return slugify(metadata.Title, { lower: true });
     },
-    async DateTimeOriginal(metadata) {
+    async DateTimeOriginal(metadata: ImageMetadata) {
         return metadata.DateTimeOriginal.replace(/:/, "-").replace(/:/, "-");
     },
-    async DatePublished(metadata) {
+    async DatePublished(metadata: ImageMetadata) {
         return `${metadata.OriginalTransmissionReference} 00:00:00`;
     },
-    async Colors(metadata, args) {
+    async Colors(metadata: ImageMetadata, args: {pathToFile: string}) {
         const colorsArray = await getColors(args.pathToFile, {count: 1});
         return colorsArray.map((color) => color.hex());
     },
-    async Season(metadata) {
+    async Season(metadata: ImageMetadata) {
         const standardDate = metadata.DateTimeOriginal.replace(/:/, "-").replace(/:/, "-");
         return (new DateSeason({
             autumn: true,
@@ -76,7 +75,7 @@ const transformedFields = {
     },
 };
 
-function validateMetadata(metadata, fileName) {
+function validateMetadata(metadata: any, fileName: string) {
     if (!metadata.Title) {
         throw new Error(`Title is missing from metadata stored in ${fileName}`);
     }
@@ -85,7 +84,7 @@ function validateMetadata(metadata, fileName) {
         throw new Error(`Headline is missing from metadata stored in ${fileName}`);
     }
 
-    if (metadata["Country-PrimaryLocationName"] === undefined || !metadata["Country-PrimaryLocationName"].length) {
+    if (typeof metadata["Country-PrimaryLocationName"] === "undefined" || !metadata["Country-PrimaryLocationName"].length) {
         throw new Error(`Country name is missing from metadata stored in ${fileName}`);
     }
 
@@ -106,13 +105,13 @@ function validateMetadata(metadata, fileName) {
  * @param gallery
  * @returns {{}}
  */
-module.exports = async function getImageMetadata(fileName, gallery) {
+export default async function getImageMetadata(fileName: string, gallery: string) {
     const ep = new exiftool.ExiftoolProcess();
     await ep.open();
 
-    const metadata = await ep.readMetadata(fileName)
-        .then((res) => res.data[0])
-        .catch((error) => {
+    const metadata: any = await ep.readMetadata(fileName)
+        .then((res: {data: any[]}) => res.data[0])
+        .catch((error: any) => {
             throw new Error(`There was a problem reading the metadata for ${fileName}: ${error.message}`);
         });
 
@@ -120,15 +119,18 @@ module.exports = async function getImageMetadata(fileName, gallery) {
 
     validateMetadata(metadata, fileName);
 
-    const relevantMetaData = {};
+    //@ts-ignore
+    const relevantMetaData: ImageMetadata = {};
 
     relevantMetaData.Gallery = gallery;
 
-    Object.keys(copiedFields).forEach((key) => {
+    Object.keys(copiedFields).forEach((key: keyof typeof copiedFields) => {
+        //@ts-ignore
         relevantMetaData[copiedFields[key]] = metadata[key];
     });
 
-    await Promise.all(Object.keys(transformedFields).map(async (key) => {
+    await Promise.all(Object.keys(transformedFields).map(async (key: keyof typeof transformedFields) => {
+        //@ts-ignore
         relevantMetaData[key] = await transformedFields[key](
             metadata,
             {

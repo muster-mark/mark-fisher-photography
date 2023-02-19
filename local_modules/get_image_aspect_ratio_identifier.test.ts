@@ -1,4 +1,6 @@
-const getImageAspectRatioIdentifier = require('./get_image_aspect_ratio_identifier.js');
+import {expect, test} from "@jest/globals";
+
+import getImageAspectRatioIdentifier from "./get_image_aspect_ratio_identifier";
 
 test('Correct aspect ratio identifiers are returned when aspect ratio is exact', () => {
     expect(getImageAspectRatioIdentifier(840, 594)).toEqual('a4landscape');

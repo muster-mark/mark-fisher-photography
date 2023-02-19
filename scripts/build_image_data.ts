@@ -1,14 +1,17 @@
-const path = require("node:path");
-const util = require("node:util");
-const fs = require("node:fs");
+import path from "node:path";
+import util from "node:util";
+import fs from "node:fs";
 
-const groupBy = require("lodash/groupBy");
+import {groupBy} from "lodash";
 
-const { images } = require("../source/metadata_json/all");
+import images from "../source/metadata_json/all.json";
 
+import type {ImageMetadata} from "../types";
+
+let partialImageMetadata: Partial <ImageMetadata>[] = [];
 for (let i = 0; i < images.length; i++) {
     const {ImageAspectRatio, Headline, Slug, Colors, Season, CountryPrimaryLocationName, Gallery} = images[i];
-    images[i] = {
+    partialImageMetadata[i] = {
         ImageAspectRatio,
         Headline,
         Slug,
@@ -19,14 +22,14 @@ for (let i = 0; i < images.length; i++) {
     }
 }
 
-const seasonGroups = groupBy(images, "Season");
-const seasonCounts = [];
+const seasonGroups = groupBy(partialImageMetadata, "Season");
+const seasonCounts: {name: string, count: number}[] = [];
 ["spring", "summer", "autumn", "winter"].forEach(season => {
     seasonCounts.push({ name: season, count: seasonGroups[season].length });
 });
 
-const countryGroups = groupBy(images, "CountryPrimaryLocationName");
-const countryCounts = [];
+const countryGroups = groupBy(partialImageMetadata, "CountryPrimaryLocationName");
+const countryCounts: {name: string, count: number}[] = [];
 Object.keys(countryGroups).forEach((key) => {
     countryCounts.push({ name: key, count: countryGroups[key].length });
 });
@@ -35,9 +38,8 @@ countryCounts.sort((a, b) => {
     return a.name < b.name ? -1 : 1;
 });
 
-
 const data = {
-    images,
+    images: partialImageMetadata,
     countryCounts,
     seasonCounts,
 };

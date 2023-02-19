@@ -1,13 +1,13 @@
-const path: typeof import("node:path") = require("node:path");
-const fs: typeof import("node:fs/promises") = require("node:fs/promises");
+import path from "node:path";
+import fs from "node:fs/promises";
 
-const Mustache: typeof import ("mustache") = require("mustache");
+import Mustache from "mustache";
 
-const {galleries} = require("../local_modules/galleries.js");
-const {images} = require("../source/metadata_json/all.json");
+import galleries from "../local_modules/galleries";
+import images from "../source/metadata_json/all.json";
 
 const base = "https://www.markfisher.photo";
-const publicDir = path.resolve(`${__dirname}/../public`);
+const publicDir = path.join(__dirname, "..", "public");
 
 const urls: {
     loc: string;

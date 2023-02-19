@@ -1,17 +1,19 @@
-const fs = require("node:fs");
-const path = require("node:path");
-const util = require("node:util");
-const glob = require("glob-promise");
-const nunjucks = require("../local_modules/nunjucks");
+import fs from "node:fs";
+import path from "node:path";
+import util from "node:util";
+import glob from "glob-promise";
 
-const { galleries } = require("../local_modules/galleries.js");
-const renderAndWriteTemplate = require("../local_modules/render_and_write_template");
+import nunjucks from "../local_modules/nunjucks";
+import galleries from "../local_modules/galleries";
+import renderAndWriteTemplate from "../local_modules/render_and_write_template";
 
-const templatesPath = path.resolve(`${__dirname}/../templates`);
-const metadataDir = path.resolve(`${__dirname}/../source/metadata_json/`);
-const publicDir = path.resolve(`${__dirname}/../public/`);
+const rootPath = path.join(__dirname, "..");
 
-async function createImagePages(galleryData, galleryMetadata) {
+const templatesPath = path.join(rootPath, "templates");
+const metadataDir = path.join(rootPath, "source", "metadata_json");
+const publicDir = path.join(rootPath, "public");
+
+async function createImagePages(galleryData: any, galleryMetadata: any) {
     for (let i = 0; i < galleryMetadata.length; i++) {
         let previousIndex = i - 1;
         let nextIndex = i + 1;
@@ -44,7 +46,7 @@ async function createImagePages(galleryData, galleryMetadata) {
     }
 }
 
-async function createGalleryPage(gallery) {
+async function createGalleryPage(gallery: string) {
     const jsonFiles = await glob(`${metadataDir}/${gallery}/*.json`);
     const jsonStrings = await Promise.all(
         jsonFiles.map((file) => util.promisify(fs.readFile)(file, { encoding: "utf-8" })),
@@ -54,7 +56,7 @@ async function createGalleryPage(gallery) {
         json.brickHeight = Math.round((200 * (json.ImageHeight / json.ImageWidth) + 15));
         return json;
     });
-    imageMetadata.sort((a, b) => new Date(b.DatePublished) - new Date(a.DatePublished));
+    imageMetadata.sort((a, b) => new Date(b.DatePublished).getTime() - new Date(a.DatePublished).getTime());
 
     await util.promisify(fs.mkdir)(`${publicDir}/${gallery}`, { recursive: true });
 

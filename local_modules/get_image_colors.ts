@@ -1,11 +1,17 @@
 // From https://github.com/colorjs/get-image-colors
 // Without the svg stuff, due to vulnerabilities in get-svg-colors
 
-const getPixels = require('get-pixels')
-const getRgbaPalette = require('get-rgba-palette')
-const chroma = require('chroma-js')
+import getPixels from "get-pixels";
+//@ts-ignore
+import getRgbaPalette from "get-rgba-palette";
+import chroma from "chroma-js";
 
-function colorPalette (input, options) {
+interface Options {
+    type?: string;
+    count?: number;
+}
+
+function colorPalette(input: string, options: Options): Promise<chroma.Color[]> {
     options = options ?? {
         type: undefined,
         count: 5,
@@ -13,12 +19,12 @@ function colorPalette (input, options) {
 
     return new Promise((resolve, reject) => {
         paletteFromBitmap(input, options)
-            .then(resolve)
-            .catch(reject);
+                .then(resolve)
+                .catch(reject);
     });
 }
 
-function paletteFromBitmap (filename, options) {
+function paletteFromBitmap(filename: string, options: Options): Promise<chroma.Color[]> {
     options = options ?? {
         type: undefined,
         count: 5,
@@ -30,7 +36,7 @@ function paletteFromBitmap (filename, options) {
                 reject(err);
             }
 
-            const palette = getRgbaPalette(pixels.data, options.count).map(function (rgba) {
+            const palette = getRgbaPalette(pixels.data, options.count).map(function (rgba: [number, number, number]) {
                 return chroma(rgba)
             });
 
@@ -39,4 +45,4 @@ function paletteFromBitmap (filename, options) {
     });
 }
 
-module.exports = colorPalette;
+export default colorPalette;

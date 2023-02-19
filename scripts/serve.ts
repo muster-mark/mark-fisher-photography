@@ -1,8 +1,8 @@
-const express: typeof import("express") = require("express");
-const fs: typeof import("node:fs") = require("node:fs");
-const morgan: typeof import("morgan") = require("morgan");
-const compression: typeof import("compression") = require("compression");
-const defaultHeaders: {[key: string]: {name: string; value: string}[]} = require("./server/default_headers");
+import express from "express";
+import fs from "node:fs";
+import morgan from "morgan";
+import compression from "compression";
+import defaultHeaders from "./server/default_headers";
 
 const PORT = process.env.PORT || 8888;
 

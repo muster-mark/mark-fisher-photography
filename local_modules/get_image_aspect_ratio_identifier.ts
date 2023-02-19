@@ -1,4 +1,4 @@
-module.exports = function getImageAspectRatioIdentifier(width, height) {
+export default function getImageAspectRatioIdentifier(width: number, height: number) {
     const widthOverHeight = width / height;
 
     // Based on image with long edge of 840px

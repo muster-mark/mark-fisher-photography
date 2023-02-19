@@ -1,5 +1,5 @@
-const { galleries } = require("./galleries.js");
-const { expect } = require("@jest/globals")
+import galleries from "./galleries";
+import { expect, test } from "@jest/globals";
 
 test("Meta descriptions all end in full stop", () => {
     const doAllGalleryDescriptionsEndInPeriod = galleries
