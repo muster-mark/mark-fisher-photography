@@ -46,7 +46,7 @@
 
 {% block meta_description_tag %}
     <meta name="description"
-          content="Mark Fisher is an amateur landscape and nature photographer from the UK. Whether he is looking for relaxation, invigoration or mental stimulation, he turns to the natural world to find it."/>
+          content="Hi I'm Mark Fisher and I'm an amateur landscape and nature photographer from the UK. I live in London and dream of Scotland, which is where I take most of my images. "/>
 {% endblock %}
 
 {% block content %}
