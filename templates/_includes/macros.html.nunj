@@ -133,6 +133,7 @@
     <span class="{{ classes.join(' ') }}">
     <a class="a_context sm-link"
        href="https://www.instagram.com/mark.j.fisher/"
+       rel="external"
        aria-label="Visit Mark Fisher's Instagram profile"
     >
         {{ svg_icon('instagram', 'Visit my Instagram profile') }}
