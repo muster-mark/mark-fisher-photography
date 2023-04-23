@@ -156,6 +156,7 @@ function updateColumns() {
     masonryElement.value.setAttribute("gap", `${masonryGap.value}`); // Seems to be bug in @appnest component
 }
 
+// This is preloaded on this page
 fetch("/data/images.json")
         .then(data => data.json())
         .then(json => {

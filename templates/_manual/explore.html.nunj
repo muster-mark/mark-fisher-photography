@@ -6,6 +6,10 @@
     "title" : "Explore"
 } %}
 
+{% block head %}
+    <link rel="preload" as="fetch" crossorigin href="/data/images.json"/>
+{% endblock %}
+
 {% block meta_description_tag %}
     <meta name="description" content="Explore all photos. Search by season, colour, time of day."/>
 {% endblock %}
