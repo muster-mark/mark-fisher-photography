@@ -16,7 +16,6 @@
     "Contrast",
     "Dark",
     "England",
-    "Europe",
     "Feet",
     "Foot",
     "Greater London",
@@ -33,7 +32,6 @@
     "Tiles",
     "UK",
     "United Kingdom",
-    "United Kingdom of Great Britain and Northern Ireland",
     "Urban",
     "_Body Part"
   ],
@@ -54,7 +52,7 @@
   "DatePublished": "2015-11-19 00:00:00",
   "Season": "autumn",
   "Colors": [
-    "#2d2325"
+    "#2d2225"
   ],
   "CaptionAbstract": null
 }

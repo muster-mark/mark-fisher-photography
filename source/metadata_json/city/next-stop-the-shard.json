@@ -16,7 +16,6 @@
     "Building",
     "City",
     "England",
-    "Europe",
     "Glass",
     "Greater London",
     "Inner London",
@@ -48,7 +47,6 @@
     "Transport",
     "UK",
     "United Kingdom",
-    "United Kingdom of Great Britain and Northern Ireland",
     "Vehicle",
     "Waterloo",
     "Waterloo East"
@@ -70,7 +68,7 @@
   "DatePublished": "2015-09-18 00:00:00",
   "Season": "summer",
   "Colors": [
-    "#2e2e35"
+    "#2e2e34"
   ],
   "CaptionAbstract": null
 }

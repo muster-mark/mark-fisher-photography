@@ -125,7 +125,6 @@
       "Birch",
       "Bryophyta",
       "Duchray Water",
-      "Europe",
       "Gleann Dubh",
       "Leaves",
       "Lichen",
@@ -223,7 +222,6 @@
       "Beaulieu River",
       "Blue",
       "England",
-      "Europe",
       "Hampshire",
       "Headwater",
       "Longwater Lawn",
@@ -273,7 +271,6 @@
       "Black and White",
       "Cairn",
       "Cloud",
-      "Europe",
       "Lewis",
       "Monochrome",
       "Mountain",
@@ -363,7 +360,7 @@
     "Colors": [
       "#a6a493"
     ],
-    "CaptionAbstract": "<p>The title of this photograph is stolen from the title of a Tripadvisor review of Grouse Mountain, one of several which complain about the fog &quot;hampering&quot; the view of Vancouver. I found this quite amusing - personally, it made my day.</p>\n"
+    "CaptionAbstract": "<p>I stole the title of the photograph from a Tripadvisor review of Grouse Mountain, one of several which complain about the fog &quot;hampering&quot; the view of Vancouver. I found this quite amusing - personally, it made my day.</p>\n"
   },
   {
     "Gallery": "highlands",
@@ -378,13 +375,15 @@
     "Flash": "Off, Did not fire",
     "FocalLength": "32.0 mm",
     "Keywords": [
+      "An t-Eilean Muileach",
       "Cloud",
-      "Europe",
       "Firth of Lorn",
       "Great Glen Fault",
       "Highlands",
       "Inner Hebrides",
+      "Isle of Mull",
       "Long Exposure",
+      "Muile",
       "Mull",
       "Outer Firth of Lorn",
       "Rainbow",
@@ -395,7 +394,6 @@
       "Slow Shutter Speed",
       "UK",
       "United Kingdom",
-      "United Kingdom of Great Britain and Northern Ireland",
       "Water"
     ],
     "Headline": "A long exposure of the sea lapping at a boulder-strewn shore on the Ross of Mull, with a rainbow visible in the direction of mainland Scotland.",
@@ -431,6 +429,7 @@
     "Flash": "Off, Did not fire",
     "FocalLength": "25.0 mm",
     "Keywords": [
+      "An t-Eilean Muileach",
       "Argyll and Bute",
       "Beach",
       "Black sand",
@@ -439,10 +438,15 @@
       "Froth",
       "Hebrides",
       "Inner Hebrides",
+      "Isle of Mull",
+      "Muile",
       "Mull",
       "Rocks",
       "Sand",
+      "Scotland",
       "Sea",
+      "UK",
+      "United Kingdom",
       "Water",
       "Waves"
     ],
@@ -483,7 +487,6 @@
       "Autumn",
       "Beech",
       "Bryophyta",
-      "Europe",
       "Fagus Sylvatica",
       "Forest",
       "Loch Ard Forest",
@@ -499,7 +502,6 @@
       "Trees",
       "UK",
       "United Kingdom",
-      "United Kingdom of Great Britain and Northern Ireland",
       "Woodland"
     ],
     "Headline": "A beech forest in Autumn, near the shore of Loch Ard in Loch Lomond and the Trossachs National Park.",
@@ -585,7 +587,6 @@
     "Keywords": [
       "Abertawe",
       "Beach",
-      "Europe",
       "Glamorgan",
       "Gower Peninsula",
       "Gŵyr",
@@ -605,7 +606,6 @@
       "Tide",
       "UK",
       "United Kingdom",
-      "United Kingdom of Great Britain and Northern Ireland",
       "Wales",
       "Whiteford Sands"
     ],
@@ -648,7 +648,6 @@
       "Coniston",
       "Cumbria",
       "England",
-      "Europe",
       "Hurricane Gonzalo",
       "Lake District",
       "Lake District National Park",
@@ -661,7 +660,6 @@
       "South Lakeland",
       "UK",
       "United Kingdom",
-      "United Kingdom of Great Britain and Northern Ireland",
       "Water",
       "Waterfall",
       "Weather"
@@ -734,14 +732,14 @@
     "Keywords": [
       "Black Cuillins",
       "Bualintur",
+      "Clouds",
       "Cuillin",
-      "Europe",
       "Gleann Breadail",
       "Glen Brittle",
+      "Inner Hebrides",
       "Loch Brittle",
       "Mountain",
       "Mountain range",
-      "Outer Hebrides",
       "Peninsula",
       "Rain",
       "Rainbow",
@@ -753,10 +751,12 @@
       "Sgùrr Dearg",
       "Sgùrr na Banachdaich",
       "Sgùrr nan Gobhar",
+      "Shade",
+      "Shadow",
       "Skye",
+      "Sunlight",
       "UK",
       "United Kingdom",
-      "United Kingdom of Great Britain and Northern Ireland",
       "Water",
       "Weather"
     ],
@@ -930,7 +930,6 @@
     "FocalLength": "33.0 mm",
     "Keywords": [
       "England",
-      "Europe",
       "Evergreen",
       "Greater London",
       "Green",
@@ -948,7 +947,6 @@
       "Tree pincushion",
       "UK",
       "United Kingdom",
-      "United Kingdom of Great Britain and Northern Ireland",
       "Vaalkreupelhout"
     ],
     "Headline": "Leaves of a grey tree pincushion (Leucospermum conocarpodendron) in Kew Gardens, showing the fine silvery hairs which give the leaves their grey appearance.",
@@ -985,7 +983,6 @@
     "Keywords": [
       "Atlantic Ocean",
       "Clouds",
-      "Europe",
       "Hebrides",
       "Isle of Lewis",
       "Isle of Lewis and Harris",
@@ -1000,7 +997,6 @@
       "UK",
       "Uig Bay",
       "United Kingdom",
-      "United Kingdom of Great Britain and Northern Ireland",
       "Water",
       "Waves"
     ],
@@ -1042,7 +1038,6 @@
       "Arran",
       "Coast",
       "Cock of Arran",
-      "Europe",
       "Island",
       "Isle of Arran",
       "Lichen",
@@ -1060,8 +1055,7 @@
       "Sky",
       "Thrift",
       "UK",
-      "United Kingdom",
-      "United Kingdom of Great Britain and Northern Ireland"
+      "United Kingdom"
     ],
     "Headline": "Sea thrift and lichen on coastal rocks on the Isle of Arran.",
     "Title": "Sea Thrift",
@@ -1102,7 +1096,6 @@
       "Beach",
       "Camas Uig",
       "Eilean Glas",
-      "Europe",
       "Headland",
       "Hebrides",
       "Isle of Lewis",
@@ -1126,7 +1119,6 @@
       "UK",
       "Uig Bay",
       "United Kingdom",
-      "United Kingdom of Great Britain and Northern Ireland",
       "Water",
       "Waves"
     ],
@@ -1172,7 +1164,6 @@
       "Dryopteris Affinis",
       "East Kyd Brook",
       "England",
-      "Europe",
       "Fern",
       "Kent",
       "Leaves",
@@ -1186,10 +1177,9 @@
       "Trees",
       "UK",
       "United Kingdom",
-      "United Kingdom of Great Britain and Northern Ireland",
       "Woods"
     ],
-    "Headline": "A fern with striking croziers by East Kyd Brook in Crofton Woods, with Crofton Heath beyond.",
+    "Headline": "A woodland scene showing a Dryopteris Affinis fern with striking croziers by East Kyd Brook in Crofton Woods, with Crofton Heath beyond.",
     "Title": "Cradle of Life",
     "Sublocation": "Crofton Woods",
     "CountryPrimaryLocationName": "England",
@@ -1236,7 +1226,6 @@
       "England",
       "English bluebell",
       "English countryside",
-      "Europe",
       "Fairy flower",
       "Flowers",
       "Green",
@@ -1260,7 +1249,6 @@
       "Tree",
       "UK",
       "United Kingdom",
-      "United Kingdom of Great Britain and Northern Ireland",
       "Violet",
       "Wild hyacinth",
       "Wood bell"
@@ -1306,7 +1294,6 @@
       "Elder",
       "Elderberry",
       "England",
-      "Europe",
       "European elder",
       "Garden",
       "Kent",
@@ -1317,11 +1304,10 @@
       "Spider",
       "UK",
       "United Kingdom",
-      "United Kingdom of Great Britain and Northern Ireland",
       "Web",
       "elder"
     ],
-    "Headline": "A small spider in a tiny web, on a Black Lace Eler plant (Sambuca Nigris) backlit by the sun.",
+    "Headline": "A small spider in a tiny web, on a Black Lace Elder plant (Sambuca Nigris) backlit by the sun.",
     "Title": "Born to spin",
     "CountryPrimaryLocationName": "England",
     "CountryPrimaryLocationCode": "GB",
@@ -1355,7 +1341,6 @@
       "Arran",
       "Boggy",
       "Difficult path",
-      "Europe",
       "Flooding",
       "Gleann Easan Biorach",
       "Glen",
@@ -1375,7 +1360,6 @@
       "Scotland",
       "UK",
       "United Kingdom",
-      "United Kingdom of Great Britain and Northern Ireland",
       "Valley",
       "Water",
       "Weather"
@@ -1419,7 +1403,6 @@
       "Clouds",
       "Dark",
       "England",
-      "Europe",
       "Greater London",
       "Illumination",
       "Kent",
@@ -1439,10 +1422,9 @@
       "Stars",
       "Trees",
       "UK",
-      "United Kingdom",
-      "United Kingdom of Great Britain and Northern Ireland"
+      "United Kingdom"
     ],
-    "Headline": "A long exposure of an illuminated tree at night, with orange clouds and stars out.",
+    "Headline": "A long exposure of an illuminated tree at night in Petts Wood, with orange clouds and stars out.",
     "Title": "Alone in the Woods",
     "Sublocation": "Petts Wood",
     "CountryPrimaryLocationName": "England",
@@ -1689,7 +1671,6 @@
       "Crofton Woods",
       "England",
       "English oak",
-      "Europe",
       "European oak",
       "Green",
       "Hedera",
@@ -1711,7 +1692,6 @@
       "Trunk",
       "UK",
       "United Kingdom",
-      "United Kingdom of Great Britain and Northern Ireland",
       "Winter",
       "Wood",
       "Woodland",
@@ -1758,7 +1738,6 @@
       "Debris",
       "Dusk",
       "England",
-      "Europe",
       "Flooded",
       "Flooding",
       "Greater London",
@@ -1780,7 +1759,6 @@
       "Tree",
       "UK",
       "United Kingdom",
-      "United Kingdom of Great Britain and Northern Ireland",
       "Weather",
       "Wet"
     ],
@@ -1832,7 +1810,6 @@
       "Dominance",
       "Eagle fern",
       "England",
-      "Europe",
       "Fern",
       "Greater London",
       "Kent",
@@ -1850,8 +1827,7 @@
       "Sunset",
       "Tree",
       "UK",
-      "United Kingdom",
-      "United Kingdom of Great Britain and Northern Ireland"
+      "United Kingdom"
     ],
     "Headline": "Two birch trees stand among densely packed, red-brown bracken in Autumn in a woodland, with the sun close to the horizon.",
     "Title": "Monoculture",
@@ -1891,7 +1867,6 @@
       "Cadora Woods",
       "Drupe",
       "England",
-      "Europe",
       "Fog",
       "Fruit",
       "Gloucestershire",
@@ -1907,7 +1882,6 @@
       "Tree",
       "UK",
       "United Kingdom",
-      "United Kingdom of Great Britain and Northern Ireland",
       "Wales",
       "Weather",
       "Winter",
@@ -1954,7 +1928,6 @@
       "Birch",
       "Blue",
       "England",
-      "Europe",
       "Kent",
       "Leaves",
       "Moonlight",
@@ -1965,7 +1938,6 @@
       "Tree",
       "UK",
       "United Kingdom",
-      "United Kingdom of Great Britain and Northern Ireland",
       "Winter",
       "Woodland"
     ],
@@ -2007,7 +1979,6 @@
       "Cir Mhor",
       "Clouds",
       "Ericaceae",
-      "Europe",
       "Fern",
       "Geology",
       "Glacial valley",
@@ -2026,10 +1997,9 @@
       "Stone",
       "UK",
       "United Kingdom",
-      "United Kingdom of Great Britain and Northern Ireland",
       "Valley"
     ],
-    "Headline": "A clump of ferns cluster around a large rock in a glacial valley, with a Cir Mhor in the background,",
+    "Headline": "A clump of ferns cluster around a large rock in a glacial valley, with Cir Mhor in the background,",
     "Title": "Green Embrace",
     "Sublocation": "Glen Sannox",
     "CountryPrimaryLocationName": "Scotland",
@@ -2069,7 +2039,6 @@
       "Blue",
       "Crustacean",
       "Dalradian schist",
-      "Europe",
       "Gastropod",
       "Invertebrate",
       "Island",
@@ -2092,7 +2061,6 @@
       "UK",
       "Unconformity",
       "United Kingdom",
-      "United Kingdom of Great Britain and Northern Ireland",
       "Water"
     ],
     "Headline": "Barnacles create a streak of white on black schist on the North coast of Arran.",
@@ -2166,15 +2134,14 @@
       "Bovidae",
       "Cow",
       "Cuillin",
-      "Europe",
       "Gabbro",
       "Grass",
       "Grazing",
       "Igneous rock",
+      "Inner Hebrides",
       "Mammal",
       "Mountain",
       "Mountain range",
-      "Outer Hebrides",
       "Peninsula",
       "Plant",
       "Rock",
@@ -2183,8 +2150,7 @@
       "Stone",
       "Strathaird",
       "UK",
-      "United Kingdom",
-      "United Kingdom of Great Britain and Northern Ireland"
+      "United Kingdom"
     ],
     "Headline": "3 cows grazing, with the Cuillin peak of  Blà Bheinn in the background.",
     "Title": "Beneath Blà Bheinn",
@@ -2224,12 +2190,11 @@
       "Cuillin",
       "Ealaghol",
       "Elgol",
-      "Europe",
       "Gars-bheinn",
+      "Inner Hebrides",
       "Loch Scavaig",
       "Mountain",
       "Mountain range",
-      "Outer Hebrides",
       "Rocks",
       "Scotland",
       "Sea",
@@ -2237,7 +2202,6 @@
       "Skye",
       "UK",
       "United Kingdom",
-      "United Kingdom of Great Britain and Northern Ireland",
       "Water"
     ],
     "Headline": "A view of the Black Cuillins across Loch Scavaig",
@@ -2274,10 +2238,9 @@
     "FocalLength": "24.0 mm",
     "Keywords": [
       "Beach",
-      "Europe",
       "Glen Brittle",
+      "Inner Hebrides",
       "Loch Brittle",
-      "Outer Hebrides",
       "Rocks",
       "Sand",
       "Scotland",
@@ -2286,7 +2249,6 @@
       "Skye",
       "UK",
       "United Kingdom",
-      "United Kingdom of Great Britain and Northern Ireland",
       "Volcanic sand",
       "Water"
     ],
@@ -2352,7 +2314,7 @@
     "DatePublished": "2019-03-10 00:00:00",
     "Season": "summer",
     "Colors": [
-      "#706e7d"
+      "#716f7d"
     ],
     "CaptionAbstract": "<p>Cows by Loch Brittle on Rubha an Dùnain, the Isle of Skye.</p>\n"
   },
@@ -2376,7 +2338,6 @@
       "Clouds",
       "Colony",
       "Dolerite",
-      "Europe",
       "Flight",
       "Flying",
       "Gabbro",
@@ -2408,7 +2369,6 @@
       "UK",
       "UNESCO World Heritage Site",
       "United Kingdom",
-      "United Kingdom of Great Britain and Northern Ireland",
       "World Heritage Site"
     ],
     "Headline": "Northern gannet colony at Boreray, St. Kilda",
@@ -2450,7 +2410,6 @@
       "Dragonfly",
       "England",
       "Epiprocta",
-      "Europe",
       "Exhibit",
       "Glass display",
       "Greater London",
@@ -2468,7 +2427,6 @@
       "Tourist",
       "UK",
       "United Kingdom",
-      "United Kingdom of Great Britain and Northern Ireland",
       "Woman",
       "Wonder"
     ],
@@ -2514,7 +2472,6 @@
       "Countryside",
       "Domestic sheep",
       "England",
-      "Europe",
       "Farm",
       "Farm animals",
       "Farming",
@@ -2541,8 +2498,7 @@
       "Tree",
       "Twilight",
       "UK",
-      "United Kingdom",
-      "United Kingdom of Great Britain and Northern Ireland"
+      "United Kingdom"
     ],
     "Headline": "Tyre tracks leading towards a field of sheep  in Shoreham, Kent.",
     "Title": "Tyre Tracks at Dusk",
@@ -2648,7 +2604,6 @@
       "Cloud",
       "Empty shop",
       "England",
-      "Europe",
       "Gloucestershire",
       "Leather jacket",
       "Medieval architecture",
@@ -2663,8 +2618,7 @@
       "Street",
       "Street photography",
       "UK",
-      "United Kingdom",
-      "United Kingdom of Great Britain and Northern Ireland"
+      "United Kingdom"
     ],
     "Headline": "A man in a leather jacket walking down a narrow street, with a medieval church in the background.",
     "Title": "Black Jack Street",
@@ -3100,7 +3054,6 @@
     "FocalLength": "17.0 mm",
     "Keywords": [
       "England",
-      "Europe",
       "Ferris Wheel",
       "Greater London",
       "London",
@@ -3108,8 +3061,7 @@
       "Millenium Wheel",
       "Night",
       "UK",
-      "United Kingdom",
-      "United Kingdom of Great Britain and Northern Ireland"
+      "United Kingdom"
     ],
     "Headline": "The Coca-Cola London Eye, then the EDF Energy London Eye, at night viewed from below.",
     "Title": "The London Eye",
@@ -3190,7 +3142,6 @@
       "Dog",
       "Dog lead",
       "England",
-      "Europe",
       "Hiking",
       "Lake",
       "Lake District",
@@ -3206,7 +3157,6 @@
       "Stream",
       "UK",
       "United Kingdom",
-      "United Kingdom of Great Britain and Northern Ireland",
       "Walkers",
       "Walking",
       "Walking poles",
@@ -3256,7 +3206,6 @@
       "Christmas Lights",
       "Christmas Tree",
       "England",
-      "Europe",
       "Fairy lights",
       "Greater London",
       "Headlight",
@@ -3278,7 +3227,6 @@
       "Transport",
       "UK",
       "United Kingdom",
-      "United Kingdom of Great Britain and Northern Ireland",
       "Vehicle",
       "Walking",
       "Walking stick"
@@ -3324,7 +3272,6 @@
       "Deer Park",
       "Dusk",
       "England",
-      "Europe",
       "Facing",
       "Fallow Deer",
       "Grass",
@@ -3346,8 +3293,7 @@
       "Sky",
       "Tree",
       "UK",
-      "United Kingdom",
-      "United Kingdom of Great Britain and Northern Ireland"
+      "United Kingdom"
     ],
     "Headline": "Fallow deer on a hill top with two Scots Pine trees in Knole Park.",
     "Title": "Deer at Dusk",
@@ -3471,7 +3417,6 @@
       "Decay",
       "Early evening",
       "England",
-      "Europe",
       "Evening",
       "Flag",
       "Flint",
@@ -3494,7 +3439,6 @@
       "Tree stump",
       "UK",
       "United Kingdom",
-      "United Kingdom of Great Britain and Northern Ireland",
       "Wood"
     ],
     "Headline": "A tree stump in Meenfield Wood",
@@ -3590,7 +3534,6 @@
       "Building",
       "Carinthia",
       "Clouds",
-      "Europe",
       "Lamp",
       "Light",
       "Lights",
@@ -3618,7 +3561,7 @@
       "Train Station",
       "Transmission pole",
       "Transport",
-      "Utillity pole",
+      "Utility pole",
       "Vehicle",
       "Villach",
       "Villach Central Station",
@@ -3645,7 +3588,7 @@
     "DatePublished": "2016-01-25 00:00:00",
     "Season": "summer",
     "Colors": [
-      "#412824"
+      "#412825"
     ],
     "CaptionAbstract": "<p>Sunrise at Villach Hauptbahnhof, just before this timber-laden train set off. Being a nocturnal creature, I don't get to see many sunrises, so I was quite excited by this.</p>\n"
   },
@@ -3764,7 +3707,6 @@
     "FocalLength": "22.0 mm",
     "Keywords": [
       "Bridge",
-      "Europe",
       "France",
       "Padlock",
       "Paris",
@@ -3805,7 +3747,6 @@
     "Flash": "Off, Did not fire",
     "FocalLength": "24.0 mm",
     "Keywords": [
-      "Europe",
       "France",
       "Paris",
       "People",
@@ -3950,7 +3891,6 @@
       "Contrast",
       "Dark",
       "England",
-      "Europe",
       "Feet",
       "Foot",
       "Greater London",
@@ -3967,7 +3907,6 @@
       "Tiles",
       "UK",
       "United Kingdom",
-      "United Kingdom of Great Britain and Northern Ireland",
       "Urban",
       "_Body Part"
     ],
@@ -3988,7 +3927,7 @@
     "DatePublished": "2015-11-19 00:00:00",
     "Season": "autumn",
     "Colors": [
-      "#2d2325"
+      "#2d2225"
     ],
     "CaptionAbstract": null
   },
@@ -4014,7 +3953,6 @@
       "Deserted Street",
       "Empty Street",
       "England",
-      "Europe",
       "Greater London",
       "Insomnia",
       "Kent",
@@ -4041,7 +3979,6 @@
       "Tree",
       "UK",
       "United Kingdom",
-      "United Kingdom of Great Britain and Northern Ireland",
       "Vehicle",
       "Window"
     ],
@@ -4094,7 +4031,6 @@
       "England",
       "English",
       "Estate",
-      "Europe",
       "Figure in Distance",
       "Footpath",
       "Geometric",
@@ -4125,7 +4061,6 @@
       "Tree",
       "UK",
       "United Kingdom",
-      "United Kingdom of Great Britain and Northern Ireland",
       "Vanishing Point",
       "Walk",
       "Yellow",
@@ -4172,7 +4107,6 @@
       "Clothing",
       "Display",
       "England",
-      "Europe",
       "Fashion",
       "Greater London",
       "London",
@@ -4192,7 +4126,6 @@
       "Street photography",
       "UK",
       "United Kingdom",
-      "United Kingdom of Great Britain and Northern Ireland",
       "Walking",
       "Window"
     ],
@@ -4237,7 +4170,6 @@
       "Cumbria",
       "Dark",
       "England",
-      "Europe",
       "Lake District",
       "Mining shaft",
       "National Park",
@@ -4256,7 +4188,6 @@
       "Tower",
       "UK",
       "United Kingdom",
-      "United Kingdom of Great Britain and Northern Ireland",
       "Valley"
     ],
     "Headline": "Star trails and shooting star in the Lake District, with a disused mine shaft tower in silhouette.",
@@ -4300,7 +4231,6 @@
       "Danube Delta",
       "Decisive Moment",
       "Egretta garzetta",
-      "Europe",
       "Feather",
       "Flight",
       "Flying",
@@ -4357,7 +4287,6 @@
       "Ceiling",
       "Chapel",
       "Decoration",
-      "Europe",
       "France",
       "French Architecture",
       "French Gothic Architecture",
@@ -4415,7 +4344,6 @@
       "Domestic sheep",
       "Dreamy",
       "England",
-      "Europe",
       "Field",
       "Gambolling",
       "Grass",
@@ -4427,8 +4355,7 @@
       "Sheep",
       "Shoreham",
       "UK",
-      "United Kingdom",
-      "United Kingdom of Great Britain and Northern Ireland"
+      "United Kingdom"
     ],
     "Headline": "A sheep running in warm sunlight in a field in Shoreham, Kent",
     "Title": "Baaalmy Afternoon",
@@ -4469,7 +4396,6 @@
       "Church",
       "Dawn",
       "Empty Street",
-      "Europe",
       "Flag",
       "Lights",
       "Sky",
@@ -4536,8 +4462,8 @@
     "GPSLatitudeRef": "South",
     "GPSLongitudeRef": "East",
     "ImageWidth": 840,
-    "ImageHeight": 468,
-    "ImageAspectRatio": 1.794871794871795,
+    "ImageHeight": 473,
+    "ImageAspectRatio": 1.7758985200845665,
     "ImageAspectRatioIdentifier": "invalid",
     "Slug": "zebras-of-the-serengeti",
     "DateTimeOriginal": "2013-07-18 06:22:11",
@@ -4601,7 +4527,7 @@
     "ExposureCompensation": "+1/3",
     "Flash": "Off, Did not fire",
     "FocalLength": "35.0 mm",
-    "Headline": "Three pine trees lit by sunset at Chobham common in Surrey.",
+    "Headline": "Three pine trees lit by the setting sun at Chobham common in Surrey.",
     "Title": "Evening at Chobham Common",
     "Sublocation": "Chobham Common",
     "CountryPrimaryLocationName": "England",
@@ -4618,7 +4544,7 @@
     "DatePublished": "2015-09-23 00:00:00",
     "Season": "spring",
     "Colors": [
-      "#764850"
+      "#764950"
     ],
     "CaptionAbstract": null
   },
@@ -4685,7 +4611,6 @@
       "Building",
       "City",
       "England",
-      "Europe",
       "Glass",
       "Greater London",
       "Inner London",
@@ -4717,7 +4642,6 @@
       "Transport",
       "UK",
       "United Kingdom",
-      "United Kingdom of Great Britain and Northern Ireland",
       "Vehicle",
       "Waterloo",
       "Waterloo East"
@@ -4739,7 +4663,7 @@
     "DatePublished": "2015-09-18 00:00:00",
     "Season": "summer",
     "Colors": [
-      "#2e2e35"
+      "#2e2e34"
     ],
     "CaptionAbstract": null
   },
@@ -4808,7 +4732,6 @@
       "Canopy",
       "Deciduous",
       "England",
-      "Europe",
       "Kent",
       "Leafless",
       "Meenfield Wood",
@@ -4816,8 +4739,7 @@
       "Shoreham",
       "Tree",
       "UK",
-      "United Kingdom",
-      "United Kingdom of Great Britain and Northern Ireland"
+      "United Kingdom"
     ],
     "Headline": "A leafless canopy and blue sky in Shoreham Wood, Kent.",
     "Title": "Empty Canopy",
