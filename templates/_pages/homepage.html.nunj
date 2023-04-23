@@ -21,11 +21,6 @@
                             {% if gallery.image.Colors[0] %}style="background-color: {{ gallery.image.Colors[0] }}{% endif %}"
                     >
                         <source
-                                type="image/jxl"
-                                srcset="/photos/l484/{{ gallery.image.Slug }}@2x.jxl 968w, /photos/l484/{{ gallery.image.Slug }}.jxl 484w"
-                                sizes="calc(45vw - 20px)"
-                        />
-                        <source
                                 type="image/webp"
                                 srcset="/photos/l484/{{ gallery.image.Slug }}@2x.webp 968w, /photos/l484/{{ gallery.image.Slug }}.webp 484w"
                                 sizes="calc(45vw - 20px)"
@@ -61,9 +56,6 @@
                         <picture
                                 {% if image.Colors[0] %}style="background-color: {{ image.Colors[0] }}{% endif %}"
                         >
-                            <source
-                                    type="image/jxl"
-                                    srcset="/photos/w200/{{ image.Slug }}@2x.jxl 400w, /photos/w200/{{ image.Slug }}.jxl 200w"/>
                             <source
                                     type="image/webp"
                                     srcset="/photos/w200/{{ image.Slug }}@2x.webp 400w, /photos/w200/{{ image.Slug }}.webp 200w"/>

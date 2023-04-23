@@ -16,7 +16,6 @@
     {% else %}
     {% endif %}
     <picture>
-        <source type="image/jxl" srcset="/photos/{{ size }}/{{ slug }}@2x.jxl 2x, /photos/{{ size }}/{{ slug }}.jxl 1x" />
         <source type="image/webp" srcset="/photos/{{ size }}/{{ slug }}@2x.webp 2x, /photos/{{ size }}/{{ slug }}.webp 1x" />
         <img width="{{ width }}" height="{{ height }}"
              srcset="/photos/{{ size }}/{{ slug }}@2x.jpg 2x, /photos/{{ size }}/{{ slug }}.jpg 1x"
@@ -52,7 +51,6 @@
     {% else %}
     {% endif %}
     <picture>
-        <source type="image/jxl" srcset="/photos/{{ size }}/{{ slug }}@2x.jxl {{ width * 2 }}w, /photos/{{ size }}/{{ slug }}.jxl {{ width }}w" />
         <source type="image/webp" srcset="/photos/{{ size }}/{{ slug }}@2x.webp {{ width * 2 }}w, /photos/{{ size }}/{{ slug }}.webp {{ width }}w" />
         <img width="{{ width }}" height="{{ height }}"
              srcset="/photos/{{ size }}/{{ slug }}@2x.jpg {{ width * 2 }}w, /photos/{{ size }}/{{ slug }}.jpg {{ width }}w"
