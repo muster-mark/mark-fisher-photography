@@ -4,5 +4,4 @@ defaults
 > 0.3%
 not baidu < 10
 not op_mini all
-not ie 11
 not dead
