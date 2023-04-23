@@ -19,6 +19,15 @@ const ping = function (url: string): Promise<void> {
     });
 }
 
+/**
+ * @Will need to ping bing and yandex manually for now, with a URL like the following
+ *
+ * https://bing.com/indexnow?url=https://www.markfisher.photo&key=a1c51b4da2bb46c2947541b2cde1fc6e
+ * https://bing.com/indexnow?url=https://www.markfisher.photo&key=a1c51b4da2bb46c2947541b2cde1fc6e
+ *
+ * N.B. the key is stored in  a1c51b4da2bb46c2947541b2cde1fc6e.txt at website root
+ * Could submit a set of URLS by POSTing JSON; would need to compute which pages have changed.
+ */
 async function main() {
     const urlsToPing = [
         `https://www.google.com/webmasters/sitemaps/ping?sitemap=${sitemapUrl}`,
