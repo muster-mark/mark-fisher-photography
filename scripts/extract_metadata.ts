@@ -1,7 +1,7 @@
 // Write a json file for each image containing metadata
 
 import path from "node:path";
-import {rmdir, readdir, mkdir, writeFile} from "fs/promises";
+import {readdir, mkdir, writeFile, rm} from "fs/promises";
 import colors from "colors";
 import junk from "junk";
 
@@ -42,7 +42,7 @@ const main = async function main() {
 
     await Promise.all(galleries.map(async (gallery) => {
         try {
-            await rmdir(`${metadataJsonDir}/${gallery}`, {recursive: true})
+            await rm(`${metadataJsonDir}/${gallery}`, {recursive: true});
         } catch (err) {
             // No big deal
         }
