@@ -22,7 +22,6 @@ const ping = function (url: string): Promise<void> {
 async function main() {
     const urlsToPing = [
         `https://www.google.com/webmasters/sitemaps/ping?sitemap=${sitemapUrl}`,
-        `https://bing.com/webmaster/ping.aspx?sitemap=${sitemapUrl}`, // TODO use IndexNow instead
     ];
     Promise.allSettled(urlsToPing.map(url => ping(url)))
             .then(results => {
