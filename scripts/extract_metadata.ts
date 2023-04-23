@@ -30,12 +30,10 @@ const getMetaDataForGallery = async function getMetaDataForGallery(galleryName: 
         .then((files) => files.filter(junk.not));
 
     if (!imageFiles.length) {
-        return Promise.reject(new Error(`Gallery ${galleryName} is empty`));
+        throw new Error(`Gallery ${galleryName} is empty`)
     }
 
-    const galleryMetadata = await Promise.all(imageFiles.map((imageFile) => getImageMetadata(`${metadataImagesDir}/${galleryName}/${imageFile}`, galleryName)));
-
-    return Promise.resolve(galleryMetadata);
+    return Promise.all(imageFiles.map((imageFile) => getImageMetadata(`${metadataImagesDir}/${galleryName}/${imageFile}`, galleryName)));
 };
 
 const main = async function main() {
