@@ -11,13 +11,11 @@
 {% endblock %}
 
 {% block meta_description_tag %}
-    <meta name="description" content="Explore all photos. Search by season, colour, time of day."/>
+    <meta name="description" content="Explore all photos. Filter by season or country."/>
 {% endblock %}
 
 {% block content %}
     <div class="inner-container">
-        <div id="explore-app">
-        </div>
+        <div id="explore-app"></div>
     </div>
-
 {% endblock %}
