@@ -1,7 +1,7 @@
 import path from "node:path";
 import fs from "node:fs";
 import util from "node:util";
-import glob from "glob-promise";
+import {glob} from "glob";
 
 import nunjucks from "../local_modules/nunjucks";
 import renderAndWriteTemplate from "../local_modules/render_and_write_template";

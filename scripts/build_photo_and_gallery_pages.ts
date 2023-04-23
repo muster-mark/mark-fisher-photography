@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import util from "node:util";
-import glob from "glob-promise";
+import {glob} from "glob";
 
 import nunjucks from "../local_modules/nunjucks";
 import galleries from "../local_modules/galleries";
