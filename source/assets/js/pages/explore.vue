@@ -156,7 +156,7 @@ function updateColumns() {
     masonryElement.value.setAttribute("gap", `${masonryGap.value}`); // Seems to be bug in @appnest component
 }
 
-// This is preloaded on this page
+// This is pre-loaded on this page
 fetch("/data/images.json")
         .then(data => data.json())
         .then(json => {
@@ -167,8 +167,7 @@ fetch("/data/images.json")
             seasonCounts.value = json.seasonCounts;
         })
         .catch(err => {
-            console.error("There was an error fetching data");
-            console.log(err);
+            console.error("There was an error fetching data", err);
         });
 
 onMounted(() => {
