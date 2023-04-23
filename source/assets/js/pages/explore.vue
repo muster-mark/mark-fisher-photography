@@ -1,12 +1,11 @@
 <template>
-    <div>
-        <details class="explore-filter">
-            <summary>
-                <svg-icon name="filter"></svg-icon>
-                <span class="explore-filter_details-closed">Show filters</span>
-                <span class="explore-filter_details-open">Hide filters</span></summary>
-            <div class="explore-filter_title">Seasons:</div>
-            <div class="checkbox-grid">
+    <details class="explore-filter">
+        <summary>
+            <svg-icon name="filter"></svg-icon>
+            <span class="explore-filter_details-closed">Show filters</span>
+            <span class="explore-filter_details-open">Hide filters</span></summary>
+        <div class="explore-filter_title">Seasons:</div>
+        <div class="checkbox-grid">
                 <span v-for="seasonCount in seasonCounts" :key="`season-checkbox_${seasonCount.name}`">
                     <input
                             type="checkbox"
@@ -24,10 +23,10 @@
                         }})
                     </label>
                 </span>
-            </div>
+        </div>
 
-            <div class="explore-filter_title">Countries:</div>
-            <div class="checkbox-grid">
+        <div class="explore-filter_title">Countries:</div>
+        <div class="checkbox-grid">
                 <span v-for="countryCount in countryCounts" :key="`country-checkbox_${countryCount.name}`">
                     <input
                             type="checkbox"
@@ -43,41 +42,40 @@
                         {{ countryCount.name.replace(" ", " ") }}&nbsp;({{ countryCount.count }})
                     </label>
                 </span>
-            </div>
-        </details>
-
-        <div ref="scrollTarget" class="explore_result-summary">
-            <span v-if="!filteredImages.length">No images match your search criteria</span>
-            <span class="smaller" v-else>Showing <span class="larger">{{ firstShown }}-{{ lastShown }}</span> of <span
-                    class="larger">{{ filteredImages.length }}</span> matching images</span>
         </div>
+    </details>
 
-        <div ref="masonryLayoutContainer">
-            <masonry-layout
-                    ref="masonryElement"
-                    class="explore-results"
-                    :cols="numColumns"
-                    :gap="masonryGap"
-                    :maxcolwidth="columnWidth"
-                    :style="`width: ${masonryWidth}px`"
-            >
-                <div
-                        class="explore_result"
-                        v-for="image in filteredImages.slice(firstShown - 1, lastShown)"
-                        :key="image.Slug"
-                >
-                    <explore-result :image="image"></explore-result>
-                </div>
-            </masonry-layout>
-        </div>
-
-        <PaginationLinks
-                :page="page"
-                @page-change="goToPage($event)"
-                :numPages="numPages"
-                aria-controls=""
-        ></PaginationLinks>
+    <div ref="scrollTarget" class="explore_result-summary">
+        <span v-if="!filteredImages.length">No images match your search criteria</span>
+        <span class="smaller" v-else>Showing <span class="larger">{{ firstShown }}-{{ lastShown }}</span> of <span
+                class="larger">{{ filteredImages.length }}</span> matching images</span>
     </div>
+
+    <div ref="masonryLayoutContainer">
+        <masonry-layout
+                ref="masonryElement"
+                class="explore-results"
+                :cols="numColumns"
+                :gap="masonryGap"
+                :maxcolwidth="columnWidth"
+                :style="`width: ${masonryWidth}px`"
+        >
+            <div
+                    class="explore_result"
+                    v-for="image in filteredImages.slice(firstShown - 1, lastShown)"
+                    :key="image.Slug"
+            >
+                <explore-result :image="image"></explore-result>
+            </div>
+        </masonry-layout>
+    </div>
+
+    <PaginationLinks
+            :page="page"
+            @page-change="goToPage($event)"
+            :numPages="numPages"
+            aria-controls=""
+    ></PaginationLinks>
 </template>
 
 <script lang="ts">
