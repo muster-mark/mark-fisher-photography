@@ -13,7 +13,7 @@
     grid-auto-rows: 1px;
     grid-auto-flow: dense;
     grid-gap: 0 var(--masonry-gap);
-    width: calc(4 * (var(--column-width + var(--masonry-gap))) - var(--masonry-gap));
+    width: calc(calc(4 * (var(--column-width) + var(--masonry-gap))) - var(--masonry-gap));
     max-width: 100%;
     margin: auto;
 
