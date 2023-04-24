@@ -58,7 +58,9 @@
                         >
                             <source
                                     type="image/webp"
-                                    srcset="/photos/w200/{{ image.Slug }}@2x.webp 400w, /photos/w200/{{ image.Slug }}.webp 200w"/>
+                                    srcset="/photos/w200/{{ image.Slug }}@2x.webp 400w, /photos/w200/{{ image.Slug }}.webp 200w"
+                                    sizes="200px"
+                            />
                             <img width="200"
                                  height="{{ (200 / image.ImageAspectRatio)|round }}"
                                  srcset="/photos/w200/{{ image.Slug }}@2x.jpg 400w, /photos/w200/{{ image.Slug }}.jpg 200w"

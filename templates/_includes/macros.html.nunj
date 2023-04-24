@@ -51,7 +51,13 @@
     {% else %}
     {% endif %}
     <picture>
-        <source type="image/webp" srcset="/photos/{{ size }}/{{ slug }}@2x.webp {{ width * 2 }}w, /photos/{{ size }}/{{ slug }}.webp {{ width }}w" />
+        <source
+                type="image/webp"
+                srcset="/photos/{{ size }}/{{ slug }}@2x.webp {{ width * 2 }}w, /photos/{{ size }}/{{ slug }}.webp {{ width }}w"
+                {% if sizes %}
+                    sizes="{{ sizes }}"
+                {% endif %}
+        />
         <img width="{{ width }}" height="{{ height }}"
              srcset="/photos/{{ size }}/{{ slug }}@2x.jpg {{ width * 2 }}w, /photos/{{ size }}/{{ slug }}.jpg {{ width }}w"
                 {% if sizes %}
