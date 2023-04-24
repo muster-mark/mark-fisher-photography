@@ -10,6 +10,6 @@
 
         <p>If you believe this is an error, please <a href="/contact">contact me</a>.</p>
 
-        <img alt="A sheep running through a field in golden light" srcset="/images/404@2x.jpg 2x, /images/404.jpg 1x" width="630" height="460" />
+        <img alt="A sheep running through a field in golden light" srcset="/images/404@2x.jpg 1260w, /images/404.jpg 630w" sizes="min(calc(100vw - 40px), 630px)" width="630" height="420" src="/images/404.jpg" />
     </div>
 {% endblock %}
