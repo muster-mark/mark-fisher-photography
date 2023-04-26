@@ -27,14 +27,14 @@ async function main() {
         })
     });
 
-    galleries.forEach((gallery: any) => {
+    galleries.forEach(gallery => {
         urls.push({
             loc: `${base}/${gallery.slug}`,
             lastMod: new Date().toISOString(),
         })
     });
 
-    images.forEach((image: any) => {
+    images.forEach(image => {
         urls.push({
             loc: `${base}/${image.Gallery}/${image.Slug}`,
             lastMod: new Date().toISOString(),
