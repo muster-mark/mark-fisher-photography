@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"> {# Ensure not zoomed out on mobile #}
     <link rel="stylesheet" href="{{ 'main.css' | chunk }}"/>
     <link rel="canonical" href="https://{{ env.URL }}{{ page.url }}"/>
+    <link rel="alternate" type="application/rss+xml" title="Subscribe to New Images" href="http://{{ env.URL }}/new-images.xml" />
     <meta name="theme-color" content="#efa929">
     {% if page.skipJs %}
         <link rel="prefetch" as="script" href="{{ 'main.js' | chunk }}" />
