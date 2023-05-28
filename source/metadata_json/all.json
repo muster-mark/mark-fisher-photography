@@ -1,5 +1,38 @@
 [
   {
+    "Gallery": "landscapes",
+    "FileName": "beaulieu-river-ripples.jpg",
+    "Make": "Canon",
+    "Model": "Canon EOS 5D Mark III",
+    "Lens": "EF24-105mm f/4L IS USM",
+    "ExposureTime": "1/100",
+    "FNumber": 7.1,
+    "ISO": 3200,
+    "ExposureCompensation": "-2/3",
+    "Flash": "Off, Did not fire",
+    "FocalLength": "73.0 mm",
+    "Headline": "Rain falling on the Beaulieu River creates an abstract pattern of circular ripples.",
+    "Title": "Beaulieu River Ripples",
+    "Sublocation": "Beaulieu River",
+    "CountryPrimaryLocationName": "England",
+    "CountryPrimaryLocationCode": "GB",
+    "State": "Hampshire",
+    "GPSLatitudeRef": "North",
+    "GPSLongitudeRef": "West",
+    "ImageWidth": 840,
+    "ImageHeight": 560,
+    "ImageAspectRatio": 1.5,
+    "ImageAspectRatioIdentifier": "3to2",
+    "Slug": "beaulieu-river-ripples",
+    "DateTimeOriginal": "2022-10-31 15:42:57",
+    "DatePublished": "2023-05-28 00:00:00",
+    "Season": "autumn",
+    "Colors": [
+      "#625b59"
+    ],
+    "CaptionAbstract": "<p>Oh dear, this image doesn't fit very well into any of my categories. It's stretching it a bit to call it a landscape, but that will have to do for now.</p>\n<p>Rain is great for photography, I think. But photographing in the rain is a potentially expensive business when you don't have a waterproof camera, so it's usually advisable to stick to either photographing rain in the distance, or waiting until just after it has finished raining, which can be just as good. However it was raining just lightly enough here to not have to worry too much about it, and I couldn't really say no to these wonderful intersecting circular ripples, could I? They kept me well entertained until the rain had passed.</p>\n"
+  },
+  {
     "Gallery": "highlands",
     "FileName": "multi-tiered-waterfall.jpg",
     "Make": "Canon",
