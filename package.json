@@ -81,7 +81,7 @@
         "node": "^18.16.0",
         "postcss-clamp": "^4.1.0",
         "postcss-loader": "^7.3.2",
-        "postcss-logical": "^6.2.0",
+        "postcss-logical": "^7.0.0",
         "sass": "^1.62.1",
         "sass-loader": "^13.3.1",
         "terser-webpack-plugin": "^5.3.9",
