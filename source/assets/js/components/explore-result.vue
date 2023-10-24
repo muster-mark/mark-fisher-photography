@@ -1,6 +1,8 @@
 <template>
     <a :href="imageUrl" class="explore-result">
         <picture>
+            <source type="image/jxl"
+                    :srcset="`/photos/w200/${image.Slug}@2x.jxl 2x, /photos/w200/${image.Slug}.jxl 1x`"/>
             <source type="image/webp"
                     :srcset="`/photos/w200/${image.Slug}@2x.webp 2x, /photos/w200/${image.Slug}.webp 1x`"/>
             <img

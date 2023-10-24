@@ -7,7 +7,7 @@ const folders = [
     `${photosDir}/l840`,
     `${photosDir}/w200`,
 ];
-const extensions = ["jpg", "webp"];
+const extensions = ["jpg", "webp", "jxl"];
 
 test("Test all photos exist in all sizes and all formats", () => {
     const allSlugs = images.map(image => image.Slug);

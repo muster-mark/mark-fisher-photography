@@ -8,6 +8,7 @@
 *.jpg binary diff=exif
 *.js text diff=js
 *.json text
+*.jxl binary diff=exif
 *.map text -diff
 *.md text diff=markdown
 *.nunj text
