@@ -1,6 +1,8 @@
 $line-height: 1.4;
 
-html {
+:root {
+    hyphens: auto;
+    overflow-wrap: break-word;
     line-height: $line-height;
 }
 
@@ -57,11 +59,6 @@ a:focus, a:hover {
 
 .a_context:hover, .a_context:focus {
     color: $color-primary;
-}
-
-a:focus {
-    /*outline: none;*/
-    /* have set manually for text, but not other elements */
 }
 
 .subtle-text {
