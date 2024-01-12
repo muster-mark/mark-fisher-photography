@@ -45,7 +45,7 @@ export default [
     },
     {
         "slug": "plants",
-        "name": "Plants and Trees",
+        "name": "Plants & Trees",
         "metaDescription": "From lilies to lime trees, and birch to bracken - photographs of plants and trees by Mark Fisher.",
         "homepageDescription": "Bringing colour and calm",
         "featured": true,
