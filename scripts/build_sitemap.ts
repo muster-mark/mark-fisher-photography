@@ -34,7 +34,7 @@ async function main() {
         const lastPublishedImage = imagesSortedDateDescending.filter(image => image.Gallery === gallery.slug)[0];
 
         urls.push({
-            loc: `${base}/${gallery.slug}`,
+            loc: `${base}/${gallery.slug}/`,
             lastMod: new Date(lastPublishedImage.DatePublished).toISOString(),
         })
     });
