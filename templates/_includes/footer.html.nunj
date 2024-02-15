@@ -1,8 +1,7 @@
 {% set footer_nav_links =
     {
         '/about': 'About',
-        '/contact': 'Contact',
-        '/privacy': 'Privacy'
+        '/contact': 'Contact'
     } %}
 
 {% from "_includes/macros.html.nunj" import social_media %}
@@ -26,5 +25,5 @@
     </nav>
     {{ social_media(["footer_sm"]) }}
 
-    <div class="footer_copyright subtle-text">Images and words &copy; {{ copyrightYear }} Mark Fisher</div>
+    <div class="footer_copyright subtle-text">&copy; {{ copyrightYear }} Mark Fisher · This site doesn't use cookies.</div>
 </footer>

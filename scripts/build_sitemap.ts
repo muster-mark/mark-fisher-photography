@@ -24,7 +24,7 @@ async function main() {
         lastMod: new Date(imagesSortedDateDescending[0].DatePublished).toISOString(),
     });
 
-    ["about", "contact", "privacy", "explore"].forEach(page => {
+    ["about", "contact", "explore"].forEach(page => {
         urls.push({
             loc: `${base}/${page}`,
         });
