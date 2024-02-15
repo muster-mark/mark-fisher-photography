@@ -1,9 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 
-//@ts-ignore
 import MarkdownIt from 'markdown-it';
-
 
 const md = new MarkdownIt();
 const rootDir = path.resolve(`${__dirname}/../`);
