@@ -51,7 +51,7 @@ export default [
         "featured": true,
         "imageSlug": "the-other-side",
         "imageAltText": "Photographs of the plant kingdom, from grass to trees, by Orpington based photographer Mark Fisher",
-        "description": null,
+        "description": getGalleryDescription("plants"),
     },
     {
         "slug": "dusk-to-dawn",

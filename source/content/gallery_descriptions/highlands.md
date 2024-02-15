@@ -1,2 +1,1 @@
-I am always either on a Scotland trip or have one coming up. It's the closest you can get to untamed wilderness in the
-UK, and it draws me back time and time again.
+I am always either on a Scotland trip or dreaming about my next one. My first trip to Scotland was in 2017, and I have visited at least once a year since then. The majority of the photos you see here are from the Western Isles, including Skye, Lewis and Harris, Mull, Arran and St. Kilda.  I still have many more to explore. I'm not in any hurry to get through them all. I rather prefer to be thorough and explore just a small part of one island on any one trip. Because I know this is a lifelong love affair, so why rush?
