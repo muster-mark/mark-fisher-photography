@@ -18,7 +18,6 @@
         "test": "jest",
         "deploy": "node -r ts-node/register scripts/deploy.ts",
         "serve": "node -r ts-node/register scripts/serve.ts",
-        "ping-sitemap": "node -r ts-node/register scripts/ping_sitemap.ts",
         "update-browserslist": "npm --depth 20 update --save caniuse-lite browserslist"
     },
     "sideEffects": [
