@@ -77,7 +77,7 @@
         "markdown-it": "^14.1.0",
         "mini-css-extract-plugin": "^2.7.6",
         "mustache": "^4.2.0",
-        "node": "^20.9.0",
+        "node": "^22.0.0",
         "postcss-clamp": "^4.1.0",
         "postcss-loader": "^8.1.1",
         "postcss-logical": "^7.0.0",
