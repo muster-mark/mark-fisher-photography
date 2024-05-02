@@ -1,9 +1,9 @@
 // Write a json file for each image containing metadata
 
+import { statSync } from "node:fs";
 import path from "node:path";
-import {readdir, mkdir, writeFile, rm} from "fs/promises";
+import {readdir, mkdir, writeFile, rm} from "node:fs/promises";
 import colors from "colors";
-import junk from "junk";
 
 import getImageMetadata from "../local_modules/get_image_metadata";
 import {ImageMetadata} from "../types";
@@ -19,22 +19,19 @@ const rootDir = path.normalize(`${__dirname}/..`);
 const metadataImagesDir = path.normalize(`${rootDir}/source/metadata_images`);
 const metadataJsonDir = path.normalize(`${rootDir}/source/metadata_json`);
 
-const getAllGalleries = async function getAllGalleries() {
-    let galleries = await readdir(metadataImagesDir);
-    galleries = galleries.filter(junk.not);
-    return galleries;
-};
+async function getAllGalleries() {
+    return (await readdir(metadataImagesDir)).filter(file => statSync(`${metadataImagesDir}/${file}`)?.isDirectory());
+}
 
-const getMetaDataForGallery = async function getMetaDataForGallery(galleryName: string) {
-    const imageFiles = await readdir(`${metadataImagesDir}/${galleryName}`)
-        .then((files) => files.filter(junk.not));
+async function getMetaDataForGallery(galleryName: string) {
+    const imageFiles = (await readdir(`${metadataImagesDir}/${galleryName}`)).filter(file => file.endsWith(".jpg"));
 
     if (!imageFiles.length) {
         throw new Error(`Gallery ${galleryName} is empty`)
     }
 
     return Promise.all(imageFiles.map((imageFile) => getImageMetadata(`${metadataImagesDir}/${galleryName}/${imageFile}`, galleryName)));
-};
+}
 
 const main = async function main() {
     const galleries = await getAllGalleries();
