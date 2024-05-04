@@ -1,7 +1,8 @@
 import fs from "node:fs";
+//@ts-expect-error Still experimental
+import { glob } from "node:fs/promises";
 import path from "node:path";
 import util from "node:util";
-import {glob} from "glob";
 
 import nunjucks from "../local_modules/nunjucks";
 import galleries from "../local_modules/galleries";
@@ -47,20 +48,29 @@ async function createImagePages(galleryData: any, galleryMetadata: any) {
 }
 
 async function createGalleryPage(gallery: string) {
-    const jsonFiles = await glob(`${metadataDir}/${gallery}/*.json`);
+    const jsonFiles: string[] = [];
+    for await (const file of glob(`${metadataDir}/${gallery}/*.json`)) {
+        jsonFiles.push(file);
+    }
     const jsonStrings = await Promise.all(
-        jsonFiles.map((file) => util.promisify(fs.readFile)(file, { encoding: "utf-8" })),
+        jsonFiles.map(file => util.promisify(fs.readFile)(file, { encoding: "utf-8" })),
     );
-    const imageMetadata = jsonStrings.map((string) => {
+    const imageMetadata = jsonStrings.map(string => {
         const json = JSON.parse(string.toString());
-        json.brickHeight = Math.round((200 * (json.ImageHeight / json.ImageWidth) + 15));
-        return json;
+        return {
+            ...json,
+            brickHeight: Math.round((200 * (json.ImageHeight / json.ImageWidth) + 15)),
+        }
     });
     imageMetadata.sort((a, b) => new Date(b.DatePublished).getTime() - new Date(a.DatePublished).getTime());
 
     await util.promisify(fs.mkdir)(`${publicDir}/${gallery}`, { recursive: true });
 
     const galleryData = galleries.find(data => data.slug === gallery);
+
+    if (!galleryData) {
+        throw new Error(`No gallery with slug ${gallery}`);
+    }
 
     renderAndWriteTemplate(
         "_pages/gallery.html.nunj",
@@ -85,11 +95,14 @@ async function createGalleryPage(gallery: string) {
 }
 
 async function main() {
-    let allGalleries = await glob(`${metadataDir}/*`);
-    allGalleries = allGalleries.filter(gallery => fs.statSync(gallery)?.isDirectory());
-    allGalleries = allGalleries.map((dir) => path.basename(dir));
+    const allGalleries: string[] = [];
+    for await (const fullGalleryPath of glob(`${metadataDir}/*`)) {
+        if (fs.statSync(fullGalleryPath)?.isDirectory()) {
+            allGalleries.push(path.basename(fullGalleryPath));
+        }
+    }
 
-    allGalleries.forEach((gallery) => {
+    allGalleries.forEach(gallery => {
         createGalleryPage(gallery);
     });
 }

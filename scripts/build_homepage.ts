@@ -1,7 +1,8 @@
 import path from "node:path";
 import fs from "node:fs";
+//@ts-expect-error Still experimental
+import { glob } from "node:fs/promises";
 import util from "node:util";
-import {glob} from "glob";
 
 import nunjucks from "../local_modules/nunjucks";
 import renderAndWriteTemplate from "../local_modules/render_and_write_template";
@@ -13,19 +14,23 @@ const rootPath = path.join(__dirname, "..");
 const metadataDir = path.join(rootPath, "source", "metadata_json");
 const publicDir = path.join(rootPath, "public");
 
-// Get 20 most recent images
+// Get 21 most recent images
 const homepageImages = allImages
     .sort((a, b) => new Date(b.DatePublished).getTime() - new Date(a.DatePublished).getTime())
     .slice(0, 21)
-    .map((image) => image.Slug);
+    .map(({Slug}) => Slug);
 
 const getImageData = async (slug: string) => {
-    const jsonFiles = await glob(`${metadataDir}/*/${slug}.json`);
+    const jsonFiles: string[] = [];
+    for await (const file of glob(`${metadataDir}/*/${slug}.json`)) {
+        jsonFiles.push(file);
+    }
     if (jsonFiles.length !== 1) {
         throw new Error(`Unexpected number of JSON files for ${slug}. ${jsonFiles.length} files were found`);
     }
 
-    return util.promisify(fs.readFile)(jsonFiles[0], { encoding: "utf-8" });
+    const fileContents = await util.promisify(fs.readFile)(jsonFiles[0], { encoding: "utf-8" });
+    return JSON.parse(fileContents.toString());
 };
 
 const getImagesData = async () => Promise.all(homepageImages.map((image) => getImageData(image)));
@@ -33,10 +38,11 @@ const getImagesData = async () => Promise.all(homepageImages.map((image) => getI
 const main = async function() {
     const favouriteImages = await getImagesData()
         .then(data => {
-            return data.map(string => {
-                const imageData = JSON.parse(string.toString());
-                imageData.brickHeight = Math.round((200 * (imageData.ImageHeight / imageData.ImageWidth) + 15));
-                return imageData;
+            return data.map(item => {
+                return {
+                    ...item,
+                    brickHeight: Math.round((200 * (item.ImageHeight / item.ImageWidth) + 15)),
+                }
             });
         });
 
