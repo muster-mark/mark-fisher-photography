@@ -28,7 +28,7 @@ export interface ImageMetadata {
     DatePublished: string;
     Season: "spring"  | "summer" | "autumn" | "winter";
     Colors: string[];
-    CaptionAbstract: string;
+    CaptionAbstract?: string;
     /**
      * In format YYYY-MM-DD, e.g. 1999-12-31
      */

@@ -1,12 +1,10 @@
-//@ts-ignore
 import slugify from "slug";
-//@ts-ignore
+//@ts-expect-error
 import DateSeason from "date-season";
 import getColors from "./get_image_colors";
-//@ts-ignore
+//@ts-expect-error
 import exiftool from "node-exiftool";
 import colors from "colors/safe";
-//@ts-ignore
 import MarkdownIt from "markdown-it";
 
 import type {ImageMetadata} from "../types";
@@ -62,7 +60,7 @@ const transformedFields = {
     async DatePublished(metadata: ImageMetadata) {
         return `${metadata.OriginalTransmissionReference} 00:00:00`;
     },
-    async Colors(metadata: ImageMetadata, args: {pathToFile: string}) {
+    async Colors(_metadata: ImageMetadata, args: {pathToFile: string}) {
         const colorsArray = await getColors(args.pathToFile, {count: 1});
         return colorsArray.map((color) => color.hex());
     },
@@ -99,19 +97,13 @@ function validateMetadata(metadata: any, fileName: string) {
     }
 }
 
-/**
- *
- * @param fileName
- * @param gallery
- * @returns {{}}
- */
-export default async function getImageMetadata(fileName: string, gallery: string) {
+export default async function getImageMetadata(fileName: string, gallery: string): Promise<ImageMetadata> {
     const ep = new exiftool.ExiftoolProcess();
     await ep.open();
 
     const metadata: any = await ep.readMetadata(fileName)
         .then((res: {data: any[]}) => res.data[0])
-        .catch((error: any) => {
+        .catch((error: Error) => {
             throw new Error(`There was a problem reading the metadata for ${fileName}: ${error.message}`);
         });
 
@@ -124,13 +116,13 @@ export default async function getImageMetadata(fileName: string, gallery: string
 
     relevantMetaData.Gallery = gallery;
 
-    Object.keys(copiedFields).forEach((key: keyof typeof copiedFields) => {
-        //@ts-ignore
+    Object.keys(copiedFields).forEach(key => {
+        //@ts-expect-error
         relevantMetaData[copiedFields[key]] = metadata[key];
     });
 
-    await Promise.all(Object.keys(transformedFields).map(async (key: keyof typeof transformedFields) => {
-        //@ts-ignore
+    await Promise.all((Object.keys(transformedFields) as (keyof typeof transformedFields)[]).map(async key => {
+        //@ts-expect-error
         relevantMetaData[key] = await transformedFields[key](
             metadata,
             {
@@ -141,10 +133,8 @@ export default async function getImageMetadata(fileName: string, gallery: string
 
     const md = new MarkdownIt();
 
-    if (metadata["Caption-Abstract"]) {
+    if (!!metadata["Caption-Abstract"]) {
         relevantMetaData.CaptionAbstract = md.render(metadata["Caption-Abstract"]);
-    } else {
-        relevantMetaData.CaptionAbstract = null;
     }
 
     return relevantMetaData;

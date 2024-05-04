@@ -1040,8 +1040,7 @@
     "Season": "spring",
     "Colors": [
       "#2e3424"
-    ],
-    "CaptionAbstract": null
+    ]
   },
   {
     "Gallery": "landscapes",
@@ -1671,8 +1670,7 @@
     "Season": "autumn",
     "Colors": [
       "#3b2b27"
-    ],
-    "CaptionAbstract": null
+    ]
   },
   {
     "Gallery": "highlands",
@@ -1700,8 +1698,7 @@
     "Season": "spring",
     "Colors": [
       "#938b86"
-    ],
-    "CaptionAbstract": null
+    ]
   },
   {
     "Gallery": "landscapes",
@@ -2341,8 +2338,7 @@
     "Season": "summer",
     "Colors": [
       "#ada49f"
-    ],
-    "CaptionAbstract": null
+    ]
   },
   {
     "Gallery": "highlands",
@@ -2982,8 +2978,7 @@
     "Season": "spring",
     "Colors": [
       "#625658"
-    ],
-    "CaptionAbstract": null
+    ]
   },
   {
     "Gallery": "plants",
@@ -3347,8 +3342,7 @@
     "Season": "winter",
     "Colors": [
       "#4d4d53"
-    ],
-    "CaptionAbstract": null
+    ]
   },
   {
     "Gallery": "people",
@@ -4157,8 +4151,7 @@
     "Season": "autumn",
     "Colors": [
       "#2d2225"
-    ],
-    "CaptionAbstract": null
+    ]
   },
   {
     "Gallery": "city",
@@ -4229,8 +4222,7 @@
     "Season": "autumn",
     "Colors": [
       "#23180f"
-    ],
-    "CaptionAbstract": null
+    ]
   },
   {
     "Gallery": "landscapes",
@@ -4313,8 +4305,7 @@
     "Season": "summer",
     "Colors": [
       "#363830"
-    ],
-    "CaptionAbstract": null
+    ]
   },
   {
     "Gallery": "people",
@@ -4376,8 +4367,7 @@
     "Season": "autumn",
     "Colors": [
       "#302f36"
-    ],
-    "CaptionAbstract": null
+    ]
   },
   {
     "Gallery": "dusk-to-dawn",
@@ -4495,8 +4485,7 @@
     "Season": "summer",
     "Colors": [
       "#727279"
-    ],
-    "CaptionAbstract": null
+    ]
   },
   {
     "Gallery": "city",
@@ -4603,8 +4592,7 @@
     "Season": "summer",
     "Colors": [
       "#bd9468"
-    ],
-    "CaptionAbstract": null
+    ]
   },
   {
     "Gallery": "city",
@@ -4774,8 +4762,7 @@
     "Season": "spring",
     "Colors": [
       "#764950"
-    ],
-    "CaptionAbstract": null
+    ]
   },
   {
     "Gallery": "city",
@@ -4893,8 +4880,7 @@
     "Season": "summer",
     "Colors": [
       "#2e2e34"
-    ],
-    "CaptionAbstract": null
+    ]
   },
   {
     "Gallery": "animals",
@@ -5026,7 +5012,6 @@
     "Season": "winter",
     "Colors": [
       "#625958"
-    ],
-    "CaptionAbstract": null
+    ]
   }
 ]
