@@ -4,32 +4,22 @@
  */
 
 import path from "node:path";
-import dotEnv from "dotenv";
 
 const clearCloudFrontCache = require("../local_modules/clear_cloudfront_cache");
 const syncS3Bucket = require("../local_modules/sync_s3_bucket");
 
-function printUsage(exitCode = 1, message: string = null) {
+function printUsage(exitCode = 1, message: string|null = null) {
     if (message) {
         console.log(message);
     }
-    console.log(`Usage: node ${path.basename(__filename)} [--dryrun] staging|production`);
+    console.log(`Usage: node ${path.basename(__filename)} [--dryrun]`);
     process.exit(exitCode);
 }
 
 const main = async function main() {
-
-    const destination = process.argv.pop();
-
-    if (["staging", "production"].indexOf(destination) === -1) {
-        console.error("Invalid destination");
-        printUsage(2);
-    }
-
-    dotEnv.config({ path: `${__dirname}/../.${destination}.env` });
-
     let isDryRun = false;
 
+    console.log("process.arg.env", process.argv);
     if (process.argv.length > 2) {
         if (process.argv.length > 3 || process.argv[2] !== "--dryrun") {
             printUsage(3);
