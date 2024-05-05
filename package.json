@@ -18,7 +18,7 @@
         "test": "jest",
         "deploy": "node -r ts-node/register scripts/deploy.ts",
         "serve": "node -r ts-node/register scripts/serve.ts",
-        "update-browserslist": "npm --depth 20 update --save caniuse-lite browserslist"
+        "update-browserslist": "npm update --save caniuse-lite browserslist"
     },
     "sideEffects": [
         "*.vue"
