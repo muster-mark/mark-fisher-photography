@@ -42,7 +42,7 @@ const main = async function main() {
         process.env.S3_BUCKET,
         "",
         process.env.S3_REGION,
-        process.env.S3_DELETE,
+        process.env.S3_DELETE === "true",
         isDryRun,
     );
 
