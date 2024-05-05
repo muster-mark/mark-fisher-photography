@@ -1,7 +1,9 @@
-const util = require("node:util");
-const exec = util.promisify(require("node:child_process").exec);
+import util from "node:util";
+import { exec as _exec } from "node:child_process";
 
-module.exports = async function syncS3Bucket(bucketName: string, key = "", bucketRegion: string, deleteRemoved: boolean, dryRun: boolean) {
+const exec = util.promisify(_exec);
+
+export default async function syncS3Bucket(bucketName: string, key = "", bucketRegion: string, deleteRemoved: boolean, dryRun: boolean) {
     // Syncs the public directory to a bucket
 
     const excludes = [
@@ -12,7 +14,7 @@ module.exports = async function syncS3Bucket(bucketName: string, key = "", bucke
 
     let excludeArgs = "";
 
-    excludes.forEach((item) => {
+    excludes.forEach(item => {
         excludeArgs += ` --exclude="${item}" `;
     });
 
