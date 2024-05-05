@@ -22,8 +22,8 @@ header {
 }
 
 .nav-active {
-    //text-decoration: underline;
-    //text-underline-offset: 7px; //Waiting on Chromium support
+    text-decoration: underline;
+    text-underline-offset: 7px;
     color: $color-primary;
     position: relative;
 
@@ -38,17 +38,8 @@ header {
     }
 }
 
-.nav-active.nav-active__exact::before {
-    display: block;
-    width: calc(100% - 2rem);
-    height: 1px;
-    content: "";
-    background-color: $color-primary;
-    position: absolute;
-    bottom: 6px;
-}
-
-.nav-active.nav-active__exact::after {
+.nav-active__exact::after {
+    // Triangle
     display: block;
     width: 0;
     height: 0;
