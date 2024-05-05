@@ -132,7 +132,7 @@
     <svg role="img"
          {% if display_width %}width="{{ display_width }}"{% endif %}
             {% if display_height %}height="{{ display_height }}"{% endif %}
-         class="ico{% if(fixed_width) %} ico_fw{% endif %}"
+         class="ico{% if(fixed_width) %} ico--fw{% endif %}"
          viewBox="0 0 {{ width | default('448') }} {{ height | default('512') }}"
     >
         {% if title %}<title>{{ title }}</title>{% endif %}

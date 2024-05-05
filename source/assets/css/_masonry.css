@@ -1,7 +1,5 @@
-@use "sass:math";
-
 .masonry_wall {
-    --column-width-unitless: #{200};
+    --column-width-unitless: 200;
     --column-width: calc(var(--column-width-unitless) * 1px);
     --masonry-gap-unitless: 15;
     --masonry-gap: calc(var(--masonry-gap-unitless) * 1px);
@@ -16,8 +14,6 @@
     width: calc(calc(4 * (var(--column-width) + var(--masonry-gap))) - var(--masonry-gap));
     max-width: 100%;
     margin: auto;
-
-    // Catering for a maximum scrollbar width of 17px
 
     @media screen and (max-width: 471px) {
         --column-width-unitless: 180;

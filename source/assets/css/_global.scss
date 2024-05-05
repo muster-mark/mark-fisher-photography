@@ -1,14 +1,6 @@
-$inner-container-side-padding: 20px;
-
 body {
-    $fallback-background-color: #090909;
     margin: 0;
-    background: $fallback-background-color url("/images/bg_tesselate.webp");
-    @media (prefers-reduced-data: reduce) {
-        // prefers-reduced data not currently supported anywhere (behind a flag in Chromium)
-        background: $fallback-background-color;
-    }
-
+    background: #090909 url("/images/bg_tesselate.webp");
     background-size: 1200px 800px;
     min-height: 100%;
 }
@@ -76,7 +68,7 @@ summary {
 .inner-container {
     margin: auto;
     max-width: 920px;
-    padding: 0 $inner-container-side-padding 20px;
+    padding: 0 20px 20px;
     display: flow-root;
 
     &_narrow {
