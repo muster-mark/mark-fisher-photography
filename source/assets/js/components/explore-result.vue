@@ -19,7 +19,7 @@
 </template>
 
 <script lang="ts" setup>
-import {computed, defineProps, PropType} from "vue";
+import {computed, PropType} from "vue";
 import {Image} from "../../../types";
 
 const props = defineProps({

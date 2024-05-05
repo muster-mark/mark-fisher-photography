@@ -33,7 +33,6 @@
 </template>
 
 <script lang="ts" setup>
-import {defineEmits, defineProps} from "vue";
 
 import SvgIcon from "./svg-icon.vue";
 
