@@ -1,11 +1,12 @@
-import util from "node:util";
 import { exec as _exec } from "node:child_process";
+import util from "node:util";
 
 const exec = util.promisify(_exec);
 
+/**
+ * Syncs the publi directory to a bucket
+ */
 export default async function syncS3Bucket(bucketName: string, key = "", bucketRegion: string, deleteRemoved: boolean, dryRun: boolean) {
-    // Syncs the public directory to a bucket
-
     const excludes = [
         "entrypoints.json",
         "manifest.json",
