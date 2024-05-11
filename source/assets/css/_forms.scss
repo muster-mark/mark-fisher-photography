@@ -7,21 +7,20 @@ input, textarea {
     font-style: italic;
 }
 
-.contact-form input, .contact-form label {
-    display: block;
-}
-
 .contact-form {
     margin: 3vw;
-}
 
-.contact-form {
+    input, label {
+        display: block;
+    }
+
     input[type="text"], input[type="email"], textarea {
         $focus-outline: 2px solid $color-primary;
 
         font-size: var(--font-size);
         padding: 0.5em;
         border: 2px solid $text-color;
+        border-radius: 2px;
         background-color: black;
         color: $text-color;
         width: 100%;
@@ -46,11 +45,7 @@ input, textarea {
             outline-offset: 2px;
             transition: outline-offset 200ms;
         }
-    }
-}
 
-.contact-form {
-    input[type="text"], input[type="email"], textarea {
         &.input_touched:invalid:not(:focus-visible) {
             border: 2px solid red;
         }
@@ -101,11 +96,4 @@ input, textarea {
     align-items: center;
     position: relative;
     top: -0.2em;
-}
-
-input[type="checkbox"] {
-    accent-color: $color-primary;
-    width: 20px;
-    height: 20px;
-    vertical-align: -0.1em
 }

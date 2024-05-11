@@ -32,6 +32,10 @@ img {
     box-sizing: content-box;
 }
 
+img, picture {
+    border-radius: 2px;
+}
+
 @keyframes showAltText {
     from {
         color: transparent;
