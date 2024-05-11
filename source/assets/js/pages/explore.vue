@@ -1,7 +1,7 @@
 <template>
     <details class="explore-filter">
         <summary>
-            <svg-icon name="filter"></svg-icon>
+            <SvgIcon name="filter" />
             <span class="explore-filter_details-closed">Show filters</span>
             <span class="explore-filter_details-open">Hide filters</span></summary>
         <div class="explore-filter_title">Seasons:</div>
@@ -18,7 +18,7 @@
                             class="explore-filter-label"
                             :for="`season-checkbox_${seasonCount.name}`"
                     >
-                        {{ seasonCount.name[0].toUpperCase() + seasonCount.name.substr(1) }}&nbsp;({{
+                        {{ seasonCount.name[0].toUpperCase() + seasonCount.name.slice(1) }}&nbsp;({{
                             seasonCount.count
                         }})
                     </label>
@@ -72,14 +72,15 @@
 
     <PaginationLinks
             :page="page"
-            @page-change="goToPage($event)"
             :numPages="numPages"
             aria-controls=""
+            @page-change="goToPage($event)"
     ></PaginationLinks>
 </template>
 
 <script lang="ts">
 import "@appnest/masonry-layout";
+//import { MasonryLayout } from "@appnest/masonry-layout";
 </script>
 
 <script lang="ts" setup>
@@ -88,9 +89,9 @@ import ExploreResult from "../components/explore-result.vue";
 import PaginationLinks from "../components/pagination-links.vue";
 import SvgIcon from "../components/svg-icon.vue";
 import {
-    Image,
-    CountryCount,
-    SeasonCount,
+    type Image,
+    type CountryCount,
+    type SeasonCount,
     Season,
 } from "../../../types";
 
