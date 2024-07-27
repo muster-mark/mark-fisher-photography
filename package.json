@@ -19,7 +19,7 @@
         "deploy:staging": "node -r ts-node/register --env-file=.staging.env scripts/deploy.ts",
         "deploy:production": "node -r ts-node/register  --env-file=.production.env scripts/deploy.ts",
         "serve": "node -r ts-node/register scripts/serve.ts",
-        "update-browserslist": "npm update --save caniuse-lite browserslist"
+        "update-browserslist": "pnpm update --save caniuse-lite browserslist"
     },
     "sideEffects": [
         "*.vue"
