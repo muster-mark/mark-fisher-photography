@@ -80,7 +80,7 @@
         "postcss-loader": "^8.1.1",
         "postcss-logical": "^7.0.0",
         "sass": "^1.62.1",
-        "sass-loader": "^14.2.1",
+        "sass-loader": "^16.0.0",
         "terser-webpack-plugin": "^5.3.9",
         "ts-jest": "^29.2.3",
         "ts-loader": "^9.4.3",
