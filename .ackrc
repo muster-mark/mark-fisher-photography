@@ -2,7 +2,6 @@
 --ignore-dir=output_prod
 --ignore-dir=output_dev
 --ignore-dir=public
---ignore-dir=.idea
 --ignore-dir=cache
 --ignore-dir=@fortawesome
 --ignore-dir=reports
