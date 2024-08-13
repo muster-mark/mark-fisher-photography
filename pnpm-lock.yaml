@@ -11,9 +11,6 @@ importers:
       '@appnest/masonry-layout':
         specifier: ^2.0.8
         version: 2.2.3
-      babel-preset-vue:
-        specifier: ^2.0.2
-        version: 2.0.2
       date-season:
         specifier: 0.0.2
         version: 0.0.2
@@ -41,12 +38,6 @@ importers:
       vue:
         specifier: ^3.4.34
         version: 3.4.34(typescript@5.5.4)
-      vue-template-compiler:
-        specifier: ^2.7.14
-        version: 2.7.16
-      webpack-cli:
-        specifier: ^5.1.1
-        version: 5.1.4(webpack-bundle-analyzer@4.10.2)(webpack@5.93.0)
     devDependencies:
       '@aws-sdk/client-cloudfront':
         specifier: ^3.620.0
@@ -123,9 +114,6 @@ importers:
       copy-webpack-plugin:
         specifier: ^12.0.2
         version: 12.0.2(webpack@5.93.0(webpack-cli@5.1.4))
-      core-js:
-        specifier: ^3.30.2
-        version: 3.37.1
       cross-env:
         specifier: ^7.0.3
         version: 7.0.3
@@ -181,7 +169,7 @@ importers:
         specifier: ^9.4.3
         version: 9.5.1(typescript@5.5.4)(webpack@5.93.0(webpack-cli@5.1.4))
       ts-node:
-        specifier: ^10.9.1
+        specifier: ^10.9.2
         version: 10.9.2(@types/node@20.14.10)(typescript@5.5.4)
       typescript:
         specifier: ^5.5.4
@@ -189,15 +177,15 @@ importers:
       vue-loader:
         specifier: ^17.1.2
         version: 17.4.2(vue@3.4.34(typescript@5.5.4))(webpack@5.93.0(webpack-cli@5.1.4))
-      vue-loader-plugin:
-        specifier: ^1.3.0
-        version: 1.3.0
       webpack:
         specifier: ^5.84.1
         version: 5.93.0(webpack-cli@5.1.4)
       webpack-bundle-analyzer:
         specifier: ^4.8.0
         version: 4.10.2
+      webpack-cli:
+        specifier: ^5.1.4
+        version: 5.1.4(webpack-bundle-analyzer@4.10.2)(webpack@5.93.0)
       webpack-manifest-plugin:
         specifier: ^5.0.0
         version: 5.0.0(webpack@5.93.0(webpack-cli@5.1.4))
@@ -1655,9 +1643,6 @@ packages:
   aws4@1.13.0:
     resolution: {integrity: sha512-3AungXC4I8kKsS9PuS4JH2nc+0bVY/mjgrephHTIi8fpEeGsTHBUJeosp0Wc1myYMElmD0B3Oc4XL/HVJ4PV2g==}
 
-  babel-helper-vue-jsx-merge-props@2.0.3:
-    resolution: {integrity: sha512-gsLiKK7Qrb7zYJNgiXKpXblxbV5ffSwR0f5whkPAaBAR4fhi6bwRZxX9wBlIc5M/v8CCkXUbXZL4N/nSE97cqg==}
-
   babel-jest@29.7.0:
     resolution: {integrity: sha512-BrvGY3xZSwEcCzKvKsCi2GgHqDqsYkOP4/by5xCgIwGXQxIEh+8ew3gmrE1y7XRR6LHZIj6yLYnUi/mm2KXKBg==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
@@ -1679,12 +1664,6 @@ packages:
     resolution: {integrity: sha512-ESAc/RJvGTFEzRwOTT4+lNDk/GNHMkKbNzsvT0qKRfDyyYTskxB5rnU2njIDYVxXCBHHEI1c0YwHob3WaYujOg==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
 
-  babel-plugin-jsx-event-modifiers@2.0.5:
-    resolution: {integrity: sha512-tWGnCk0whZ+nZcj9tYLw4+y08tPJXqaEjIxRJZS6DkUUae72Kz4BsoGpxt/Kow7mmgQJpvFCw8IPLSNh5rkZCg==}
-
-  babel-plugin-jsx-v-model@2.0.3:
-    resolution: {integrity: sha512-SIx3Y3XxwGEz56Q1atwr5GaZsxJ2IRYmn5dl38LFkaTAvjnbNQxsZHO+ylJPsd+Hmv+ixJBYYFEekPBTHwiGfQ==}
-
   babel-plugin-polyfill-corejs2@0.4.11:
     resolution: {integrity: sha512-sMEJ27L0gRHShOh5G54uAAPaiCOygY/5ratXuiyb2G46FmlSpc9eFCzYVyDiPxfNbwzA7mYahmjQc5q+CZQ09Q==}
     peerDependencies:
@@ -1700,14 +1679,6 @@ packages:
     peerDependencies:
       '@babel/core': ^7.4.0 || ^8.0.0-0 <8.0.0
 
-  babel-plugin-syntax-jsx@6.18.0:
-    resolution: {integrity: sha512-qrPaCSo9c8RHNRHIotaufGbuOBN8rtdC4QrrFFc43vyWCCz7Kl7GL1PGaXtMGQZUXrkCjNEgxDfmAuAabr/rlw==}
-
-  babel-plugin-transform-vue-jsx@3.7.0:
-    resolution: {integrity: sha512-W39X07/n3oJMQd8tALBO+440NraGSF//Lo1ydd/9Nme3+QiRGFBb1Q39T9iixh0jZPPbfv3so18tNoIgLatymw==}
-    peerDependencies:
-      babel-helper-vue-jsx-merge-props: ^2.0.0
-
   babel-preset-current-node-syntax@1.0.1:
     resolution: {integrity: sha512-M7LQ0bxarkxQoN+vz5aJPsLBn77n8QgTFmo8WK0/44auK2xlCXrYcUxHFxgU7qW5Yzw/CjmLRK2uJzaCd7LvqQ==}
     peerDependencies:
@@ -1718,10 +1689,6 @@ packages:
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
     peerDependencies:
       '@babel/core': ^7.0.0
-
-  babel-preset-vue@2.0.2:
-    resolution: {integrity: sha512-ubo67P9PWIJJtL73/V0qeKvXoqoZK5Dnx+hSwW/ZVE7WvG6j5Jrx8CMeL6ZVcCQrdkQ195/MnGUnxHGyWX25OQ==}
-    engines: {node: '>=4'}
 
   balanced-match@1.0.2:
     resolution: {integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==}
@@ -1936,9 +1903,6 @@ packages:
   core-js-compat@3.37.1:
     resolution: {integrity: sha512-9TNiImhKvQqSUkOvk/mMRZzOANTiEVC7WaBNhHcKM7x+/5E1l5NvsysR19zuDQScE8k+kfQXWRN3AtS/eOSHpg==}
 
-  core-js@3.37.1:
-    resolution: {integrity: sha512-Xn6qmxrQZyB0FFY8E3bgRXei3lWDJHhvI+u0q9TKIYM49G8pAr0FgnnrFRAmsbptZL1yxRADVXn+x5AGsbBfyw==}
-
   core-util-is@1.0.2:
     resolution: {integrity: sha512-3lqz5YjWTYnW6dlDa5TLaTCcShfar1e40rmcJVwCBJC6mWlFuj0eCHIElmG1g5kyuJ/GD+8Wn4FFCcz4gJPfaQ==}
 
@@ -2000,9 +1964,6 @@ packages:
 
   date-season@0.0.2:
     resolution: {integrity: sha512-VvUXRK5uE5oCofMl0lA7mWoOKsoPZ+58bE3fNtVODf6YUtwahe6WKOQnyK/0q+uRBvuUs/dM6hUSM3/307AGAQ==}
-
-  de-indent@1.0.2:
-    resolution: {integrity: sha512-e/1zu3xH5MQryN2zdVaF0OrdNLUbvWxzMbi+iNA6Bky7l1RoP8a2fIbRocyHclXt/arDrrR6lL3TqFD9pMQTsg==}
 
   debounce@1.2.1:
     resolution: {integrity: sha512-XRRe6Glud4rd/ZGQfiV1ruXSfbvfJedlV9Y6zOlP+2K04vBYiJEte6stfFkCP03aMnY5tsipamumUjL14fofug==}
@@ -2402,16 +2363,8 @@ packages:
     resolution: {integrity: sha512-0hJU9SCPvmMzIBdZFqNPXWa6dqh7WdH0cII9y+CyS8rG3nL48Bclra9HmKhVVUHyPWNH5Y7xDwAB7bfgSjkUMQ==}
     engines: {node: '>= 0.4'}
 
-  he@1.2.0:
-    resolution: {integrity: sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==}
-    hasBin: true
-
   html-escaper@2.0.2:
     resolution: {integrity: sha512-H2iMtd0I4Mt5eYiapRdIDjp+XzelXQ0tFE4JS7YFwFevXXMmOp9myNrUvCg0D6ws8iqkRPBfKHgbwig1SmlLfg==}
-
-  html-tags@2.0.0:
-    resolution: {integrity: sha512-+Il6N8cCo2wB/Vd3gqy/8TZhTD3QvcVeQLCnZiGkGCH3JP28IgGAY41giccp2W4R3jfyJPAP318FQTa1yU7K7g==}
-    engines: {node: '>=4'}
 
   http-errors@2.0.0:
     resolution: {integrity: sha512-FtwrG/euBzaEjYeRqOgly7G0qviiXoJWnvEH2Z1plBdXgbyjv34pHTSb9zoeHMyDy33+DWy5Wt9Wo+TURtOYSQ==}
@@ -3504,9 +3457,6 @@ packages:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
 
-  svg-tags@1.0.0:
-    resolution: {integrity: sha512-ovssysQTa+luh7A5Weu3Rta6FJlFBBbInjOh722LIt6klpU2/HtdUbszju/G4devcvk8PGt7FCLv5wftu3THUA==}
-
   tapable@2.2.1:
     resolution: {integrity: sha512-GNzQvQTOIP6RyTfE2Qxb8ZVlNmw0n88vp1szwWRimP02mnTsx3Wtn5qRdqY9w2XduFNUgvOwhNnQsjwCp+kqaQ==}
     engines: {node: '>=6'}
@@ -3706,9 +3656,6 @@ packages:
     resolution: {integrity: sha512-ZZKSmDAEFOijERBLkmYfJ+vmk3w+7hOLYDNkRCuRuMJGEmqYNCNLyBBFwWKVMhfwaEF3WOd0Zlw86U/WC/+nYw==}
     engines: {'0': node >=0.6.0}
 
-  vue-loader-plugin@1.3.0:
-    resolution: {integrity: sha512-kzWyVB81zHnkv41tAC2nQtRKDWEA3od791FWjV/JOg9TSaop6Uvt92VWIPQQ84FK2UQYP4Ah99vAaVZXSnIgYA==}
-
   vue-loader@17.4.2:
     resolution: {integrity: sha512-yTKOA4R/VN4jqjw4y5HrynFL8AK0Z3/Jt7eOJXEitsm0GMRHDBjCfCiuTiLP7OESvsZYo2pATCWhDqxC5ZrM6w==}
     peerDependencies:
@@ -3720,9 +3667,6 @@ packages:
         optional: true
       vue:
         optional: true
-
-  vue-template-compiler@2.7.16:
-    resolution: {integrity: sha512-AYbUWAJHLGGQM7+cNTELw+KsOG9nl2CnSv467WobS5Cv9uk3wFcnr1Etsz2sEIHEZvw1U+o9mRlEO6QbZvUPGQ==}
 
   vue@3.4.34:
     resolution: {integrity: sha512-VZze05HWlA3ItreQ/ka7Sx7PoD0/3St8FEiSlSTVgb6l4hL+RjtP2/8g5WQBzZgyf8WG2f+g1bXzC7zggLhAJA==}
@@ -6047,8 +5991,6 @@ snapshots:
 
   aws4@1.13.0: {}
 
-  babel-helper-vue-jsx-merge-props@2.0.3: {}
-
   babel-jest@29.7.0(@babel/core@7.24.9):
     dependencies:
       '@babel/core': 7.24.9
@@ -6086,14 +6028,6 @@ snapshots:
       '@types/babel__core': 7.20.5
       '@types/babel__traverse': 7.20.6
 
-  babel-plugin-jsx-event-modifiers@2.0.5: {}
-
-  babel-plugin-jsx-v-model@2.0.3:
-    dependencies:
-      babel-plugin-syntax-jsx: 6.18.0
-      html-tags: 2.0.0
-      svg-tags: 1.0.0
-
   babel-plugin-polyfill-corejs2@0.4.11(@babel/core@7.24.9):
     dependencies:
       '@babel/compat-data': 7.25.0
@@ -6118,13 +6052,6 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  babel-plugin-syntax-jsx@6.18.0: {}
-
-  babel-plugin-transform-vue-jsx@3.7.0(babel-helper-vue-jsx-merge-props@2.0.3):
-    dependencies:
-      babel-helper-vue-jsx-merge-props: 2.0.3
-      esutils: 2.0.3
-
   babel-preset-current-node-syntax@1.0.1(@babel/core@7.24.9):
     dependencies:
       '@babel/core': 7.24.9
@@ -6146,14 +6073,6 @@ snapshots:
       '@babel/core': 7.24.9
       babel-plugin-jest-hoist: 29.6.3
       babel-preset-current-node-syntax: 1.0.1(@babel/core@7.24.9)
-
-  babel-preset-vue@2.0.2:
-    dependencies:
-      babel-helper-vue-jsx-merge-props: 2.0.3
-      babel-plugin-jsx-event-modifiers: 2.0.5
-      babel-plugin-jsx-v-model: 2.0.3
-      babel-plugin-syntax-jsx: 6.18.0
-      babel-plugin-transform-vue-jsx: 3.7.0(babel-helper-vue-jsx-merge-props@2.0.3)
 
   balanced-match@1.0.2: {}
 
@@ -6370,8 +6289,6 @@ snapshots:
     dependencies:
       browserslist: 4.23.2
 
-  core-js@3.37.1: {}
-
   core-util-is@1.0.2: {}
 
   cosmiconfig@9.0.0(typescript@5.5.4):
@@ -6440,8 +6357,6 @@ snapshots:
   date-season@0.0.2:
     dependencies:
       moonbeams: 1.3.0
-
-  de-indent@1.0.2: {}
 
   debounce@1.2.1: {}
 
@@ -6827,11 +6742,7 @@ snapshots:
     dependencies:
       function-bind: 1.1.2
 
-  he@1.2.0: {}
-
   html-escaper@2.0.2: {}
-
-  html-tags@2.0.0: {}
 
   http-errors@2.0.0:
     dependencies:
@@ -8014,8 +7925,6 @@ snapshots:
 
   supports-preserve-symlinks-flag@1.0.0: {}
 
-  svg-tags@1.0.0: {}
-
   tapable@2.2.1: {}
 
   terser-webpack-plugin@5.3.10(webpack@5.93.0(webpack-cli@5.1.4)):
@@ -8180,8 +8089,6 @@ snapshots:
       core-util-is: 1.0.2
       extsprintf: 1.3.0
 
-  vue-loader-plugin@1.3.0: {}
-
   vue-loader@17.4.2(vue@3.4.34(typescript@5.5.4))(webpack@5.93.0(webpack-cli@5.1.4)):
     dependencies:
       chalk: 4.1.2
@@ -8190,11 +8097,6 @@ snapshots:
       webpack: 5.93.0(webpack-cli@5.1.4)
     optionalDependencies:
       vue: 3.4.34(typescript@5.5.4)
-
-  vue-template-compiler@2.7.16:
-    dependencies:
-      de-indent: 1.0.2
-      he: 1.2.0
 
   vue@3.4.34(typescript@5.5.4):
     dependencies:
