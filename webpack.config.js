@@ -29,7 +29,7 @@ const productionPlugins = [
 
 module.exports = {
     mode: isDevelopment ? "development" : "production",
-    entry: "./source/assets/js/main.ts",
+    entry: "./src/assets/js/main.ts",
     output: {
         path: path.resolve(__dirname, "public/assets/"),
         filename: "[name].bundle.js?v=[contenthash:6]", // Hash must be in query not file name, to allow --size-only S3 sync
@@ -100,7 +100,7 @@ module.exports = {
         new CopyPlugin({
             patterns: [
                 {
-                    from: "source/static",
+                    from: "src/static",
                     to: "../",
                     globOptions: {
                         ignore: ["**/.DS_Store"],

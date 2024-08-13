@@ -3,12 +3,12 @@ import { glob, readFile } from "node:fs/promises";
 
 import nunjucks from "../local_modules/nunjucks";
 import renderAndWriteTemplate from "../local_modules/render_and_write_template";
-import allImages from "../source/metadata_json/all.json";
+import allImages from "../src/metadata_json/all.json";
 import galleries from "../local_modules/galleries";
 
 const rootPath = path.join(__dirname, "..");
 
-const metadataDir = path.join(rootPath, "source", "metadata_json");
+const metadataDir = path.join(rootPath, "src", "metadata_json");
 const publicDir = path.join(rootPath, "public");
 
 // Get 21 most recent images

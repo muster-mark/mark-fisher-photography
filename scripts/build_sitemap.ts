@@ -4,7 +4,7 @@ import fs from "node:fs/promises";
 import Mustache from "mustache";
 
 import galleries from "../local_modules/galleries";
-import images from "../source/metadata_json/all.json";
+import images from "../src/metadata_json/all.json";
 
 const base = "https://www.markfisher.photo";
 const publicDir = path.join(__dirname, "..", "public");

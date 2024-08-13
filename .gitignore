@@ -2,9 +2,9 @@
 /node_modules/
 /vendor/
 .DS_Store
-/source/metadata_images/
+/src/metadata_images/
 sitemap.xml
 .staging.env
 .production.env
 /reports/
-source/static/data
+src/static/data

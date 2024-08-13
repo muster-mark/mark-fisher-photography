@@ -7,7 +7,7 @@ const md = new MarkdownIt();
 const rootDir = path.resolve(`${__dirname}/../`);
 
 const getGalleryDescription = function (galleryName: string) {
-    return md.render(fs.readFileSync(`${rootDir}/source/content/gallery_descriptions/${galleryName}.md`).toString());
+    return md.render(fs.readFileSync(`${rootDir}/src/content/gallery_descriptions/${galleryName}.md`).toString());
 };
 
 export default [

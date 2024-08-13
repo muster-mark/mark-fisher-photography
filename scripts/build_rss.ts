@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 import escape from "escape-html";
 import mustache from "mustache";
 
-import images from "../source/metadata_json/all.json";
+import images from "../src/metadata_json/all.json";
 
 dotenv.config({ path: `${__dirname}/../.production.env` });
 

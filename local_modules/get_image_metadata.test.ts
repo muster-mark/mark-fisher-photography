@@ -5,7 +5,7 @@ import { test, expect } from "@jest/globals";
 import getImageMetadata from "./get_image_metadata";
 
 const rootDir = path.resolve(`${__dirname}/../`);
-const testImagesDir = `${rootDir}/source/tests/images`;
+const testImagesDir = `${rootDir}/src/tests/images`;
 
 test("Returns correct number of fields", async () => {
     const metaData = await getImageMetadata(`${testImagesDir}/green-sotol.jpg`, "plants");

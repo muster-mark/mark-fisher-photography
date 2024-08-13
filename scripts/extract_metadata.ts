@@ -16,8 +16,8 @@ colors.setTheme({
 });
 
 const rootDir = path.normalize(`${__dirname}/..`);
-const metadataImagesDir = path.normalize(`${rootDir}/source/metadata_images`);
-const metadataJsonDir = path.normalize(`${rootDir}/source/metadata_json`);
+const metadataImagesDir = path.normalize(`${rootDir}/src/metadata_images`);
+const metadataJsonDir = path.normalize(`${rootDir}/src/metadata_json`);
 
 async function getAllGalleries() {
     return (await readdir(metadataImagesDir)).filter((file) => statSync(`${metadataImagesDir}/${file}`)?.isDirectory());

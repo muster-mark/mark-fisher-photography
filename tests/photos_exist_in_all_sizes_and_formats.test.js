@@ -1,8 +1,8 @@
 const { expect } = require("@jest/globals");
-import images from "../source/metadata_json/all.json";
+import images from "../src/metadata_json/all.json";
 import { existsSync } from "node:fs";
 
-const photosDir = __dirname + "/../source/static/photos";
+const photosDir = __dirname + "/../src/static/photos";
 const folders = [`${photosDir}/l840`, `${photosDir}/w200`];
 const extensions = ["jpg", "webp", "jxl"];
 

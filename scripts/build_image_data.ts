@@ -4,7 +4,7 @@ import fs from "node:fs";
 
 import { groupBy } from "lodash";
 
-import images from "../source/metadata_json/all.json";
+import images from "../src/metadata_json/all.json";
 
 import type { ImageMetadata } from "../types";
 
@@ -44,7 +44,7 @@ const data = {
     seasonCounts,
 };
 
-util.promisify(fs.writeFile)(path.resolve(`${__dirname}/../source/static/data/images.json`), JSON.stringify(data))
+util.promisify(fs.writeFile)(path.resolve(`${__dirname}/../src/static/data/images.json`), JSON.stringify(data))
     .then(() => {
         console.log("Wrote /data/images.json");
     })

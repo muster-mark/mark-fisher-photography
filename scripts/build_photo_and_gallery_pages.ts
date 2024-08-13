@@ -9,7 +9,7 @@ import renderAndWriteTemplate from "../local_modules/render_and_write_template";
 const rootPath = path.join(__dirname, "..");
 
 const templatesPath = path.join(rootPath, "templates");
-const metadataDir = path.join(rootPath, "source", "metadata_json");
+const metadataDir = path.join(rootPath, "src", "metadata_json");
 const publicDir = path.join(rootPath, "public");
 
 async function createImagePages(galleryData: any, galleryMetadata: any) {

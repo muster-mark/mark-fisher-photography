@@ -24,10 +24,10 @@ Use `.env.example` as a starting point to create config files for deployment to 
 
 ### Adding photos
 
-* Add photos of appropriate sizes to source/static/photos/ subdirectories, in both @1x (implicit) and @2x sizes
+* Add photos of appropriate sizes to src/static/photos/ subdirectories, in both @1x (implicit) and @2x sizes
     * e.g photos in l840 directory should contain photos 840px on the long edge (either width or height)
     * photos in w200 directory should contain photos 200px wide
-* Add thumbnail image containing all metadata to source/metadata_images/&lt;gallery&gt;/ folder
+* Add thumbnail image containing all metadata to src/metadata_images/&lt;gallery&gt;/ folder
 * `npm run add-photos` extracts metadata and rebuilds the gallery and photo pages
 
 ### Environment
