@@ -1,7 +1,5 @@
 import path from "node:path";
-import fs from "node:fs";
-import { glob} from "node:fs/promises";
-import util from "node:util";
+import { glob, readFile } from "node:fs/promises";
 
 import nunjucks from "../local_modules/nunjucks";
 import renderAndWriteTemplate from "../local_modules/render_and_write_template";
@@ -28,7 +26,7 @@ const getImageData = async (slug: string) => {
         throw new Error(`Unexpected number of JSON files for ${slug}. ${jsonFiles.length} files were found`);
     }
 
-    const fileContents = await util.promisify(fs.readFile)(jsonFiles[0], { encoding: "utf-8" });
+    const fileContents = await readFile(jsonFiles[0], { encoding: "utf-8" });
     return JSON.parse(fileContents.toString());
 };
 

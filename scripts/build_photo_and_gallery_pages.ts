@@ -1,7 +1,6 @@
 import fs from "node:fs";
-import { glob } from "node:fs/promises";
+import { glob, mkdir, readFile } from "node:fs/promises";
 import path from "node:path";
-import util from "node:util";
 
 import nunjucks from "../local_modules/nunjucks";
 import galleries from "../local_modules/galleries";
@@ -52,7 +51,7 @@ async function createGalleryPage(gallery: string) {
         jsonFiles.push(file);
     }
     const jsonStrings = await Promise.all(
-        jsonFiles.map(file => util.promisify(fs.readFile)(file, { encoding: "utf-8" })),
+        jsonFiles.map(file => readFile(file, { encoding: "utf-8" })),
     );
     const imageMetadata = jsonStrings.map(string => {
         const json = JSON.parse(string.toString());
@@ -63,7 +62,7 @@ async function createGalleryPage(gallery: string) {
     });
     imageMetadata.sort((a, b) => new Date(b.DatePublished).getTime() - new Date(a.DatePublished).getTime());
 
-    await util.promisify(fs.mkdir)(`${publicDir}/${gallery}`, { recursive: true });
+    await mkdir(`${publicDir}/${gallery}`, { recursive: true });
 
     const galleryData = galleries.find(data => data.slug === gallery);
 

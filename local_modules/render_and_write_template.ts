@@ -1,5 +1,4 @@
-import fs from "node:fs";
-import util from "node:util";
+import { writeFile } from "node:fs/promises";
 
 export default async function renderAndWriteTemplate(templatePath: string, outputPath: string, data = {}, nunjucks: typeof import("nunjucks")) {
     let output;
@@ -15,7 +14,7 @@ export default async function renderAndWriteTemplate(templatePath: string, outpu
     }
 
     try {
-        await util.promisify(fs.writeFile)(outputPath, output, { encoding: "utf-8" });
+        await writeFile(outputPath, output, { encoding: "utf-8" });
         console.log(`Wrote HTML to ${outputPath}`);
     } catch (error) {
         return Promise.reject(new Error(`Could not write to ${outputPath}`));
