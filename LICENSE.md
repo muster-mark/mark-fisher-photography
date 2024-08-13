@@ -2,8 +2,7 @@
 
 ## Photos
 
-All photos and photo captions are &copy; 2022 Mark Fisher. All rights reserved. 
-
+All photos and photo captions are &copy; 2024 Mark Fisher. All rights reserved.
 
 ## Code
 
@@ -11,7 +10,7 @@ All code and associated documentation are licensed under the MIT license.
 
 ### MIT license terms
 
-Copyright &copy; 2022 Mark Fisher
+Copyright &copy; 2024 Mark Fisher
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
