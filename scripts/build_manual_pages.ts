@@ -1,4 +1,3 @@
-//@ts-expect-error Still experimental
 import { glob } from "node:fs/promises";
 import path from "node:path";
 

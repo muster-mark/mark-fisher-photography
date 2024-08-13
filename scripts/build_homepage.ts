@@ -1,7 +1,6 @@
 import path from "node:path";
 import fs from "node:fs";
-//@ts-expect-error Still experimental
-import { glob } from "node:fs/promises";
+import { glob} from "node:fs/promises";
 import util from "node:util";
 
 import nunjucks from "../local_modules/nunjucks";
