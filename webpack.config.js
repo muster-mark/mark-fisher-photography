@@ -3,7 +3,7 @@ const path = require("path");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const BundleAnalyzer = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 const TerserPlugin = require("terser-webpack-plugin");
-const {VueLoaderPlugin} = require("vue-loader");
+const { VueLoaderPlugin } = require("vue-loader");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { WebpackManifestPlugin } = require("webpack-manifest-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
@@ -32,16 +32,16 @@ module.exports = {
     entry: "./source/assets/js/main.ts",
     output: {
         path: path.resolve(__dirname, "public/assets/"),
-        filename: "[name].bundle.js?v=[contenthash:6]",  // Hash must be in query not file name, to allow --size-only S3 sync
+        filename: "[name].bundle.js?v=[contenthash:6]", // Hash must be in query not file name, to allow --size-only S3 sync
         publicPath: "/public/",
     },
     // used for resolving webpack's loader packages
     resolveLoader: {
-        extensions: [ '.js', '.json', '.ts' ],
-        mainFields: [ 'loader', 'main' ]
+        extensions: [".js", ".json", ".ts"],
+        mainFields: ["loader", "main"],
     },
     resolve: {
-        extensions: ['.ts', '.js', '.vue', '.json']
+        extensions: [".ts", ".js", ".vue", ".json"],
     },
     module: {
         rules: [
@@ -53,11 +53,11 @@ module.exports = {
                         // Translates CSS into CommonJS
                         loader: "css-loader",
                         options: {
-                            url: false
-                        }
+                            url: false,
+                        },
                     },
                     {
-                        loader: "postcss-loader"
+                        loader: "postcss-loader",
                     },
                     // Compiles Sass to CSS
                     "sass-loader",
@@ -65,10 +65,7 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                use: [
-                    MiniCssExtractPlugin.loader,
-                    "css-loader",
-                ],
+                use: [MiniCssExtractPlugin.loader, "css-loader"],
             },
             {
                 test: /\.vue$/,
@@ -81,13 +78,13 @@ module.exports = {
             {
                 test: /\.tsx?$/,
                 use: {
-                    loader:'ts-loader',
+                    loader: "ts-loader",
                     options: {
                         configFile: path.join(__dirname, "tsconfig.json"),
                         appendTsSuffixTo: [/\.vue$/],
                         transpileOnly: true,
                     },
-                }
+                },
             },
         ],
     },
@@ -98,7 +95,7 @@ module.exports = {
             filename: "[name].css?v=[contenthash:6]", // Hash must be in query not file name, to allow --size-only S3 sync
         }),
         new WebpackManifestPlugin({
-            filter: descriptor => descriptor.chunk,
+            filter: (descriptor) => descriptor.chunk,
         }),
         new CopyPlugin({
             patterns: [

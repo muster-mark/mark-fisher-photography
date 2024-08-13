@@ -27,20 +27,34 @@ const main = async function main() {
         isDryRun = true;
     }
 
-    const s3Bucket = process.env.S3_BUCKET ?? (function () { throw new Error("S3_BUCKET is not in environment") }());
-    const s3Region = process.env.S3_REGION ?? (function () { throw new Error("S3_REGION is not in environment") }());
+    const s3Bucket =
+        process.env.S3_BUCKET ??
+        (function () {
+            throw new Error("S3_BUCKET is not in environment");
+        })();
+    const s3Region =
+        process.env.S3_REGION ??
+        (function () {
+            throw new Error("S3_REGION is not in environment");
+        })();
     const s3Delete = (process.env.S3_DELETE ?? false) === "true";
-    const cloudFrontDistributionId = process.env.DISTRIBUTION_ID ?? (function () { throw new Error("DISTRIBUTION_ID is not in environment") }());
-    const cloudFrontInvalidatorKey = process.env.CF_INVALIDATOR_KEY ?? (function () { throw new Error("CF_INVALIDATOR_KEY is not in environment") }());
-    const cloudFrontInvalidatorSecret = process.env.CF_INVALIDATOR_SECRET ?? (function () { throw new Error("CF_INVALIDATOR_SECRET is not in environment") }());
+    const cloudFrontDistributionId =
+        process.env.DISTRIBUTION_ID ??
+        (function () {
+            throw new Error("DISTRIBUTION_ID is not in environment");
+        })();
+    const cloudFrontInvalidatorKey =
+        process.env.CF_INVALIDATOR_KEY ??
+        (function () {
+            throw new Error("CF_INVALIDATOR_KEY is not in environment");
+        })();
+    const cloudFrontInvalidatorSecret =
+        process.env.CF_INVALIDATOR_SECRET ??
+        (function () {
+            throw new Error("CF_INVALIDATOR_SECRET is not in environment");
+        })();
 
-    const syncResult = await syncS3Bucket(
-        s3Bucket,
-        "",
-        s3Region,
-        s3Delete,
-        isDryRun,
-    );
+    const syncResult = await syncS3Bucket(s3Bucket, "", s3Region, s3Delete, isDryRun);
 
     console.log(`${syncResult}`);
 
@@ -49,11 +63,7 @@ const main = async function main() {
     } else if (!syncResult) {
         console.log("Not invalidating CDN as no changes to sync");
     } else {
-        clearCloudFrontCache(
-            cloudFrontDistributionId,
-            cloudFrontInvalidatorKey,
-            cloudFrontInvalidatorSecret,
-        );
+        clearCloudFrontCache(cloudFrontDistributionId, cloudFrontInvalidatorKey, cloudFrontInvalidatorSecret);
     }
 };
 

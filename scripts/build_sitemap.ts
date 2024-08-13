@@ -24,30 +24,30 @@ async function main() {
         lastMod: new Date(imagesSortedDateDescending[0].DatePublished).toISOString(),
     });
 
-    ["about", "contact", "explore"].forEach(page => {
+    ["about", "contact", "explore"].forEach((page) => {
         urls.push({
             loc: `${base}/${page}`,
         });
     });
 
-    galleries.forEach(gallery => {
-        const lastPublishedImage = imagesSortedDateDescending.filter(image => image.Gallery === gallery.slug)[0];
+    galleries.forEach((gallery) => {
+        const lastPublishedImage = imagesSortedDateDescending.filter((image) => image.Gallery === gallery.slug)[0];
 
         urls.push({
             loc: `${base}/${gallery.slug}/`,
             lastMod: new Date(lastPublishedImage.DatePublished).toISOString(),
-        })
+        });
     });
 
-    images.forEach(image => {
+    images.forEach((image) => {
         urls.push({
             loc: `${base}/${image.Gallery}/${image.Slug}`,
             lastMod: new Date(image.DatePublished).toISOString(),
-        })
+        });
     });
 
     const output = Mustache.render(
-            `<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+        `<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <?xml-stylesheet type="text/xsl" href="/sitemap.xsl" ?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 {{#urls}}
@@ -59,10 +59,11 @@ async function main() {
     </url>
 {{/urls}}
 </urlset>
-`
-            , {urls,});
+`,
+        { urls },
+    );
 
-    await fs.writeFile(`${publicDir}/sitemap.xml`, output, {encoding: "utf-8"});
+    await fs.writeFile(`${publicDir}/sitemap.xml`, output, { encoding: "utf-8" });
 }
 
 main();

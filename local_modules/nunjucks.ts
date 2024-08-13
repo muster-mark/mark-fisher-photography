@@ -9,7 +9,6 @@ import galleries from "./galleries";
 
 const templatesPath = path.resolve(`${__dirname}/../templates`);
 
-
 dotenv.config({ path: `${__dirname}/../.production.env` });
 
 const environment = nunjucks.configure(templatesPath, {
@@ -19,7 +18,10 @@ const environment = nunjucks.configure(templatesPath, {
 
 const stripHTML = (string: string) => string.replace(/(<([^>]+)>)/gi, "");
 
-environment.addGlobal("featured_galleries", galleries.filter(gallery => gallery.featured));
+environment.addGlobal(
+    "featured_galleries",
+    galleries.filter((gallery) => gallery.featured),
+);
 environment.addGlobal("env", process.env);
 environment.addFilter("date", nunjucksDate);
 environment.addFilter("chunk", (name: string) => {
@@ -57,9 +59,9 @@ environment.addFilter("json", function (value: any, spaces: number) {
     if (value instanceof nunjucks.runtime.SafeString) {
         value = value.toString();
     }
-    const jsonString = JSON.stringify(value, null, spaces).replace(/</g, '\\u003c');
+    const jsonString = JSON.stringify(value, null, spaces).replace(/</g, "\\u003c");
     //@ts-ignore
-    return nunjucks.runtime.markSafe(jsonString)
-})
+    return nunjucks.runtime.markSafe(jsonString);
+});
 
 export default nunjucks;

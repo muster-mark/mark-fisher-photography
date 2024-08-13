@@ -7,7 +7,7 @@ import exiftool from "node-exiftool";
 import colors from "colors/safe";
 import MarkdownIt from "markdown-it";
 
-import type {ImageMetadata} from "../types";
+import type { ImageMetadata } from "../types";
 
 import getImageAspectRatioIdentifier from "./get_image_aspect_ratio_identifier";
 
@@ -60,16 +60,16 @@ const transformedFields = {
     async DatePublished(metadata: ImageMetadata) {
         return `${metadata.OriginalTransmissionReference} 00:00:00`;
     },
-    async Colors(_metadata: ImageMetadata, args: {pathToFile: string}) {
-        const colorsArray = await getColors(args.pathToFile, {count: 1});
+    async Colors(_metadata: ImageMetadata, args: { pathToFile: string }) {
+        const colorsArray = await getColors(args.pathToFile, { count: 1 });
         return colorsArray.map((color) => color.hex());
     },
     async Season(metadata: ImageMetadata) {
         const standardDate = metadata.DateTimeOriginal.replace(/:/, "-").replace(/:/, "-");
-        return (new DateSeason({
+        return new DateSeason({
             autumn: true,
             north: metadata.GPSLatitudeRef !== "South",
-        })(new Date(standardDate))).toLowerCase();
+        })(new Date(standardDate)).toLowerCase();
     },
 };
 
@@ -82,7 +82,10 @@ function validateMetadata(metadata: any, fileName: string) {
         throw new Error(`Headline is missing from metadata stored in ${fileName}`);
     }
 
-    if (typeof metadata["Country-PrimaryLocationName"] === "undefined" || !metadata["Country-PrimaryLocationName"].length) {
+    if (
+        typeof metadata["Country-PrimaryLocationName"] === "undefined" ||
+        !metadata["Country-PrimaryLocationName"].length
+    ) {
         throw new Error(`Country name is missing from metadata stored in ${fileName}`);
     }
 
@@ -101,8 +104,9 @@ export default async function getImageMetadata(fileName: string, gallery: string
     const ep = new exiftool.ExiftoolProcess();
     await ep.open();
 
-    const metadata: any = await ep.readMetadata(fileName)
-        .then((res: {data: any[]}) => res.data[0])
+    const metadata: any = await ep
+        .readMetadata(fileName)
+        .then((res: { data: any[] }) => res.data[0])
         .catch((error: Error) => {
             throw new Error(`There was a problem reading the metadata for ${fileName}: ${error.message}`);
         });
@@ -116,20 +120,19 @@ export default async function getImageMetadata(fileName: string, gallery: string
 
     relevantMetaData.Gallery = gallery;
 
-    Object.keys(copiedFields).forEach(key => {
+    Object.keys(copiedFields).forEach((key) => {
         //@ts-expect-error
         relevantMetaData[copiedFields[key]] = metadata[key];
     });
 
-    await Promise.all((Object.keys(transformedFields) as (keyof typeof transformedFields)[]).map(async key => {
-        //@ts-expect-error
-        relevantMetaData[key] = await transformedFields[key](
-            metadata,
-            {
+    await Promise.all(
+        (Object.keys(transformedFields) as (keyof typeof transformedFields)[]).map(async (key) => {
+            //@ts-expect-error
+            relevantMetaData[key] = await transformedFields[key](metadata, {
                 pathToFile: fileName,
-            },
-        );
-    }));
+            });
+        }),
+    );
 
     const md = new MarkdownIt();
 
@@ -138,4 +141,4 @@ export default async function getImageMetadata(fileName: string, gallery: string
     }
 
     return relevantMetaData;
-};
+}

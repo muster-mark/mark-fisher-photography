@@ -4,5 +4,5 @@ module.exports = {
         require("postcss-logical")({
             dir: "ltr",
         }),
-    ]
-}
+    ],
+};

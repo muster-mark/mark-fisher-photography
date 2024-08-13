@@ -8,16 +8,10 @@
         "experimentalDecorators": true,
         "moduleResolution": "node",
         "esModuleInterop": true,
-        "lib": [
-            "es2015",
-            "es2018",
-            "dom",
-        ],
+        "lib": ["es2015", "es2018", "dom"],
         "target": "es5",
         "resolveJsonModule": true,
-        "typeRoots": [
-            "./"
-        ],
+        "typeRoots": ["./"],
         "types": [
             "node",
             "@types/chroma-js",
@@ -26,16 +20,11 @@
             "@types/morgan",
             "@types/mustache",
             "@types/nunjucks",
-            "@types/lodash",
+            "@types/lodash"
         ],
         "paths": {
-            "*": [
-                "./node_modules/*",
-                "./node_modules/@types/*"
-            ]
+            "*": ["./node_modules/*", "./node_modules/@types/*"]
         }
     },
-    "include": [
-        "./source/**/*"
-    ]
+    "include": ["./source/**/*"]
 }

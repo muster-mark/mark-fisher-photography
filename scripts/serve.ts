@@ -23,24 +23,26 @@ app.post("/message", (_req, res) => {
 });
 
 // Everything is static!
-app.use(express.static("public", {
-    index: "index",
-    setHeaders(res, path) {
-        // Just need to set Content-Type for requests without an extension
-        if (path.split("/")?.pop()?.indexOf(".") === -1) {
-            // Set default headers for documents only
-            res.set("Content-Type", "text/html; charset=utf-8");
-            defaultHeaders.document.forEach(header => {
+app.use(
+    express.static("public", {
+        index: "index",
+        setHeaders(res, path) {
+            // Just need to set Content-Type for requests without an extension
+            if (path.split("/")?.pop()?.indexOf(".") === -1) {
+                // Set default headers for documents only
+                res.set("Content-Type", "text/html; charset=utf-8");
+                defaultHeaders.document.forEach((header) => {
+                    res.set(header.name, header.value);
+                });
+            }
+
+            // Set default headers
+            defaultHeaders.all.forEach((header) => {
                 res.set(header.name, header.value);
             });
-        }
-
-        // Set default headers
-        defaultHeaders.all.forEach(header => {
-            res.set(header.name, header.value);
-        });
-    },
-}));
+        },
+    }),
+);
 
 // static middleware only calls next() if it couldn't find the file
 app.use((_req, res) => {

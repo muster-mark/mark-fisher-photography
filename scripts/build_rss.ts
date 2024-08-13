@@ -6,7 +6,7 @@ import mustache from "mustache";
 
 import images from "../source/metadata_json/all.json";
 
-dotenv.config({path: `${__dirname}/../.production.env`});
+dotenv.config({ path: `${__dirname}/../.production.env` });
 
 function stripHtmlTags(string: string): string {
     return string.replace(/(<([^>]+)>)/gi, "");
@@ -14,21 +14,21 @@ function stripHtmlTags(string: string): string {
 
 async function main() {
     const items = images
-            .sort((a, b) => {
-                return Math.sign(new Date(a.DatePublished).getTime() - new Date(b.DatePublished).getTime());
-            })
-            .map(image => ({
-                title: "NEW IMAGE: " + escape(image.Title),
-                description: escape(stripHtmlTags(image.CaptionAbstract ?? image.Headline)),
-                link: `https://${process.env.URL}/${image.Gallery}/${image.Slug}`,
-                pubDate: new Date(image.DatePublished).toUTCString(),
-                guid: escape(image.Slug),
-            }));
+        .sort((a, b) => {
+            return Math.sign(new Date(a.DatePublished).getTime() - new Date(b.DatePublished).getTime());
+        })
+        .map((image) => ({
+            title: "NEW IMAGE: " + escape(image.Title),
+            description: escape(stripHtmlTags(image.CaptionAbstract ?? image.Headline)),
+            link: `https://${process.env.URL}/${image.Gallery}/${image.Slug}`,
+            pubDate: new Date(image.DatePublished).toUTCString(),
+            guid: escape(image.Slug),
+        }));
 
     const publicDir = path.join(__dirname, "..", "public");
 
     const output = mustache.render(
-            `
+        `
 <?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0">
 
@@ -54,14 +54,16 @@ async function main() {
 
 </channel>
 
-</rss>`.trim(), {
-                items,
-                websiteUrl: process.env.URL,
-                lastBuildDate: (new Date()).toUTCString(),
-                pubDate: items[items.length - 1].pubDate,
-            });
+</rss>`.trim(),
+        {
+            items,
+            websiteUrl: process.env.URL,
+            lastBuildDate: new Date().toUTCString(),
+            pubDate: items[items.length - 1].pubDate,
+        },
+    );
 
-    await fs.writeFile(`${publicDir}/new-images.xml`, output, {encoding: "utf-8"});
+    await fs.writeFile(`${publicDir}/new-images.xml`, output, { encoding: "utf-8" });
 }
 
 main();

@@ -42,7 +42,6 @@ export default {
         {
             name: "Feature-Policy",
             value: featurePolicyHeaderDirectives.join(" "),
-
         },
         {
             name: "Referrer-Policy",

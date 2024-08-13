@@ -6,25 +6,21 @@ export default function clearCloudfrontCache(distributionId: string, key: string
         credentials: {
             accessKeyId: key,
             secretAccessKey: secret,
-        }
+        },
     });
     const input = {
         DistributionId: distributionId,
         InvalidationBatch: {
             Paths: {
                 Quantity: 1,
-                Items: [
-                    "/*",
-                ],
+                Items: ["/*"],
             },
             CallerReference: Date.now().toString(),
         },
     };
     const command = new CreateInvalidationCommand(input);
-    client
-        .send(command)
-        .then(data => {
-            console.log(`Invalidated CF cache for distribution: ${distributionId}`);
-            console.log(data);
-        });
-};
+    client.send(command).then((data) => {
+        console.log(`Invalidated CF cache for distribution: ${distributionId}`);
+        console.log(data);
+    });
+}

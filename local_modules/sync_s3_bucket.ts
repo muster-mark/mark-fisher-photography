@@ -6,16 +6,18 @@ const exec = util.promisify(_exec);
 /**
  * Syncs the publi directory to a bucket
  */
-export default async function syncS3Bucket(bucketName: string, key = "", bucketRegion: string, deleteRemoved: boolean, dryRun: boolean) {
-    const excludes = [
-        "entrypoints.json",
-        "manifest.json",
-        ".DS_Store",
-    ];
+export default async function syncS3Bucket(
+    bucketName: string,
+    key = "",
+    bucketRegion: string,
+    deleteRemoved: boolean,
+    dryRun: boolean,
+) {
+    const excludes = ["entrypoints.json", "manifest.json", ".DS_Store"];
 
     let excludeArgs = "";
 
-    excludes.forEach(item => {
+    excludes.forEach((item) => {
         excludeArgs += ` --exclude="${item}" `;
     });
 
@@ -35,4 +37,4 @@ export default async function syncS3Bucket(bucketName: string, key = "", bucketR
     }
 
     return Promise.resolve(stdout);
-};
+}

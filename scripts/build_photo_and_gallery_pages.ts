@@ -50,21 +50,19 @@ async function createGalleryPage(gallery: string) {
     for await (const file of glob(`${metadataDir}/${gallery}/*.json`)) {
         jsonFiles.push(file);
     }
-    const jsonStrings = await Promise.all(
-        jsonFiles.map(file => readFile(file, { encoding: "utf-8" })),
-    );
-    const imageMetadata = jsonStrings.map(string => {
+    const jsonStrings = await Promise.all(jsonFiles.map((file) => readFile(file, { encoding: "utf-8" })));
+    const imageMetadata = jsonStrings.map((string) => {
         const json = JSON.parse(string.toString());
         return {
             ...json,
-            brickHeight: Math.round((200 * (json.ImageHeight / json.ImageWidth) + 15)),
-        }
+            brickHeight: Math.round(200 * (json.ImageHeight / json.ImageWidth) + 15),
+        };
     });
     imageMetadata.sort((a, b) => new Date(b.DatePublished).getTime() - new Date(a.DatePublished).getTime());
 
     await mkdir(`${publicDir}/${gallery}`, { recursive: true });
 
-    const galleryData = galleries.find(data => data.slug === gallery);
+    const galleryData = galleries.find((data) => data.slug === gallery);
 
     if (!galleryData) {
         throw new Error(`No gallery with slug ${gallery}`);
@@ -100,7 +98,7 @@ async function main() {
         }
     }
 
-    allGalleries.forEach(gallery => {
+    allGalleries.forEach((gallery) => {
         createGalleryPage(gallery);
     });
 }

@@ -2,11 +2,11 @@
 
 import { statSync } from "node:fs";
 import path from "node:path";
-import {readdir, mkdir, writeFile, rm} from "node:fs/promises";
+import { readdir, mkdir, writeFile, rm } from "node:fs/promises";
 import colors from "colors";
 
 import getImageMetadata from "../local_modules/get_image_metadata";
-import {ImageMetadata} from "../types";
+import { ImageMetadata } from "../types";
 
 colors.setTheme({
     info: "cyan",
@@ -20,47 +20,57 @@ const metadataImagesDir = path.normalize(`${rootDir}/source/metadata_images`);
 const metadataJsonDir = path.normalize(`${rootDir}/source/metadata_json`);
 
 async function getAllGalleries() {
-    return (await readdir(metadataImagesDir)).filter(file => statSync(`${metadataImagesDir}/${file}`)?.isDirectory());
+    return (await readdir(metadataImagesDir)).filter((file) => statSync(`${metadataImagesDir}/${file}`)?.isDirectory());
 }
 
 async function getMetaDataForGallery(galleryName: string) {
-    const imageFiles = (await readdir(`${metadataImagesDir}/${galleryName}`)).filter(file => file.endsWith(".jpg"));
+    const imageFiles = (await readdir(`${metadataImagesDir}/${galleryName}`)).filter((file) => file.endsWith(".jpg"));
 
     if (!imageFiles.length) {
-        throw new Error(`Gallery ${galleryName} is empty`)
+        throw new Error(`Gallery ${galleryName} is empty`);
     }
 
-    return Promise.all(imageFiles.map((imageFile) => getImageMetadata(`${metadataImagesDir}/${galleryName}/${imageFile}`, galleryName)));
+    return Promise.all(
+        imageFiles.map((imageFile) =>
+            getImageMetadata(`${metadataImagesDir}/${galleryName}/${imageFile}`, galleryName),
+        ),
+    );
 }
 
 const main = async function main() {
     const galleries = await getAllGalleries();
-    const allMetadata: ImageMetadata[]= [];
+    const allMetadata: ImageMetadata[] = [];
 
-    await Promise.all(galleries.map(async (gallery) => {
-        try {
-            await rm(`${metadataJsonDir}/${gallery}`, {recursive: true});
-        } catch (err) {
-            // No big deal
-        }
-        await mkdir(`${metadataJsonDir}/${gallery}`); // Recreate empty directory
+    await Promise.all(
+        galleries.map(async (gallery) => {
+            try {
+                await rm(`${metadataJsonDir}/${gallery}`, { recursive: true });
+            } catch (err) {
+                // No big deal
+            }
+            await mkdir(`${metadataJsonDir}/${gallery}`); // Recreate empty directory
 
-        await getMetaDataForGallery(gallery)
-            .then(async imagesMetadata => {
-                imagesMetadata.forEach((imageMetadata) => {
-                    allMetadata.push(imageMetadata);
+            await getMetaDataForGallery(gallery)
+                .then(async (imagesMetadata) => {
+                    imagesMetadata.forEach((imageMetadata) => {
+                        allMetadata.push(imageMetadata);
+                    });
+                    await Promise.all(
+                        imagesMetadata.map(async (imageMetadata) => {
+                            const fileName = `${metadataJsonDir}/${gallery}/${imageMetadata.FileName.replace(".jpg", ".json")}`;
+                            await writeFile(fileName, JSON.stringify(imageMetadata, null, 2));
+                            console.log(
+                                `Wrote JSON file for ${imageMetadata.FileName.replace(".jpg", ".json")} in ${gallery}`,
+                            );
+                        }),
+                    );
+                })
+                .catch((error) => {
+                    console.error(error.message);
+                    console.trace();
                 });
-                await Promise.all(imagesMetadata.map(async imageMetadata => {
-                    const fileName = `${metadataJsonDir}/${gallery}/${imageMetadata.FileName.replace(".jpg", ".json")}`;
-                    await writeFile(fileName, JSON.stringify(imageMetadata, null, 2));
-                    console.log(`Wrote JSON file for ${imageMetadata.FileName.replace(".jpg", ".json")} in ${gallery}`);
-                }));
-            })
-            .catch((error) => {
-                console.error(error.message);
-                console.trace();
-            });
-    }));
+        }),
+    );
 
     await writeFile(
         `${metadataJsonDir}/all.json`,
@@ -70,10 +80,13 @@ const main = async function main() {
                     return Math.sign(Number(new Date(b.DateTimeOriginal)) - Number(new Date(a.DateTimeOriginal)));
                 }
                 return Math.sign(Number(new Date(b.DatePublished)) - Number(new Date(a.DatePublished)));
-            }), null, 2)
+            }),
+            null,
+            2,
+        ),
     );
 
-    console.log(`Wrote all.json to ${metadataJsonDir}`)
+    console.log(`Wrote all.json to ${metadataJsonDir}`);
 };
 
 main();

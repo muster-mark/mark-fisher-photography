@@ -18,9 +18,7 @@ function colorPalette(input: string, options: Options): Promise<chroma.Color[]> 
     };
 
     return new Promise((resolve, reject) => {
-        paletteFromBitmap(input, options)
-                .then(resolve)
-                .catch(reject);
+        paletteFromBitmap(input, options).then(resolve).catch(reject);
     });
 }
 
@@ -37,7 +35,7 @@ function paletteFromBitmap(filename: string, options: Options): Promise<chroma.C
             }
 
             const palette = getRgbaPalette(pixels.data, options.count).map(function (rgba: [number, number, number]) {
-                return chroma(rgba)
+                return chroma(rgba);
             });
 
             resolve(palette);

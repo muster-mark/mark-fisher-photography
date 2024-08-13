@@ -26,7 +26,7 @@ export interface ImageMetadata {
     Slug: string;
     DateTimeOriginal: string;
     DatePublished: string;
-    Season: "spring"  | "summer" | "autumn" | "winter";
+    Season: "spring" | "summer" | "autumn" | "winter";
     Colors: string[];
     CaptionAbstract?: string;
     /**

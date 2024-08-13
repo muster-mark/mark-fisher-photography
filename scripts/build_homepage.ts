@@ -15,7 +15,7 @@ const publicDir = path.join(rootPath, "public");
 const homepageImages = allImages
     .sort((a, b) => new Date(b.DatePublished).getTime() - new Date(a.DatePublished).getTime())
     .slice(0, 21)
-    .map(({Slug}) => Slug);
+    .map(({ Slug }) => Slug);
 
 const getImageData = async (slug: string) => {
     const jsonFiles: string[] = [];
@@ -32,16 +32,15 @@ const getImageData = async (slug: string) => {
 
 const getImagesData = async () => Promise.all(homepageImages.map((image) => getImageData(image)));
 
-const main = async function() {
-    const favouriteImages = await getImagesData()
-        .then(data => {
-            return data.map(item => {
-                return {
-                    ...item,
-                    brickHeight: Math.round((200 * (item.ImageHeight / item.ImageWidth) + 15)),
-                }
-            });
+const main = async function () {
+    const favouriteImages = await getImagesData().then((data) => {
+        return data.map((item) => {
+            return {
+                ...item,
+                brickHeight: Math.round(200 * (item.ImageHeight / item.ImageWidth) + 15),
+            };
         });
+    });
 
     renderAndWriteTemplate(
         "_pages/homepage.html.nunj",
@@ -53,12 +52,12 @@ const main = async function() {
             },
             favouriteImages,
             featuredGalleries: galleries
-                .filter(gallery => gallery.featured)
-                .map(gallery=> {
+                .filter((gallery) => gallery.featured)
+                .map((gallery) => {
                     return {
                         ...gallery,
-                        image: allImages.find(image => image.Slug === gallery.imageSlug),
-                    }
+                        image: allImages.find((image) => image.Slug === gallery.imageSlug),
+                    };
                 }),
             copyrightYear: new Date().getFullYear(),
         },

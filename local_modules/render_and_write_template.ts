@@ -1,6 +1,11 @@
 import { writeFile } from "node:fs/promises";
 
-export default async function renderAndWriteTemplate(templatePath: string, outputPath: string, data = {}, nunjucks: typeof import("nunjucks")) {
+export default async function renderAndWriteTemplate(
+    templatePath: string,
+    outputPath: string,
+    data = {},
+    nunjucks: typeof import("nunjucks"),
+) {
     let output;
     try {
         output = nunjucks.render(templatePath, data);
@@ -10,7 +15,9 @@ export default async function renderAndWriteTemplate(templatePath: string, outpu
     }
 
     if (output === null) {
-        return Promise.reject(new Error(`Template ${templatePath} rendered to null using data: ${JSON.stringify(data)}`));
+        return Promise.reject(
+            new Error(`Template ${templatePath} rendered to null using data: ${JSON.stringify(data)}`),
+        );
     }
 
     try {
@@ -21,4 +28,4 @@ export default async function renderAndWriteTemplate(templatePath: string, outpu
     }
 
     return Promise.resolve(outputPath);
-};
+}

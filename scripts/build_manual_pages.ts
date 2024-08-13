@@ -19,10 +19,9 @@ async function main() {
                 copyrightYear: new Date().getFullYear(),
             },
             nunjucks,
-        )
-            .catch((error) => {
-                console.error(error);
-            });
+        ).catch((error) => {
+            console.error(error);
+        });
     }
 }
 

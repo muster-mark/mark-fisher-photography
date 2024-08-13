@@ -1,22 +1,22 @@
-import {expect, test} from "@jest/globals";
+import { expect, test } from "@jest/globals";
 
 import getImageAspectRatioIdentifier from "./get_image_aspect_ratio_identifier";
 
-test('Correct aspect ratio identifiers are returned when aspect ratio is exact', () => {
-    expect(getImageAspectRatioIdentifier(840, 594)).toEqual('a4landscape');
-    expect(getImageAspectRatioIdentifier(594, 840)).toEqual('a4portrait');
-    expect(getImageAspectRatioIdentifier(840, 840)).toEqual('1to1');
-    expect(getImageAspectRatioIdentifier(840, 630)).toEqual('4to3');
-    expect(getImageAspectRatioIdentifier(630, 840)).toEqual('3to4');
-    expect(getImageAspectRatioIdentifier(840, 560)).toEqual('3to2');
-    expect(getImageAspectRatioIdentifier(560, 840)).toEqual('2to3');
-    expect(getImageAspectRatioIdentifier(840, 420)).toEqual('2to1');
-    expect(getImageAspectRatioIdentifier(420, 840)).toEqual('1to2');
-    expect(getImageAspectRatioIdentifier(840, 600)).toEqual('7to5');
-    expect(getImageAspectRatioIdentifier(600, 840)).toEqual('5to7');
+test("Correct aspect ratio identifiers are returned when aspect ratio is exact", () => {
+    expect(getImageAspectRatioIdentifier(840, 594)).toEqual("a4landscape");
+    expect(getImageAspectRatioIdentifier(594, 840)).toEqual("a4portrait");
+    expect(getImageAspectRatioIdentifier(840, 840)).toEqual("1to1");
+    expect(getImageAspectRatioIdentifier(840, 630)).toEqual("4to3");
+    expect(getImageAspectRatioIdentifier(630, 840)).toEqual("3to4");
+    expect(getImageAspectRatioIdentifier(840, 560)).toEqual("3to2");
+    expect(getImageAspectRatioIdentifier(560, 840)).toEqual("2to3");
+    expect(getImageAspectRatioIdentifier(840, 420)).toEqual("2to1");
+    expect(getImageAspectRatioIdentifier(420, 840)).toEqual("1to2");
+    expect(getImageAspectRatioIdentifier(840, 600)).toEqual("7to5");
+    expect(getImageAspectRatioIdentifier(600, 840)).toEqual("5to7");
 });
 
-test('Error is thrown when aspect ratio is slightly larger than exact match', () => {
+test("Error is thrown when aspect ratio is slightly larger than exact match", () => {
     expect(() => getImageAspectRatioIdentifier(840, 593)).toThrow(); // a4landscape
     expect(() => getImageAspectRatioIdentifier(595, 840)).toThrow(); // a4portrait
     expect(() => getImageAspectRatioIdentifier(840, 839)).toThrow(); // 1to1
@@ -30,7 +30,7 @@ test('Error is thrown when aspect ratio is slightly larger than exact match', ()
     expect(() => getImageAspectRatioIdentifier(601, 840)).toThrow(); // 5to7
 });
 
-test('Error is thrown when aspect ratio is slightly smaller than exact match', () => {
+test("Error is thrown when aspect ratio is slightly smaller than exact match", () => {
     expect(() => getImageAspectRatioIdentifier(840, 595)).toThrow(); // a4landscape
     expect(() => getImageAspectRatioIdentifier(593, 840)).toThrow(); // a4portrait
     expect(() => getImageAspectRatioIdentifier(839, 840)).toThrow(); // 1to1
