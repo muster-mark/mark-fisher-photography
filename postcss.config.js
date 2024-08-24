@@ -4,5 +4,8 @@ module.exports = {
         require("postcss-logical")({
             dir: "ltr",
         }),
+        require("cssnano")({
+            preset: "default",
+        }),
     ],
 };
