@@ -4,56 +4,53 @@
     </svg>
 </template>
 
-<script>
+<script lang="ts" setup>
+import { computed } from "vue";
 
-    const defaultWidth = 448;
-    const defaultHeight = 512;
+const defaultWidth = 448;
+const defaultHeight = 512;
 
-    // Commented icons are default width and default height
+/**
+ * Any icons not defined here have default width and height
+ */
+const iconDimensions: Record<string, { width: number; height?: number }> = {
+    "chevron-left": {
+        width: 256,
+    },
+    "chevron-right": {
+        width: 256,
+    },
+    "map-marked-alt": {
+        width: 576,
+    },
+    "camera-retro": {
+        width: 512,
+    },
+    envelope: {
+        width: 512,
+    },
+    "exclamation-circle": {
+        width: 512,
+    },
+    "film-canister": {
+        width: 576,
+    },
+    telescope: {
+        width: 640,
+    },
+    filter: {
+        width: 512,
+    },
+    hashtag: {
+        width: 448,
+    },
+};
 
-    const iconDimensions = {
-        // instagram: {
-        // },
-        "chevron-left": {
-            width: 256,
-        },
-        "chevron-right": {
-            width: 256,
-        },
-        "map-marked-alt": {
-            width: 576,
-        },
-        // 'calendar-alt': {
-        // },
-        "camera-retro": {
-            width: 512,
-        },
-        envelope: {
-            width: 512,
-        },
-        "exclamation-circle": {
-            width: 512,
-        },
-        "film-canister": {
-            width: 576,
-        },
-        telescope: {
-            width: 640,
-        },
-        filter: {
-            width: 512,
-        },
-        hashtag: {
-            width: 448
-        }
-    };
-    export default {
-        props: ["name", "title"],
-        data() {
-            return {
-                width: iconDimensions[this.name] ? iconDimensions[this.name].width || defaultWidth : null,
-                height: iconDimensions[this.name] ? iconDimensions[this.name].height || defaultHeight : null,
-            };
-        },
-    };
+const { name, title } = defineProps<{
+    name: string;
+    title?: string;
+}>();
+
+const width = computed(() => (iconDimensions[name] ? (iconDimensions[name].width ?? defaultWidth) : null));
+const height = computed(() => (iconDimensions[name] ? (iconDimensions[name].height ?? defaultHeight) : null));
 </script>
