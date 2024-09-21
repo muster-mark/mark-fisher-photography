@@ -84,7 +84,7 @@ import "@appnest/masonry-layout";
 </script>
 
 <script lang="ts" setup>
-import {computed, onMounted, onUnmounted, ref, watch} from "vue";
+import {computed, onMounted, onUnmounted, ref, useTemplateRef, watch} from "vue";
 import ExploreResult from "../components/explore-result.vue";
 import PaginationLinks from "../components/pagination-links.vue";
 import SvgIcon from "../components/svg-icon.vue";
@@ -105,9 +105,9 @@ const page = ref(1);
 const numColumns = ref(4);
 const masonryGap = ref(15);
 const columnWidth = 200;
-const scrollTarget = ref<HTMLElement>(null);
-const masonryLayoutContainer = ref<HTMLElement>(null);
-const masonryElement = ref<HTMLElement>(null);
+const scrollTarget = useTemplateRef("scrollTarget");
+const masonryLayoutContainer = useTemplateRef("masonryLayoutContainer");
+const masonryElement = useTemplateRef("masonryElement");
 
 const filteredImages = computed(() => {
     return allImages.value.filter(image => matchesCountry(image) && matchesSeason(image));
