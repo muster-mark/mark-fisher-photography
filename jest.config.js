@@ -6,10 +6,11 @@ module.exports = {
             tsconfig: "<rootDir>/tsconfig.json",
         },
     },
-    moduleFileExtensions: ["js", "json", , "ts"],
+    moduleFileExtensions: ["js", "json", "ts"],
     testEnvironment: "node",
     transform: {
         "^.+\\.js$": "babel-jest",
         ...tsjPreset.transform,
     },
+    testPathIgnorePatterns: ["<rootDir>/e2e/"],
 };
