@@ -27,6 +27,7 @@ s{% extends "_layouts/default.html.nunj" %}
         {% endif %}
         }
     </script>
+    <meta property="og:image" content="{{ env.URL }}/photos/l840/{{ photo.Slug }}@2x.jpg" />
 {% endblock %}
 
 {% block meta_description_tag %}
