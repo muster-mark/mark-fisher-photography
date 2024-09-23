@@ -19,7 +19,7 @@ async function main() {
         })
         .map((image) => ({
             title: "NEW IMAGE: " + escape(image.Title),
-            description: escape(stripHtmlTags(image.CaptionAbstract ?? image.Headline)),
+            description: escape(stripHtmlTags(image.CaptionAbstract ?? image.AltText)),
             link: `https://${process.env.URL}/${image.Gallery}/${image.Slug}`,
             pubDate: new Date(image.DatePublished).toUTCString(),
             guid: escape(image.Slug),

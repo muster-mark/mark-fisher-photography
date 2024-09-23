@@ -18,7 +18,7 @@
       "Madeira",
       "Waterfall"
     ],
-    "Headline": "Erysimum bicolor in front of the Caldeirāo Verde waterfall in Madeira.",
+    "AltText": "Erysimum bicolor in front of the Caldeirāo Verde waterfall in Madeira.",
     "Title": "Caldeirão Verde",
     "Sublocation": "Caldeirão Verde",
     "CountryPrimaryLocationName": "Portugal",
@@ -66,7 +66,7 @@
       "UK",
       "United Kingdom"
     ],
-    "Headline": "Bog pondweed (Potamogeton polygonifolius) with leaves submerged in a stream near Rowbarrow pond in the New Forest, with ripples on the surface of the water.",
+    "AltText": "Bog pondweed (Potamogeton polygonifolius) with leaves submerged in a stream near Rowbarrow pond in the New Forest, with ripples on the surface of the water.",
     "Title": "The underwater crowd",
     "Sublocation": "New Forest",
     "CountryPrimaryLocationName": "England",
@@ -106,7 +106,7 @@
       "Pool",
       "Water"
     ],
-    "Headline": "A murky pool of decaying organic matter near Fionn Loch, Assynt.",
+    "AltText": "A murky pool of decaying organic matter near Fionn Loch, Assynt.",
     "Title": "Tangle",
     "Sublocation": "By Fionn Loch",
     "CountryPrimaryLocationName": "Scotland",
@@ -151,7 +151,7 @@
       "Ripples",
       "Water"
     ],
-    "Headline": "A grazing horse reflected in the Beaulieu River.",
+    "AltText": "A grazing horse reflected in the Beaulieu River.",
     "Title": "Grazing by the Beaulieu River",
     "Sublocation": "Longwater Lawn, New Forest",
     "CountryPrimaryLocationName": "England",
@@ -206,7 +206,7 @@
       "United Kingdom",
       "Wood"
     ],
-    "Headline": "Snail trails on green algae on an old shed door.",
+    "AltText": "Snail trails on green algae on an old shed door.",
     "Title": "Snail trails on shed door",
     "Sublocation": "My back garden",
     "CountryPrimaryLocationName": "England",
@@ -239,7 +239,7 @@
     "ExposureCompensation": "-2/3",
     "Flash": "Off, Did not fire",
     "FocalLength": "73.0 mm",
-    "Headline": "Rain falling on the Beaulieu River creates an abstract pattern of circular ripples.",
+    "AltText": "Rain falling on the Beaulieu River creates an abstract pattern of circular ripples.",
     "Title": "Beaulieu River Ripples",
     "Sublocation": "Beaulieu River",
     "CountryPrimaryLocationName": "England",
@@ -295,7 +295,7 @@
       "Water",
       "Waterfall"
     ],
-    "Headline": "A waterfall cascading over columnar basalt on the Ardmeanach peninsula",
+    "AltText": "A waterfall cascading over columnar basalt on the Ardmeanach peninsula",
     "Title": "Multi-tiered waterfall",
     "Sublocation": "Ardmeanach Peninsula",
     "CountryPrimaryLocationName": "Scotland",
@@ -349,7 +349,7 @@
       "Water",
       "Yellow"
     ],
-    "Headline": "Smooth ripples on Loch Bà reflect Beinn Bhuidhe as it basks in the evening light.",
+    "AltText": "Smooth ripples on Loch Bà reflect Beinn Bhuidhe as it basks in the evening light.",
     "Title": "Loch Bà Reflections",
     "Sublocation": "Loch Bà",
     "CountryPrimaryLocationName": "Scotland",
@@ -402,7 +402,7 @@
       "UK",
       "United Kingdom"
     ],
-    "Headline": "Oaks in Autumn, with bright orange leaves, on the shore of Loch Drunkie.",
+    "AltText": "Oaks in Autumn, with bright orange leaves, on the shore of Loch Drunkie.",
     "Title": "Oaks by Loch Drunkie in Autumn",
     "Sublocation": "Loch Drunkie",
     "CountryPrimaryLocationName": "Scotland",
@@ -456,7 +456,7 @@
       "UK",
       "United Kingdom"
     ],
-    "Headline": "A birch tree covered in thick lichen and moss in Autumn, in Loch Lomond and the Trossachs National Park.",
+    "AltText": "A birch tree covered in thick lichen and moss in Autumn, in Loch Lomond and the Trossachs National Park.",
     "Title": "Winter Wardrobe",
     "Sublocation": "Gleann Dubh",
     "CountryPrimaryLocationName": "Scotland",
@@ -502,7 +502,7 @@
       "Tree",
       "Young"
     ],
-    "Headline": "Rowan saplings blanket the ground in Crofton woods.",
+    "AltText": "Rowan saplings blanket the ground in Crofton woods.",
     "Title": "Rowan Nursery",
     "Sublocation": "Crofton Woods",
     "CountryPrimaryLocationName": "England",
@@ -553,7 +553,7 @@
       "Water",
       "Winter"
     ],
-    "Headline": "The light fades at Longwater Lawn in the New Forest, seconds after sunset on the last day of winter. The headwaters of the Beaulieu river meanders towards a tree.",
+    "AltText": "The light fades at Longwater Lawn in the New Forest, seconds after sunset on the last day of winter. The headwaters of the Beaulieu river meanders towards a tree.",
     "Title": "The End of Winter",
     "Sublocation": "Longwater Lawn",
     "CountryPrimaryLocationName": "England",
@@ -601,7 +601,7 @@
       "UK",
       "United Kingdom"
     ],
-    "Headline": "A cairn graces the summit of Suaineabhal (or Suinaval) on the Isle of Lewis.",
+    "AltText": "A cairn graces the summit of Suaineabhal (or Suinaval) on the Isle of Lewis.",
     "Title": "Suaineabhal Summit",
     "Sublocation": "Suaineabhal",
     "CountryPrimaryLocationName": "Scotland",
@@ -658,7 +658,7 @@
       "Vertical",
       "Weather"
     ],
-    "Headline": "Trees in heavy fog on the Grouse Grind trail up Grouse Mountain, near North Vancouver.",
+    "AltText": "Trees in heavy fog on the Grouse Grind trail up Grouse Mountain, near North Vancouver.",
     "Title": "Shame About the Fog",
     "Sublocation": "Grouse Mountain",
     "CountryPrimaryLocationName": "Canada",
@@ -713,7 +713,7 @@
       "United Kingdom",
       "Water"
     ],
-    "Headline": "A long exposure of the sea lapping at a boulder-strewn shore on the Ross of Mull, with a rainbow visible in the direction of mainland Scotland.",
+    "AltText": "A long exposure of the sea lapping at a boulder-strewn shore on the Ross of Mull, with a rainbow visible in the direction of mainland Scotland.",
     "Title": "The Froth on the Firth",
     "Sublocation": "Ross of Mull",
     "CountryPrimaryLocationName": "Scotland",
@@ -767,7 +767,7 @@
       "Water",
       "Waves"
     ],
-    "Headline": "The receding waves leave silver lines of froth leading back to the sea at Carsaig Bay, Mull.",
+    "AltText": "The receding waves leave silver lines of froth leading back to the sea at Carsaig Bay, Mull.",
     "Title": "Exhale",
     "Sublocation": "Carsaig Bay",
     "CountryPrimaryLocationName": "Scotland",
@@ -821,7 +821,7 @@
       "United Kingdom",
       "Woodland"
     ],
-    "Headline": "A beech forest in Autumn, near the shore of Loch Ard in Loch Lomond and the Trossachs National Park.",
+    "AltText": "A beech forest in Autumn, near the shore of Loch Ard in Loch Lomond and the Trossachs National Park.",
     "Title": "Gone Tomorrow",
     "Sublocation": "Loch Ard Forest",
     "CountryPrimaryLocationName": "Scotland",
@@ -868,7 +868,7 @@
       "Red",
       "Swansea"
     ],
-    "Headline": "A Mahonia starts changing to its Autumn colours in Clyne Gardens, Swansea.",
+    "AltText": "A Mahonia starts changing to its Autumn colours in Clyne Gardens, Swansea.",
     "Title": "A Change for the Better",
     "Sublocation": "Clyne Gardens",
     "CountryPrimaryLocationName": "Wales",
@@ -926,7 +926,7 @@
       "Wales",
       "Whiteford Sands"
     ],
-    "Headline": "Patterns left in the sand by the retreating tide at Whiteford Sands on the Gower Peninsula, Wales.",
+    "AltText": "Patterns left in the sand by the retreating tide at Whiteford Sands on the Gower Peninsula, Wales.",
     "Title": "Maritime Motif",
     "Sublocation": "Whiteford Sands",
     "CountryPrimaryLocationName": "Wales",
@@ -981,7 +981,7 @@
       "Waterfall",
       "Weather"
     ],
-    "Headline": "A waterfall swollen by heavy rains on Levers Water Beck in the Lake District.",
+    "AltText": "A waterfall swollen by heavy rains on Levers Water Beck in the Lake District.",
     "Title": "In the Spray Zone",
     "CountryPrimaryLocationName": "England",
     "CountryPrimaryLocationCode": "GB",
@@ -1013,7 +1013,7 @@
     "ExposureCompensation": "-2/3",
     "Flash": "Off, Did not fire",
     "FocalLength": "58.0 mm",
-    "Headline": "An ancient, lichen-encrusted piece of wood, once a majestic tree, forms a natural piece of art.",
+    "AltText": "An ancient, lichen-encrusted piece of wood, once a majestic tree, forms a natural piece of art.",
     "Title": "Abstract #2",
     "Sublocation": "Shingle Hill on the Greensand Way",
     "CountryPrimaryLocationName": "England",
@@ -1077,7 +1077,7 @@
       "Water",
       "Weather"
     ],
-    "Headline": "A double rainbow arches between Loch Brittle and Sgùrr nan Gobhar on the Isle of Skye.",
+    "AltText": "A double rainbow arches between Loch Brittle and Sgùrr nan Gobhar on the Isle of Skye.",
     "Title": "Rainbow Valley",
     "Sublocation": "Loch Brittle",
     "CountryPrimaryLocationName": "Scotland",
@@ -1110,7 +1110,7 @@
     "ExposureCompensation": -1,
     "Flash": "Off, Did not fire",
     "FocalLength": "50.0 mm",
-    "Headline": "Moss on the bark of an old oak tree",
+    "AltText": "Moss on the bark of an old oak tree",
     "Title": "Mossy Oak",
     "Sublocation": "Crofton Woods",
     "CountryPrimaryLocationName": "England",
@@ -1162,7 +1162,7 @@
       "San Bernadino County",
       "United States"
     ],
-    "Headline": "The sun fingers some bushes and a rocky outcrop in Mojave National Preserve.",
+    "AltText": "The sun fingers some bushes and a rocky outcrop in Mojave National Preserve.",
     "Title": "Granite Mountains",
     "Sublocation": "Mojave National Preserve",
     "CountryPrimaryLocationName": "United States",
@@ -1211,7 +1211,7 @@
       "Sussex",
       "Wind"
     ],
-    "Headline": "Red sorrel (rumex acetosella) in long grass is blown by strong wind near Devil's Dyke, Sussex.",
+    "AltText": "Red sorrel (rumex acetosella) in long grass is blown by strong wind near Devil's Dyke, Sussex.",
     "Title": "Sorrel in the Wind",
     "Sublocation": "Devil's Dyke",
     "CountryPrimaryLocationName": "England",
@@ -1265,7 +1265,7 @@
       "United Kingdom",
       "Vaalkreupelhout"
     ],
-    "Headline": "Leaves of a grey tree pincushion (Leucospermum conocarpodendron) in Kew Gardens, showing the fine silvery hairs which give the leaves their grey appearance.",
+    "AltText": "Leaves of a grey tree pincushion (Leucospermum conocarpodendron) in Kew Gardens, showing the fine silvery hairs which give the leaves their grey appearance.",
     "Title": "Cripplewood",
     "Sublocation": "Kew Gardens",
     "CountryPrimaryLocationName": "England",
@@ -1316,7 +1316,7 @@
       "Water",
       "Waves"
     ],
-    "Headline": "An orange-red sunset falls over Uig Bay on the Isle of Lewis and Harris",
+    "AltText": "An orange-red sunset falls over Uig Bay on the Isle of Lewis and Harris",
     "Title": "Hebridean Rhythms",
     "Sublocation": "Uig Bay",
     "CountryPrimaryLocationName": "Scotland",
@@ -1373,7 +1373,7 @@
       "UK",
       "United Kingdom"
     ],
-    "Headline": "Sea thrift and lichen on coastal rocks on the Isle of Arran.",
+    "AltText": "Sea thrift and lichen on coastal rocks on the Isle of Arran.",
     "Title": "Sea Thrift",
     "Sublocation": "Cock of Arran",
     "CountryPrimaryLocationName": "Scotland",
@@ -1438,7 +1438,7 @@
       "Water",
       "Waves"
     ],
-    "Headline": "A tranquil view of Uig Bay from Uig Beach on the Isle of Lewis.",
+    "AltText": "A tranquil view of Uig Bay from Uig Beach on the Isle of Lewis.",
     "Title": "Longer Days to Come",
     "Sublocation": "Uig Bay",
     "CountryPrimaryLocationName": "Scotland",
@@ -1495,7 +1495,7 @@
       "United Kingdom",
       "Woods"
     ],
-    "Headline": "A woodland scene showing a Dryopteris Affinis fern with striking croziers by East Kyd Brook in Crofton Woods, with Crofton Heath beyond.",
+    "AltText": "A woodland scene showing a Dryopteris Affinis fern with striking croziers by East Kyd Brook in Crofton Woods, with Crofton Heath beyond.",
     "Title": "Cradle of Life",
     "Sublocation": "Crofton Woods",
     "CountryPrimaryLocationName": "England",
@@ -1569,7 +1569,7 @@
       "Wild hyacinth",
       "Wood bell"
     ],
-    "Headline": "A flash of new-growth green in Meenfied wood near Shoreham, putting on one of the UK's best displays of bluebells.",
+    "AltText": "A flash of new-growth green in Meenfied wood near Shoreham, putting on one of the UK's best displays of bluebells.",
     "Title": "A Few Thousand of my Favourite Things",
     "Sublocation": "Meenfield Wood",
     "CountryPrimaryLocationName": "England",
@@ -1623,7 +1623,7 @@
       "Web",
       "elder"
     ],
-    "Headline": "A small spider in a tiny web, on a Black Lace Elder plant (Sambuca Nigris) backlit by the sun.",
+    "AltText": "A small spider in a tiny web, on a Black Lace Elder plant (Sambuca Nigris) backlit by the sun.",
     "Title": "Born to spin",
     "CountryPrimaryLocationName": "England",
     "CountryPrimaryLocationCode": "GB",
@@ -1680,7 +1680,7 @@
       "Water",
       "Weather"
     ],
-    "Headline": "Some grassy mounds emerge from very wet and boggy ground in Gleann Easan Biorach on the Isle of Arran.",
+    "AltText": "Some grassy mounds emerge from very wet and boggy ground in Gleann Easan Biorach on the Isle of Arran.",
     "Title": "The Hard Path",
     "CountryPrimaryLocationName": "Scotland",
     "CountryPrimaryLocationCode": "GB",
@@ -1740,7 +1740,7 @@
       "UK",
       "United Kingdom"
     ],
-    "Headline": "A long exposure of an illuminated tree at night in Petts Wood, with orange clouds and stars out.",
+    "AltText": "A long exposure of an illuminated tree at night in Petts Wood, with orange clouds and stars out.",
     "Title": "Alone in the Woods",
     "Sublocation": "Petts Wood",
     "CountryPrimaryLocationName": "England",
@@ -1772,7 +1772,7 @@
     "ExposureCompensation": 0,
     "Flash": "Off, Did not fire",
     "FocalLength": "27.0 mm",
-    "Headline": "An abstract photo. See in it what you will.",
+    "AltText": "An abstract photo. See in it what you will.",
     "Title": "Abstract #1",
     "CountryPrimaryLocationName": "Scotland",
     "CountryPrimaryLocationCode": "GB",
@@ -1824,7 +1824,7 @@
       "Twilight",
       "Valley"
     ],
-    "Headline": "Snow-capped mountains near Tromsø, Northern Sweden a couple of weeks from the start of the Polar Night.",
+    "AltText": "Snow-capped mountains near Tromsø, Northern Sweden a couple of weeks from the start of the Polar Night.",
     "Title": "Last Light",
     "Sublocation": "Skarvassbu",
     "CountryPrimaryLocationName": "Norway",
@@ -1885,7 +1885,7 @@
       "Troms",
       "Winter"
     ],
-    "Headline": "The last surviving snow from last year's snowfall, with rocks and a mountain in the background.",
+    "AltText": "The last surviving snow from last year's snowfall, with rocks and a mountain in the background.",
     "Title": "Survivor",
     "Sublocation": "Skarvassbu",
     "CountryPrimaryLocationName": "Norway",
@@ -1943,7 +1943,7 @@
       "The Swale National Nature Reserve",
       "Trees"
     ],
-    "Headline": "Sheep looking at the camera in a field adjacent to the Swale National Nature Reserve on the Isle of Sheppey.",
+    "AltText": "Sheep looking at the camera in a field adjacent to the Swale National Nature Reserve on the Isle of Sheppey.",
     "Title": "Sheep Island",
     "Sublocation": "Isle of Sheppey",
     "CountryPrimaryLocationName": "England",
@@ -2011,7 +2011,7 @@
       "Woodland",
       "_Body Part"
     ],
-    "Headline": "A thick-trunked oak tree in Crofton woods, leafless and covered in ivy and moss in winter.",
+    "AltText": "A thick-trunked oak tree in Crofton woods, leafless and covered in ivy and moss in winter.",
     "Title": "The Other Side",
     "Sublocation": "Crofton Woods",
     "CountryPrimaryLocationName": "England",
@@ -2076,7 +2076,7 @@
       "Weather",
       "Wet"
     ],
-    "Headline": "A wind-fallen branch, encrusted in lichen, lies in a flooded path, with trees reflected.",
+    "AltText": "A wind-fallen branch, encrusted in lichen, lies in a flooded path, with trees reflected.",
     "Title": "After Brendan",
     "Sublocation": "Crofton Woods",
     "CountryPrimaryLocationName": "England",
@@ -2143,7 +2143,7 @@
       "UK",
       "United Kingdom"
     ],
-    "Headline": "Two birch trees stand among densely packed, red-brown bracken in Autumn in a woodland, with the sun close to the horizon.",
+    "AltText": "Two birch trees stand among densely packed, red-brown bracken in Autumn in a woodland, with the sun close to the horizon.",
     "Title": "Monoculture",
     "Sublocation": "Petts Wood",
     "CountryPrimaryLocationName": "England",
@@ -2203,7 +2203,7 @@
       "Wye Valley",
       "Wye Valley Area of Outstanding Natural Beauty"
     ],
-    "Headline": "A small-leaved lime tree with the last of its fruits in winter, with a misty woodland background.",
+    "AltText": "A small-leaved lime tree with the last of its fruits in winter, with a misty woodland background.",
     "Title": "The Last of Autumn's Bounty",
     "Sublocation": "Cadora Woods",
     "CountryPrimaryLocationName": "England",
@@ -2255,7 +2255,7 @@
       "Winter",
       "Woodland"
     ],
-    "Headline": "A birch tree is illuminated by the full moon in a wood.",
+    "AltText": "A birch tree is illuminated by the full moon in a wood.",
     "Title": "Moonbolt",
     "Sublocation": "Petts Wood",
     "CountryPrimaryLocationName": "England",
@@ -2313,7 +2313,7 @@
       "United Kingdom",
       "Valley"
     ],
-    "Headline": "A clump of ferns cluster around a large rock in a glacial valley, with Cir Mhor in the background,",
+    "AltText": "A clump of ferns cluster around a large rock in a glacial valley, with Cir Mhor in the background,",
     "Title": "Green Embrace",
     "Sublocation": "Glen Sannox",
     "CountryPrimaryLocationName": "Scotland",
@@ -2377,7 +2377,7 @@
       "United Kingdom",
       "Water"
     ],
-    "Headline": "Barnacles create a streak of white on black schist on the North coast of Arran.",
+    "AltText": "Barnacles create a streak of white on black schist on the North coast of Arran.",
     "Title": "Barnacle Unconformity",
     "Sublocation": "Cock of Arran",
     "CountryPrimaryLocationName": "Scotland",
@@ -2410,7 +2410,7 @@
     "ExposureCompensation": 0,
     "Flash": "Off, Did not fire",
     "FocalLength": "47.0 mm",
-    "Headline": "2 men waiting at a bus stop on a very steep road in Chinatown, San Francisco",
+    "AltText": "2 men waiting at a bus stop on a very steep road in Chinatown, San Francisco",
     "Title": "Lean-to",
     "Sublocation": "Chinatown",
     "CountryPrimaryLocationName": "United States",
@@ -2465,7 +2465,7 @@
       "UK",
       "United Kingdom"
     ],
-    "Headline": "3 cows grazing, with the Cuillin peak of  Blà Bheinn in the background.",
+    "AltText": "3 cows grazing, with the Cuillin peak of  Blà Bheinn in the background.",
     "Title": "Beneath Blà Bheinn",
     "Sublocation": "Blà Bheinn",
     "CountryPrimaryLocationName": "Scotland",
@@ -2517,7 +2517,7 @@
       "United Kingdom",
       "Water"
     ],
-    "Headline": "A view of the Black Cuillins across Loch Scavaig",
+    "AltText": "A view of the Black Cuillins across Loch Scavaig",
     "Title": "Loch Scavaig",
     "CountryPrimaryLocationName": "Scotland",
     "CountryPrimaryLocationCode": "GB",
@@ -2565,7 +2565,7 @@
       "Volcanic sand",
       "Water"
     ],
-    "Headline": "A streak of white sand on a mostly black volcanic sand beach in Glen Brittle, Isle of Skye.",
+    "AltText": "A streak of white sand on a mostly black volcanic sand beach in Glen Brittle, Isle of Skye.",
     "Title": "Neptune's Canvas",
     "Sublocation": "Glen Brittle",
     "CountryPrimaryLocationName": "Scotland",
@@ -2610,7 +2610,7 @@
       "Reflection",
       "Rubha an Dùnain"
     ],
-    "Headline": "Cows by Loch Brittle on Rubha an Dùnain, the Isle of Skye.",
+    "AltText": "Cows by Loch Brittle on Rubha an Dùnain, the Isle of Skye.",
     "Title": "Cows by Loch Brittle",
     "Sublocation": "Rhuba an Dùnain",
     "CountryPrimaryLocationName": "Scotland",
@@ -2684,7 +2684,7 @@
       "United Kingdom",
       "World Heritage Site"
     ],
-    "Headline": "Northern gannet colony at Boreray, St. Kilda",
+    "AltText": "Northern gannet colony at Boreray, St. Kilda",
     "Title": "Boreray",
     "Sublocation": "St. Kilda",
     "CountryPrimaryLocationName": "Scotland",
@@ -2743,7 +2743,7 @@
       "Woman",
       "Wonder"
     ],
-    "Headline": "Visitors at the Natural History Museum in London examine a display of insects in Hintze Hall.",
+    "AltText": "Visitors at the Natural History Museum in London examine a display of insects in Hintze Hall.",
     "Title": "Insect exhibit at Hintze Hall",
     "Sublocation": "Natural History Museum",
     "CountryPrimaryLocationName": "England",
@@ -2813,7 +2813,7 @@
       "UK",
       "United Kingdom"
     ],
-    "Headline": "Tyre tracks leading towards a field of sheep  in Shoreham, Kent.",
+    "AltText": "Tyre tracks leading towards a field of sheep  in Shoreham, Kent.",
     "Title": "Tyre Tracks at Dusk",
     "CountryPrimaryLocationName": "England",
     "CountryPrimaryLocationCode": "GB",
@@ -2870,7 +2870,7 @@
       "Western roe deer",
       "White rump patch"
     ],
-    "Headline": "A roe deer leaps through the grass at Chobham common, white rump patch on display.",
+    "AltText": "A roe deer leaps through the grass at Chobham common, white rump patch on display.",
     "Title": "Roe Deer Scarpering",
     "Sublocation": "Chobham Common",
     "CountryPrimaryLocationName": "England",
@@ -2933,7 +2933,7 @@
       "UK",
       "United Kingdom"
     ],
-    "Headline": "A man in a leather jacket walking down a narrow street, with a medieval church in the background.",
+    "AltText": "A man in a leather jacket walking down a narrow street, with a medieval church in the background.",
     "Title": "Black Jack Street",
     "Sublocation": "Black Jack Street",
     "CountryPrimaryLocationName": "England",
@@ -3005,7 +3005,7 @@
       "United States",
       "Work clothes"
     ],
-    "Headline": "Spray artist Tony Vegas displays a finished painting in the Fremont Street Experience, Las Vegas.",
+    "AltText": "Spray artist Tony Vegas displays a finished painting in the Fremont Street Experience, Las Vegas.",
     "Title": "Tony Vegas",
     "Sublocation": "Fremont Street Experience",
     "CountryPrimaryLocationName": "United States",
@@ -3049,7 +3049,7 @@
       "United States",
       "Utah"
     ],
-    "Headline": "Rain falls from dark clouds above a red-orange landscape of hoodooes and coniferous trees.",
+    "AltText": "Rain falls from dark clouds above a red-orange landscape of hoodooes and coniferous trees.",
     "Title": "Rain over Bryce Canyon",
     "CountryPrimaryLocationName": "United States",
     "CountryPrimaryLocationCode": "US",
@@ -3099,7 +3099,7 @@
       "University of California Berkeley",
       "University of California Botanical Garden"
     ],
-    "Headline": "Dasylirion leiophyllum (green sotol) in the University of California Botanical Garden.",
+    "AltText": "Dasylirion leiophyllum (green sotol) in the University of California Botanical Garden.",
     "Title": "Green Sotol",
     "Sublocation": "University of California Botanical Garden",
     "CountryPrimaryLocationName": "United States",
@@ -3132,7 +3132,7 @@
     "ExposureCompensation": 0,
     "Flash": "Off, Did not fire",
     "FocalLength": "45.0 mm",
-    "Headline": "A puddle meanders towards a cow by the Severn Estuary, with a lighthouse on a small island in the background.",
+    "AltText": "A puddle meanders towards a cow by the Severn Estuary, with a lighthouse on a small island in the background.",
     "Title": "Cow Pooing at Black Rock",
     "Sublocation": "Black Rock",
     "CountryPrimaryLocationName": "Wales",
@@ -3193,7 +3193,7 @@
       "Yellowstone",
       "Yellowstone National Park"
     ],
-    "Headline": "Dead trees at Main Terrace in Mammoth Hot Springs.",
+    "AltText": "Dead trees at Main Terrace in Mammoth Hot Springs.",
     "Title": "Mammoth Hot Springs",
     "Sublocation": "Mammoth Hot Springs",
     "CountryPrimaryLocationName": "United States",
@@ -3247,7 +3247,7 @@
       "Zanzibar",
       "Zanzibar City"
     ],
-    "Headline": "A Zanzibari man looking up from his newspaper in a Stone Town alley.",
+    "AltText": "A Zanzibari man looking up from his newspaper in a Stone Town alley.",
     "Title": "Cosy Reading Spot",
     "Sublocation": "Stone Town",
     "CountryPrimaryLocationName": "Tanzania",
@@ -3298,7 +3298,7 @@
       "World Heritage Site",
       "Zebra"
     ],
-    "Headline": "A close-up of a Grant's zebra (Equus quagga boehmi) in Ngorongoro Conservation Area.",
+    "AltText": "A close-up of a Grant's zebra (Equus quagga boehmi) in Ngorongoro Conservation Area.",
     "Title": "Zebra, Ngorongoro Crater",
     "Sublocation": "Ngorongoro Crater",
     "CountryPrimaryLocationName": "Tanzania",
@@ -3331,7 +3331,7 @@
     "ExposureCompensation": "+1",
     "Flash": "Off, Did not fire",
     "FocalLength": "35.0 mm",
-    "Headline": "A padlocked garage door with peeling paint and No Parking sign.",
+    "AltText": "A padlocked garage door with peeling paint and No Parking sign.",
     "Title": "24h Access Required",
     "Sublocation": "23 Park Street, formerly Henry Tanner's Chapel",
     "CountryPrimaryLocationName": "England",
@@ -3375,7 +3375,7 @@
       "UK",
       "United Kingdom"
     ],
-    "Headline": "The Coca-Cola London Eye, then the EDF Energy London Eye, at night viewed from below.",
+    "AltText": "The Coca-Cola London Eye, then the EDF Energy London Eye, at night viewed from below.",
     "Title": "The London Eye",
     "Sublocation": "Lambeth",
     "CountryPrimaryLocationName": "England",
@@ -3413,7 +3413,7 @@
       "People",
       "Tanzania"
     ],
-    "Headline": "A man rolling a huge tyre along a dust road in Arusha, Tanzania. ",
+    "AltText": "A man rolling a huge tyre along a dust road in Arusha, Tanzania. ",
     "Title": "Rapid Roadside Assistance",
     "CountryPrimaryLocationName": "Tanzania",
     "CountryPrimaryLocationCode": "TZ",
@@ -3475,7 +3475,7 @@
       "Weather",
       "Weir"
     ],
-    "Headline": "A man walking his dog over a weir at Levers Water reservoir in the Lake District.",
+    "AltText": "A man walking his dog over a weir at Levers Water reservoir in the Lake District.",
     "Title": "Weir Walking",
     "Sublocation": "Levers Water",
     "CountryPrimaryLocationName": "England",
@@ -3542,7 +3542,7 @@
       "Walking",
       "Walking stick"
     ],
-    "Headline": "A hunched elderly man with walking stick walking across the Savoy Hotel entrance.",
+    "AltText": "A hunched elderly man with walking stick walking across the Savoy Hotel entrance.",
     "Title": "World in a Hurry",
     "Sublocation": "Savoy Hotel",
     "CountryPrimaryLocationName": "England",
@@ -3606,7 +3606,7 @@
       "UK",
       "United Kingdom"
     ],
-    "Headline": "Fallow deer on a hill top with two Scots Pine trees in Knole Park.",
+    "AltText": "Fallow deer on a hill top with two Scots Pine trees in Knole Park.",
     "Title": "Deer at Dusk",
     "Sublocation": "Knole Park",
     "CountryPrimaryLocationName": "England",
@@ -3639,7 +3639,7 @@
     "ExposureCompensation": 0,
     "Flash": "Off, Did not fire",
     "FocalLength": "47.0 mm",
-    "Headline": "Black Rock, along the River Severn in Monmouthshire. A cow and Charston Rock Lighthouse lie in the background.",
+    "AltText": "Black Rock, along the River Severn in Monmouthshire. A cow and Charston Rock Lighthouse lie in the background.",
     "Title": "Cow and Lighthouse",
     "CountryPrimaryLocationName": "Wales",
     "CountryPrimaryLocationCode": "GB",
@@ -3688,7 +3688,7 @@
       "UNESCO World Heritage Site",
       "World Heritage Site"
     ],
-    "Headline": "A male lion lying down in grass in Ngorongoro Conservation Area, Tanzania.",
+    "AltText": "A male lion lying down in grass in Ngorongoro Conservation Area, Tanzania.",
     "Title": "Ngorongoro Lion",
     "Sublocation": "Ngorongoro Conservation Area",
     "CountryPrimaryLocationName": "Tanzania",
@@ -3752,7 +3752,7 @@
       "United Kingdom",
       "Wood"
     ],
-    "Headline": "A tree stump in Meenfield Wood",
+    "AltText": "A tree stump in Meenfield Wood",
     "Title": "Sunstruck Stump",
     "Sublocation": "Meenfield Wood",
     "CountryPrimaryLocationName": "England",
@@ -3805,7 +3805,7 @@
       "Zanzibar",
       "Zanzibar City"
     ],
-    "Headline": "People in a crowded Darajani market in Zanzibar City, some wearing bargashia (traditional hats similar to the kofia).",
+    "AltText": "People in a crowded Darajani market in Zanzibar City, some wearing bargashia (traditional hats similar to the kofia).",
     "Title": "Bazaar",
     "Sublocation": "Darajani",
     "CountryPrimaryLocationName": "Tanzania",
@@ -3882,7 +3882,7 @@
       "ÖBB",
       "Österreichische Bundesbahnen"
     ],
-    "Headline": "Sunrise at Villach Hauptbahnhof (train station) where a timber laden train waits to set off.",
+    "AltText": "Sunrise at Villach Hauptbahnhof (train station) where a timber laden train waits to set off.",
     "Title": "Villach Sunrise",
     "Sublocation": "Villach Hauptbahnhof",
     "CountryPrimaryLocationName": "Austria",
@@ -3924,7 +3924,7 @@
       "Road",
       "United States"
     ],
-    "Headline": "The dazzling light show at the Fremont Street Experience and a girl in a white hat. Also a man dressed as Superman.",
+    "AltText": "The dazzling light show at the Fremont Street Experience and a girl in a white hat. Also a man dressed as Superman.",
     "Title": "In Amazing Technicolor",
     "Sublocation": "Fremont Street Experience",
     "CountryPrimaryLocationName": "United States",
@@ -3983,7 +3983,7 @@
       "Tree",
       "Water"
     ],
-    "Headline": "A mute swan swimming in a pond at Caldicot Castle, with a tree and reflection in the background.",
+    "AltText": "A mute swan swimming in a pond at Caldicot Castle, with a tree and reflection in the background.",
     "Title": "Swan in a Tree",
     "Sublocation": "Caldicot Castle",
     "CountryPrimaryLocationName": "Wales",
@@ -4024,7 +4024,7 @@
       "Pont Neuf",
       "Île-de-France"
     ],
-    "Headline": "Love locks on the Pont des Arts in Paris.",
+    "AltText": "Love locks on the Pont des Arts in Paris.",
     "Title": "45 Metric Tons of Love",
     "Sublocation": "Pont des Arts",
     "CountryPrimaryLocationName": "France",
@@ -4065,7 +4065,7 @@
       "Zebra Crossing",
       "Île-de-France"
     ],
-    "Headline": "A man roller skating over a zebra crossing in Paris, with a family walking behind going in the opposite direction.",
+    "AltText": "A man roller skating over a zebra crossing in Paris, with a family walking behind going in the opposite direction.",
     "Title": "Paris Street Roller",
     "Sublocation": "4e arrondissement de Paris",
     "CountryPrimaryLocationName": "France",
@@ -4105,7 +4105,7 @@
       "North America",
       "United States"
     ],
-    "Headline": "A cluster of water lilies with flowers in the Monet Pool at Denver Botanic Gardens.",
+    "AltText": "A cluster of water lilies with flowers in the Monet Pool at Denver Botanic Gardens.",
     "Title": "Monet Pool",
     "Sublocation": "Denver Botanic Gardens",
     "CountryPrimaryLocationName": "United States",
@@ -4163,7 +4163,7 @@
       "Warty Birch",
       "Whirl"
     ],
-    "Headline": "An abstract image of heather with purple flowers and a birch branch on Chobham common. The camera was rotated during the exposure",
+    "AltText": "An abstract image of heather with purple flowers and a birch branch on Chobham common. The camera was rotated during the exposure",
     "Title": "Heather Eddy",
     "Sublocation": "Chobham Common",
     "CountryPrimaryLocationName": "England",
@@ -4221,7 +4221,7 @@
       "Urban",
       "_Body Part"
     ],
-    "Headline": "Shadows of passers-by in front of the London Eye.",
+    "AltText": "Shadows of passers-by in front of the London Eye.",
     "Title": "Shadow Play",
     "Sublocation": "Lambeth",
     "CountryPrimaryLocationName": "England",
@@ -4292,7 +4292,7 @@
       "Vehicle",
       "Window"
     ],
-    "Headline": "A Mini Cooper lit by a street light at night in Orpington.",
+    "AltText": "A Mini Cooper lit by a street light at night in Orpington.",
     "Title": "Insomnia",
     "Sublocation": "Dale Wood Road",
     "CountryPrimaryLocationName": "England",
@@ -4375,7 +4375,7 @@
       "Yellow",
       "Yellow Leaf"
     ],
-    "Headline": "A long and straight tree-lined footpath ending at the horizon in the Bathurst Estate, Cirencester.",
+    "AltText": "A long and straight tree-lined footpath ending at the horizon in the Bathurst Estate, Cirencester.",
     "Title": "X",
     "Sublocation": "Bathurst Estate",
     "CountryPrimaryLocationName": "England",
@@ -4437,7 +4437,7 @@
       "Walking",
       "Window"
     ],
-    "Headline": "A man wearing Converse shoes walking past a shoe shop on Oxford Street at Christmas.",
+    "AltText": "A man wearing Converse shoes walking past a shoe shop on Oxford Street at Christmas.",
     "Title": "Shoe Shop",
     "Sublocation": "Oxford Street",
     "CountryPrimaryLocationName": "England",
@@ -4497,7 +4497,7 @@
       "United Kingdom",
       "Valley"
     ],
-    "Headline": "Star trails and shooting star in the Lake District, with a disused mine shaft tower in silhouette.",
+    "AltText": "Star trails and shooting star in the Lake District, with a disused mine shaft tower in silhouette.",
     "Title": "Disused Mine Shaft and Star Trails",
     "Sublocation": "Lake District",
     "CountryPrimaryLocationName": "England",
@@ -4555,7 +4555,7 @@
       "White",
       "Wings"
     ],
-    "Headline": "A little egret (Egretta garzetta) taking off from a cable over the river Danube in evening light.",
+    "AltText": "A little egret (Egretta garzetta) taking off from a cable over the river Danube in evening light.",
     "Title": "An Egret's Egress",
     "Sublocation": "Danube",
     "CountryPrimaryLocationName": "Romania",
@@ -4610,7 +4610,7 @@
       "Île de la Cité",
       "Île-de-France"
     ],
-    "Headline": "The interior of Sainte Chapelle, showing the stained glass windows and vaulted ceiling.",
+    "AltText": "The interior of Sainte Chapelle, showing the stained glass windows and vaulted ceiling.",
     "Title": "Inside God's Jewelry Box",
     "Sublocation": "Sainte-Chapelle",
     "CountryPrimaryLocationName": "France",
@@ -4663,7 +4663,7 @@
       "UK",
       "United Kingdom"
     ],
-    "Headline": "A sheep running in warm sunlight in a field in Shoreham, Kent",
+    "AltText": "A sheep running in warm sunlight in a field in Shoreham, Kent",
     "Title": "Baaalmy Afternoon",
     "CountryPrimaryLocationName": "England",
     "CountryPrimaryLocationCode": "GB",
@@ -4709,7 +4709,7 @@
       "Street photography",
       "Villach"
     ],
-    "Headline": "The view up Hauptplatz in Villach, with St. Jakob's Church in the background.",
+    "AltText": "The view up Hauptplatz in Villach, with St. Jakob's Church in the background.",
     "Title": "Villach Sleeping",
     "CountryPrimaryLocationName": "Austria",
     "CountryPrimaryLocationCode": "AT",
@@ -4758,7 +4758,7 @@
       "Tree",
       "Zebra"
     ],
-    "Headline": "Five Grant's zebras walking across a plain in Serengeti National Park, Tanzania.",
+    "AltText": "Five Grant's zebras walking across a plain in Serengeti National Park, Tanzania.",
     "Title": "Zebras of the Serengeti",
     "Sublocation": "Serengeti National Park",
     "CountryPrimaryLocationName": "Tanzania",
@@ -4799,7 +4799,7 @@
       "United States",
       "Utah"
     ],
-    "Headline": "The roof of the LDS Conference Centre in Salt Lake City, showing reflecting pool and spire.",
+    "AltText": "The roof of the LDS Conference Centre in Salt Lake City, showing reflecting pool and spire.",
     "Title": "LDS Conference Center",
     "Sublocation": "Downtown",
     "CountryPrimaryLocationName": "United States",
@@ -4832,7 +4832,7 @@
     "ExposureCompensation": "+1/3",
     "Flash": "Off, Did not fire",
     "FocalLength": "35.0 mm",
-    "Headline": "Three pine trees lit by the setting sun at Chobham common in Surrey.",
+    "AltText": "Three pine trees lit by the setting sun at Chobham common in Surrey.",
     "Title": "Evening at Chobham Common",
     "Sublocation": "Chobham Common",
     "CountryPrimaryLocationName": "England",
@@ -4876,7 +4876,7 @@
       "Zanzibar",
       "Zanzibar City"
     ],
-    "Headline": "Chickens for sale at a market in Stone Town, Zanzibar.",
+    "AltText": "Chickens for sale at a market in Stone Town, Zanzibar.",
     "Title": "Chickens for Sale",
     "Sublocation": "Darajani Market",
     "CountryPrimaryLocationName": "Tanzania",
@@ -4950,7 +4950,7 @@
       "Waterloo",
       "Waterloo East"
     ],
-    "Headline": "A view of the Shard from London Waterloo East Railway Station at night.",
+    "AltText": "A view of the Shard from London Waterloo East Railway Station at night.",
     "Title": "Next Stop: The Shard",
     "Sublocation": "Waterloo East Station",
     "CountryPrimaryLocationName": "England",
@@ -4998,7 +4998,7 @@
       "Tanzania",
       "Tarangire National Park"
     ],
-    "Headline": "An impala in Tarangire National Park, Tanzania",
+    "AltText": "An impala in Tarangire National Park, Tanzania",
     "Title": "Impala in the Grass",
     "Sublocation": "Tarangire National Park",
     "CountryPrimaryLocationName": "Tanzania",
@@ -5044,7 +5044,7 @@
       "UK",
       "United Kingdom"
     ],
-    "Headline": "A leafless canopy and blue sky in Shoreham Wood, Kent.",
+    "AltText": "A leafless canopy and blue sky in Shoreham Wood, Kent.",
     "Title": "Empty Canopy",
     "Sublocation": "Meenfield Wood",
     "CountryPrimaryLocationName": "England",
@@ -5082,7 +5082,7 @@
       "Park",
       "Tarangire National Park"
     ],
-    "Headline": "A leafless baobab tree (Adansonia digitata) in Tarangire National Park, Tanzania.",
+    "AltText": "A leafless baobab tree (Adansonia digitata) in Tarangire National Park, Tanzania.",
     "Title": "Baobab Tree",
     "Sublocation": "Tarangire National Park",
     "CountryPrimaryLocationName": "Tanzania",

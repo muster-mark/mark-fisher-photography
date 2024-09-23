@@ -57,7 +57,7 @@
                        style="--aspect-ratio: {{ image.ImageAspectRatio }}"
                        aria-label="See more information about the photo &ldquo;{{ image.Title }}&rdquo;"
                     >
-                        {#                        {{ picture(image.Slug, image.Headline, "w200", image.ImageAspectRatio, image.Colors[0], "lazy") }} #}
+                        {#                        {{ picture(image.Slug, image.AltText, "w200", image.ImageAspectRatio, image.Colors[0], "lazy") }} #}
                         <picture
                                 {% if image.Colors[0] %}style="background-color: {{ image.Colors[0] }}{% endif %}"
                         >
@@ -73,7 +73,7 @@
                                  height="{{ (200 / image.ImageAspectRatio)|round }}"
                                  srcset="/photos/w200/{{ image.Slug }}@2x.jpg 400w, /photos/w200/{{ image.Slug }}.jpg 200w"
                                  src="/photos/w200/{{ image.Slug }}.jpg"
-                                 alt="{{ image.Headline }}"
+                                 alt="{{ image.AltText }}"
                                  loading="lazy">
                         </picture>
 

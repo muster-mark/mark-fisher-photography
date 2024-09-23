@@ -27,7 +27,7 @@ test("Fields which should be truthy are truthy for file with correct metadata", 
     expect(metaData.Flash).toBeTruthy();
     expect(metaData.FocalLength).toBeTruthy();
     expect(metaData.Keywords).toBeTruthy();
-    expect(metaData.Headline).toBeTruthy();
+    expect(metaData.AltText).toBeTruthy();
     expect(metaData.Title).toBeTruthy();
     expect(metaData.CountryPrimaryLocationName).toBeTruthy();
     expect(metaData.CountryPrimaryLocationCode).toBeTruthy();

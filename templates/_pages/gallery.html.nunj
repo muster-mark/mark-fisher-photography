@@ -22,7 +22,7 @@
                    style="--aspect-ratio: {{ photo.ImageAspectRatio }}"
                    aria-label="See more information about the photo &ldquo;{{ photo.Title }}&rdquo;"
                 >
-                    {{ picture(photo.Slug, photo.Headline, "w200", photo.ImageAspectRatio, photo.Colors[0], "lazy") }}
+                    {{ picture(photo.Slug, photo.AltText, "w200", photo.ImageAspectRatio, photo.Colors[0], "lazy") }}
                 </a>
             {% endfor %}
         </div>

@@ -25,7 +25,7 @@ const copiedFields = {
     Flash: "Flash",
     FocalLength: "FocalLength",
     Keywords: "Keywords",
-    Headline: "Headline",
+    AltTextAccessibility: "AltText",
     Title: "Title",
     Location: "Sublocation", // Don't use Sub-Location as truncated to 32 characters
     "Country-PrimaryLocationName": "CountryPrimaryLocationName",
@@ -78,8 +78,8 @@ function validateMetadata(metadata: any, fileName: string) {
         throw new Error(`Title is missing from metadata stored in ${fileName}`);
     }
 
-    if (!metadata.Headline) {
-        throw new Error(`Headline is missing from metadata stored in ${fileName}`);
+    if (!metadata.AltTextAccessibility && !metadata.Headline) {
+        throw new Error(`AltTText and Headline are missing from metadata stored in ${fileName}`);
     }
 
     if (
@@ -124,6 +124,10 @@ export default async function getImageMetadata(fileName: string, gallery: string
         //@ts-expect-error
         relevantMetaData[copiedFields[key]] = metadata[key];
     });
+
+    if (!relevantMetaData.AltText) {
+        relevantMetaData.AltText = metadata.Headline ?? null;
+    }
 
     await Promise.all(
         (Object.keys(transformedFields) as (keyof typeof transformedFields)[]).map(async (key) => {

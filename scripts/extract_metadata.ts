@@ -1,8 +1,8 @@
 // Write a json file for each image containing metadata
 
 import { statSync } from "node:fs";
-import path from "node:path";
 import { readdir, mkdir, writeFile, rm } from "node:fs/promises";
+import path from "node:path";
 import colors from "colors";
 
 import getImageMetadata from "../local_modules/get_image_metadata";
@@ -16,8 +16,8 @@ colors.setTheme({
 });
 
 const rootDir = path.normalize(`${__dirname}/..`);
-const metadataImagesDir = path.normalize(`${rootDir}/src/metadata_images`);
-const metadataJsonDir = path.normalize(`${rootDir}/src/metadata_json`);
+const metadataImagesDir = path.join(rootDir, "src", "metadata_images");
+const metadataJsonDir = path.join(rootDir, "src", "metadata_json");
 
 async function getAllGalleries() {
     return (await readdir(metadataImagesDir)).filter((file) => statSync(`${metadataImagesDir}/${file}`)?.isDirectory());

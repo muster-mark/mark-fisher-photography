@@ -10,10 +10,10 @@ import type { ImageMetadata } from "../types";
 
 let partialImageMetadata: Partial<ImageMetadata>[] = [];
 for (let i = 0; i < images.length; i++) {
-    const { ImageAspectRatio, Headline, Slug, Colors, Season, CountryPrimaryLocationName, Gallery } = images[i];
+    const { ImageAspectRatio, AltText, Slug, Colors, Season, CountryPrimaryLocationName, Gallery } = images[i];
     partialImageMetadata[i] = {
         ImageAspectRatio,
-        Headline,
+        AltText,
         Slug,
         Colors,
         Season,

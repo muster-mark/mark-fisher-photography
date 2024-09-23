@@ -11,7 +11,7 @@ export interface ImageMetadata {
     Flash: string;
     FocalLength: string;
     Keywords: string[];
-    Headline: string;
+    AltText: string;
     Title: string;
     Sublocation: string;
     CountryPrimaryLocationName: string;
