@@ -12,3 +12,4 @@ src/static/data
 /playwright-report/
 /blob-report/
 /playwright/.cache/
+/src/static/photos/*/*.png

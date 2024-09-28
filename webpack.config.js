@@ -103,7 +103,7 @@ module.exports = {
                     from: "src/static",
                     to: "../",
                     globOptions: {
-                        ignore: ["**/.DS_Store"],
+                        ignore: ["photos/*/*.png/"],
                     },
                 },
             ],
