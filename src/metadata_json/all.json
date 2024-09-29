@@ -5064,42 +5064,5 @@
       "#697190"
     ],
     "CaptionAbstract": "<p>The canopy is bare in Shoreham woods, but not for much longer: spring is just around the corner. Shoreham woods puts on its best show in the spring, playing host to a legion of bluebells.</p>\n"
-  },
-  {
-    "Gallery": "plants",
-    "FileName": "baobab-tree.jpg",
-    "Make": "Canon",
-    "Model": "Canon EOS 50D",
-    "Lens": "EF-S10-22mm f/3.5-4.5 USM",
-    "ExposureTime": "1/250",
-    "FNumber": 5.6,
-    "ISO": 100,
-    "ExposureCompensation": "+2/3",
-    "Flash": "Off, Did not fire",
-    "FocalLength": "10.0 mm",
-    "Keywords": [
-      "National Park",
-      "Park",
-      "Tarangire National Park"
-    ],
-    "AltText": "A leafless baobab tree (Adansonia digitata) in Tarangire National Park, Tanzania.",
-    "Title": "Baobab Tree",
-    "Sublocation": "Tarangire National Park",
-    "CountryPrimaryLocationName": "Tanzania",
-    "CountryPrimaryLocationCode": "TZ",
-    "State": "Manyara Region",
-    "GPSLatitudeRef": "South",
-    "GPSLongitudeRef": "East",
-    "ImageWidth": 840,
-    "ImageHeight": 560,
-    "ImageAspectRatio": 1.5,
-    "ImageAspectRatioIdentifier": "3to2",
-    "Slug": "baobab-tree",
-    "DateTimeOriginal": "2013-07-20 09:26:27",
-    "DatePublished": "2015-01-13 00:00:00",
-    "Season": "winter",
-    "Colors": [
-      "#625958"
-    ]
   }
 ]
