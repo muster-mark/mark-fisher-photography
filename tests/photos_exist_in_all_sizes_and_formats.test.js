@@ -22,7 +22,7 @@ expect.extend({
     },
 });
 
-const photosDir = path.resolve(__dirname, "..", "static", "photos");
+const photosDir = path.resolve(__dirname, "..", "src", "static", "photos");
 const folders = [path.resolve(photosDir, "l840"), path.resolve(photosDir, "w200")];
 const extensions = ["png", "jpg", "webp", "jxl"];
 
