@@ -1,4 +1,4 @@
-const path = require("path");
+const path = require("node:path");
 
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const BundleAnalyzer = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
@@ -16,7 +16,7 @@ const productionPlugins = [
         defaultSizes: "gzip",
         analyzerMode: "static",
         reportFilename: `./../../reports/bundle_analyzer/${new Date().toISOString()}.html`,
-        openAnalyzer: false,
+        openAnalyzer: true,
     }),
     new TerserPlugin(),
     new CleanWebpackPlugin({
@@ -29,6 +29,7 @@ const productionPlugins = [
 
 module.exports = {
     mode: isDevelopment ? "development" : "production",
+    devtool: isDevelopment,
     entry: "./src/assets/js/main.ts",
     output: {
         path: path.resolve(__dirname, "public/assets/"),
