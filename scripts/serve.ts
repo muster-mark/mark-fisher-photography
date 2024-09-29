@@ -4,7 +4,7 @@ import compression from "compression";
 import express from "express";
 import morgan from "morgan";
 
-import defaultHeaders from "./server/default_headers";
+import defaultHeaders from "./server/default_headers.ts";
 
 const port = 8888;
 
