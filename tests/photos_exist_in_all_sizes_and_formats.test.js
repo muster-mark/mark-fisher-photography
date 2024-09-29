@@ -1,18 +1,39 @@
-const { expect } = require("@jest/globals");
-import images from "../src/metadata_json/all.json";
 import { existsSync } from "node:fs";
+import path from "node:path";
 
-const photosDir = __dirname + "/../src/static/photos";
-const folders = [`${photosDir}/l840`, `${photosDir}/w200`];
-const extensions = ["jpg", "webp", "jxl"];
+import { expect } from "@jest/globals";
+
+import images from "../src/metadata_json/all.json";
+
+expect.extend({
+    toBeFile(received) {
+        const pass = existsSync(received);
+        if (pass) {
+            return {
+                message: () => `expected file ${received} not to exist`,
+                pass: true,
+            };
+        } else {
+            return {
+                message: () => `expected file ${received} to exist`,
+                pass: false,
+            };
+        }
+    },
+});
+
+const photosDir = path.resolve(__dirname, "..", "static", "photos");
+const folders = [path.resolve(photosDir, "l840"), path.resolve(photosDir, "w200")];
+const extensions = ["png", "jpg", "webp", "jxl"];
 
 test("Test all photos exist in all sizes and all formats", () => {
     const allSlugs = images.map((image) => image.Slug);
     allSlugs.forEach((slug) => {
         folders.forEach((folder) => {
             extensions.forEach((extension) => {
-                expect(existsSync(`${folder}/${slug}.${extension}`)).toBeTruthy();
-                expect(existsSync(`${folder}/${slug}@2x.${extension}`)).toBeTruthy();
+                ["", "@2x"].forEach((suffix) => {
+                    expect(`${folder}/${slug}${suffix}.${extension}`).toBeFile();
+                });
             });
         });
     });
