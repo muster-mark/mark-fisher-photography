@@ -11,16 +11,16 @@
   "scripts": {
     "postinstall": "command -v nvm && nvm use || echo \"Please make sure you are using the version of node specified in .nvmrc\"",
     "add-photos": "node -r ts-node/register scripts/extract_metadata.ts && node -r ts-node/register scripts/build_image_data.ts",
-    "build": "cross-env NODE_ENV='production' webpack --config webpack.config.js && npm run build-pages && npm run build-rss",
+    "build": "cross-env NODE_ENV='production' webpack --config webpack.config.js && npm run build-pages && pnpm run build-rss",
     "dev": "cross-env NODE_ENV='development' webpack --config webpack.config.js --watch",
     "build-pages": "node -r ts-node/register scripts/build_manual_pages.ts && node -r ts-node/register scripts/build_photo_and_gallery_pages.ts && node -r ts-node/register scripts/build_homepage.ts && node -r ts-node/register scripts/build_sitemap.ts",
-    "build-rss": "node -r ts-node/register scripts/build_rss.ts",
+    "build-rss": "node --experimental-transform-types scripts/build_rss.ts",
     "test": "jest",
     "deploy:staging": "node -r ts-node/register --env-file=.staging.env scripts/deploy.ts",
     "deploy:production": "node -r ts-node/register  --env-file=.production.env scripts/deploy.ts",
-    "serve": "node -r ts-node/register scripts/serve.ts",
+    "serve": "node --experimental-strip-types scripts/serve.ts",
     "update-browserslist": "pnpm update --save caniuse-lite browserslist",
-    "convert-images": "node --experimental-transform-types scripts/convert_image_formats.ts"
+    "convert-images": "node --experimental-strip-types scripts/convert_image_formats.ts"
   },
   "sideEffects": [
     "*.vue"

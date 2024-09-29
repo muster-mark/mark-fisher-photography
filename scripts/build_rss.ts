@@ -4,9 +4,9 @@ import dotenv from "dotenv";
 import escape from "escape-html";
 import mustache from "mustache";
 
-import images from "../src/metadata_json/all.json";
+import images from "../src/metadata_json/all.json" assert { type: "json" };
 
-dotenv.config({ path: `${__dirname}/../.production.env` });
+dotenv.config({ path: path.resolve(import.meta.dirname, "..", ".production.env") });
 
 function stripHtmlTags(string: string): string {
     return string.replace(/(<([^>]+)>)/gi, "");
@@ -25,7 +25,7 @@ async function main() {
             guid: escape(image.Slug),
         }));
 
-    const publicDir = path.join(__dirname, "..", "public");
+    const publicDir = path.join(import.meta.dirname, "..", "public");
 
     const output = mustache.render(
         `
