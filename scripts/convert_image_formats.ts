@@ -4,10 +4,11 @@ import path from "node:path";
 import { parseArgs } from "node:util";
 
 import { execa, parseCommandString } from "execa";
+import pLimit from "p-limit";
 import sharp from "sharp";
 
 const {
-    values: { image = null, overwrite = false },
+    values: { image = null, overwrite = false, concurrency: _concurrency = "4" },
 } = parseArgs({
     options: {
         image: {
@@ -16,8 +17,12 @@ const {
         overwrite: {
             type: "boolean",
         },
+        concurrency: {
+            type: "string",
+        }
     },
 });
+const concurrency = parseInt(_concurrency, 10);
 const photoDir = path.join(import.meta.dirname, "..", "src", "static", "photos");
 const allPngFiles: string[] = [];
 const jxlEffort = 9;
@@ -33,7 +38,9 @@ const formatDefinitions = [
         async convertPngToFormat(file: string) {
             if (false) {
                 // This is experimental at the moment, and doesn't work
-                return sharp(file).jxl({ quality: 85, effort: jxlEffort }).toFile(file.replace(/\.png$/, `.${this.extension}`));
+                return sharp(file)
+                    .jxl({ quality: 85, effort: jxlEffort })
+                    .toFile(file.replace(/\.png$/, `.${this.extension}`));
             }
             const commandArray = parseCommandString(
                 `cjxl -q 85 --effort=${jxlEffort} ${file} ${file.replace(/\.png$/, `.${this.extension}`)}`,
@@ -84,7 +91,7 @@ for await (const file of fs.glob(`${photoDir}/*/${image ?? "*"}.png`)) {
     for (const formatDefinition of formatDefinitions) {
         const { extension } = formatDefinition;
         const targetFile = file.replace(/\.png$/, `.${extension}`);
-        if (overwrite || !statSync(targetFile).isFile()) {
+        if (overwrite || !(statSync(targetFile, { throwIfNoEntry: false })?.isFile() ?? false)) {
             filesToConvert[extension].add(file);
         }
     }
@@ -99,6 +106,7 @@ if (allPngFiles.length === 0) {
 }
 
 let didError = false;
+const limit = pLimit(concurrency);
 
 for (const formatDefinition of formatDefinitions) {
     const { name: formatName, extension } = formatDefinition;
@@ -109,7 +117,7 @@ for (const formatDefinition of formatDefinitions) {
         const filesArray = Array.from(filesToConvert[extension].values());
         const conversionResult = await Promise.allSettled(
             filesArray.map((file) => {
-                return formatDefinition.convertPngToFormat(file);
+                return limit(() => formatDefinition.convertPngToFormat(file));
             }),
         );
 
