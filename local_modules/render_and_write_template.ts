@@ -1,5 +1,7 @@
 import { writeFile } from "node:fs/promises";
 
+import prettier from "prettier";
+
 export default async function renderAndWriteTemplate(
     templatePath: string,
     outputPath: string,
@@ -19,6 +21,8 @@ export default async function renderAndWriteTemplate(
             new Error(`Template ${templatePath} rendered to null using data: ${JSON.stringify(data)}`),
         );
     }
+
+    output = await prettier.format(output, { parser: "html", printWidth: 200 });
 
     try {
         await writeFile(outputPath, output, { encoding: "utf-8" });
