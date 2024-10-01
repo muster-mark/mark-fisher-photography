@@ -43,7 +43,7 @@ const formatDefinitions = [
                     .toFile(file.replace(/\.png$/, `.${this.extension}`));
             }
             const commandArray = parseCommandString(
-                `cjxl -q 85 --effort=${jxlEffort} --progressive ${file} ${file.replace(/\.png$/, `.${this.extension}`)}`,
+                `cjxl -q 85 --quiet --effort=${jxlEffort} --progressive ${file} ${file.replace(/\.png$/, `.${this.extension}`)}`,
             );
             const resultOrError = await execa({
                 all: true,
@@ -51,6 +51,9 @@ const formatDefinitions = [
             })`${commandArray}`;
             if (resultOrError.failed) {
                 return Promise.reject(resultOrError.all);
+            }
+            if (!!resultOrError.stderr) {
+                console.error(resultOrError.stderr);
             }
             return Promise.resolve();
         },
