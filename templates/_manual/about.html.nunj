@@ -53,6 +53,7 @@
     <div class="inner-container" style="z-index: 0; position: relative;">
 
         <img
+                alt=""
                 width="375"
                 height="500"
                 srcset="/images/me_jellyfish_bnw_brighter@2x.jpg 2x, /images/me_jellyfish_bnw_brighter.jpg 1x"

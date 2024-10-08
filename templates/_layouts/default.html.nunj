@@ -5,15 +5,15 @@
     <title>{% if page.meta_title %}{{ page.meta_title }} - {% endif %}Mark Fisher Photography</title>
     {% block meta_description_tag %}{% endblock %}
     <meta name="viewport" content="width=device-width, initial-scale=1"> {# Ensure not zoomed out on mobile #}
-    <link rel="stylesheet" href="{{ 'main.css' | chunk }}"/>
-    <link rel="canonical" href="https://{{ env.URL }}{{ page.url }}"/>
-    <link rel="alternate" type="application/rss+xml" title="Subscribe to New Images" href="http://{{ env.URL }}/new-images.xml" />
+    <link rel="stylesheet" href="{{ 'main.css' | chunk }}">
+    <link rel="canonical" href="https://{{ env.URL }}{{ page.url }}">
+    <link rel="alternate" type="application/rss+xml" title="Subscribe to New Images" href="http://{{ env.URL }}/new-images.xml">
     <meta name="theme-color" content="#efa929">
     {% if page.meta_title %}
-        <meta property="og:title" content="{{page.meta_title}}" />
+        <meta property="og:title" content="{{page.meta_title}}">
     {% endif %}
     {% if page.skipJs %}
-        <link rel="prefetch" as="script" href="{{ 'main.js' | chunk }}" />
+        <link rel="prefetch" as="script" href="{{ 'main.js' | chunk }}">
     {% endif %}
 
     {% block head %}

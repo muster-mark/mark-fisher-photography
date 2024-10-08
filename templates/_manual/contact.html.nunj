@@ -26,7 +26,7 @@
             >
                 <label for="contact_name">What's your name?</label>
                 <input
-                    required="required"
+                    required
                     type="text"
                     id="contact_name"
                     name="name"
@@ -35,7 +35,7 @@
                 <span class="form-help">Feel free to make one up if you want to provide some harsh but constructive criticism about my photos.</span>
                 <label for="contact_email">What's your email address?</label>
                 <input
-                    required="required"
+                    required
                     type="email"
                     id="contact_email"
                     name="email"
@@ -44,10 +44,10 @@
                 <label
                     for="contact_msg">How can I help you?</label>
                 <textarea
-                    required="required"
+                    required
                     id="contact_msg"
                     name="message"
-                    class=""></textarea> <!---->
+                    class=""></textarea>
                 <button type="submit" class="btn btn_lg">Submit</button>
             </form>
         </div>

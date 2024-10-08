@@ -3,8 +3,8 @@ s{% extends "_layouts/default.html.nunj" %}
 {% from "_includes/macros.html.nunj" import sizespicture, svg_icon %}
 
 {% block head %}
-    <link rel="prefetch" href="/{{ gallery }}/{{ next_photo.Slug }}"/>
-    <link rel="prefetch" href="/{{ gallery }}/{{ previous_photo.Slug }}"/>
+    <link rel="prefetch" href="/{{ gallery }}/{{ next_photo.Slug }}">
+    <link rel="prefetch" href="/{{ gallery }}/{{ previous_photo.Slug }}">
     <script type="application/ld+json">
         {
             "@context": "https://schema.org/"
@@ -27,7 +27,7 @@ s{% extends "_layouts/default.html.nunj" %}
         {% endif %}
         }
     </script>
-    <meta property="og:image" content="https://{{ env.URL }}/photos/l840/{{ photo.Slug }}@2x.jpg" />
+    <meta property="og:image" content="https://{{ env.URL }}/photos/l840/{{ photo.Slug }}@2x.jpg">
 {% endblock %}
 
 {% block meta_description_tag %}

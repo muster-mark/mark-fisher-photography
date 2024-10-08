@@ -7,7 +7,7 @@
 {% from "_includes/macros.html.nunj" import social_media %}
 
 <footer class="container">
-    <nav class="nav footer_nav">
+    <nav class="nav footer_nav" aria-label="Secondary navigation">
         <ul>
             {% for nav_url, nav_title in footer_nav_links %}
                 {% if page.url and (nav_url == page.url|trim(".", "right")) %}

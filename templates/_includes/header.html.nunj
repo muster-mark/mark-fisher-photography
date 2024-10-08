@@ -2,10 +2,10 @@
 
 <header class="container">
     <a href="/">
-        <img class="header_logo" src="/images/reflection_logo.svg" width="300" height="88" alt="Mark Fisher Photography"/>
+        <img class="header_logo" src="/images/reflection_logo.svg" width="300" height="88" alt="Mark Fisher Photography">
     </a>
     {{ social_media(["header_sm"]) }}
-    <nav class="nav header_nav">
+    <nav class="nav header_nav" aria-label="Main navigation">
         <ul>
             {% for gallery in featured_galleries %}
                 {% if page.url and (("/" + gallery.slug + "/") == page.url|trim(".", "right")) %}

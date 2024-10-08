@@ -24,12 +24,12 @@
                                 type="image/jxl"
                                 srcset="/photos/l484/{{ gallery.image.Slug }}@2x.jxl 968w, /photos/l484/{{ gallery.image.Slug }}.jxl 484w"
                                 sizes="calc(45vw - 20px)"
-                        />
+                        >
                         <source
                                 type="image/webp"
                                 srcset="/photos/l484/{{ gallery.image.Slug }}@2x.webp 968w, /photos/l484/{{ gallery.image.Slug }}.webp 484w"
                                 sizes="calc(45vw - 20px)"
-                        />
+                        >
                         <img width="484" height="{{ (484 / gallery.image.ImageAspectRatio)|round }}"
                              srcset="/photos/l484/{{ gallery.image.Slug }}@2x.jpg 968w, /photos/l484/{{ gallery.image.Slug }}.jpg 484w"
                              sizes="calc(45vw - 20px)"
