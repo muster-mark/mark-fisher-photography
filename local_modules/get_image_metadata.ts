@@ -141,7 +141,7 @@ export default async function getImageMetadata(fileName: string, gallery: string
     const md = new MarkdownIt();
 
     if (!!metadata["Caption-Abstract"]) {
-        relevantMetaData.CaptionAbstract = md.render(metadata["Caption-Abstract"]);
+        relevantMetaData.CaptionAbstract = md.render(metadata["Caption-Abstract"]).replace(/\n$/, "")
     }
 
     return relevantMetaData;
