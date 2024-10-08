@@ -74,6 +74,7 @@
     "express": "^4.21.0",
     "get-pixels": "^3.3.3",
     "get-rgba-palette": "^2.0.1",
+    "html-validate": "^8.24.0",
     "jest": "^29.7.0",
     "markdown-it": "^14.1.0",
     "mini-css-extract-plugin": "^2.9.1",
