@@ -1,6 +1,8 @@
 import { writeFile } from "node:fs/promises";
 
 import prettier from "prettier";
+//@ts-ignore
+import { minify } from "html-minifier";
 
 export default async function renderAndWriteTemplate(
     templatePath: string,
@@ -23,6 +25,7 @@ export default async function renderAndWriteTemplate(
     }
 
     output = await prettier.format(output, { parser: "html", printWidth: 200 });
+    output = minify(output);
 
     try {
         await writeFile(outputPath, output, { encoding: "utf-8" });
