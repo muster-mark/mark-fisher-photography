@@ -7,3 +7,4 @@
 --ignore-dir=reports
 --ignore-dir=src/static/data/
 --ignore-dir=src/metadata_json
+--ignore-dir=playwright-report
