@@ -79,7 +79,7 @@ function validateMetadata(metadata: any, fileName: string) {
     }
 
     if (!metadata.AltTextAccessibility && !metadata.Headline) {
-        throw new Error(`AltTText and Headline are missing from metadata stored in ${fileName}`);
+        throw new Error(`AltText and Headline are missing from metadata stored in ${fileName}. One is required - should use AltText now.`);
     }
 
     if (
