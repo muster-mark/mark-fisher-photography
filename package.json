@@ -80,7 +80,7 @@
     "markdown-it": "^14.1.0",
     "mini-css-extract-plugin": "^2.9.2",
     "mustache": "^4.2.0",
-    "node": "^23.1.0",
+    "node": "^23.5.0",
     "p-limit": "^6.2.0",
     "postcss-loader": "^8.1.1",
     "postcss-logical": "^8.0.0",
