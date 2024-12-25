@@ -16,6 +16,7 @@
     "build-pages": "node -r ts-node/register scripts/build_manual_pages.ts && node -r ts-node/register scripts/build_photo_and_gallery_pages.ts && node -r ts-node/register scripts/build_homepage.ts && node -r ts-node/register scripts/build_sitemap.ts",
     "build-rss": "node --experimental-transform-types scripts/build_rss.ts",
     "test": "jest",
+    "test:e2e": "playwright test",
     "deploy:staging": "node -r ts-node/register --env-file=.staging.env scripts/deploy.ts",
     "deploy:production": "node -r ts-node/register  --env-file=.production.env scripts/deploy.ts",
     "serve": "node --experimental-strip-types scripts/serve.ts",
