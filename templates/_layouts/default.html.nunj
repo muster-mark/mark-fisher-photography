@@ -12,9 +12,6 @@
     {% if page.meta_title %}
         <meta property="og:title" content="{{page.meta_title}}">
     {% endif %}
-    {% if page.skipJs %}
-        <link rel="prefetch" as="script" href="{{ 'main.js' | chunk }}">
-    {% endif %}
 
     {% block head %}
 
@@ -47,9 +44,7 @@
 </main>
 
 {% include "_includes/footer.html.nunj" %}
-{% if not page.skipJs %}
-    <script src="{{ 'main.js' | chunk }}" defer></script>
-{% endif %}
+<script src="{{ 'main.js' | chunk }}" defer fetchpriority="{{ 'low' if page.skipJs else 'high' }}"></script>
 {% block footer_scripts %}
     {# Cloudflare Web Analytics #}
     <script id="cf-script">
