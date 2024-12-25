@@ -29,7 +29,7 @@ const productionPlugins = [
 
 module.exports = {
     mode: isDevelopment ? "development" : "production",
-    devtool: isDevelopment,
+    devtool: isDevelopment ? "eval" : false,
     entry: "./src/assets/js/main.ts",
     output: {
         path: path.resolve(__dirname, "public/assets/"),
