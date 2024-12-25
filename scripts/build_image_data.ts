@@ -35,7 +35,7 @@ Object.keys(countryGroups).forEach((key) => {
 });
 
 countryCounts.sort((a, b) => {
-    return a.name < b.name ? -1 : 1;
+    return Math.sign(a.name.localeCompare(b.name));
 });
 
 const data = {
@@ -44,7 +44,7 @@ const data = {
     seasonCounts,
 };
 
-util.promisify(fs.writeFile)(path.resolve(`${__dirname}/../src/static/data/images.json`), JSON.stringify(data))
+util.promisify(fs.writeFile)(path.join(__dirname, "..", "src", "static", "data", "images.json"), JSON.stringify(data))
     .then(() => {
         console.log("Wrote /data/images.json");
     })

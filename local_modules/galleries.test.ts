@@ -1,5 +1,6 @@
-import galleries from "./galleries";
 import { expect, test } from "@jest/globals";
+
+import galleries from "./galleries";
 
 test("Meta descriptions all end in full stop", () => {
     const doAllGalleryDescriptionsEndInPeriod = galleries
