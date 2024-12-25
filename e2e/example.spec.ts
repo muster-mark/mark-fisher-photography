@@ -39,23 +39,32 @@ test("can submit contact form", async ({ page }) => {
     const successMessage = await page.getByText("Your message has been sent!");
     await expect(successMessage).toBeAttached();
     await expect(successMessage).toBeVisible();
+    await expect(successMessage).toBeInViewport();
 });
 
 test("can't submit with invalid email", async ({ page }) => {
     await page.goto(`${baseURL}/contact`);
 
-    const nameField = page.getByLabel("Name");
-    await nameField.fill("Playwright");
-
-    const emailField = page.getByLabel("Email");
-    await emailField.fill("playwrightexample.com");
-
-    const messageField = page.getByLabel("how can i help you");
-    await messageField.fill("Hello, World!");
+    await page.getByLabel("Name").fill("Playwright");
+    await page.getByLabel("Email").fill("playwrightexample.com");
+    await page.getByLabel("how can i help you").fill("Hello, World!");
 
     await page.focus("button[type=submit]");
 
     const errorMessage = await page.getByText("Please fill out all the fields correctly");
     await expect(errorMessage).toBeAttached();
     await expect(errorMessage).toBeVisible();
+    await expect(errorMessage).toBeInViewport();
+});
+
+test("can't submit with empty message", async ({ page }) => {
+    await page.goto(`${baseURL}/contact`);
+    await page.getByLabel("Name").fill("Playwright");
+    await page.getByLabel("Email").fill("playwright@example.com");
+    await page.getByLabel("how can i help you").fill("");
+    await page.click("button[type=submit]");
+    const errorMessage = await page.getByText("Please fill out all the fields correctly");
+    await expect(errorMessage).toBeAttached();
+    await expect(errorMessage).toBeVisible();
+    await expect(errorMessage).toBeInViewport();
 });
