@@ -96,6 +96,8 @@ const fields = ref<Fields>({
     }
 });
 
+console.log("Created contact form");
+
 const isSubmitting = ref(false);
 const submissionSucceeded = ref<boolean>(null);
 const fallbackEmail = "mfishe@gmail.com";
@@ -118,6 +120,7 @@ function resetForm() {
 }
 
 function submitForm() {
+    console.debug("submit form");
     isSubmitting.value = true; // Puts button into progress state
     submissionSucceeded.value = null;
 
@@ -135,7 +138,8 @@ function submitForm() {
             "Content-Type": "application/json",
         },
     })
-            .then(response => {
+        .then(response => {
+            console.debug("got response", response.ok);
                 if (response.ok) {
                     submissionSucceeded.value = true;
                     resetForm();
