@@ -57,10 +57,10 @@ const main = async function main() {
                     });
                     await Promise.all(
                         imagesMetadata.map(async (imageMetadata) => {
-                            const fileName = `${metadataJsonDir}/${gallery}/${imageMetadata.FileName.replace(".jpg", ".json")}`;
+                            const fileName = `${metadataJsonDir}/${gallery}/${imageMetadata.Slug}.json`;
                             await writeFile(fileName, JSON.stringify(imageMetadata, null, 2));
                             console.log(
-                                `Wrote JSON file for ${imageMetadata.FileName.replace(".jpg", ".json")} in ${gallery}`,
+                                `Wrote JSON file for ${imageMetadata.Slug}.json in ${gallery}`,
                             );
                         }),
                     );

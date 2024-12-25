@@ -1,6 +1,6 @@
 import path from "node:path";
 
-import { test, expect } from "@jest/globals";
+import { expect, test } from "@jest/globals";
 
 import getImageMetadata from "./get_image_metadata";
 
@@ -9,13 +9,12 @@ const testImagesDir = `${rootDir}/src/tests/images`;
 
 test("Returns correct number of fields", async () => {
     const metaData = await getImageMetadata(`${testImagesDir}/green-sotol.jpg`, "plants");
-    expect(Object.keys(metaData)).toHaveLength(30);
+    expect(Object.keys(metaData)).toHaveLength(29);
 });
 
 test("Fields which should be truthy are truthy for file with correct metadata", async () => {
     const metaData = await getImageMetadata(`${testImagesDir}/green-sotol.jpg`, "plants");
     expect(metaData.Gallery).toStrictEqual("plants");
-    expect(metaData.FileName).toBeTruthy();
     expect(metaData.Slug).toBeTruthy();
     expect(metaData.Make).toBeTruthy();
     expect(metaData.Model).toBeTruthy();
@@ -43,7 +42,6 @@ test("Fields which should be truthy are truthy for file with correct metadata", 
 
 test("Fields are of correct format for file with correct metadata", async () => {
     const metaData = await getImageMetadata(`${testImagesDir}/green-sotol.jpg`, "plants");
-    expect(metaData.FileName).toMatch(/[a-z]+(-[a-z]+)*\.jpg/);
     expect(metaData.Slug).toMatch(/^[a-z]+(-[a-z]+)+$/);
     // Exposure time either number or "1/[number]"
     expect(typeof metaData.FNumber).toBe("number");

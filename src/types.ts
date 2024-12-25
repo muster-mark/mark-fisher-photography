@@ -3,7 +3,6 @@ export interface Image {
     Season: "spring" | "summer" | "autumn" | "winter";
     FileName: string;
     ImageAspectRatio: number;
-    Slug: string;
     Colors: string[];
     Gallery: string;
     AltText: string;

@@ -14,7 +14,6 @@ import getImageAspectRatioIdentifier from "./get_image_aspect_ratio_identifier";
 const copiedFields = {
     // Map field on input to field on output
     // Excludes gallery, which is dealt with separately
-    FileName: "FileName",
     Make: "Make",
     Model: "Model",
     Lens: "Lens",
@@ -46,7 +45,7 @@ const transformedFields = {
         try {
             imageAspectRatioIdentifier = getImageAspectRatioIdentifier(metadata.ImageWidth, metadata.ImageHeight);
         } catch (err) {
-            console.warn(colors.yellow(`${metadata.FileName} does not have a standard aspect ratio`));
+            console.warn(colors.yellow(`${metadata.Title} does not have a standard aspect ratio`));
             imageAspectRatioIdentifier = "invalid";
         }
         return imageAspectRatioIdentifier;
