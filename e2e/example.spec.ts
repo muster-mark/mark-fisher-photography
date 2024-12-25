@@ -8,14 +8,15 @@ test("has title", async ({ page }) => {
 });
 
 [
-    baseURL,
-    `${baseURL}/explore`,
-    `${baseURL}/about`,
-    `${baseURL}/contact`,
-    `${baseURL}/highlands`,
-    `${baseURL}/highlands/tangle`,
-].forEach((url) => {
-    test(`no console errors/warnings on ${url}`, async ({ page }) => {
+    "/",
+    "/explore",
+    "/about",
+    "/contact",
+    "/highlands/",
+    "/highlands/tangle",
+].forEach((slug) => {
+    const url = `${baseURL}${slug}`;
+    test(`No console errors/warnings on ${url}`, async ({ page }) => {
         const errors: string[] = [];
         const warnings: string[] = [];
         page.on("console", (msg) => {
@@ -27,6 +28,33 @@ test("has title", async ({ page }) => {
         });
         await page.goto(url);
         expect(errors).toHaveLength(0);
+    });
+
+    test(`No network errors on ${url}`, async ({ page }) => {
+        const failedRequests: {
+            url: string;
+            status: number;
+        }[] = [];
+        page.on("response", (response) => {
+            if (response.status() !== 200) {
+                console.error(`${response.status()} response for ${response.url()}`);
+                failedRequests.push({
+                    url: response.url(),
+                    status: response.status(),
+                });
+            }
+        });
+        await page.goto(url);
+        expect(failedRequests).toHaveLength(0);
+    });
+
+    test(`All images on ${url} have alt text`, async ({ page }) => {
+        await page.goto(url);
+        const images = await page.$$("img");
+        for (const image of images) {
+            const alt = await image.getAttribute("alt");
+            expect(alt, `Image with src ${await image.getAttribute("src")} has no alt attribute`).not.toBeNull();
+        }
     });
 });
 
