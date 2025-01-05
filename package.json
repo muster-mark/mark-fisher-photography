@@ -76,7 +76,7 @@
     "get-pixels": "^3.3.3",
     "get-rgba-palette": "^2.0.1",
     "html-minifier": "^4.0.0",
-    "html-validate": "^8.27.0",
+    "html-validate": "^8.29.0",
     "jest": "^29.7.0",
     "markdown-it": "^14.1.0",
     "mini-css-extract-plugin": "^2.9.2",
@@ -96,7 +96,7 @@
     "vue-loader": "^17.4.2",
     "webpack": "^5.97.1",
     "webpack-bundle-analyzer": "^4.10.2",
-    "webpack-cli": "^5.1.4",
+    "webpack-cli": "^6.0.1",
     "webpack-manifest-plugin": "^5.0.0"
   }
 }
