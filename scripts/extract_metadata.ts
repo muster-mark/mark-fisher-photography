@@ -15,7 +15,7 @@ colors.setTheme({
     error: "red",
 });
 
-const rootDir = path.join(__dirname, "");
+const rootDir = path.join(__dirname, "..");
 const metadataImagesDir = path.join(rootDir, "src", "metadata_images");
 const metadataJsonDir = path.join(rootDir, "src", "metadata_json");
 
