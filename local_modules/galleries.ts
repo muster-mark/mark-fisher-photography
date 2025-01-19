@@ -55,17 +55,17 @@ export default [
         imageAltText: "Wildlife photography by Mark Fisher",
         description: getGalleryDescription("animals"),
     },
-    {
-        slug: "dusk-to-dawn",
-        name: "Dusk to Dawn",
-        metaDescription:
-            "A collection of photos taken after the sun has set, or when it is not yet risen. More of the former, as Mark is an expert sleeper.",
-        homepageDescription: "When darkness reigns",
-        featured: true,
-        imageSlug: "moonbolt",
-        imageAltText: "Images taken when the sun don't shine. Photography by Mark Fisher",
-        description: getGalleryDescription("dusk-to-dawn"),
-    },
+    // {
+    //     slug: "dusk-to-dawn",
+    //     name: "Dusk to Dawn",
+    //     metaDescription:
+    //         "A collection of photos taken after the sun has set, or when it is not yet risen. More of the former, as Mark is an expert sleeper.",
+    //     homepageDescription: "When darkness reigns",
+    //     featured: false,
+    //     imageSlug: "moonbolt",
+    //     imageAltText: "Images taken when the sun don't shine. Photography by Mark Fisher",
+    //     description: getGalleryDescription("dusk-to-dawn"),
+    // },
     {
         slug: "city",
         name: "City",
