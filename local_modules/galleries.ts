@@ -23,6 +23,18 @@ export default [
         description: getGalleryDescription("highlands"),
     },
     {
+        slug: "plants",
+        name: "Plants & Trees",
+        metaDescription:
+            "From lilies to lime trees, and birch to bracken - photographs of plants and trees by Mark Fisher.",
+        homepageDescription: "Bringing colour and calm",
+        featured: true,
+        imageSlug: "the-other-side",
+        imageAltText:
+            "Photographs of the plant kingdom, from grass to trees, by Orpington based photographer Mark Fisher",
+        description: getGalleryDescription("plants"),
+    },
+    {
         slug: "landscapes",
         name: "Landscapes",
         metaDescription:
@@ -42,18 +54,6 @@ export default [
         imageSlug: "cows-by-loch-brittle",
         imageAltText: "Wildlife photography by Mark Fisher",
         description: getGalleryDescription("animals"),
-    },
-    {
-        slug: "plants",
-        name: "Plants & Trees",
-        metaDescription:
-            "From lilies to lime trees, and birch to bracken - photographs of plants and trees by Mark Fisher.",
-        homepageDescription: "Bringing colour and calm",
-        featured: true,
-        imageSlug: "the-other-side",
-        imageAltText:
-            "Photographs of the plant kingdom, from grass to trees, by Orpington based photographer Mark Fisher",
-        description: getGalleryDescription("plants"),
     },
     {
         slug: "dusk-to-dawn",
