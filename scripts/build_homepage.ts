@@ -54,9 +54,13 @@ const main = async function () {
             featuredGalleries: galleries
                 .filter((gallery) => gallery.featured)
                 .map((gallery) => {
+                    const image = allImages.find((image) => image.Slug === gallery.imageSlug);
+                    if (!image) {
+                        throw new Error(`No image found for gallery ${gallery.name} with slug ${gallery.imageSlug}`);
+                    }
                     return {
                         ...gallery,
-                        image: allImages.find((image) => image.Slug === gallery.imageSlug),
+                        image,
                     };
                 }),
             copyrightYear: new Date().getFullYear(),
