@@ -5,6 +5,7 @@ import express from "express";
 import morgan from "morgan";
 
 import defaultHeaders from "./server/default_headers.ts";
+import redirects from "./server/redirects.ts";
 
 const port = 8888;
 
@@ -43,6 +44,15 @@ app.use(
         },
     }),
 );
+
+app.use((_req, res, next) => {
+    // redirect /foo to /bar
+    if (redirects.has(_req.url)) {
+        res.redirect(301, redirects.get(_req.url) as string);
+    } else {
+        next();
+    }
+});
 
 // static middleware only calls next() if it couldn't find the file
 app.use((_req, res) => {
