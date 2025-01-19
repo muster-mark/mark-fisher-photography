@@ -27,7 +27,7 @@ export default [
         name: "Abstracts",
         metaDescription: "Looking more closely, more curiously and more creatively at the world around us. Abstract photography by Mark Fisher.",
         featured: true,
-        imageSlug: "exhale", // TODO change to new image of ice
+        imageSlug: "temporary-exhibit",
         imageAltText: "Abstract photography by Mark Fisher",
         description: getGalleryDescription("abstracts"),
     },

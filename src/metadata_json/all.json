@@ -1,5 +1,42 @@
 [
   {
+    "Gallery": "abstracts",
+    "Make": "Canon",
+    "Model": "Canon EOS 5D Mark III",
+    "Lens": "EF24-105mm f/4L IS USM",
+    "ExposureTime": 1,
+    "FNumber": 10,
+    "ISO": 100,
+    "ExposureCompensation": 0,
+    "Flash": "Off, Did not fire",
+    "FocalLength": "95.0 mm",
+    "Keywords": [
+      "Crofton Woods",
+      "Frozen",
+      "Ice",
+      "Leaves",
+      "Winter"
+    ],
+    "AltText": "Oak leaves and a red berry in a frozen puddle in Crofton Woods.",
+    "Title": "Temporary exhibit",
+    "Sublocation": "Crofton Woods",
+    "CountryPrimaryLocationName": "United Kingdom",
+    "CountryPrimaryLocationCode": "GB",
+    "State": "Kent",
+    "ImageWidth": 840,
+    "ImageHeight": 560,
+    "ImageAspectRatio": 1.5,
+    "ImageAspectRatioIdentifier": "3to2",
+    "Slug": "temporary-exhibit",
+    "DateTimeOriginal": "2025-01-12 10:55:52",
+    "DatePublished": "2025-01-19 00:00:00",
+    "Season": "winter",
+    "Colors": [
+      "#b4acb4"
+    ],
+    "CaptionAbstract": "<p>Frozen conditions are not common where I live in the London suburbs, and it's always a painful experience if I miss the photographic opportunities presented by sub-zero temperatures.</p>\n<p>Thankfully, this cold snap was one I managed to capitalise on. This frozen puddle wouldn't have lasted much longer than a day or so after I took this photo.</p>"
+  },
+  {
     "Gallery": "highlands",
     "Make": "Canon",
     "Model": "Canon EOS 5D Mark III",
