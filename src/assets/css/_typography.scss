@@ -32,7 +32,9 @@ h4, .h4 {
 }
 
 p {
-    margin-bottom: 24px;
+    margin-bottom: #{$line-height * 1em}; // Fallback for Safari < 16.4
+    margin-bottom: 1lh;
+
     &:last-child {
         margin-bottom: 0;
     }
