@@ -50,7 +50,7 @@
                 all photos{{ svg_icon("chevron-right", '', false, 12, 19) }}</a>
 
             <div class="masonry_wall">
-                <h2 style="grid-row: auto / span 60; grid-column: 1 / -1">Recent Work:</h2>
+                <h2 style="grid-column: 1 / -1">Recent Work:</h2>
                 {% for image in favouriteImages %}
                     <a href="/{{ image.Gallery }}/{{ image.Slug }}"
                        class="img-link masonry_brick"

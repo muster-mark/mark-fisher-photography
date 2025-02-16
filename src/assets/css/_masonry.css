@@ -7,7 +7,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(var(--column-width), max-content));
     justify-content: center;
-    grid-template-rows: none;
+    grid-template-rows: max-content; /* For the h2 */
     grid-auto-rows: 1px;
     grid-auto-flow: dense;
     grid-gap: 0 var(--masonry-gap);
