@@ -2,7 +2,7 @@ import { writeFile } from "node:fs/promises";
 
 import prettier from "prettier";
 //@ts-ignore
-import { minify } from "html-minifier";
+import { minify } from "html-minifier-terser";
 
 export default async function renderAndWriteTemplate(
     templatePath: string,
