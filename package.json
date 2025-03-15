@@ -28,7 +28,6 @@
   ],
   "dependencies": {
     "@appnest/masonry-layout": "^2.2.3",
-    "@types/jpeg-js": "^0.3.7",
     "date-season": "0.0.2",
     "dotenv": "^16.4.7",
     "html-minifier-terser": "^7.2.0",

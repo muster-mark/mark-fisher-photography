@@ -11,9 +11,6 @@ importers:
       '@appnest/masonry-layout':
         specifier: ^2.2.3
         version: 2.2.3
-      '@types/jpeg-js':
-        specifier: ^0.3.7
-        version: 0.3.7
       date-season:
         specifier: 0.0.2
         version: 0.0.2
@@ -1563,10 +1560,6 @@ packages:
 
   '@types/istanbul-reports@3.0.4':
     resolution: {integrity: sha512-pk2B1NWalF9toCRu6gjBzR69syFjP4Od8WRAX+0mmf9lAjCRicLOWc+ZrxZHx/0XRjotgkF9t6iaMJ+aXcOdZQ==}
-
-  '@types/jpeg-js@0.3.7':
-    resolution: {integrity: sha512-v3FEzt2TXOOIgvwwOqMoeEhqYqUoK4wcV/K7JbKj8CzwDE9sSuor8EZpSJKaOnuEtyO0W+Nd2uKk8MbtusYpEg==}
-    deprecated: This is a stub types definition. jpeg-js provides its own type definitions, so you do not need this installed.
 
   '@types/json-schema@7.0.15':
     resolution: {integrity: sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==}
@@ -6255,10 +6248,6 @@ snapshots:
   '@types/istanbul-reports@3.0.4':
     dependencies:
       '@types/istanbul-lib-report': 3.0.3
-
-  '@types/jpeg-js@0.3.7':
-    dependencies:
-      jpeg-js: 0.4.4
 
   '@types/json-schema@7.0.15': {}
 
