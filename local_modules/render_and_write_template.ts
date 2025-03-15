@@ -25,12 +25,13 @@ export default async function renderAndWriteTemplate(
     }
 
     output = await prettier.format(output, { parser: "html", printWidth: 200 });
-    output = minify(output);
+    output = await minify(output);
 
     try {
         await writeFile(outputPath, output, { encoding: "utf-8" });
         console.log(`Wrote HTML to ${outputPath}`);
     } catch (error) {
+        console.error(error);
         return Promise.reject(new Error(`Could not write to ${outputPath}`));
     }
 
