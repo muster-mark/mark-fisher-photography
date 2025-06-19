@@ -37,7 +37,7 @@
     "nunjucks": "^3.2.4",
     "nunjucks-date": "^1.5.0",
     "sharp": "^0.34.2",
-    "slug": "^11.0.0",
+    "slug": "^9.1.0",
     "vue": "^3.5.17"
   },
   "devDependencies": {
