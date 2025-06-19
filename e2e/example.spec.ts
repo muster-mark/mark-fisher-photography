@@ -13,7 +13,7 @@ test("has title", async ({ page }) => {
     "/about",
     "/contact",
     "/highlands/",
-    "/highlands/tangle",
+    "/abstracts/tangle",
 ].forEach((slug) => {
     const url = `${baseURL}${slug}`;
     test(`No console errors/warnings on ${url}`, async ({ page }) => {
