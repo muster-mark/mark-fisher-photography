@@ -42,7 +42,7 @@
     "webpack-bundle-analyzer": "^4.10.2"
   },
   "devDependencies": {
-    "@aws-sdk/client-cloudfront": "^3.872.0",
+    "@aws-sdk/client-cloudfront": "^3.883.0",
     "@babel/plugin-syntax-dynamic-import": "^7.8.3",
     "@babel/plugin-transform-runtime": "^7.28.3",
     "@babel/preset-env": "^7.28.3",
@@ -85,10 +85,10 @@
     "ndarray": "^1.0.19",
     "node": "^23.11.1",
     "p-limit": "^6.2.0",
-    "postcss-loader": "^8.1.1",
+    "postcss-loader": "^8.2.0",
     "postcss-logical": "^8.1.0",
     "prettier": "^3.6.2",
-    "sass": "^1.90.0",
+    "sass": "^1.92.1",
     "sass-loader": "^16.0.5",
     "terser-webpack-plugin": "^5.3.14",
     "ts-jest": "^29.4.1",
