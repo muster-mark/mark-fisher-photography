@@ -146,21 +146,21 @@ function updateColumns() {
     masonryElement.value.setAttribute("gap", `${masonryGap.value}`); // Seems to be bug in @appnest component
 }
 
-// This is pre-loaded on this page
-fetch("/data/images.json")
-    .then((data) => data.json())
-    .then((json) => {
-        allImages.value = json.images;
-        countryCounts.value = json.countryCounts;
-        selectedCountries.value = json.countryCounts.map((countryCount: CountryCount) => countryCount.name);
-        selectedCountries.value = Array.from(new Set(selectedCountries.value));
-        seasonCounts.value = json.seasonCounts;
-    })
+onMounted(() => {
+    // This is pre-loaded on this page
+    fetch("/data/images.json")
+        .then((data) => data.json())
+        .then((json) => {
+            allImages.value = json.images;
+            countryCounts.value = json.countryCounts;
+            selectedCountries.value = json.countryCounts.map((countryCount: CountryCount) => countryCount.name);
+            selectedCountries.value = Array.from(new Set(selectedCountries.value));
+            seasonCounts.value = json.seasonCounts;
+        })
     .catch((err) => {
         console.error("There was an error fetching data", err);
     });
 
-onMounted(() => {
     masonryElement.value.setAttribute("gap", `${masonryGap.value}`); // Seems to be bug in @appnest component
     if ("ResizeObserver" in window) {
         const resizeObserver = new ResizeObserver(() => {

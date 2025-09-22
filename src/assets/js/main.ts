@@ -9,7 +9,7 @@ require("../css/main.scss");
 //@ts-expect-error
 __webpack_public_path__ = "assets/";
 
-const appElement = document.getElementById("app");
+const appElement = document.getElementById("explore-app");
 
 if (appElement) {
     createApp(explore).mount(appElement);
