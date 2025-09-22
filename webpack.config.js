@@ -71,6 +71,14 @@ module.exports = {
             {
                 test: /\.vue$/,
                 loader: "vue-loader",
+                options: {
+                    compilerOptions: {
+                        isCustomElement: (tag) => {
+                            return tag === "masonry-layout";
+                        },
+                    },
+                    productionMode: !isDevelopment,
+                },
             },
             {
                 test: /\.js$/,
