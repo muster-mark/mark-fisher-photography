@@ -29,7 +29,7 @@
   "dependencies": {
     "@appnest/masonry-layout": "^2.2.3",
     "date-season": "0.0.2",
-    "dotenv": "^17.2.2",
+    "dotenv": "^17.2.3",
     "html-minifier-terser": "^7.2.0",
     "lodash": "^4.17.21",
     "morgan": "^1.10.1",
@@ -38,7 +38,7 @@
     "nunjucks-date": "^1.5.0",
     "sharp": "^0.34.3",
     "slug": "^9.1.0",
-    "vue": "^3.5.21",
+    "vue": "^3.5.22",
     "webpack-bundle-analyzer": "^4.10.2"
   },
   "devDependencies": {
@@ -91,10 +91,10 @@
     "sass": "^1.92.1",
     "sass-loader": "^16.0.5",
     "terser-webpack-plugin": "^5.3.14",
-    "ts-jest": "^29.4.1",
+    "ts-jest": "^29.4.5",
     "ts-loader": "^9.5.4",
     "ts-node": "^10.9.2",
-    "typescript": "^5.9.2",
+    "typescript": "^5.9.3",
     "vue-loader": "^17.4.2",
     "webpack": "^5.101.3",
     "webpack-cli": "^6.0.1",
