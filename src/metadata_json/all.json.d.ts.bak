@@ -1,6 +1,0 @@
-import {ImageMetadata} from "../../types";
-
-declare module "all.json" {
-    const images: ImageMetadata[]
-    export = images;
-}
