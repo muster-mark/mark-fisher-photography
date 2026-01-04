@@ -46,16 +46,24 @@
             }}
         </button>
 
-        <div class="contact-form_result-message contact-form_success-message" v-if="submissionSucceeded === true"
-             aria-live="assertive">
+        <div
+            v-if="submissionSucceeded === true"
+            ref="resultMessage"
+            class="contact-form_result-message contact-form_success-message" 
+            aria-live="assertive"
+        >
             <div class="fadeInDown contact-form_result-message_icon">
                 <SvgIcon name="envelope"></SvgIcon>
             </div>
             <div class="fadeInUp contact-form_result-message_text"><span>Your message has been sent!</span></div>
         </div>
 
-        <div class="contact-form_result-message contact-form_fail-message" v-if="submissionSucceeded === false"
-             aria-live="assertive">
+        <div
+            v-if="submissionSucceeded === false"
+            ref="resultMessage"
+            class="contact-form_result-message contact-form_fail-message" 
+            aria-live="assertive"
+        >
             <div class="fadeInDown contact-form_result-message_icon">
                 <SvgIcon name="exclamation-circle"></SvgIcon>
             </div>
@@ -70,13 +78,18 @@
 </template>
 
 <script lang="ts" setup>
-import {computed, ref} from "vue";
+import {computed, ref, shallowRef, useTemplateRef} from "vue";
 import SvgIcon from "../components/svg-icon.vue";
 
+type Field = {
+    value: string;
+    touched: boolean;
+}
+
 type Fields = {
-    name: { value: string, touched: boolean },
-    email: { value: string, touched: boolean },
-    message: { value: string, touched: boolean }
+    name: Field,
+    email: Field,
+    message: Field
 };
 
 const action = `${window.location.origin.replace("www", "api")}/message` as const;
@@ -96,8 +109,9 @@ const fields = ref<Fields>({
     }
 });
 
-const isSubmitting = ref(false);
-const submissionSucceeded = ref<boolean>(null);
+const resultMessage = useTemplateRef("resultMessage");
+const isSubmitting = shallowRef(false);
+const submissionSucceeded = shallowRef<boolean>(null);
 const fallbackEmail = "mfishe@gmail.com";
 const allFieldsTouched = computed(() => Object.keys(fields.value).every((key: keyof Fields) => fields.value[key].touched));
 const fallbackEmailHref = computed(() => {
@@ -118,7 +132,7 @@ function resetForm() {
 }
 
 function submitForm() {
-    isSubmitting.value = true; // Puts button into progress state
+    isSubmitting.value = true;
     submissionSucceeded.value = null;
 
     // Create data for body
@@ -134,24 +148,24 @@ function submitForm() {
         headers: {
             "Content-Type": "application/json",
         },
-    })
-        .then(response => {
-                if (response.ok) {
-                    submissionSucceeded.value = true;
-                    resetForm();
-                    return Promise.resolve();
-                } else {
-                    return Promise.reject(response);
-                }
-            })
-            .catch((err) => {
-                submissionSucceeded.value = false;
-                console.error("Form submission failed");
-                console.error(err);
-            })
-            .finally(() => {
-                isSubmitting.value = false;
-                document.querySelector(".contact-form_result-message").scrollIntoView(false);
-            });
+    }).then(response => {
+        if (!response.ok) {
+                return Promise.reject(response);
+        }
+        submissionSucceeded.value = true;
+        resetForm();
+        return Promise.resolve();
+    }).catch((err) => {
+        submissionSucceeded.value = false;
+        console.error("Form submission failed");
+        console.error(err);
+    }).finally(() => {
+        isSubmitting.value = false;
+        resultMessage.value.scrollIntoView({
+            block: "end",
+            inline: "nearest",
+            behavior: "smooth",
+        });
+    });
 }
 </script>
