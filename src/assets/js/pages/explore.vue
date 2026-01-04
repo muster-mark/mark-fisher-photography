@@ -132,11 +132,7 @@ function matchesSeason(image: Image) {
     return selectedSeasons.value.find((season) => season === image.Season);
 }
 
-watch(selectedCountries, () => {
-    page.value = 1;
-});
-
-watch(selectedSeasons, () => {
+watch([selectedCountries, selectedSeasons], () => {
     page.value = 1;
 });
 
@@ -166,17 +162,10 @@ onMounted(() => {
     });
 
     masonryElement.value.setAttribute("gap", `${masonryGap.value}`); // Seems to be bug in @appnest component
-    if ("ResizeObserver" in window) {
-        const resizeObserver = new ResizeObserver(() => {
-            updateColumns();
-        });
-        resizeObserver.observe(masonryLayoutContainer.value);
-    } else {
-        // Fallback for Safari < 13.1
-        (["resize", "orientationchange"] as const).forEach((event) => {
-            window.addEventListener(event, updateColumns, { passive: true });
-        });
-    }
+    const resizeObserver = new ResizeObserver(() => {
+        updateColumns();
+    });
+    resizeObserver.observe(masonryLayoutContainer.value);
 });
 
 onUnmounted(() => {
