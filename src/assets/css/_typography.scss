@@ -32,12 +32,7 @@ h4, .h4 {
 }
 
 p {
-    margin-bottom: #{$line-height * 1em}; 
-    @supports not (margin-bottom: 1lh) {
-        // @supports is needed. We can't rely on override, because cssnano will remove the "redundant" fallback
-        margin-bottom: 1lh; // Fallback for Safari < 16.4
-    }
-
+    margin-bottom: 1lh;
 
     &:last-child {
         margin-bottom: 0;
