@@ -85,7 +85,7 @@ import SvgIcon from "../components/svg-icon.vue";
 import { type Image, type CountryCount, type SeasonCount, Season } from "../../../types";
 
 const seasonCounts = ref<SeasonCount[]>([]);
-const selectedSeasons = ref<Season[]>([Season.spring, Season.summer, Season.autumn, Season.winter]);
+const selectedSeasons = ref<Season[]>([]);
 const countryCounts = ref<CountryCount[]>([]);
 const selectedCountries = ref<string[]>([]);
 const allImages = ref<Image[]>([]);
@@ -119,10 +119,16 @@ const masonryWidth = computed(() => {
 });
 
 function matchesCountry(image: Image) {
+    if (selectedCountries.value.length === 0) {
+        return true;
+    }   
     return selectedCountries.value.find((country) => country === image.CountryPrimaryLocationName);
 }
 
 function matchesSeason(image: Image) {
+    if (selectedSeasons.value.length === 0) {
+        return true;
+    }
     return selectedSeasons.value.find((season) => season === image.Season);
 }
 
@@ -153,8 +159,6 @@ onMounted(() => {
         .then((json) => {
             allImages.value = json.images;
             countryCounts.value = json.countryCounts;
-            selectedCountries.value = json.countryCounts.map((countryCount: CountryCount) => countryCount.name);
-            selectedCountries.value = Array.from(new Set(selectedCountries.value));
             seasonCounts.value = json.seasonCounts;
         })
     .catch((err) => {
