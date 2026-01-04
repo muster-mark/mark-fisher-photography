@@ -82,7 +82,7 @@ import { computed, onMounted, onUnmounted, ref, useTemplateRef, watch } from "vu
 import ExploreResult from "../components/explore-result.vue";
 import PaginationLinks from "../components/pagination-links.vue";
 import SvgIcon from "../components/svg-icon.vue";
-import { type Image, type CountryCount, type SeasonCount, Season } from "../../../types";
+import { type Image, type CountryCount, type SeasonCount, type Season } from "../../../types";
 
 const seasonCounts = ref<SeasonCount[]>([]);
 const selectedSeasons = ref<Season[]>([]);
