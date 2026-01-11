@@ -1,3 +1,4 @@
+@use "sass:color";
 @use "../colors";
 
 $btn-color-1: #eeb374;
@@ -27,7 +28,7 @@ $btn-color-2: colors.$color-primary;
     }
 
     &:hover, &:focus {
-        background-image: linear-gradient(darken($btn-color-1, 22%), darken(colors.$color-primary, 22%));
+        background-image: linear-gradient(color.adjust($btn-color-1, $lightness: -22%), color.adjust(colors.$color-primary, $lightness: -22%));
         color: white;
     }
 
@@ -55,7 +56,7 @@ $btn-color-2: colors.$color-primary;
     background-image: repeating-linear-gradient(-45deg, $btn-color-1 0%, $btn-color-2 10%, $btn-color-1 20%);
 
     &:focus {
-        background-image: repeating-linear-gradient(-45deg, darken($btn-color-1, 22%) 0%, darken($btn-color-2, 22%) 10%, darken($btn-color-1, 22%) 20%);
+        background-image: repeating-linear-gradient(-45deg, color.adjust($btn-color-1, $lightness: -22%) 0%, color.adjust($btn-color-2, $lightness: -22%) 10%, color.adjust($btn-color-1, $lightness: -22%) 20%);
         color: white;
     }
 }

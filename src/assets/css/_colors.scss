@@ -1,7 +1,9 @@
+@use "sass:color";
+
 $color-primary: #efa929; /* #efa929 is AAA on black. Keep synchronised with meta theme colour in HTML */
 $link-color: $color-primary;
 
-$text-color: desaturate(lighten($color-primary, 35%), 10%);
-$subtle-text-color: desaturate(darken($color-primary, 10%), 75%);
-$visited-link-color: darken($color-primary, 10%);
-$placeholder-grey: darken(desaturate($color-primary, 25%), 20%);
+$text-color: color.adjust($color-primary, $lightness: 35%, $saturation: -10%);
+$subtle-text-color: color.adjust($color-primary, $lightness: -10%, $saturation: -75%);
+$visited-link-color: color.adjust($color-primary, $lightness: -10%);
+$placeholder-grey: color.adjust($color-primary, $lightness: -20%, $saturation: -25%);

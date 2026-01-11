@@ -1,3 +1,4 @@
+@use "sass:color";   
 @use "../colors";
 @use "../mixins";
 
@@ -50,7 +51,7 @@
     }
 
     &:hover:after {
-        background-image: linear-gradient(to right, transparentize(colors.$color-primary, 0.5), transparent);
+        background-image: linear-gradient(to right, color.adjust(colors.$color-primary, $alpha: 0.5), transparent);
     }
 }
 
@@ -64,7 +65,7 @@
     }
 
     &:hover:after {
-        background-image: linear-gradient(to left, transparentize(colors.$color-primary, 0.5), transparent);
+        background-image: linear-gradient(to left, color.adjust(colors.$color-primary, $alpha: 0.5), transparent);
     }
 }
 
