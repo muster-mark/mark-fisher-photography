@@ -1,5 +1,7 @@
+@use "../colors";
+
 $btn-color-1: #eeb374;
-$btn-color-2: $color-primary;
+$btn-color-2: colors.$color-primary;
 
 .btn {
     // A button, optionally containing a right chevron icon (.ico)
@@ -12,8 +14,8 @@ $btn-color-2: $color-primary;
     border: none;
     border-radius: 10px;
     color: black;
-    background-color: $color-primary;
-    background-image: linear-gradient($btn-color-1, $color-primary);
+    background-color: colors.$color-primary;
+    background-image: linear-gradient($btn-color-1, colors.$color-primary);
     text-decoration: none;
 
     &_lg {
@@ -25,7 +27,7 @@ $btn-color-2: $color-primary;
     }
 
     &:hover, &:focus {
-        background-image: linear-gradient(darken($btn-color-1, 22%), darken($color-primary, 22%));
+        background-image: linear-gradient(darken($btn-color-1, 22%), darken(colors.$color-primary, 22%));
         color: white;
     }
 

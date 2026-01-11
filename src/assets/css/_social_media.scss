@@ -1,4 +1,6 @@
-$screen-width-show-social-media-in-footer: 500px;
+@use "colors";
+@use "vars";
+
 
 .header_sm, .footer_sm {
     display: inline-block;
@@ -18,13 +20,13 @@ $screen-width-show-social-media-in-footer: 500px;
     text-align: center;
 }
 
-@media screen and (max-width: $screen-width-show-social-media-in-footer) {
+@media screen and (max-width: vars.$screen-width-show-social-media-in-footer) {
     .header_sm {
         display: none;
     }
 }
 
-@media screen and (min-width: $screen-width-show-social-media-in-footer + 1px) {
+@media screen and (min-width: vars.$screen-width-show-social-media-in-footer + 1px) {
     .footer_sm {
         display: none;
     }
@@ -34,17 +36,17 @@ $screen-width-show-social-media-in-footer: 500px;
     /* Why is higher specificity required - bug? */
     display: inline-block;
     font-size: 1.5em;
-    color: $text-color;
+    color: colors.$text-color;
     padding: 20px 0.4em;
     text-decoration: none;
     transition: scale 0.3s;
 }
 
 .sm-link:hover {
-    color: $color-primary;
+    color: colors.$color-primary;
     text-decoration: none;
 
     .ico {
-        fill: $color-primary;
+        fill: colors.$color-primary;
     }
 }

@@ -1,3 +1,5 @@
+@use "colors";
+
 header {
     border-bottom: 2px solid black;
     padding-top: 10px;
@@ -24,16 +26,16 @@ header {
 .nav-active {
     text-decoration: underline;
     text-underline-offset: 7px;
-    color: $color-primary;
+    color: colors.$color-primary;
     position: relative;
 
     .a_context {
         &, &:visited {
-            color: $color-primary;
+            color: colors.$color-primary;
         }
 
         &:hover, &:focus {
-            color: $text-color;
+            color: colors.$text-color;
         }
     }
 }
@@ -44,7 +46,7 @@ header {
     width: 0;
     height: 0;
     border: 5px solid transparent;
-    border-top-color: $color-primary;
+    border-top-color: colors.$color-primary;
     content: "";
     position: absolute;
     bottom: -4px;

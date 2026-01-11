@@ -1,3 +1,5 @@
+@use "colors";
+
 //Confusing conflation of header terminology
 
 .header-container .inner-container {
@@ -9,7 +11,7 @@
     content: "";
     height: 1px;
     width: 100%;
-    background-color: $text-color;
+    background-color: colors.$text-color;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -18,7 +20,7 @@
 .header-container {
     padding: 2vw 0;
     display: flow-root;
-    background-image: linear-gradient($color-primary, transparent);
+    background-image: linear-gradient(colors.$color-primary, transparent);
     margin-block-start: -1em;
 }
 

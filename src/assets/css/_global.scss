@@ -1,3 +1,5 @@
+@use "colors";
+
 body {
     margin: 0;
     background: #090909 url("/images/bg_tesselate.webp");
@@ -11,7 +13,7 @@ html {
     background-color: black;
     --font-size: calc(16px + 0.25vw);
     font-size: var(--font-size);
-    color: $text-color;
+    color: colors.$text-color;
 }
 
 html, body {
@@ -42,7 +44,7 @@ img, picture {
         text-decoration: none;
     }
     to {
-        color: $color-primary;
+        color: colors.$color-primary;
         text-decoration: underline;
     }
 }
