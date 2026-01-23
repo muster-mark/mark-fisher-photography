@@ -83,7 +83,7 @@
     "mini-css-extract-plugin": "^2.10.0",
     "mustache": "^4.2.0",
     "ndarray": "^1.0.19",
-    "node": "^24.12.0",
+    "node": "^25.4.0",
     "p-limit": "^7.2.0",
     "postcss-loader": "^8.2.0",
     "postcss-logical": "^8.1.0",
