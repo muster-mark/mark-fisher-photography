@@ -180,9 +180,6 @@ importers:
       postcss-loader:
         specifier: ^8.2.0
         version: 8.2.0(postcss@8.5.6)(typescript@5.9.3)(webpack@5.104.1)
-      postcss-logical:
-        specifier: ^8.1.0
-        version: 8.1.0(postcss@8.5.6)
       prettier:
         specifier: ^3.8.1
         version: 3.8.1
@@ -3417,12 +3414,6 @@ packages:
         optional: true
       webpack:
         optional: true
-
-  postcss-logical@8.1.0:
-    resolution: {integrity: sha512-pL1hXFQ2fEXNKiNiAgtfA005T9FBxky5zkX6s4GZM2D8RkVgRqz3f4g1JUoq925zXv495qk8UNldDwh8uGEDoA==}
-    engines: {node: '>=18'}
-    peerDependencies:
-      postcss: ^8.4
 
   postcss-merge-longhand@7.0.5:
     resolution: {integrity: sha512-Kpu5v4Ys6QI59FxmxtNB/iHUVDn9Y9sYw66D6+SZoIk4QTz1prC4aYkhIESu+ieG1iylod1f8MILMs1Em3mmIw==}
@@ -8164,11 +8155,6 @@ snapshots:
       webpack: 5.104.1(webpack-cli@6.0.1)
     transitivePeerDependencies:
       - typescript
-
-  postcss-logical@8.1.0(postcss@8.5.6):
-    dependencies:
-      postcss: 8.5.6
-      postcss-value-parser: 4.2.0
 
   postcss-merge-longhand@7.0.5(postcss@8.5.6):
     dependencies:

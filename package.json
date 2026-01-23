@@ -86,7 +86,6 @@
     "node": "^25.4.0",
     "p-limit": "^7.2.0",
     "postcss-loader": "^8.2.0",
-    "postcss-logical": "^8.1.0",
     "prettier": "^3.8.1",
     "sass": "^1.97.3",
     "sass-loader": "^16.0.6",
