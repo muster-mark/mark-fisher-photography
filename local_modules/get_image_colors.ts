@@ -3,7 +3,6 @@
 
 import fs from "fs/promises";
 
-import chroma from "chroma-js";
 //@ts-ignore
 import getRgbaPalette from "get-rgba-palette";
 import jpeg from "jpeg-js";
@@ -24,7 +23,7 @@ async function getPixels(path: string) {
     return result.transpose(1, 0);
 }
 
-async function paletteFromBitmap(filename: string, options: Options): Promise<chroma.Color[]> {
+async function paletteFromBitmap(filename: string, options: Options): Promise<string[]> {
     options = {
         count: 5,
         ...options,
@@ -32,11 +31,11 @@ async function paletteFromBitmap(filename: string, options: Options): Promise<ch
 
     const pixels = await getPixels(filename);
     return getRgbaPalette(pixels.data, options.count).map(function (rgba: [number, number, number]) {
-        return chroma(rgba);
+        return `rgb(${rgba[0]}, ${rgba[1]}, ${rgba[2]})`;
     });
 }
 
-async function colorPalette(input: string, options: Options): Promise<chroma.Color[]> {
+async function colorPalette(input: string, options: Options): Promise<string[]> {
     options = {
         count: 5,
         ...options,

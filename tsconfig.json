@@ -14,7 +14,6 @@
         "typeRoots": ["./"],
         "types": [
             "node",
-            "@types/chroma-js",
             "@types/compression",
             "@types/express",
             "@types/morgan",

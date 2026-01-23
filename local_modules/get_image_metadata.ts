@@ -59,9 +59,8 @@ const transformedFields = {
     async DatePublished(metadata: ImageMetadata) {
         return `${metadata.OriginalTransmissionReference} 00:00:00`;
     },
-    async Colors(_metadata: ImageMetadata, args: { pathToFile: string }) {
-        const colorsArray = await getColors(args.pathToFile, { count: 1 });
-        return colorsArray.map((color) => color.hex());
+    Colors(_metadata: ImageMetadata, args: { pathToFile: string }) {
+        return getColors(args.pathToFile, { count: 1 });
     },
     async Season(metadata: ImageMetadata) {
         const standardDate = metadata.DateTimeOriginal.replace(/:/, "-").replace(/:/, "-");
