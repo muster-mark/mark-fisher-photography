@@ -1,5 +1,46 @@
 [
   {
+    "Gallery": "plants",
+    "Make": "Canon",
+    "Model": "Canon EOS 5D Mark III",
+    "Lens": "EF16-35mm f/4L IS USM",
+    "ExposureTime": "1/250",
+    "FNumber": 5.6,
+    "ISO": 320,
+    "ExposureCompensation": -1,
+    "Flash": "Off, Did not fire",
+    "FocalLength": "23.0 mm",
+    "Keywords": [
+      "Cliff",
+      "Flower",
+      "Madeira",
+      "Matthiola maderensis",
+      "Plant",
+      "Ponta de São Lourenço",
+      "Waves"
+    ],
+    "AltText": "Matthiola maderensis perched on a clifftop on the Ponta de Sāo Lourenço",
+    "Title": "Matthiola maderensis",
+    "Sublocation": "Ponta de São Lourenço",
+    "CountryPrimaryLocationName": "Portugal",
+    "CountryPrimaryLocationCode": "PT",
+    "State": "Madeira",
+    "GPSLatitudeRef": "North",
+    "GPSLongitudeRef": "West",
+    "ImageWidth": 560,
+    "ImageHeight": 840,
+    "ImageAspectRatio": 0.6666666666666666,
+    "ImageAspectRatioIdentifier": "2to3",
+    "Slug": "matthiola-maderensis",
+    "DateTimeOriginal": "2024-03-22 18:26:20",
+    "DatePublished": "2026-01-25 00:00:00",
+    "Season": "spring",
+    "Colors": [
+      "rgb(71, 82, 98)"
+    ],
+    "CaptionAbstract": "<p>Matthiola maderensis in Madeira. It is one of an incredibly high number of plants endemic to Madeira which, like other islands in the Madeiran archipelago, has a very high rate of endemism. 10% of species found there are endemic, making it an exciting place for a plant lover like me. This is due to the island having being isolated from the mainland ever since it's explosive birth 5 million years ago.</p>"
+  },
+  {
     "Gallery": "abstracts",
     "Make": "Canon",
     "Model": "Canon EOS 5D Mark III",
