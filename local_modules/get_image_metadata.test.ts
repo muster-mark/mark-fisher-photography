@@ -59,7 +59,7 @@ test("Fields are of correct format for file with correct metadata", async () => 
     expect(typeof metaData.ImageAspectRatio).toBe("number");
     expect(typeof metaData.ImageAspectRatioIdentifier).toBe("string");
     expect(Array.isArray(metaData.Colors)).toBeTruthy();
-    expect(metaData.Colors[0]).toMatch(/^#[a-z0-9A-Z]{6}$/);
+    expect(metaData.Colors[0]).toMatch(/^rgb\(\d{1,3}, \d{1,3}, \d{1,3}\)$/);
     expect(metaData.Season).toMatch(/^(spring|summer|autumn|winter)$/);
 });
 
