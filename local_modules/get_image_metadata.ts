@@ -139,9 +139,9 @@ export default async function getImageMetadata(fileName: string, gallery: string
     const md = new MarkdownIt();
 
     if (!!metadata["Caption-Abstract"]) {
-        // Using ImageDescription since length of Caption-Abstract is limited to ~2000 characters - could change the key used
-        // There is also Description, which I believe is the same
-        relevantMetaData.CaptionAbstract = md.render(metadata["ImageDescription"]).replace(/\n$/, "");
+        // Using Description since length of Caption-Abstract is limited to ~2000 characters - could change the key used
+        // It is identical to ImageDescription
+        relevantMetaData.Description = md.render(metadata["Description"]).replace(/\n$/, "");
     }
 
     return relevantMetaData;
