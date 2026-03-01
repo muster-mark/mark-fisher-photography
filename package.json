@@ -42,7 +42,7 @@
     "webpack-bundle-analyzer": "^5.2.0"
   },
   "devDependencies": {
-    "@aws-sdk/client-cloudfront": "^3.995.0",
+    "@aws-sdk/client-cloudfront": "^3.1000.0",
     "@babel/plugin-syntax-dynamic-import": "^7.8.3",
     "@babel/plugin-transform-runtime": "^7.29.0",
     "@babel/preset-env": "^7.29.0",
@@ -81,7 +81,7 @@
     "mini-css-extract-plugin": "^2.10.0",
     "mustache": "^4.2.0",
     "ndarray": "^1.0.19",
-    "node": "^25.6.1",
+    "node": "^25.7.0",
     "p-limit": "^7.3.0",
     "postcss-loader": "^8.2.1",
     "prettier": "^3.8.1",
