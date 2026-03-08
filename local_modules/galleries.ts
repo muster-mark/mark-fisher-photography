@@ -16,7 +16,7 @@ export default [
         name: "Highlands",
         metaDescription:
             "Stunning landscape images of the Scottish highlands and islands, including Skye, St. Kilda, Lewis and Harris and Arran.",
-        _unused_homepageDescription: "The UK's crown jewels",
+        _unused_homepageDescription: "The UK’s crown jewels",
         featured: true,
         imageSlug: "here-lies-sutherland", // TODO can remove old gallery images later
         imageAltText: "Scottish Highlands photography by Mark Fisher",
