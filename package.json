@@ -42,7 +42,7 @@
     "webpack-bundle-analyzer": "^5.2.0"
   },
   "devDependencies": {
-    "@aws-sdk/client-cloudfront": "^3.1000.0",
+    "@aws-sdk/client-cloudfront": "^3.1005.0",
     "@babel/plugin-syntax-dynamic-import": "^7.8.3",
     "@babel/plugin-transform-runtime": "^7.29.0",
     "@babel/preset-env": "^7.29.0",
@@ -56,12 +56,12 @@
     "@types/morgan": "^1.9.10",
     "@types/mustache": "^4.2.6",
     "@types/ndarray": "^1.0.14",
-    "@types/node": "^25.3.2",
+    "@types/node": "^25.4.0",
     "@types/nunjucks": "^3.2.6",
     "@types/slug": "^5.0.9",
     "autoprefixer": "^10.4.27",
     "babel-jest": "^29.7.0",
-    "babel-loader": "^10.0.0",
+    "babel-loader": "^10.1.1",
     "browserslist": "^4.28.1",
     "clean-webpack-plugin": "^4.0.0",
     "colors": "^1.4.0",
