@@ -62,7 +62,7 @@
     "autoprefixer": "^10.5.4",
     "babel-jest": "^29.7.0",
     "babel-loader": "^10.1.1",
-    "browserslist": "^4.28.7",
+    "browserslist": "^4.28.8",
     "clean-webpack-plugin": "^4.0.0",
     "colors": "^1.4.0",
     "compression": "^1.8.1",
