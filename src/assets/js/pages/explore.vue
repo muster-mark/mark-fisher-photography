@@ -23,7 +23,14 @@
 
         <div class="explore-filter_title">Countries:</div>
         <div class="checkbox-grid">
-            <span v-for="countryCount in countryCounts" :key="`country-checkbox_${countryCount.name}`">
+            <span 
+                v-for="countryCount in countryCounts"
+                :key="`country-checkbox_${countryCount.name}`"
+                class="checkbox-grid-item"
+                :class="{
+                    '--lesser': !countryCount.featured
+                }"
+            >
                 <input
                     type="checkbox"
                     :value="countryCount.name"
@@ -86,7 +93,7 @@ import { type Image, type CountryCount, type SeasonCount, type Season } from "..
 
 const seasonCounts = ref<SeasonCount[]>([]);
 const selectedSeasons = ref<Season[]>([]);
-const countryCounts = ref<CountryCount[]>([]);
+const unsortedCountryCounts = ref<CountryCount[]>([]);
 const selectedCountries = ref<string[]>([]);
 const allImages = ref<Image[]>([]);
 const resultLimit = 20;
@@ -97,6 +104,30 @@ const columnWidth = 200;
 const scrollTarget = useTemplateRef("scrollTarget");
 const masonryLayoutContainer = useTemplateRef("masonryLayoutContainer");
 const masonryElement = useTemplateRef("masonryElement");
+
+const countryCounts = computed(() => {
+    const featuredCountries = ["England", "Scotland", "Wales"]; // Put these countries at the top of the list, in this order
+    const orderedCountries = unsortedCountryCounts.value.sort((a, b) => {
+        const aIndex = featuredCountries.indexOf(a.name);
+        const bIndex = featuredCountries.indexOf(b.name);
+        if (aIndex !== -1 && bIndex !== -1) {
+            return aIndex - bIndex;
+        } else if (aIndex !== -1) {
+            return -1;
+        } else if (bIndex !== -1) {
+            return 1;
+        } else {
+            return a.name.localeCompare(b.name);
+        }
+    });
+    return orderedCountries.map((countryCount) => {
+        return {
+            name: countryCount.name.replace(" ", " "),
+            count: countryCount.count,
+            featured: featuredCountries.includes(countryCount.name)
+        };
+    });
+});
 
 const filteredImages = computed(() => {
     return allImages.value.filter((image) => matchesCountry(image) && matchesSeason(image));
@@ -154,7 +185,7 @@ onMounted(() => {
         .then((data) => data.json())
         .then((json) => {
             allImages.value = json.images;
-            countryCounts.value = json.countryCounts;
+            unsortedCountryCounts.value = json.countryCounts;
             seasonCounts.value = json.seasonCounts;
         })
     .catch((err) => {
@@ -241,6 +272,18 @@ onUnmounted(() => {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(max-content, 200px));
     gap: 8px 16px;
+}
+
+.checkbox-grid-item {
+    &:not(.--lesser) {
+        font-size: min(18px, var(--font-size));
+    }
+    &.--lesser {
+        font-size: max(16px, 0.9em);
+    }
+    &:nth-child(1 of .--lesser) {
+        grid-column: 1;
+    }
 }
 
 $checkbox-size: 20px;
