@@ -16,7 +16,7 @@
                     class="explore-filter-checkbox"
                 />
                 <label class="explore-filter-label" :for="`season-checkbox_${seasonCount.name}`">
-                    {{ seasonCount.name[0].toUpperCase() + seasonCount.name.slice(1) }}&nbsp;({{ seasonCount.count }})
+                    {{ seasonEmojis[seasonCount.name] }} {{ seasonCount.name[0].toUpperCase() + seasonCount.name.slice(1) }}&nbsp;({{ seasonCount.count }})
                 </label>
             </span>
         </div>
@@ -104,6 +104,13 @@ const columnWidth = 200;
 const scrollTarget = useTemplateRef("scrollTarget");
 const masonryLayoutContainer = useTemplateRef("masonryLayoutContainer");
 const masonryElement = useTemplateRef("masonryElement");
+
+const seasonEmojis: Record<Season, string> = {
+    spring: "🌱",
+    summer: "☀️",
+    autumn: "🍂",
+    winter: "❄️"
+};
 
 const countryCounts = computed(() => {
     const featuredCountries = ["England", "Scotland", "Wales"]; // Put these countries at the top of the list, in this order

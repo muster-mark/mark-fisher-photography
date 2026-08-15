@@ -31,7 +31,7 @@ export enum Season {
 }
 
 export interface SeasonCount {
-    name: string;
+    name: Season;
     count: number;
 }
 
