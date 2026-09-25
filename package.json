@@ -56,7 +56,7 @@
     "@types/morgan": "^1.9.10",
     "@types/mustache": "^4.2.6",
     "@types/ndarray": "^1.1.0",
-    "@types/node": "^25.9.1",
+    "@types/node": "^26.6.2",
     "@types/nunjucks": "^3.2.6",
     "@types/slug": "^5.0.9",
     "autoprefixer": "^10.6.1",
