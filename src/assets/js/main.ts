@@ -3,7 +3,8 @@ import { createApp } from "vue";
 import explore from "./pages/explore.vue";
 import contact from "./pages/contact.vue";
 
-require("../css/main.scss");
+// @ts-expect-error
+import("../css/main.scss");
 
 // Needed for dynamic imports to work (though not currently used), otherwise they will load /public/0.js instead of /assets/0.js for example
 //@ts-expect-error
