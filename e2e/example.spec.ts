@@ -56,6 +56,18 @@ test("has title", async ({ page }) => {
             expect(alt, `Image with src ${await image.getAttribute("src")} has no alt attribute`).not.toBeNull();
         }
     });
+
+    test(`No broken links on ${url}`, async ({ page }) => {
+        await page.goto(url);
+        const links = await page.$$("a");
+        for (const link of links) {
+            const href = await link.getAttribute("href");
+            if (href && href.startsWith("http")) {
+                const response = await page.request.get(href);
+                expect(response.status(), `Link ${href} is broken`).toBe(200);
+            }
+        }
+    });
 });
 
 test("can submit contact form", async ({ page }) => {
